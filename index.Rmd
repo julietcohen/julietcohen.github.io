@@ -1,8 +1,9 @@
 ---
 title: "Juliet Cohen"
 description: |
-  UCSB Bren School
-  Welcome to the website. I hope you enjoy it!
+  UCSB Bren School of Enviornmental Science and Management
+  Master of Environmental Data Science
+  
 site: distill::distill_website
 ---
 
