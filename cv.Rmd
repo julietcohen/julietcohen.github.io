@@ -1,11 +1,18 @@
 ---
-title: "cv.Rmd"
-author: "Juliet Cohen"
-date: "8/6/2021"
-output: html_document
+title: "Juliet Cohen"
+description: |
+  Work Experience: Pacific States Marine Fisheries Commission
+  
+  Education: UCSB Bren School
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point(aes(color = price))
 ```
 

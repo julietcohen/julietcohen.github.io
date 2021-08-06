@@ -9,4 +9,6 @@ navbar:
       href: index.html
     - text: "Walrus"
       href: about.html
+    - text: "My CV"
+      href: cv.html
 output: distill::distill_article
