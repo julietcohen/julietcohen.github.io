@@ -1,0 +1,12 @@
+name: "julietcohen.github.io"
+title: "My Awesome Website"
+description: |
+  My Awesome Website
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Bembe"
+      href: index.html
+    - text: "Walrus"
+      href: about.html
+output: distill::distill_article
