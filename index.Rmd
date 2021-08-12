@@ -1,20 +1,12 @@
 ---
 title: "Juliet Cohen"
-description: |
-  UCSB Bren School of Enviornmental Science and Management
-  Master of Environmental Data Science
-  
+image: "Photo_Juliet.jpg"
+links:
+  - label: Email
+    url: "jscohen@bren.ucsb.edu"
+output:
+  postcards::jolla
 site: distill::distill_website
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
-```
 

@@ -1,9 +1,8 @@
 ---
 title: "Juliet Cohen"
 description: |
-  Work Experience: Pacific States Marine Fisheries Commission
-  
-  Education: UCSB Bren School
+  "Work Experience: Pacific States Marine Fisheries Commission
+  Education: UCSB Bren School"
 ---
 
 ```{r setup, include=FALSE}
