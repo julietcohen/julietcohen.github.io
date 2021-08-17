@@ -44,7 +44,10 @@ lobsters_legality <- lobsters %>%
 proportion_legal_plot <- ggplot(lobsters_legality, aes(x = site, y = site_legal_count)) +
   geom_col(position = "fill",
                aes(color = legal,
-               fill = legal))
+               fill = legal)) +
+  labs(x = "Lobster Harvest Site",
+       y = "Legality Proportion of Catch",
+       title = "Lobster Size Legality by Site")
 
 proportion_legal_plot
 ```
