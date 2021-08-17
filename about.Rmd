@@ -1,7 +1,7 @@
 ---
-title: "About this site"
+title: "Welcome to my website!"
 description: |
-  Some additional details about the website
+  "**Insert inspiring quote about data science here**"
 ---
 
 ```{r setup, include=FALSE}

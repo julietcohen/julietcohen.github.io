@@ -1,8 +1,17 @@
 ---
-title: "Juliet Cohen"
+title: "Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist"
 description: |
-  "Work Experience: Pacific States Marine Fisheries Commission
-  Education: UCSB Bren School"
+  "Work Experience:
+    
+  ~ Pacific States Marine Fisheries Commission
+  ~ Oahu Invasive Species Committee
+  ~ San Diego Natural History Museum
+  
+  Education:
+    
+  - UCSB Bren School of Environemntal Science and Management - Master of Enviornmental Data Science Program
+  - UC Santa Barbara - B.S. Ecology and Evolution
+  "
 ---
 
 ```{r setup, include=FALSE}
@@ -13,5 +22,9 @@ library(tidyverse)
 ```{r}
 ggplot(data = diamonds, aes(x = carat, y = price)) +
   geom_point(aes(color = price))
+```
+
+```{r}
+
 ```
 

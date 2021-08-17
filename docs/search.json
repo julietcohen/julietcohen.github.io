@@ -2,33 +2,33 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
+      "title": "Welcome to my website!",
+      "description": "\"**Insert inspiring quote about data science here**\"",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-12T15:19:00-07:00"
+      "last_modified": "2021-08-16T21:19:42-07:00"
     },
     {
       "path": "blog.html",
       "title": "My Blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-12T15:19:02-07:00"
+      "last_modified": "2021-08-16T21:19:42-07:00"
     },
     {
       "path": "cv.html",
-      "title": "Juliet Cohen",
-      "description": "\"Work Experience: Pacific States Marine Fisheries Commission\nEducation: UCSB Bren School\"",
+      "title": "Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist",
+      "description": "\"Work Experience:\n  \n~ Pacific States Marine Fisheries Commission\n~ Oahu Invasive Species Committee\n~ San Diego Natural History Museum\n\nEducation:\n  \n- UCSB Bren School of Environemntal Science and Management - Master of Enviornmental Data Science Program\n- UC Santa Barbara - B.S. Ecology and Evolution\n\"",
       "author": [],
-      "contents": "\r\n\r\n\r\nggplot(data = diamonds, aes(x = carat, y = price)) +\r\n  geom_point(aes(color = price))\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-12T15:19:11-07:00"
+      "contents": "\r\n\r\n\r\nggplot(data = diamonds, aes(x = carat, y = price)) +\r\n  geom_point(aes(color = price))\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-16T21:19:49-07:00"
     },
     {
       "path": "index.html",
-      "title": "Juliet Cohen",
+      "title": "Juliet Cohen : Let's Talk Big Data",
       "author": [],
-      "contents": "\r\n\r\n          \r\n          \r\n          My Awesome Website\r\n          \r\n          \r\n          Bembe\r\n          Walrus\r\n          My CV\r\n          My Blog\r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            Juliet Cohen\r\n          \r\n          \r\n            \r\n              \r\n            \r\n            \r\n              \r\n            \r\n          \r\n\r\n          \r\n            \r\n              \r\n                  \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                \r\n                              \r\n          \r\n\r\n          \r\n            \r\n              \r\n                                \r\n                  \r\n                    Email\r\n                  \r\n                \r\n                              \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
-      "last_modified": "2021-08-12T15:19:11-07:00"
+      "contents": "\r\n\r\n          \r\n          \r\n          Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist\r\n          \r\n          \r\n          Bembe\r\n          Walrus\r\n          My CV\r\n          My Blog\r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            Juliet Cohen : Let’s Talk Big Data\r\n          \r\n          \r\n            \r\n              \r\n            \r\n            \r\n              \r\n            \r\n          \r\n\r\n          \r\n            \r\n              \r\n                  \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                \r\n                              \r\n          \r\n\r\n          \r\n            \r\n              \r\n                                \r\n                  \r\n                    Email\r\n                  \r\n                \r\n                              \r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
+      "last_modified": "2021-08-16T21:19:50-07:00"
     }
   ],
   "collections": ["posts/posts.json"]

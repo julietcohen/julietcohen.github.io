@@ -1,6 +1,6 @@
 ---
-title: "Juliet Cohen"
-image: "Photo_Juliet.jpg"
+title: "Juliet Cohen : Let's Talk Big Data"
+image: "Juliet.png"
 links:
   - label: Email
     url: "jscohen@bren.ucsb.edu"
