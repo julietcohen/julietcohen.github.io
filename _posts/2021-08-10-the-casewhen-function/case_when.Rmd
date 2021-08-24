@@ -13,14 +13,16 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(here)
-library(tidyverse)
-library(janitor)
+
 ```
 
 ## First thing first, import your data! Lobster data, of course.
 
-```{r, include = TRUE}
+```{r, echo = TRUE}
+library(here)
+library(tidyverse)
+library(janitor)
+
 lobsters <- read_csv(file.path("data","Lobster_Abundance_All_Years_20210412.csv"), na = c("-99999", "")) %>% 
   clean_names() %>% 
   uncount(count)
@@ -32,7 +34,7 @@ lobsters <- read_csv(file.path("data","Lobster_Abundance_All_Years_20210412.csv"
 ### Use this function to bin continuous data into manually defined categories and add it to your data set in the form of new column.
 ### case_when() is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this daatframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.
 
-```{r, include = TRUE}
+```{r, echo = TRUE}
 
 lobsters_legality <- lobsters %>% 
   mutate(legal = case_when(
@@ -65,7 +67,7 @@ proportion_legal_plot
 
 ### Your data isn't in Tidy format? That's alright! Check out the tidyr::pivot_longer() and tidyr::pivot_wider() functions to help you help R help you. In the example below, we have a tribble dataset that is not in Tidy format. We know this because there are multiple columns (A:C) that represent different individuals or observations of the same variable (dog food brands). We can use pivot_longer() to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting Tidy data may seem more complex, it is easier to convert to a graph and structurally is more ornagized.
 
-```{r}
+```{r, echo = TRUE}
 df <- tribble(
   ~name, ~A, ~B, ~C,
   "teddy", 4, 5, 6,

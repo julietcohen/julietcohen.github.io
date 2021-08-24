@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-08-10-the-casewhen-function/",
+    "title": "The case_when() Function",
+    "description": "A gem within the expansive tidyverse",
+    "author": [
+      {
+        "name": "Unknown",
+        "url": {}
+      }
+    ],
+    "date": "2021-08-23",
+    "categories": [],
+    "contents": "\r\nFirst thing first, import your data! Lobster data, of course.\r\n\r\n\r\nlibrary(here)\r\nlibrary(tidyverse)\r\nlibrary(janitor)\r\n\r\nlobsters <- read_csv(file.path(\"data\",\"Lobster_Abundance_All_Years_20210412.csv\"), na = c(\"-99999\", \"\")) %>% \r\n  clean_names() %>% \r\n  uncount(count)\r\n\r\n\r\n\r\ncase_when()\r\nUse this function to bin continuous data into manually defined categories and add it to your data set in the form of new column.\r\ncase_when() is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this daatframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.\r\n\r\n\r\nlobsters_legality <- lobsters %>% \r\n  mutate(legal = case_when(\r\n    size_mm >= 79.76 ~ \"yes\",\r\n    size_mm < 79.76 ~ \"no\")) %>% \r\n   group_by(site, legal) %>% \r\n  summarize(site_legal_count = n())\r\n\r\nproportion_legal_plot <- ggplot(lobsters_legality, aes(x = site, y = site_legal_count)) +\r\n  geom_col(position = \"fill\",\r\n               aes(color = legal,\r\n               fill = legal)) +\r\n  labs(x = \"Lobster Harvest Site\",\r\n       y = \"Legality Proportion of Catch\",\r\n       title = \"Lobster Size Legality by Site\")\r\n\r\nproportion_legal_plot\r\n\r\n\r\n\r\n\r\nTidy Data\r\nWhat is it and why do we care?\r\nThis lobster dataset is in Tidy format, as is most of the datasets we work with. Tidy data is a structure for satasets that helps R do the most work possible when it comes to analysis, summary statistics, and combining datasets. R’s vectorized functions flourish with rows and columns in Tidy format.\r\nTidy data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster dataset, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succint title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.\r\nTidy format encourages collaboration between people and data sets beause we are easily able to combine data from different sources using join functions. If the data contains columns with shared variables, R can easily recognize those columns and associate its rows (0bservations) with the observations of the complementary dataset. Using full_join() is a common join function to utilize as it maintains all data from both sources.\r\nTidy format helps you easily make subsets of your data for specific graphs and summary tables. Consider the filter() and select() functions, which help you subset to only view variable or observations of interest. In these cases, it is especially important to have only one value in each cell and standardize the way you document observations. You always want to record each lobster species with the same spelling, each size with the same number of decimal places, and each date with the same format (such as YYYY-MM-DD). For variables such as length that might need units, always include these units in the column header rather than the cell. This streamlines our coding and keeps cells to a single class. If you include numerical and character values in one cell, it will be documented as a character, which can restrict your analysis process.\r\nYour data isn’t in Tidy format? That’s alright! Check out the tidyr::pivot_longer() and tidyr::pivot_wider() functions to help you help R help you. In the example below, we have a tribble dataset that is not in Tidy format. We know this because there are multiple columns (A:C) that represent different individuals or observations of the same variable (dog food brands). We can use pivot_longer() to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting Tidy data may seem more complex, it is easier to convert to a graph and structurally is more ornagized.\r\n\r\n\r\ndf <- tribble(\r\n  ~name, ~A, ~B, ~C,\r\n  \"teddy\", 4, 5, 6,\r\n  \"Khora\", 9, 10, 11\r\n)\r\n\r\ndf\r\n\r\n\r\n# A tibble: 2 x 4\r\n  name      A     B     C\r\n  <chr> <dbl> <dbl> <dbl>\r\n1 teddy     4     5     6\r\n2 Khora     9    10    11\r\n\r\ndf_long <- df %>% \r\n  pivot_longer(cols = c(A:C),\r\n               names_to = 'dog_food',\r\n               values_to = 'ranking')\r\ndf_long\r\n\r\n\r\n# A tibble: 6 x 3\r\n  name  dog_food ranking\r\n  <chr> <chr>      <dbl>\r\n1 teddy A              4\r\n2 teddy B              5\r\n3 teddy C              6\r\n4 Khora A              9\r\n5 Khora B             10\r\n6 Khora C             11\r\n\r\n# if A, B, C are dog food types, convert this to tidy structure\r\n\r\n\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-08-10-the-casewhen-function/case_when_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2021-08-23T19:25:36-07:00",
+    "input_file": "case_when.knit.md"
+  },
+  {
     "path": "posts/2021-08-10-a-function-i-learned/",
     "title": "A function I learned",
     "description": "A short description of the post.",
@@ -14,23 +31,6 @@
     "contents": "\r\nabline function\r\nGiven a graph of penguin body mass as a function of penguin flipper length, the geom_smooth(method = lm) function creates a best fit line for the scatterplot.\r\nWithin the function geom_smooth(), you can specify if you want the line to show a confidence interval with se = FALSE or TRUE.\r\nFurthermore, you can add linetype = “dashed” to change the line type.\r\n\r\n\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
     "preview": "posts/2021-08-10-a-function-i-learned/Images/Raccoon_Logo.png",
     "last_modified": "2021-08-23T17:41:16-07:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-08-10-the-casewhen-function/",
-    "title": "The case_when() Function",
-    "description": "A gem within the expansive tidyverse",
-    "author": [
-      {
-        "name": "Unknown",
-        "url": {}
-      }
-    ],
-    "date": "2021-08-10",
-    "categories": [],
-    "contents": "\r\nFirst thing first, import your data! Lobster data, of course.\r\n\r\n\r\n\r\ncase_when()\r\nUse this function to bin continuous data, categorize it, and add it to your data set\r\ncase_when() is used here to categorize lobsters into size bins that help us determine if each individual lobster is legally too small to catch, or if it is large enough to legally harvest from different locations along the Santa Barbara coast.\r\n\r\n\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-    "preview": "posts/2021-08-10-the-casewhen-function/hello_files/figure-html5/unnamed-chunk-2-1.png",
-    "last_modified": "2021-08-17T18:17:23-07:00",
     "input_file": {}
   }
 ]
