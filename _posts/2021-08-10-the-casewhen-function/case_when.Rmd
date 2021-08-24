@@ -16,7 +16,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-## First thing first, import your data! Lobster data, of course.
+#### *First thing first, import your data*
+###### *Lobster data, of course.*
 
 ```{r, echo = TRUE}
 library(here)
@@ -30,9 +31,11 @@ lobsters <- read_csv(file.path("data","Lobster_Abundance_All_Years_20210412.csv"
 
 
 
-## case_when()
-### Use this function to bin continuous data into manually defined categories and add it to your data set in the form of new column.
-### case_when() is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this daatframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.
+### `*case_when()*`
+
+#### Use this function to bin continuous data into manually defined categories and add it to your data set in the form of new column.
+
+`case_when()` is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this daatframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.
 
 ```{r, echo = TRUE}
 
@@ -53,19 +56,19 @@ proportion_legal_plot <- ggplot(lobsters_legality, aes(x = site, y = site_legal_
 
 proportion_legal_plot
 ```
-## Tidy Data
+### *Tidy Data*
 
-### What is it and why do we care?
+#### *What is it and why do we care?*
 
-### This lobster dataset is in Tidy format, as is most of the datasets we work with. Tidy data is a structure for satasets that helps R do the most work possible when it comes to analysis, summary statistics, and combining datasets. R's vectorized functions flourish with rows and columns in Tidy format.
+This lobster data set is in *Tidy* format, as is most of the data sets we work with. *Tidy* data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R's vectorized functions flourish with rows and columns in Tidy format.
 
-### Tidy data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster dataset, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succint title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.
+*Tidy* data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster data set, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succinct title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.
 
-### Tidy format encourages collaboration between people and data sets beause we are easily able to combine data from different sources using join functions. If the data contains columns with shared variables, R can easily recognize those columns and associate its rows (0bservations) with the observations of the complementary dataset. Using full_join() is a common join function to utilize as it maintains all data from both sources.
+*Tidy* format encourages collaboration between people and data sets because we are easily able to combine data from different sources using join functions. If the data contains columns with shared variables, R can easily recognize those columns and associate its rows `(observations)` with the observations of the complementary data set. Using `full_join()` is a common join function to utilize as it maintains all data from both sources.
 
-### Tidy format helps you easily make subsets of your data for specific graphs and summary tables. Consider the filter() and select() functions, which help you subset to only view variable or observations of interest. In these cases, it is especially important to have only one value in each cell and standardize the way you document observations. You always want to record each lobster species with the same spelling, each size with the same number of decimal places, and each date with the same format (such as YYYY-MM-DD). For variables such as length that might need units, always include these units in the column header rather than the cell. This streamlines our coding and keeps cells to a single class. If you include numerical and character values in one cell, it will be documented as a character, which can restrict your analysis process.
+*Tidy* format helps you easily make subsets of your data for specific graphs and summary tables. Consider the `filter()` and `select()` functions, which help you subset to only view variable or observations of interest. In these cases, it is especially important to have only one value in each cell and standardize the way you document observations. You always want to record each lobster species with the same spelling, each size with the same number of decimal places, and each date with the same format (such as `YYYY-MM-DD`). For variables such as length that might need units, always include these units in the column header rather than the cell. This streamlines our coding and keeps cells to a single class. If you include numerical and character values in one cell, it will be documented as a character, which can restrict your analysis process.
 
-### Your data isn't in Tidy format? That's alright! Check out the tidyr::pivot_longer() and tidyr::pivot_wider() functions to help you help R help you. In the example below, we have a tribble dataset that is not in Tidy format. We know this because there are multiple columns (A:C) that represent different individuals or observations of the same variable (dog food brands). We can use pivot_longer() to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting Tidy data may seem more complex, it is easier to convert to a graph and structurally is more ornagized.
+Your data isn't in *Tidy* format? That's alright! Check out the `tidyr::pivot_longer()` and `tidyr::pivot_wider()` functions to help you help R help you. In the example below, we have a tribble dataset that is not in *Tidy* format. We know this because there are multiple columns `(A:C)` that represent different individuals or observations of the same variable (like dog food brands). We can use `pivot_longer()` to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting *Tidy* data may seem more complex, it is easier to convert to a graph and structurally is more organized.
 
 ```{r, echo = TRUE}
 df <- tribble(
