@@ -13,11 +13,11 @@
     "categories": [],
     "contents": "\r\nabline function\r\nGiven a graph of penguin body mass as a function of penguin flipper length, the geom_smooth(method = lm) function creates a best fit line for the scatterplot.\r\nWithin the function geom_smooth(), you can specify if you want the line to show a confidence interval with se = FALSE or TRUE.\r\nFurthermore, you can add linetype = “dashed” to change the line type.\r\n\r\n\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
     "preview": "posts/2021-08-10-a-function-i-learned/Images/Raccoon_Logo.png",
-    "last_modified": "2021-08-10T11:10:44-07:00",
+    "last_modified": "2021-08-23T17:41:16-07:00",
     "input_file": {}
   },
   {
-    "path": "posts/2021-08-10-hello/",
+    "path": "posts/2021-08-10-the-casewhen-function/",
     "title": "The case_when() Function",
     "description": "A gem within the expansive tidyverse",
     "author": [
@@ -29,8 +29,8 @@
     "date": "2021-08-10",
     "categories": [],
     "contents": "\r\nFirst thing first, import your data! Lobster data, of course.\r\n\r\n\r\n\r\ncase_when()\r\nUse this function to bin continuous data, categorize it, and add it to your data set\r\ncase_when() is used here to categorize lobsters into size bins that help us determine if each individual lobster is legally too small to catch, or if it is large enough to legally harvest from different locations along the Santa Barbara coast.\r\n\r\n\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-    "preview": "posts/2021-08-10-hello/hello_files/figure-html5/unnamed-chunk-2-1.png",
+    "preview": "posts/2021-08-10-the-casewhen-function/hello_files/figure-html5/unnamed-chunk-2-1.png",
     "last_modified": "2021-08-17T18:17:23-07:00",
-    "input_file": "hello.knit.md"
+    "input_file": {}
   }
 ]

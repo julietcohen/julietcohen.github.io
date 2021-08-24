@@ -20,7 +20,8 @@ library(palmerpenguins)
 ```
 
 ## abline function
-### Given a graph of penguin body mass as a function of penguin flipper length, the geom_smooth(method = lm) function creates a best fit line for the scatterplot.
+
+Given a graph of penguin body mass as a function of penguin flipper length, the geom_smooth(method = lm) function creates a best fit line for the scatterplot.
 
 ### Within the function geom_smooth(), you can specify if you want the line to show a confidence interval with se = FALSE or TRUE.
 

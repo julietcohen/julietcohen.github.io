@@ -4,7 +4,7 @@ description: |
   A gem within the expansive tidyverse 
 author:
   - name: Unknown
-date: 08-10-2021
+date: 08-23-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -21,7 +21,7 @@ library(janitor)
 ## First thing first, import your data! Lobster data, of course.
 
 ```{r, include = TRUE}
-lobsters <- read_csv(here::here("_posts", "2021-08-10-hello", "data","Lobster_Abundance_All_Years_20210412.csv"), na = c("-99999", "")) %>% 
+lobsters <- read_csv(file.path("data","Lobster_Abundance_All_Years_20210412.csv"), na = c("-99999", "")) %>% 
   clean_names() %>% 
   uncount(count)
 ```
