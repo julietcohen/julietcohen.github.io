@@ -1,16 +1,20 @@
 ---
 title: "Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist"
 description: |
-  "Work Experience:
-    Pacific States Marine Fisheries Commission
-    Oahu Invasive Species Committee
-    San Diego Natural History Museum
-  
-  Education:
-    UCSB Bren School of Environemntal Science and Management - Master of Enviornmental Data Science Program
-    UC Santa Barbara - B.S. Ecology and Evolution
-  "
+  " Insert inspiring quote about ecology and field work and stuff"
 ---
+
+#### *Work Experience*
+
+- Pacific States Marine Fisheries Commission
+- Oahu Invasive Species Committee
+- San Diego Natural History Museum
+    
+#### *Education*
+
+- UC Santa Barbara Bren School of Environmental Science and Management
+  - Master of Environmental Data Science Program
+- UC Santa Barbara - B.S. Ecology and Evolution
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -18,8 +22,7 @@ library(tidyverse)
 ```
 
 ```{r}
-ggplot(data = diamonds, aes(x = carat, y = price)) +
-  geom_point(aes(color = price))
+
 ```
 
 ```{r}

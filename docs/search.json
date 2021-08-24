@@ -20,8 +20,8 @@
       "title": "Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist",
       "description": "\"Work Experience:\n  Pacific States Marine Fisheries Commission\n  Oahu Invasive Species Committee\n  San Diego Natural History Museum\n\nEducation:\n  UCSB Bren School of Environemntal Science and Management - Master of Enviornmental Data Science Program\n  UC Santa Barbara - B.S. Ecology and Evolution\n\"",
       "author": [],
-      "contents": "\r\n\r\n\r\nggplot(data = diamonds, aes(x = carat, y = price)) +\r\n  geom_point(aes(color = price))\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-23T21:12:33-07:00"
+      "contents": "\r\nWork Experience\r\nPacific States Marine Fisheries Commission\r\nOahu Invasive Species Committee\r\nSan Diego Natural History Museum\r\nEducation\r\nUC Santa Barbara Bren School of Environmental Science and Management\r\nMaster of Environmental Data Science Program\r\n\r\nUC Santa Barbara - B.S. Ecology and Evolution\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-08-23T22:03:15-07:00"
     },
     {
       "path": "index.html",
