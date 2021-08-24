@@ -1,5 +1,5 @@
 ---
-title: "A function I learned"
+title: "Summary Statistics"
 description: |
   A short description of the post.
 author:

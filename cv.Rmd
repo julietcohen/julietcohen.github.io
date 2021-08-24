@@ -2,15 +2,13 @@
 title: "Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist"
 description: |
   "Work Experience:
-    
-  ~ Pacific States Marine Fisheries Commission
-  ~ Oahu Invasive Species Committee
-  ~ San Diego Natural History Museum
+    Pacific States Marine Fisheries Commission
+    Oahu Invasive Species Committee
+    San Diego Natural History Museum
   
   Education:
-    
-  - UCSB Bren School of Environemntal Science and Management - Master of Enviornmental Data Science Program
-  - UC Santa Barbara - B.S. Ecology and Evolution
+    UCSB Bren School of Environemntal Science and Management - Master of Enviornmental Data Science Program
+    UC Santa Barbara - B.S. Ecology and Evolution
   "
 ---
 

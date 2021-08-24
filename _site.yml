@@ -1,17 +1,17 @@
 name: "julietcohen.github.io"
 title: "Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist"
 description: |
-  My Awesome Website
+  My Website
 output_dir: "docs"
 navbar:
   right:
-    - text: "Bembe"
+    - text: "Home"
       href: index.html
-    - text: "Walrus"
+    - text: "The Future of Data"
       href: about.html
     - text: "My CV"
       href: cv.html
-    - text: "My Blog"
+    - text: "My Programming Blog"
       href: blog.html
 output: distill::distill_article
 theme: theme.css
