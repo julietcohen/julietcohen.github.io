@@ -1,31 +1,135 @@
 ---
-title: "Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist"
+title: "Juliet Cohen"
 description: |
-  " Insert inspiring quote about ecology and field work and stuff"
+  Wildlife Enthusiast and Aspiring Data Scientist
 ---
-
-#### *Work Experience*
-
-- Pacific States Marine Fisheries Commission
-- Oahu Invasive Species Committee
-- San Diego Natural History Museum
-    
-#### *Education*
-
-- UC Santa Barbara Bren School of Environmental Science and Management
-  - Master of Environmental Data Science Program
-- UC Santa Barbara - B.S. Ecology and Evolution
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-```{r}
+### **EDUCATION**  
+**------------------------------------------------------------------------------------------------------------** 
 
-```
+**Master of Environmental Data Science**  
+**Bren School of Environmental Science & Management**  
+**University of California, Santa Barbara**  
+Expected June 2022    
+Selected Coursework:  
+- Scientific Programming Essentials  
+- Analytical Workflows and Scientific Reproducibility  
+- Meta-analysis and Systematic Reviews  
+- Remote Sensing and Environmental Data Science   
 
-```{r}
+**Bachelor of Science in Ecology and Evolution**  
+**University of California, Santa Barbara**  
+June 2019  
+- Major GPA: 3.7, Distinction in the Major  
+- Study Abroad: Monteverde Institute, Costa Rica - Tropical Biology and Conservation Program  
+- Varsity rowing team
 
-```
+### **RESEARCH**  
+**------------------------------------------------------------------------------------------------------------**  
 
+**Senior thesis - Anthropogenic niche partitioning: mesocarnivore spatial and temporal coexistence along an urban gradient through camera traps**  
+June 2018 – June 2019  
+- Independent senior thesis project conducted throughout Santa Barbara County  
+- Funded through Undergraduate Research and Creative Activities Grant  
+- Poster presentation at the UC Santa Barbara Undergraduate Research Colloquium  
+
+**Filtration Efficiency in Bivalves: effects of species and size in oysters and mussels**     
+September 2018 – December 2018  
+- Scientific paper presented at Monteverde Institute Research Symposium 2018 in Monteverde, Costa Rica  
+- Funded research through Tropical Biology and Conservation program  
+
+### **AWARDS**  
+**------------------------------------------------------------------------------------------------------------**  
+**Undergraduate Research and Creative Activities Grant 2018**  
+- Awarded $750 by UC Santa Barbara  
+- Funded senior thesis research studying anthropogenic niche partitioning, specifically mesocarnivore spatial and temporal coexistence along an urban gradient through camera traps (see RESEARCH above)  
+
+### **SCHOLARSHIPS**  
+**------------------------------------------------------------------------------------------------------------**  
+**Dean Bazzi Memorial Scholarship 2018**  
+- $500 Awarded to an outstanding student in the area of aquatic biology, environmental biology, or Zoology
+
+**UC Santa Barbara EAP Gaucho Scholarship 2018**  
+- Competitive study abroad scholarship for $2000  
+- Selection based on an essay, letter of recommendation, and academic standing
+
+**UC Santa Barbara Professional Degree Program Fellowship**  
+- Awarded based on promise of productive scholarship for $9,999   
+- Allocated towards the Environmental Data Science program at the Bren School of Environmental Science and Management
+
+### **CONSERVATION & DATA SCIENCE WORK EXPERIENCE**  
+**------------------------------------------------------------------------------------------------------------**  
+**Pacific States Marine Fisheries Commission & CDFW - Fisheries Technician**  
+December 2020 – June 2021  
+- Monitor endangered Southern California steelhead trout (Oncorhynchus mykiss) populations  
+- Utilize DIDSON underwater sonar cameras to monitor fish populations, train other employees in software  
+- Execute trout spawning surveys, electrofishing, and PIT tagging  
+- Conduct data analysis in ArcGIS and R to identify critical habitat  
+
+**Oahu Invasive Species Committee - Data Specialist & Field Technician**  
+September 2019 – August 2020  
+- Serve as crew leader in field surveys for incipient invasive flora and fauna on the island of Oahu  
+- ArcGIS mapping, queries, species distribution modeling, and database quality control  
+- Hiking in mountainous terrain through rugged forests and watersheds  
+- Sampling endemic tree species for presence of invasive fungal pathogen   
+- Communicated with the public and reporting to partner organizations in Hawaii  
+- Helicopter aerial surveys and insert-extract operations
+
+**San Diego Natural History Museum - Field Technician**
+May 2019 – July 2019  
+- Lead field surveys of the flat-tailed horned lizard, a highly cryptic species of special concern threatened by anthropogenic activity  
+- Hiking transects in arid desert habitat, reptile identification and handling, scat identification, navigating unmaintained desert roads driving 4-wheel drive vehicles, Collector for ArcGIS
+
+**UC Santa Barbara McCauley Lab - Research Assistant**  
+September 2017 - May 2019  
+- Mesocarnivore spatial ecology research studying anthropogenic impacts on behavior and diet  
+- Mesocarnivore trapping, handling, collaring with radio collars, tracking via VHF radio-telemetry  
+- Administer anesthesia and collect hair samples for stable isotope analysis  
+- Collect inventories of wildlife species through remote cameras  
+- Secure grant proposals  
+- Maintained field equipment and troubleshooted technological issues
+
+### **SUPPLEMENTAL WORK EXPERIENCE**  
+**------------------------------------------------------------------------------------------------------------**  
+**Cheadle Center for Biodiversity and Ecological Restoration – Field Technician**  
+January 2018 - May 2019  
+- Wetland field restoration, herbarium maintenance, and botanical specimen preparation 
+
+**Channel Islands Restoration - Field Assistant**  
+August 2017  
+- Surveyed for endangered plant species in wetland habitat of Carpinteria salt marshes
+
+**Partnership for the Interdisciplinary Study of Coastal Oceans - Laboratory Intern**  
+June 2017 - September 2017  
+- Identified invertebrate species with microscope to reveal long term trends in intertidal marine life
+
+### **SKILLS**   
+**------------------------------------------------------------------------------------------------------------**  
+**Computer Program Fluency:**  
+- R  
+- Python  
+- ArcGIS  
+- SQL  
+- GitHub  
+- Microsoft Access  
+- Microsoft Excel, Word, PowerPoint  
+- DIDSON sonar metrics software  
+ 
+**Field & Laboratory:**  
+-	Trap and handle carnivores & fish  
+-	Wildlife monitoring using VHF radio-telemetry techniques  
+-	Conduct remote camera research   
+-	Driving 4-wheel drive vehicles  
+-	Lead field surveys for flora and fauna  
+-	Landscape restoration & horticulture  
+
+### **CERTIFICATIONS**  
+**------------------------------------------------------------------------------------------------------------**  
+-	Wilderness First Aid   
+-	Interagency Aviation Training  
+-	IACUC (Basic and Amphibian)  
+-	First Aid & CPR  

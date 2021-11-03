@@ -3,13 +3,15 @@ title: "Summary Statistics"
 description: |
   A short description of the post.
 author:
-  - name: Unknown
+  - name: Juliet Cohen
     url: {}
 date: 08-10-2021
 output:
   distill::distill_article:
     self_contained: false
 preview: Images/bembe.jpg
+categories:
+  -R
 ---
 
 
@@ -23,9 +25,9 @@ library(palmerpenguins)
 
 Given a graph of penguin body mass as a function of penguin flipper length, the geom_smooth(method = lm) function creates a best fit line for the scatterplot.
 
-### Within the function geom_smooth(), you can specify if you want the line to show a confidence interval with se = FALSE or TRUE.
+Within the function geom_smooth(), you can specify if you want the line to show a confidence interval with se = FALSE or TRUE.
 
-### Furthermore, you can add linetype = "dashed" to change the line type.
+Furthermore, you can add linetype = "dashed" to change the line type.
 
 ```{r}
 ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
