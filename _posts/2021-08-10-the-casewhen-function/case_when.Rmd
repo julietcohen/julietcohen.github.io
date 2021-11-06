@@ -1,13 +1,17 @@
 ---
-title: "The case_when() Function"
+title: "Tidy data and the case_when() function in R"
 description: |
-  A gem within the expansive tidyverse 
+  A gem within the expansive tidyverse. 
 author:
-  - name: Unknown
+  - name: Juliet Cohen
 date: 08-23-2021
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_float: true
+categories:
+  -R
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
