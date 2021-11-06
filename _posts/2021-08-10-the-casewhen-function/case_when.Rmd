@@ -9,33 +9,74 @@ output:
   distill::distill_article:
     self_contained: false
 ---
-
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo = TRUE}
+library(tidyverse)
+# use this to tidy the data
+library(janitor)
+# use this to tidy the columns names
+```
+
+## Tidy data
+
+Whenever we start our journey transforming a dataset into something we can interpret and visualize, we 
+
+This lobster data set is in **Tidy** format, as is most of the data sets we work with. **Tidy** data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R's vectorized functions flourish with rows and columns in Tidy format.
+
+**Tidy** data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster data set, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succinct title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.
+
+**Tidy** format encourages collaboration between people and data sets because we are easily able to combine data from different sources using join functions. If the data contains columns with shared variables, R can easily recognize those columns and associate its rows `(observations)` with the observations of the complementary data set. Using `full_join()` is a common join function to utilize as it maintains all data from both sources.
+
+**Tidy** format helps you easily make subsets of your data for specific graphs and summary tables. Consider the `filter()` and `select()` functions, which help you subset to only view variable or observations of interest. In these cases, it is especially important to have only one value in each cell and standardize the way you document observations. You always want to record each lobster species with the same spelling, each size with the same number of decimal places, and each date with the same format (such as `YYYY-MM-DD`). For variables such as length that might need units, always include these units in the column header rather than the cell. This streamlines our coding and keeps cells to a single class. If you include numerical and character values in one cell, it will be documented as a character, which can restrict your analysis process.
+
+Your data isn't in **Tidy** format? That's alright! Check out the `tidyr::pivot_longer()` and `tidyr::pivot_wider()` functions to help you help R help you. In the example below, we have a tribble dataset that is not in **Tidy** format. We know this because there are multiple columns `(A:C)` that represent different individuals or observations of the same variable (like dog food brands). We can use `pivot_longer()` to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting **tidy** data may seem more complex at first galnce, it is easier to convert to a graph and structurally is more organized from a data science perspective.
+
+To demonstrate some simple data tidying, lets make a tribble (which is similar to a dataframe) and manipulate it using the pivot_longer() function. In this tibble, we are 
+
+```{r, echo = TRUE}
+df <- tribble(
+  ~name, ~A, ~B, ~C,
+  "dog_1", 4, 5, 6,
+  "dog_2", 9, 10, 8
+)
+
+df
 
 ```
 
-#### *First thing first, import your data*
-###### *Lobster data, of course.*
+This dataframe is not in tidy format, because the variable **ranking** is dispersed between multiple columns. We want a single variable in each column, so lets combine those columns and make it *tidier*:
 
-```{r, echo = TRUE}
-library(here)
-library(tidyverse)
-library(janitor)
+```{r}
+df_long <- df %>% 
+  pivot_longer(cols = c(A:C),
+               names_to = 'dog_food_brand',
+               values_to = 'ranking')
+df_long
+```
 
+## `case_when()` and Lobsters
+
+Use this function to help tidy your data and prepare it for plotting. `case_when()` bins continuous data into manually defined categories and add it to your data set in the form of new column.
+
+`case_when()` is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this dataframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.
+
+### First thing first, import your data
+
+```{r}
+# use the read_csv file becua
 lobsters <- read_csv(file.path("data","Lobster_Abundance_All_Years_20210412.csv"), na = c("-99999", "")) %>% 
   clean_names() %>% 
   uncount(count)
+
+# I set na = c("-99999", "") as such because this dataset uses -99999 and no entry as their NA symbols
+
+head(lobsters)
 ```
 
-
-
-### `*case_when()*`
-
-#### Use this function to bin continuous data into manually defined categories and add it to your data set in the form of new column.
-
-`case_when()` is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this daatframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.
+This data is ground-breaking! The world needs to see this and understand its implications. In order to plot this fasciating data in a meaningful way, we want to efficiently categorize our lobsters by legality status and color code their relative abundance in our visualization. Considering that the legal minimum size for a lobster is 79.76 (units), this is the threshold we will pass onto R to do the heavy lifting for us.
 
 ```{r, echo = TRUE}
 
@@ -46,6 +87,11 @@ lobsters_legality <- lobsters %>%
    group_by(site, legal) %>% 
   summarize(site_legal_count = n())
 
+```
+
+Use ggplot() to make a bar graph that color codes the lobster abundance by legality status. We communicate that we want R to color the graph by this variable by passing the argument `color = legal` within aes(). Manually setting colors is set outside of aes(), but here it is an argument because it is determined by a variable.
+
+```{r}
 proportion_legal_plot <- ggplot(lobsters_legality, aes(x = site, y = site_legal_count)) +
   geom_col(position = "fill",
                aes(color = legal,
@@ -56,42 +102,9 @@ proportion_legal_plot <- ggplot(lobsters_legality, aes(x = site, y = site_legal_
 
 proportion_legal_plot
 ```
-### *Tidy Data*
-
-#### *What is it and why do we care?*
-
-This lobster data set is in *Tidy* format, as is most of the data sets we work with. *Tidy* data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R's vectorized functions flourish with rows and columns in Tidy format.
-
-*Tidy* data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster data set, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succinct title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.
-
-*Tidy* format encourages collaboration between people and data sets because we are easily able to combine data from different sources using join functions. If the data contains columns with shared variables, R can easily recognize those columns and associate its rows `(observations)` with the observations of the complementary data set. Using `full_join()` is a common join function to utilize as it maintains all data from both sources.
-
-*Tidy* format helps you easily make subsets of your data for specific graphs and summary tables. Consider the `filter()` and `select()` functions, which help you subset to only view variable or observations of interest. In these cases, it is especially important to have only one value in each cell and standardize the way you document observations. You always want to record each lobster species with the same spelling, each size with the same number of decimal places, and each date with the same format (such as `YYYY-MM-DD`). For variables such as length that might need units, always include these units in the column header rather than the cell. This streamlines our coding and keeps cells to a single class. If you include numerical and character values in one cell, it will be documented as a character, which can restrict your analysis process.
-
-Your data isn't in *Tidy* format? That's alright! Check out the `tidyr::pivot_longer()` and `tidyr::pivot_wider()` functions to help you help R help you. In the example below, we have a tribble dataset that is not in *Tidy* format. We know this because there are multiple columns `(A:C)` that represent different individuals or observations of the same variable (like dog food brands). We can use `pivot_longer()` to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting *Tidy* data may seem more complex, it is easier to convert to a graph and structurally is more organized.
-
-```{r, echo = TRUE}
-df <- tribble(
-  ~name, ~A, ~B, ~C,
-  "teddy", 4, 5, 6,
-  "Khora", 9, 10, 11
-)
-
-df
-
-df_long <- df %>% 
-  pivot_longer(cols = c(A:C),
-               names_to = 'dog_food',
-               values_to = 'ranking')
-df_long
-
-# if A, B, C are dog food types, convert this to tidy structure
-
-```
 
 
 Distill is a publication format for scientific and technical writing, native to the web.
-
 Learn more about using Distill at <https://rstudio.github.io/distill>.
 
 
