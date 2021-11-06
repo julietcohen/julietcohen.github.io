@@ -1,2 +1,5 @@
 in console:
+distill::create_post
+
 create.post("name of post")
+# that didnt work
