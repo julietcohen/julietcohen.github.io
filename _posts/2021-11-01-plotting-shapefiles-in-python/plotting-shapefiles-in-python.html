@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["columns.png","crit_hab_no_basemap.png","crit_hab_with_basemap.png","plot_code.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js","set_crs.png"]}
+  {"type":"character","attributes":{},"value":["bat.png","columns.png","crit_hab_no_basemap.png","crit_hab_with_basemap.png","gdf.png","lat_long.png","plot_code.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js","set_crs.png","shape.png","subset_end.png","text.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1486,15 +1486,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#python-and-jupyter-notebooks">Python and Jupyter Notebooks</a></li>
-<li><a href="#time-to-import-your-packages-for-plotting-shapefiles-youll-want-to-import-the-following-packages">Time to import your packages! For plotting shapefiles, you’ll want to import the following packages:</a></li>
+<li><a href="#import-some-packages-modules">Import Some Packages (<code>modules</code>)</a></li>
 <li><a href="#importing-data">Importing Data</a></li>
-<li><a href="#setting-the-coordinate-reference-system">Setting the Coordinate Reference System</a></li>
+<li><a href="#coordinate-reference-system">Coordinate Reference System</a></li>
 <li><a href="#plotting-shapefiles">Plotting Shapefiles</a></li>
 </ul>
 </nav>
 </div>
+<figure>
+<img src="bat.png" alt="The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats." /><figcaption aria-hidden="true">The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.</figcaption>
+</figure>
+<p>Let’s map the critical habitat ranges of this bat and many other species of concern on a basemap of the United States.</p>
 <h3 id="python-and-jupyter-notebooks">Python and Jupyter Notebooks</h3>
-<p>Transitioning from <code>R</code> to <code>Python</code> can be difficult, as is learning any new language. We have to say goodbye to the exceptionally user-friendly RStudio interface with its git GUI, visible environment, and easily accessible console. Let’s dive into the objected oriented language of Python through Jupyter Notebooks and the mysterious terminal. Personally, I struggled every step of this journey with lots of syntax errors, merge conflicts, and endless Google searching. I hope this post will help hold your hand as we make this change together.</p>
+<p>Transitioning from <code>R</code> in <code>Rstudio</code>to <code>Python</code> in <code>Jupyter Notebook</code> can be difficult, as is learning any new language. We have to say goodbye to the exceptionally user-friendly RStudio interface with its git GUI, visible environment, and easily accessible console and terminal windows. Let’s dive into the objected oriented language of Python through Jupyter Notebook and the mysterious terminal. Personally, I struggled every step of this journey with lots of syntax errors, merge conflicts, and endless Google searching. I hope this post will help hold your hand as we make this change together.</p>
 <p>First things first, if you’re using Jupyter Notebooks to code in Python, you’re gonna have to install Anaconda Navigator and install <code>conda</code> into your home directory. As a PC user, installing <code>conda</code> really threw me and my laptop for a loop. But what better way to learn to use the terminal besides struggling to install stuff you desperately need for grad school? Errors and trouble-shooting is what makes us stronger data scientists, even if we don’t want to recognize that as we fight the urge to throw our computer out the window.</p>
 <p>After installing Anaconda, start your journey plotting shapefiles in <code>Python</code> by opening up Jupyter Notebooks. I like to do this from the Anaconda Prompt (the Aanconda terminal), because I’m working on a PC and it’s tricky to get my normal command line or Bash to recognize that <code>conda</code> is indeed on my computer. My favorite flow is as follows:</p>
 <ul>
@@ -1510,18 +1514,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </li>
 <li>Open Jupyter Notebooks by typing just that: <code>jupyter notebook</code>. This will tell your terminal to pop open Jupyter Notebook in your browser with your folder of choice already open and ready to go.<br />
 </li>
-<li>In the upper right side, open a new notebook.</li>
+<li>In the upper right side, open a new notebook.<br />
+</li>
+<li>Note: the Anaconda terminal window you used to open this notebook should not be closed during your work session. It must remain open to keep your kernel connected and give you the ability to save! If you need to run any terminal commands after you have already opened this notebook, such as if you need to download a package or check a file location, just open up another terminal window and enter the geo_env environment to do so.</li>
 </ul>
-<h3 id="time-to-import-your-packages-for-plotting-shapefiles-youll-want-to-import-the-following-packages">Time to import your packages! For plotting shapefiles, you’ll want to import the following packages:</h3>
+<h3 id="import-some-packages-modules">Import Some Packages (<code>modules</code>)</h3>
+<p>For plotting shapefiles, you’ll want to import the following packages:</p>
 <p>import <code>pandas</code> as pd<br />
 import <code>numpy</code> as np<br />
 import <code>geopandas</code> as gpd<br />
 import <code>matplotlib.pyplot</code> as plt<br />
 import <code>contextily</code> as ctx</p>
+<p><code>matplotlib</code> will allow us to plot our data and manipulate the plot as we see fit. <code>contextily</code> will allow us to add a default basemap under our polygons of interest. If you do not already have this installed, consider using a channel and conda forge to install it in the terminal.</p>
 <p>As a proponent of reproducibility and credditing those who provided the data, I like to include a markdown chunk following my package imports that includes a URL link to where I found my data, along with a citation if necessary and any notes about how I downloaded it:</p>
 <p>Data source: US Fish and Wildlife <a href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html" class="uri">https://ecos.fws.gov/ecp/report/table/critical-habitat.html</a><br />
-- contains .shp, .dbf, and .shx files<br />
-- I chose the first zip file you see on this site</p>
+- contains .shp, .dbf, and .shx polygon files that relate to critical species habiata in the United States - I chose the first zip file you see on this site<br />
+- good metadata available</p>
 <h3 id="importing-data">Importing Data</h3>
 <p>Let’s import your data! Now is the time you’re gonna be thanking yourself for placing your jupyter notebook in the same folder as your data. We will use <code>geopandas</code> to read in the <strong>shapefile</strong> with your polygons or lines or points of choice (you will not find a combination of these shapes in the same shapefile, because that’s just how the world works). You might take a look at all the data files and feel a little overwhelmed at the choices due to the way that shapefiles and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to import a <strong>shapefile</strong> of polygons, so that <strong>.shp</strong> file is the only one you need to read in:</p>
 <p>Import the data:<br />
@@ -1530,18 +1538,25 @@ Take a look at the first rows:<br />
 <code>print(gdf.head())</code><br />
 Ask Python how many rows and columns are in this dataframe:<br />
 <code>print(gdf.shape)</code></p>
-<p>My only complaint with the <code>head()</code> function is that it returns the first rows in a plain text format. If you want to see the first and last few rows of the dataframe in a format that looks more familiar (like how R studio presents dataframes), try just typing <code>gdf</code>.</p>
+<p>My only complaint with the <code>head()</code> function is that it returns the first rows in a plain text format:</p>
+<p><img src="text.png" /></p>
+<p>If you want to see the first and last few rows of the dataframe in a format that looks more familiar (like how R studio presents dataframes), try just typing the name of the data frame, <code>gdf</code>:</p>
+<p><img src="gdf.png" /></p>
 <p>This shapefile I read in contains polygons that designate the critical habitat ranges for many endangered and threatened species in the United States. I chose to name it <code>gdf</code> for <em>geodataframe</em>. While you can name objects whatever you want, it is helpful to you and to those reading your code to name things meaningfully. Expect that you will be modifying this dataframe as you go through this mapping process (subsetting columns, filtering for certain factor levels, etc.) so you will likely be tacking on more words to <code>gdf</code> to tell these modified versions apart. Start naming things simply and clearly, and get more specific as you process your data.</p>
 <p>If your dataset has a lot of columns and you want to call them, you can use:</p>
 <p><code>print(gdf.columns)</code></p>
 <p>Wanna check the different factor levels in this dataset? Run the following:<br />
 <code>status_levels = gdf.listing_st.unique()</code><br />
 <code>status_levels</code></p>
-<p>Now you can subset for only <em>“endangered”</em> species, only <em>“threatened”</em> species, etc.</p>
-<h3 id="setting-the-coordinate-reference-system">Setting the Coordinate Reference System</h3>
-<p>As a last step before you plot, you have to make sure you are in the desired coordinate reference system (CRS). This is pretty standard for all kinds of spatial data, since your data might come with an unfamiliar CRS or have no CRS at all if you are making a mask, a raster, or executing similar processes. For information about coordinate reference systems, check out this guide:<br />
+<p>Using U.S. Fish and Wildlife as an example, now that you know the factor levels of a categorical variable, you can subset for only <em>“endangered”</em> species, only <em>“threatened”</em> species, etc.</p>
+<p><img src="subset_end.png" /></p>
+<p>Feel free to play around with your dataset a bit. Google some of the species, subset the columns, search for some NA values, or take the average of a numerical column. After you make a structural change, its a good habit to check the status or dimensions of your dataset.</p>
+<p>Check the number of rows and columns: <img src="shape.png" /></p>
+<p>Print the latitude and longitude pairs that make up a particular polygon: <img src="lat_long.png" /></p>
+<h3 id="coordinate-reference-system">Coordinate Reference System</h3>
+<p>As a last step before you plot, you have to make sure you set the data to the desired coordinate reference system (CRS). This is pretty standard for all kinds of spatial data, since your data might come with an unfamiliar CRS or have no CRS at all if you are making a mask, a raster, or executing similar geospatial processes. For information about coordinate reference systems, check out this guide:<br />
 <a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf" class="uri">https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf</a></p>
-<p>But you technically do not need to understand many details about datums and CRS’s for mapping shapefiles, so just for now you should know that two common CRS’s are:</p>
+<p>But you technically do not need to understand many details about datums and CRS’s for mapping shapefiles, so just for now you should know 3 common CRS’s:</p>
 <ul>
 <li><strong>WGS84 (EPSG: 4326)</strong>, which is commonly used for GIS data across the globe or across multiple countries<br />
 and<br />
@@ -1549,7 +1564,7 @@ and<br />
 <li><strong>NAD83 (EPSG:4269)</strong>, which is most commonly used for federal agencies<br />
 and<br />
 </li>
-<li><strong>Mercator (EPSG: 3857)</strong>, which is used for tiles from Google Maps, Open Street Maps, and Stamen Maps. I will use this one because I want to overlay my polygons onto a Google basemap.</li>
+<li><strong>Mercator (EPSG: 3857)</strong>, which is used for tiles from Google Maps, Open Street Maps, and Stamen Maps. I will use this one today because I want to overlay my polygons onto a Google basemap with <code>contextily</code>.</li>
 </ul>
 <p>Set the crs:<br />
 <code>gdf_3857=gdf.to_crs(epsg=3857)</code><br />
@@ -1561,16 +1576,17 @@ Check that the CRS is what you want:<br />
 <p>Use the plot() function from matplotlib and make the fill depend on the species name: <code>gdf_3857.plot(column='comname',</code><br />
 <code>figsize=(20,20))</code></p>
 <p><img src="crit_hab_no_basemap.png" /></p>
-<p>The fig size can be whatever you want. 10-20 is usually good enough, since you have finer control over the degree of zoom of the map with the arguments xlim() and ylim() anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:</p>
+<p>Note that you did not have to call the package to use the function plot(). Instead, you can name the dataframe which you want to plot, which is <code>gdf_3857</code> in this case, <em>then</em> specify the function plot() and add arguments and supplemental plot structure changes as you go.</p>
+<p>The fig size can be whatever you want. 10-20 is usually good enough. You have finer control over the degree of zoom of the map with the arguments xlim() and ylim(), anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:</p>
 <p><code>crit_hab_polys = gdf_3857.plot(column='comname',</code><br />
 <code>figsize=(20,20))</code><br />
-Notice that I used an argument in the plot function, setting the column = "comname’, which is a column within the gdf_3857 geodataframe that specifies the common name for the species in that row. This argument sets a unique color to each common name, which will help us tell the difference between each species’ habitat on the map, even if 1 species’ habitat is composed of multiple polygons. <code>ctx.add_basemap(crit_hab_polys)</code><br />
+Notice that I used an argument in the plot function, setting the <code>column = 'comname'</code>, which is a column within the <code>gdf_3857</code> geodataframe that specifies the common name for the species in that row. This argument sets a unique color to each common name, which will help us tell the difference between each species’ habitat on the map, even if 1 species’ habitat is composed of multiple polygons. <code>ctx.add_basemap(crit_hab_polys)</code><br />
 Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:<br />
 <code>plt.ylim([2350000,6350000])</code><br />
 Since the basemap within the contextily package is of the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States to best understand our data. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States are north of the equator (which is 0 in the North and South directions), so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted. <code>plt.xlim([-14000000,-6000000])</code> Notice that these values are negative. Along similar thinking to how we decided on our y limitation, these negative values are the result of how coordinate systems are designed. Consider the prime meridian (which lies at 0 degrees in the East and West directions) with West being negative. Since the United States are to the West of the prime meridian, we know that the x-range for our zoom should be negative. As for the magnitude, I just palyed around with the numbers until I got the East-West orientation that encompassed the United States. Use the <code>show()</code> function in <code>matplotlib</code> to tell Python to show the most recently created graph:<br />
 <code>plt.show()</code></p>
 <p><img src="plot_code.png" /> <img src="crit_hab_with_basemap.png" /></p>
-<p>You did it! Welcome to the wonderful world of geospatial data in Python.</p>
+<p>You did it! Welcome to the wonderful world of geospatial data in Python. Now you can start answering questions like “Which endangered species live near me?” and “Which state or biome houses the most critical habitat for these species?”</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
