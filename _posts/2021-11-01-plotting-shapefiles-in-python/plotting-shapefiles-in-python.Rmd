@@ -5,10 +5,12 @@ description: |
 author:
   - name: Juliet Cohen
     url: {}
-date: 11-01-2021
+date: 11-05-2021
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_float: true
 categories:
   -Python
 ---
@@ -91,25 +93,38 @@ Set the crs:
 Check that the CRS is what you want:  
 `print(gdf_3857.crs)`  
 
+This code may take a minute to run. In Jupyter Notebook, you know that code chunk is still chuggin' away if you see an asterisk in brackets to the left of the code chunk:
+
+![](set_crs.png)
+
 ### Plotting Shapefiles  
 
 Use the plot() function from matplotlib and make the fill depend on the species name:
 `gdf_3857.plot(column='comname',`   
              `figsize=(20,20))`  
              
-The fig size can be whatever you want. 10-20 is usually good enough. This code should show you the polygons in the geometry column colored differently based on their species name from the "comname" column. These polygons are just floating in space, so lets add a basemap to give us geographical context:  
+![](crit_hab_no_basemap.png)
+             
+The fig size can be whatever you want. 10-20 is usually good enough, since you have finer control over the degree of zoom of the map with the arguments xlim() and ylim() anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:  
 
-`gdf_3857.plot(column='comname',`  
+`crit_hab_polys = gdf_3857.plot(column='comname',`  
              `figsize=(20,20))`  
-`ctx.add_basemap(basic_plot)`  
+Notice that I used an argument in the plot function, setting the column = "comname', which is a column within the gdf_3857 geodataframe that specifies the common name for the species in that row. This argument sets a unique color to each common name, which will help us tell the difference between each species' habitat on the map, even if 1 species' habitat is composed of multiple polygons.
+`ctx.add_basemap(crit_hab_polys)`  
 Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:  
-`plt.ylim([2000000,6000000])`  
-`plt.xlim([-14000000,-6000000])`  
+`plt.ylim([2350000,6350000])`  
+Since the basemap within the contextily package is of the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States to best understand our data. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States are north of the equator (which is 0 in the North and South directions), so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted.
+`plt.xlim([-14000000,-6000000])` 
+Notice that these values are negative. Along similar thinking to how we decided on our y limitation, these negative values are the result of how coordinate systems are designed. Consider the prime meridian (which lies at 0 degrees in the East and West directions) with West being negative. Since the United States are to the West of the prime meridian, we know that the x-range for our zoom should be negative. As for the magnitude, I just palyed around with the numbers until I got the East-West orientation that encompassed the United States.
 Use the `show()` function in `matplotlib` to tell Python to show the most recently created graph:  
 `plt.show()`   
 
+![](plot_code.png)
+![](crit_hab_with_basemap.png)
 
-You did it! Welcome to the wonderful world of geospatial data in Python.
+
+You did it! Welcome to the wonderful world of geospatial data in Python. 
+
 
 
 
