@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["bat.png","columns.png","crit_hab_no_basemap.png","crit_hab_with_basemap.png","gdf.png","lat_long.png","plot_code.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js","set_crs.png","shape.png","subset_end.png","text.png"]}
+  {"type":"character","attributes":{},"value":["activate_cd.png","bat.png","columns.png","crit_hab_no_basemap.png","crit_hab_with_basemap.png","gdf.png","jupyter.png","lat_long.png","plot_code.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js","set_crs.png","shape.png","subset_end.png","text.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2440,18 +2440,22 @@ d-appendix d-footnote-list a.footnote-backlink {
 <ul>
 <li>From the start menu, open a terminal through Anaconda Navigator that’s called “Anaconda Prompt”.<br />
 </li>
-<li>Install <code>geopandas</code> with <code>conda install geopandas</code> in your base environment (which is the default). If that doesn’t work (which would not surpise me if you’re on a PC), create a new environment to do so. I found the steps on this website to be helpful: <a href="https://medium.com/analytics-vidhya/fastest-way-to-install-geopandas-in-jupyter-notebook-on-windows-8f734e11fa2b" class="uri">https://medium.com/analytics-vidhya/fastest-way-to-install-geopandas-in-jupyter-notebook-on-windows-8f734e11fa2b</a>. I tried installing <code>geopandas</code> in my base environment, but it was difficult to install all the correct versions of all the dependencies, so I decided to take the easy route and just make a new environment for <code>geopandas</code> and any other spatial analysis packages I’ll need. Maybe one day I’ll get familiar with version-specific terminal installations and I will be able to install whatever my heart pleases in my base environment.<br />
+<li>Install <code>geopandas</code> with <code>conda install geopandas</code> in your base environment (which is the default). If that doesn’t work (which would not surprise me if you’re on a PC), create a new environment to do so. I found the steps on this website to be helpful: <a href="https://medium.com/analytics-vidhya/fastest-way-to-install-geopandas-in-jupyter-notebook-on-windows-8f734e11fa2b" class="uri">https://medium.com/analytics-vidhya/fastest-way-to-install-geopandas-in-jupyter-notebook-on-windows-8f734e11fa2b</a>. I tried installing <code>geopandas</code> in my base environment, but it was difficult to install all the correct versions of all the dependencies, so I decided to take the easy route and just make a new environment for <code>geopandas</code> and any other spatial analysis packages I’ll need. Maybe one day I’ll get familiar with version-specific terminal installations and I will be able to install whatever my heart pleases in my base environment.<br />
 </li>
 <li>Activate the environment in which you have installed the <code>geopandas</code> package. I named that environment <code>geo_env</code>, so I type <code>activate geo_env</code>.<br />
 </li>
-<li>Now that I am in my desired environment, I am going to navigate to the folder in my terminal in which I want to open and save my Jupyter Notebook. That command is <code>cd file/path/to/folder</code>. You know this worked if your terminal working directory now has that file path tacked onto the end. This file path step is <strong>not required</strong> if you want to include <strong>relative file paths</strong> to import data and save your notebook. Personally, I do not recommend using relative file paths if you can avoid it in any interface.<br />
-</li>
+<li>Now that I am in my desired environment, I am going to navigate to the folder in my terminal in which I want to open and save my Jupyter Notebook. That command is <code>cd file/path/to/folder</code>. You know this worked if your terminal working directory now has that file path tacked onto the end. This file path step is <strong>not required</strong> if you want to include <strong>relative file paths</strong> to import data and save your notebook. Personally, I do not recommend using relative file paths if you can avoid it in any interface.</li>
+</ul>
+<p><img src="activate_cd.png" /></p>
+<ul>
 <li>Download your spatial data files to this folder to make your life easier in 2 minutes when you import your spatial data in Jupyter Notebook.<br />
 </li>
 <li>Open Jupyter Notebooks by typing just that: <code>jupyter notebook</code>. This will tell your terminal to pop open Jupyter Notebook in your browser with your folder of choice already open and ready to go.<br />
 </li>
-<li>In the upper right side, open a new notebook.<br />
-</li>
+<li>In the upper right side, open a new notebook.</li>
+</ul>
+<p><img src="jupyter.png" /></p>
+<ul>
 <li>Note: the Anaconda terminal window you used to open this notebook should not be closed during your work session. It must remain open to keep your kernel connected and give you the ability to save! If you need to run any terminal commands after you have already opened this notebook, such as if you need to download a package or check a file location, just open up another terminal window and enter the geo_env environment to do so.</li>
 </ul>
 <h3 id="import-some-packages-modules">Import Some Packages (<code>modules</code>)</h3>
@@ -2522,7 +2526,42 @@ Set the axis limits to zoom in on just the lower 48 states, rather than viewing 
 Since the basemap within the contextily package is of the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States to best understand our data. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States are north of the equator (which is 0 in the North and South directions), so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted. <code>plt.xlim([-14000000,-6000000])</code> Notice that these values are negative. Along similar thinking to how we decided on our y limitation, these negative values are the result of how coordinate systems are designed. Consider the prime meridian (which lies at 0 degrees in the East and West directions) with West being negative. Since the United States are to the West of the prime meridian, we know that the x-range for our zoom should be negative. As for the magnitude, I just palyed around with the numbers until I got the East-West orientation that encompassed the United States. Use the <code>show()</code> function in <code>matplotlib</code> to tell Python to show the most recently created graph:<br />
 <code>plt.show()</code></p>
 <p><img src="plot_code.png" /> <img src="crit_hab_with_basemap.png" /></p>
-<p>You did it! Welcome to the wonderful world of geospatial data in Python. Now you can start answering questions like “Which endangered species live near me?” and “Which state or biome houses the most critical habitat for these species?”</p>
+<p>You did it! Welcome to the wonderful world of geospatial data in Python. Now you can start answering questions like:<br />
+- “Which endangered species live near me?”<br />
+- “Which state or biome houses the most critical habitat for these species?”</p>
+<h4 id="sources-supplemental-information-on-listed-species-in-the-united-states">Sources &amp; supplemental information on listed species in the United States:</h4>
+<ol type="1">
+<li><strong>Florida bonneted bat photo</strong><br />
+</li>
+</ol>
+<ul>
+<li><a href="https://www.joelsartore.com/esa002-00161/n" class="uri">https://www.joelsartore.com/esa002-00161/n</a><br />
+</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>U.S. Fish and Wildlife data</strong><br />
+</li>
+</ol>
+<ul>
+<li><a href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html" class="uri">https://ecos.fws.gov/ecp/report/table/critical-habitat.html</a><br />
+</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>U.S. Fish and Wildlife’s Environmental Conservation Online system</strong><br />
+</li>
+</ol>
+<ul>
+<li><a href="https://ecos.fws.gov/ecp/" class="uri">https://ecos.fws.gov/ecp/</a></li>
+</ul>
+<ol start="4" type="1">
+<li><strong>U.S. Fish and Wildlife listed wildlife species</strong><br />
+</li>
+</ol>
+<ul>
+<li><a href="https://ecos.fws.gov/ecp/report/species-listings-by-tax-group?statusCategory=Listed&amp;groupName=All%20Animals" class="uri">https://ecos.fws.gov/ecp/report/species-listings-by-tax-group?statusCategory=Listed&amp;groupName=All%20Animals</a><br />
+</li>
+<li>this includes links for data on each each species and a map of their habitat</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
