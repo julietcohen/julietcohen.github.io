@@ -167,7 +167,8 @@ arg_plot <- ggplot(data = arg_data, aes(x = year, y = mean_effort, color = year)
          axis.text.x = element_text(face = "bold", color = "black", size = 13),
          axis.title.y = element_text(color = "black", size = 15),
          axis.text.y = element_text(face = "bold", color = "black", size = 8),
-         plot.title = element_text(color="black", size = 17, face="bold")) +
+         plot.title = element_text(color="black", size = 17, face = "bold"),
+         panel.border = element_rect(colour = "black", fill = NA, size = 2)) +
    scale_y_continuous(breaks = seq(min_y_arg, max_y_arg, by = 10))
 
 arg_plot
@@ -204,11 +205,12 @@ can_plot <- ggplot(data = can_data, aes(x = year, y = mean_effort, color = year)
    xlab("Year") + 
    ylab("Mean Fishing Hours") +
    theme(panel.background = element_blank(),
-   axis.title.x = element_text(color = "black", size = 15),
+         axis.title.x = element_text(color = "black", size = 15),
          axis.text.x = element_text(face = "bold", color = "black", size = 13),
          axis.title.y = element_text(color = "black", size = 15),
          axis.text.y = element_text(face = "bold", color = "black", size = 8),
-         plot.title = element_text(color="black", size = 17, face="bold")) +
+         plot.title = element_text(color="black", size = 17, face = "bold"),
+         panel.border = element_rect(colour = "black", fill=NA, size = 2)) +
    scale_y_continuous(breaks = seq(min_y_can, max_y_can, by = 10))
 
 can_plot
@@ -272,10 +274,10 @@ comparison_2020_pos <- comparison_2020 %>%
 
 # take the difference between the actual and the predicted columns
 comparison_2020_pos <- comparison_2020_pos %>% 
-  mutate(difference = prediction_2020 - actual_2020) %>% 
+  mutate(difference = actual_2020 - prediction_2020) %>% 
   mutate(change_direc = case_when(
-    difference > 0 ~ "fished LESS than trend",
-    difference < 0 ~ "fished MORE than trend"))
+    difference < 0 ~ "fished LESS than trend",
+    difference > 0 ~ "fished MORE than trend"))
 ```
 
 ### Statistical Signficance
@@ -283,9 +285,9 @@ comparison_2020_pos <- comparison_2020_pos %>%
 It's time to run a t-test to determine if there is a statistical difference between the countries' predicted fishing effort in 2020 and their actual fishing effort in 2020. A t-test is a handy tool in statistics that reveals how significant the differences between groups are. If the difference between the means of two groups could have easily happened by chance, the p-value will be greater than 0.05 (which is the standard trheshold in statistics and environmental data science). If it is highly unlikely (less than a 5% chance) that a difference in means at least this extreme could have occurred by chance, the p-value is less than 0.05 and the results are considered statistically significant. A statistically significant outcome allows us to reject our **null hypothesis**.
 
 **Null Hypothesis:** There is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020.
-$$H_{0}: \mu_{predicted_2020_fishing_effort} - \mu_{actual_2020_fishing_effort} = 0$$
+$$H_{0}: \mu_{predicted} - \mu_{actual} = 0$$
 **Alternative Hypothesis:** There is a difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. Because of the pandemic in 2020, I predict that fishing effort decreased, meaning that the actual country-specific fishing effort is less than the predicted country-specific fishing effort.
-$$H_{A}: \mu_{predicted_2020_fishing_effort} - \mu_{actual_2020_fishing_effort} \neq 0$$
+$$H_{A}: \mu_{predicted} - \mu_{actual} \neq 0$$
 
 Don't forget to convert the data to **Tidy format** so we can run the t-test!
 
@@ -297,10 +299,10 @@ comparison_tidy <- comparison_2020_pos %>%
 
 # include this setting so the tiny p-value is not in scientific notation
 options(scipen = 999)
-
 ttest = t.test(mean_effort ~ actual_or_predicted, data = comparison_tidy, conf.level = 0.95)
-ttest
 ```
+
+![**t-test output**](pictures/ttest.png)
 
 The p-value is 0.0000000312, and 0.0000000312 < 0.05, so we can reject our null hypothesis that there is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. Many countries clearly changed their fishing effort in 2020 relative to their historical trend!
 
