@@ -9,14 +9,13 @@ date: 11-25-2021
 output:
   distill::distill_article:
     self_contained: false
-preview: pictures/2020_fishing_gfw.png
+preview: pictures/fishing_gfw_map_2020.png
 categories:
   -R
 ---
 
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
 ## Covid-19 and Global Fishing Activity 
@@ -28,10 +27,10 @@ As an aspiring wildlife biologist and data scientist, I'm interested in applying
 Global Fishing Watch offers an [interactive map](https://globalfishingwatch.org/map/?latitude=19&longitude=-30&zoom=1.5&start=2021-08-26T23%3A00%3A00.000Z&end=2021-11-27T00%3A00%3A00.000Z) that displays fishing activity across the globe through a heat map. This visualization has the potential to inspire data scientists, fish enthusiasts, environmental justice advocates, pandemic researchers, and everyone in between to examine fishing activity during a time period of interest. 
 
 #### **Global fishing activity from January 1, 2019 through January 1, 2020.**
-!["2019 Global Fishing Activity"](pictures/2019_fishing_gfw_map.png)
+!["2019 Global Fishing Activity"](pictures/fishing_gfw_map_2019.png)
 
 #### **Global fishing activity from January 1, 2020 through January 1, 2021.**
-!["2020 Global Fishing Activity"](pictures/2020_fishing_gfw_map.png)
+!["2020 Global Fishing Activity"](pictures/fishing_gfw_map_2020.png)
 
 Global Fishing Watch and their partners also provide an [interactive map](https://globalfishingwatch.org/carrier-portal/?latitude=12.7069821&longitude=19.1776829&zoom=1.1903704&layer[0]=encounter&layer[1]=cp_rfmo&layer[2]=cp_next_port&dataset=carriers:v20211001&tab=flags) that allows users to interact with vessels across the globe, filter by country, and overlay port locations on coastlines.
 
@@ -45,9 +44,6 @@ First things first, let's import our necessary R packages and the dataset from G
 library(tidyverse)
 # lubridate helps us manage time stamps and annual trends
 library(lubridate)
-#library(broom)
-#library(forecast)
-#library(purrr)
 # gt helps make beautiful tables to summarize our data
 library(gt)
 ```
@@ -89,14 +85,287 @@ effort_trends <- data %>%
 
 ```
 
+Our goal is to run a linear regression on each country's fishing effort over multiple years, but many countries have NA data for certain years. Considering that we have data available for 2012-2020, which years should we choose? We want to select a chunk of continuous years leading up to 2020 with minimal data gaps. We want to minimize the amount of NA values because we will drop all rows with NA values, and we want to maintain the maximum amount of rows (which represent vessels) and countries as possible. In order to choose the start year for the time period that we will feed into the linear regression, let's take a look at the amount of NA values in the years leading up to 2020.
 
+```{r}
+# only need to look at 2012 - 2017 rather than 2012 - 2019 because we want a few years of data to plug into the linear regression
+sum(is.na(effort_trends$"2012"))
+sum(is.na(effort_trends$"2013"))
+sum(is.na(effort_trends$"2014"))
+sum(is.na(effort_trends$"2015"))
+sum(is.na(effort_trends$"2016"))
+sum(is.na(effort_trends$"2017"))
+```
 
+2017 has the least amount of NA values, so we will use that year to start our 3-year data period to feed to the linear regression. Next, we convert the data into **Tidy** format and remove NA values so we can run a time series linear regression analysis.
 
+```{r}
+# change it to tidy format using pivot_longer()
+# remove all NA values, and take out the year 2020 because we want to compare what we would EXPECT in 2020 based on what we saw in 2017-2019
 
+effort_trends_tidy_no_na = effort_trends %>%
+  select(flag_gfw, "2017":"2019") %>% 
+  pivot_longer(cols = ("2017":"2019"),
+               names_to = "year",
+               values_to = "mean_effort") %>% 
+  filter(!is.na(mean_effort),
+         !is.na(flag_gfw))
+```
 
+Our dates are in years, and currently their class is `character`. We need these years in `date` format in order to run a linear regression over time. We will convert these years and remove all countries that only have data for 2 years, because we need multiple years of data to feed into the regression and we want each country to have equal amounts of data and start in the year 2017.
 
+```{r}
+# define day as Jan 1 so that when we convert the year to a date we get the first of the year so the plot looks better later on! Otherwise, R will paste TODAY'S date at the end of each year, which will skew the x axis when we plot later
 
+month_day <- "-01-01"
+effort_trends_tidy_no_na_date <- effort_trends_tidy_no_na %>% 
+  mutate(year = paste0(year, month_day))
 
+# remove those countries from the dataframe
+countries_clean <- effort_trends_tidy_no_na_date %>% 
+  group_by(flag_gfw) %>%
+  filter(n()>2) %>% 
+  mutate(year = as.Date(year, format = "%Y-%m-%d"))
+```
+
+### Plotting Fishing Effort by Country 
+
+Lets take a look at Argentina's fishing effort data from 2017-2019 with a linear regression trend line showing the trajectory. I chose Argentina because it's a good example of a country that *increased* fishing effort over time. It will be interesting to see this country's 2020 fishing effort relative to what the linear model predicts for 2020.
+
+```{r}
+# ARG = Argentina 
+arg_data <- countries_clean %>% 
+  filter(flag_gfw == "ARG")
+
+class(arg_data$year)
+
+# run a linear model on a single country that increased fishing effort over time
+arg_model = lm(mean_effort ~ year, data = arg_data)
+summary(arg_model)
+
+# adjust the min and max values for the y-axis so that they are multiples of 10 and encompass all the mean_effort numbers, multiples of 10 are easier for the reader to comprehend quickly
+max_y_arg = round(max(arg_data$mean_effort+5), 0)
+max_y_arg
+min_y_arg = round(min(arg_data$mean_effort-9), 0)
+min_y_arg
+
+arg_plot <- ggplot(data = arg_data, aes(x = year, y = mean_effort, color = year)) +
+   geom_point(size = 4,
+              color = "firebrick",
+              shape = 11) +
+   geom_line(data = augment(arg_model),
+             aes(y = .fitted),
+             color = "orange",
+             size = 2) + 
+   scale_x_date(date_labels = "%Y",
+                date_breaks = "1 year") +
+   ggtitle("Argentina's Fishing Effort from 2017-2019") +
+   xlab("Year") + 
+   ylab("Mean Fishing Hours") +
+   theme(panel.background = element_blank(),
+         axis.title.x = element_text(color = "black", size = 15),
+         axis.text.x = element_text(face = "bold", color = "black", size = 13),
+         axis.title.y = element_text(color = "black", size = 15),
+         axis.text.y = element_text(face = "bold", color = "black", size = 8),
+         plot.title = element_text(color="black", size = 17, face="bold")) +
+   scale_y_continuous(breaks = seq(min_y_arg, max_y_arg, by = 10))
+
+arg_plot
+```
+
+![**Argentina's Fishing Effort 2017-2019**](pictures/argentina_fishing_effort.png)
+
+Let's take a look at another country that consistently *decreased* fishing effort over time: Canada.
+
+```{r}
+can_data <- countries_clean %>% 
+  filter(flag_gfw == "CAN") #%>% 
+
+# run a linear model on a single country that decreased fishing effort over time
+can_model = lm(mean_effort ~ year, data = can_data)
+summary(can_model)
+
+max_y_can = round(max(can_data$mean_effort+4), 0)
+max_y_can
+min_y_can = round(min(can_data$mean_effort-3), 0)
+min_y_can
+
+can_plot <- ggplot(data = can_data, aes(x = year, y = mean_effort, color = year)) +
+   geom_point(size = 4, 
+              color = "firebrick",
+              shape = 11) +
+   geom_line(data = augment(can_model),
+             aes(y = .fitted),
+             color = "orange",
+             size = 2) + 
+   scale_x_date(date_labels = "%Y",
+                date_breaks = "1 year") +
+   ggtitle("Canada's Fishing Effort from 2017-2019") +
+   xlab("Year") + 
+   ylab("Mean Fishing Hours") +
+   theme(panel.background = element_blank(),
+   axis.title.x = element_text(color = "black", size = 15),
+         axis.text.x = element_text(face = "bold", color = "black", size = 13),
+         axis.title.y = element_text(color = "black", size = 15),
+         axis.text.y = element_text(face = "bold", color = "black", size = 8),
+         plot.title = element_text(color="black", size = 17, face="bold")) +
+   scale_y_continuous(breaks = seq(min_y_can, max_y_can, by = 10))
+
+can_plot
+```
+
+![**Canada's Fishing Effort 2017-2019**](pictures/canada_fishing_effort.png)
+
+Finally onto the fun part! We can use the `sapply()` function to iterate through all the countries and run a linear regression on their fishing effort from 2017-2020. Then we will concatenate those linear model summaries using `lapply()`. These functions serve a similar purpose as a `for loop.`
+
+```{r}
+countries_clean %>% 
+  group_by(flag_gfw) %>% 
+  do(data.frame(., as.list(coef(lm(mean_effort~year, .)))))
+
+# try to adjust the code that worked earlier to be like this code
+models <- sapply(unique(as.character(countries_clean$flag_gfw)),
+                 function(country)as.numeric(coef(lm(mean_effort~year, countries_clean, subset = (flag_gfw == country)))),
+                 simplify = FALSE, USE.NAMES = TRUE)
+```
+
+By feeding the output of these linear models into a for loop, we can plug in each country's fishing effort intercept and slope into a linear equation to predict the fishing effort in 2020 based on that country's historical trend. We 
+
+```{r}
+prediction_data = NULL;
+for (i in 1:length(models)) {
+  predicted_effort_2020 <- models[[i]][1] + models[[i]][2]*3
+  prediction_data <- rbind(prediction_data, predicted_effort_2020)
+  print(paste0("In 2020, the predicted fishing hours is ", predicted_effort_2020))
+}
+```
+
+Combine the predicted 2020 fishing effort data with the actual 2020 fishing effort data into a single dataframe to compare by country. We can even add a column that explicitly states whether that country increased or decreased their fishing effort in 2020 relative to their trend leading up to 2020.
+
+```{r}
+# figure out which countries were used in the for loop so we can get the actual 2020 effort data for those countries only
+countries_clean_unique <- countries_clean %>% 
+  group_by(flag_gfw) %>%
+  slice_head(n = 1)
+
+# set these countries as a vector so we can subset the effort_trends data to only include those countries
+countries_to_compare <- unique(countries_clean_unique$flag_gfw)
+countries_to_compare
+  
+# ensure that there are the same number of rows (countries) in both datasets
+nrow(countries_clean_unique)
+nrow(prediction_data)
+
+# set the effort trends data to only include those countries
+comparison_2020 <- effort_trends %>% 
+  select(flag_gfw, "2020") %>%
+  rename(actual_2020 = "2020") %>% 
+  filter(str_detect(flag_gfw, paste(countries_to_compare, collapse="|"))) %>% 
+  cbind(prediction_data) %>% 
+  rename(prediction_2020 = prediction_data) %>% 
+  filter(actual_2020 != "NaN")
+# I made sure to remove the NAN values from the countries that did not have actual data for 2020 AFTER I USED cbind() because I wanted to bind the actual 2020 data to the corresponding rows with the predicted data first or else the alignment would yield incorrect data
+
+# remove all negative values in the predicted column, the linear regression did not fit this data well
+comparison_2020_pos <- comparison_2020 %>% 
+  filter(prediction_2020 >= 0)
+
+# take the difference between the actual and the predicted columns
+comparison_2020_pos <- comparison_2020_pos %>% 
+  mutate(difference = prediction_2020 - actual_2020) %>% 
+  mutate(change_direc = case_when(
+    difference > 0 ~ "fished LESS than trend",
+    difference < 0 ~ "fished MORE than trend"))
+```
+
+### Statistical Signficance
+
+It's time to run a t-test to determine if there is a statistical difference between the countries' predicted fishing effort in 2020 and their actual fishing effort in 2020. A t-test is a handy tool in statistics that reveals how significant the differences between groups are. If the difference between the means of two groups could have easily happened by chance, the p-value will be greater than 0.05 (which is the standard trheshold in statistics and environmental data science). If it is highly unlikely (less than a 5% chance) that a difference in means at least this extreme could have occurred by chance, the p-value is less than 0.05 and the results are considered statistically significant. A statistically significant outcome allows us to reject our **null hypothesis**.
+
+**Null Hypothesis:** There is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020.
+$$H_{0}: \mu_{predicted_2020_fishing_effort} - \mu_{actual_2020_fishing_effort} = 0$$
+**Alternative Hypothesis:** There is a difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. Because of the pandemic in 2020, I predict that fishing effort decreased, meaning that the actual country-specific fishing effort is less than the predicted country-specific fishing effort.
+$$H_{A}: \mu_{predicted_2020_fishing_effort} - \mu_{actual_2020_fishing_effort} \neq 0$$
+
+Don't forget to convert the data to **Tidy format** so we can run the t-test!
+
+```{r}
+comparison_tidy <- comparison_2020_pos %>% 
+  pivot_longer(cols = ("actual_2020":"prediction_2020"),
+               names_to = "actual_or_predicted",
+               values_to = "mean_effort")
+
+# include this setting so the tiny p-value is not in scientific notation
+options(scipen = 999)
+
+ttest = t.test(mean_effort ~ actual_or_predicted, data = comparison_tidy, conf.level = 0.95)
+ttest
+```
+
+The p-value is 0.0000000312, and 0.0000000312 < 0.05, so we can reject our null hypothesis that there is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. Many countries clearly changed their fishing effort in 2020 relative to their historical trend!
+
+To best visualize this fishing effort data in a table, we can color code the countries that **increased** their fishing effort as red and color the countries that **decreased** their fishing effort in green.
+
+```{r}
+# convert the comparison_tidy data to a table
+
+# first, rearrange the columns
+comparison_data_rearranged <- comparison_tidy[, c(1, 5, 4, 2, 3)]
+
+# reduce the amount of rows to 1 per country, and select just the rows of interest for the table
+delete <- seq(1, nrow(comparison_data_rearranged), 2)
+comparison_rearranged_simplified <- comparison_data_rearranged[ delete ,]
+comparison_rearranged_simplified <- comparison_rearranged_simplified %>% 
+  select(flag_gfw, difference, change_direc)
+
+good_bad_table <- comparison_rearranged_simplified %>% 
+  gt() %>%
+  tab_header(
+    title = md("**Which countries increased or decreased 2020 fishing effort relative to their trend?**")
+  ) %>%
+  fmt_passthrough(
+    columns = c(flag_gfw)
+  ) %>%
+  fmt_number(
+  columns = c(difference)
+  ) %>%
+  fmt_passthrough(
+    columns = c(change_direc)
+  ) %>%
+  cols_label(flag_gfw = "Country Code" , 
+           difference = "Difference: Prediction - Actual",
+           change_direc = "Fishing Effort Relative to Trend") %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "chartreuse2"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_body(
+      columns = c(flag_gfw, difference, change_direc),
+      rows = change_direc == "fished LESS than trend")
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "brown2"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_body(
+      columns = c(flag_gfw, difference, change_direc),
+      rows = change_direc == "fished MORE than trend")
+  ) %>% 
+  tab_source_note(source_note = "Data Source: Global Fishing Watch: https://globalfishingwatch.org/datasets-and-code/") %>%
+  opt_align_table_header(align = "center") %>% 
+  cols_width(
+    flag_gfw ~ px(150),
+    difference ~ px(150),
+    change_direc ~ px(220)
+  ) %>% 
+  cols_align(align = "center")
+
+good_bad_table
+```
+
+![**Table of fishing effort relative to trend**](pictures/good_bad_table.png)
 
 #### Resources:
 
@@ -105,6 +374,10 @@ effort_trends <- data %>%
 - note: Users must make a free account in order to access datasets\
 - [Pictures 1 & 2](https://globalfishingwatch.org/map/?latitude=19&longitude=-30&zoom=1.5&start=2021-08-26T23%3A00%3A00.000Z&end=2021-11-27T00%3A00%3A00.000Z)
 - [Picture 3](https://globalfishingwatch.org/carrier-portal/?latitude=12.7069821&longitude=19.1776829&zoom=1.1903704&layer[0]=encounter&layer[1]=cp_rfmo&layer[2]=cp_next_port&dataset=carriers:v20211001&tab=flags)
+
+#### Acknowledgements:
+
+I would like to acknowledge Dr. Tamma Carlton, my professor in Statistics for Environmental Data Science at the U.C. Santa Barbara Bren School for Environmental Science and Management, for all her support throughout this project and this quarter. I would also like to thank my peers in the Master of Environmental Data Science Program for being so open to collaboration and supporting each other with resources, programming tools, and open-source science. 
 
 
 

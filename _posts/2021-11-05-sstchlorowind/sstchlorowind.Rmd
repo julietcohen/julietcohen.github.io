@@ -1,5 +1,5 @@
 ---
-title: "Visualizing Sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel"
+title: "Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel"
 description: |
   Interpretting marine processes by combining multiple data sets.
 author:
@@ -25,7 +25,7 @@ Question: How did wind speed affect sea surface temperature and chlorophyll in t
 
 The National Oceanic Atmospheric Administration has the perfect datasets to help us out, and they even have a handy application programming interface (API) to do the heavy lifting. Her
 
-The REDDAP API will pull sea surface temperature and clorophyll data from the NOAA Aquamodis Satelite into Rstudio. In addition, we manually pulled wind speed data from NOAA's East Buoy, West Buoy, and the Santa Monica Buoy by downloading and decompressing the 2020 Standard Meteorological Data Files available online (see below for links). To coordinate all the data for our analysis, we used the function rbind() to combine the datasets with time as the primary key.
+The REDDAP API will pull sea surface temperature and chlorophyll data from the NOAA Aquamodis Satelite into Rstudio. In addition, we manually pulled wind speed data from NOAA's East Buoy, West Buoy, and the Santa Monica Buoy by downloading and decompressing the 2020 Standard Meteorological Data Files available online (see below for links). To coordinate all the data for our analysis, we used the function rbind() to combine the datasets with time as the primary key.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
