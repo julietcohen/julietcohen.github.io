@@ -174,7 +174,7 @@ arg_plot <- ggplot(data = arg_data, aes(x = year, y = mean_effort, color = year)
 arg_plot
 ```
 
-![**Argentina's Fishing Effort 2017-2019**](pictures/argentina_fishing_effort.png)
+![](pictures/argentina_fishing_effort.png)
 
 Let's take a look at another country that consistently *decreased* fishing effort over time: Canada.
 
@@ -216,7 +216,7 @@ can_plot <- ggplot(data = can_data, aes(x = year, y = mean_effort, color = year)
 can_plot
 ```
 
-![**Canada's Fishing Effort 2017-2019**](pictures/canada_fishing_effort.png)
+![](pictures/canada_fishing_effort.png)
 
 Finally onto the fun part! We can use the `sapply()` function to iterate through all the countries and run a linear regression on their fishing effort from 2017-2020. Then we will concatenate those linear model summaries using `lapply()`. These functions serve a similar purpose as a `for loop.`
 
@@ -282,7 +282,7 @@ comparison_2020_pos <- comparison_2020_pos %>%
 
 ### Statistical Signficance
 
-It's time to run a t-test to determine if there is a statistical difference between the countries' predicted fishing effort in 2020 and their actual fishing effort in 2020. A t-test is a handy tool in statistics that reveals how significant the differences between groups are. If the difference between the means of two groups could have easily happened by chance, the p-value will be greater than 0.05 (which is the standard trheshold in statistics and environmental data science). If it is highly unlikely (less than a 5% chance) that a difference in means at least this extreme could have occurred by chance, the p-value is less than 0.05 and the results are considered statistically significant. A statistically significant outcome allows us to reject our **null hypothesis**.
+It's time to run a t-test to determine if there is a statistical difference between the countries' predicted fishing effort in 2020 and their actual fishing effort in 2020. A t-test is a handy tool in statistics that reveals how significant the differences between groups are. If the difference between the means of two groups could have easily happened by chance, the p-value will be greater than 0.05 (which is the standard threshold in statistics and environmental data science). If it is highly unlikely (less than a 5% chance) that a difference in means at least this extreme could have occurred by chance, the p-value is less than 0.05 and the results are considered statistically significant. A statistically significant outcome allows us to reject our **null hypothesis**.
 
 **Null Hypothesis:** There is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020.
 $$H_{0}: \mu_{predicted} - \mu_{actual} = 0$$

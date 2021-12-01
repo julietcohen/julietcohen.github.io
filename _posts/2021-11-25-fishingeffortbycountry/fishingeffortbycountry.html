@@ -1640,9 +1640,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<figure>
-<img src="pictures/argentina_fishing_effort.png" alt="Argentina’s Fishing Effort 2017-2019" /><figcaption aria-hidden="true"><strong>Argentina’s Fishing Effort 2017-2019</strong></figcaption>
-</figure>
+<p><img src="pictures/argentina_fishing_effort.png" /></p>
 <p>Let’s take a look at another country that consistently <em>decreased</em> fishing effort over time: Canada.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1684,9 +1682,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<figure>
-<img src="pictures/canada_fishing_effort.png" alt="Canada’s Fishing Effort 2017-2019" /><figcaption aria-hidden="true"><strong>Canada’s Fishing Effort 2017-2019</strong></figcaption>
-</figure>
+<p><img src="pictures/canada_fishing_effort.png" /></p>
 <p>Finally onto the fun part! We can use the <code>sapply()</code> function to iterate through all the countries and run a linear regression on their fishing effort from 2017-2020. Then we will concatenate those linear model summaries using <code>lapply()</code>. These functions serve a similar purpose as a <code>for loop.</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1753,7 +1749,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 </div>
 <h3 id="statistical-signficance">Statistical Signficance</h3>
-<p>It’s time to run a t-test to determine if there is a statistical difference between the countries’ predicted fishing effort in 2020 and their actual fishing effort in 2020. A t-test is a handy tool in statistics that reveals how significant the differences between groups are. If the difference between the means of two groups could have easily happened by chance, the p-value will be greater than 0.05 (which is the standard trheshold in statistics and environmental data science). If it is highly unlikely (less than a 5% chance) that a difference in means at least this extreme could have occurred by chance, the p-value is less than 0.05 and the results are considered statistically significant. A statistically significant outcome allows us to reject our <strong>null hypothesis</strong>.</p>
+<p>It’s time to run a t-test to determine if there is a statistical difference between the countries’ predicted fishing effort in 2020 and their actual fishing effort in 2020. A t-test is a handy tool in statistics that reveals how significant the differences between groups are. If the difference between the means of two groups could have easily happened by chance, the p-value will be greater than 0.05 (which is the standard threshold in statistics and environmental data science). If it is highly unlikely (less than a 5% chance) that a difference in means at least this extreme could have occurred by chance, the p-value is less than 0.05 and the results are considered statistically significant. A statistically significant outcome allows us to reject our <strong>null hypothesis</strong>.</p>
 <p><strong>Null Hypothesis:</strong> There is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. <span class="math display">\[H_{0}: \mu_{predicted} - \mu_{actual} = 0\]</span> <strong>Alternative Hypothesis:</strong> There is a difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. Because of the pandemic in 2020, I predict that fishing effort decreased, meaning that the actual country-specific fishing effort is less than the predicted country-specific fishing effort. <span class="math display">\[H_{A}: \mu_{predicted} - \mu_{actual} \neq 0\]</span></p>
 <p>Don’t forget to convert the data to <strong>Tidy format</strong> so we can run the t-test!</p>
 <div class="layout-chunk" data-layout="l-body">
