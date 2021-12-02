@@ -121,32 +121,30 @@ countries_clean <- effort_trends_tidy_no_na_date %>%
 
 ### Linear Regression
 
-Now that the data is sufficiently clean and our years are of class `date`, we can run a time series linear regression on every country's fishing effort from 2017-2019 and use the output coefficients to glean which direction each country is trending, meaning if the country is fishing more or less over time. We can do this with the `sapply()` function, grouping by country. Then we can feed this output into a for loop! Plug in each country's fishing effort intercept and slope coefficients into a linear equation to predict the fishing effort in 2020 based on that country's historical trend. Subsequently, we can combine the predicted 2020 fishing effort data with the actual 2020 fishing effort data into a single dataframe to compare by country. We can make a new column that takes the difference of the actual and predicted values, and then add a column that explicitly states whether that country increased or decreased their fishing effort in 2020 relative to their trend leading up to 2020.
+Now that the data is sufficiently clean and our years are of class `date`, we can run a time series linear regression on every country's fishing effort from 2017-2019 and use the output coefficients to glean which direction each country is trending, meaning if the country is fishing more or less over time. We can do this with the `do()` function, grouping by country. Then we can feed this output into a for loop! Plug in each country's fishing effort intercept and slope coefficients into a linear equation to predict the fishing effort in 2020 based on that country's historical trend. Subsequently, we can combine the predicted 2020 fishing effort data with the actual 2020 fishing effort data into a single dataframe to compare by country. We can make a new column that takes the difference of the actual and predicted values, and then add a column that explicitly states whether that country increased or decreased their fishing effort in 2020 relative to their trend leading up to 2020.
 
 ```{r}
-# an alternative way to run linear model on each country:
-# lm_with_do_function <- countries_clean %>% 
-#   group_by(flag_gfw) %>% 
-#   do(data.frame(., as.list(coef(lm(mean_effort~year, .)))))
+lm_df <- countries_clean %>% 
+  group_by(flag_gfw) %>% 
+  do(data.frame(., as.list(coef(lm(mean_effort~year, .)))))
+# lm_df has 3 obs per country and 342 rows
 
-# try to adjust the code that worked earlier to be like this code
-models <- sapply(unique(as.character(countries_clean$flag_gfw)),
-                 function(country)as.numeric(coef(lm(mean_effort~year, countries_clean, subset = (flag_gfw == country)))),
-                 simplify = FALSE, USE.NAMES = TRUE)
-# models[[4]] call just one set of coefficients
-# models call all sets of coefficients
+lm_df_unique <- lm_df[!duplicated(lm_df$flag_gfw),]
+# lm_df_unique has 114 rows, one for each country
 
 prediction_data = NULL;
-for (i in 1:length(models)) {
-  predicted_effort_2020 <- models[[i]][1] + models[[i]][2]*4
-  prediction_data <- rbind(prediction_data, predicted_effort_2020)
-  print(paste0("In 2020, the predicted fishing hours is ", predicted_effort_2020))
+for (i in 1:length(lm_df_unique$flag_gfw)) {
+  predicted_effort_2020[i] <- lm_df_unique$X.Intercept.[i] + lm_df_unique$year.1[i]*4
+  print(predicted_effort_2020[i])
+  prediction_data <- rbind(prediction_data, predicted_effort_2020[i])
+  print(paste0("In 2020, the predicted fishing hours is ", predicted_effort_2020[i]))
 }
 
 # figure out which countries were used in the for loop so we can get the actual 2020 effort data for those countries only
 countries_clean_unique <- countries_clean %>% 
   group_by(flag_gfw) %>%
   slice_head(n = 1)
+# 114 countries were used in the for loop
 
 # set these countries as a vector so we can subset the effort_trends data to only include those countries
 countries_to_compare <- unique(countries_clean_unique$flag_gfw)
@@ -208,7 +206,7 @@ mys_countries_clean <- trends_mys %>%
   rename(actual_mean_effort = mean_effort)
 
 # add the predicted values for ARG
-mys_countries_clean$prediction_2020 <- c(912.1514, 735.6150, 910.6168, 889.64468)
+mys_countries_clean$prediction_2020 <- c(912.1514, 735.6150, 910.6168, 889.64258)
 
 # now make a linear model on the actual and the predicted data
 
@@ -284,6 +282,7 @@ comparison_tidy <- comparison_2020_pos %>%
 # include this setting so the tiny p-value is not in scientific notation
 options(scipen = 999)
 ttest = t.test(mean_effort ~ actual_or_predicted, data = comparison_tidy, conf.level = 0.95)
+ttest
 ```
 
 ![**t-test output**](pictures/ttest_highlighted.png)
