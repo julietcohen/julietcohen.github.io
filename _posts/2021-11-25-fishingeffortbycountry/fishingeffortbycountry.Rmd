@@ -18,7 +18,7 @@ categories:
 knitr::opts_chunk$set(echo = FALSE, eval = FALSE)
 ```
 
-![A cod fish, one of the top species captured by marine fisheries (8)](pictures/cod.png){width=80%}
+![A cod fish, one of the top species captured by marine fisheries (8)](pictures/cod.png){width=50%}
 
 ## How did global fishing activity change during the Covid-19 pandemic?
 
@@ -26,13 +26,11 @@ knitr::opts_chunk$set(echo = FALSE, eval = FALSE)
 
 Regulating fishing and other vessel activities across the globe is a challenge in itself (4). Databases often have large gaps due to various causes such as a lack of reliable data from automatic identification systems and voluntary vessel registration by the owners of the vessels. [Global Fishing Watch](https://globalfishingwatch.org/) is an organization that aims to revolutionize the way we monitor fishing activity across the world using remote sensing techniques from satellites combined with automatic identification systems. Global Fishing Watch collects and visualizes global fishing data with the goal of embracing ocean sustainability, transparency, and open-source science. They keep track of vessels from all different countries, including their movements, boat types, and time stamps for fishing and docking at ports. Without such efforts to monitor, publicize, and regulate ocean activity, our marine resources are at high risk of depletion. On a global scale, we are fishing faster than fish stocks can naturally replenish. This has severe economic impacts; according to the World Bank Report, the ensuing depletion of marine fish stocks causes economic losses of 50 billion US dollars annually (4). With modern data science and applied statistics, we can better understand fishing activity on a global scale and protect our planet's marine biodiversity.
 
-As an aspiring wildlife biologist and data scientist, I'm interested in applying statistical analysis to [Global Fishing Watch data](https://globalfishingwatch.org/datasets-and-code/) to learn how different countries' fishing effort changed in 2020, relative to those countries' fishing trends in the years leading up to 2020. In this dataset, fishing effort is defined by the amount of hours spent fishing (3). I chose to use this dataset for my statistical analysis because it is already relatively clean, I know the data is relaible because Global Fishing Watch is a highly respected data resource with highly accurate remotely sensed data that is combined with locally collected automatic identification systems on shore, and I am interested in working with Global Fishing Watch and spatial data in the future. This data does not have spatial component since we treat countries as a categorical variable, and the temporal variable is limited to years. The only bias I believe might be present in this data is that it is limited to boats that either voluntarily allow their fishing hours to be tracked (such as through automatic identification systems) as well as boats that have been detected remotely by satellite.
-
-With Global Fishing Watch's expansive open-source data collection, we can approach this question by grouping all vessels' fishing hours by country, identifying a statistical trend up until 2019, and extrapolating that trend into 2020. By comparing this 2020 prediction to the actual fishing data available for 2020, we can glean how Covid-19 skewed large-scale fishing efforts. I chose this analysis approach because I am familiar with these processes (besides the for loop aspect) through my graduate statisics course and I believe it will be the simplest and most accurate way to derive a p-value that will reveal if there is a statistically significant difference between each country's actual mean fishing effort and their predicted mean fishing effort in 2020. Perhaps the global fishing economy sky-rocketed, plummeted into near nonexistence, or remained unscathed by the pandemic. Quantitative analysis will help provide some insight.
+As an aspiring wildlife biologist and data scientist, I'm interested in applying statistical analysis to [Global Fishing Watch data](https://globalfishingwatch.org/datasets-and-code/) to learn how different countries' fishing effort changed in 2020, relative to those countries' fishing trends in the years leading up to 2020. In this dataset, fishing effort is defined by the amount of hours spent fishing (3). I chose to use this dataset for my statistical analysis because it is already relatively clean, I know the data is relaible because Global Fishing Watch is a highly respected data resource with highly accurate remotely sensed data that is combined with locally collected automatic identification systems on shore, and I am interested in working with Global Fishing Watch and spatial data in the future. This data does not have spatial component since we treat countries as a categorical variable, and the temporal variable is limited to years. The only bias I believe might be present in this data is that it is limited to boats that either voluntarily allow their fishing hours to be tracked (such as through automatic identification systems) as well as boats that have been detected remotely by satellite. With Global Fishing Watch's expansive open-source data collection, we can approach this question by grouping all vessels' fishing hours by country, identifying a statistical trend up until 2019, and extrapolating that trend into 2020. By comparing this 2020 prediction to the actual fishing data available for 2020, we can glean how Covid-19 skewed large-scale fishing efforts. I chose this analysis approach because I am familiar with these processes (besides the for loop aspect) through my graduate statisics course and I believe it will be the simplest and most accurate way to derive a p-value that will reveal if there is a statistically significant difference between each country's actual mean fishing effort and their predicted mean fishing effort in 2020. Perhaps the global fishing economy sky-rocketed, plummeted into near nonexistence, or remained unscathed by the pandemic. Quantitative analysis will help provide some insight.
 
 Global Fishing Watch offers an [interactive map](https://globalfishingwatch.org/map/?latitude=19&longitude=-30&zoom=1.5&start=2021-08-26T23%3A00%3A00.000Z&end=2021-11-27T00%3A00%3A00.000Z) that displays fishing activity across the globe through a heat map. This visualization has the potential to inspire data scientists, fish enthusiasts, environmental justice advocates, pandemic researchers, and everyone in between to examine fishing activity during a time period of interest. 
 
-![Global fishing activity from January 1, 2020 through January 1, 2021](pictures/fishing_gfw_map_2020.png){width=70%}
+![Global fishing activity from January 1, 2020 through January 1, 2021](pictures/fishing_gfw_map_2020.png){width=60%}
 
 Global Fishing Watch and their partners also provide an [interactive map](https://globalfishingwatch.org/carrier-portal/?latitude=12.7069821&longitude=19.1776829&zoom=1.1903704&layer[0]=encounter&layer[1]=cp_rfmo&layer[2]=cp_next_port&dataset=carriers:v20211001&tab=flags) that allows users to interact with vessels across the globe, filter by country, and overlay port locations on coastlines.
 
@@ -136,7 +134,7 @@ models <- sapply(unique(as.character(countries_clean$flag_gfw)),
                  simplify = FALSE, USE.NAMES = TRUE)
 # #models[[4]]
 # #models
-# 
+
 prediction_data = NULL;
 for (i in 1:length(models)) {
   predicted_effort_2020 <- models[[i]][1] + models[[i]][2]*4
@@ -181,11 +179,7 @@ comparison_2020_pos <- comparison_2020_pos %>%
 
 ### Plotting Actual Fishing Effort versus Predicted Fishing Effort for Malaysia
 
-What does a single country's fishing trend look like? Let's consider the country of Malaysia in Southeast Asia. In 2015, Malaysia's fisheries sector employed 175,980 people and its contribution to national gross domestic product was 1.1%. The fish trade is valued at $1.7 billion (U.S. dollars), and the estimated average consumption of fish is 56.8 kg/person/year. Malaysian fisheries primarily capture shrimp, squid, and fish. Malaysia contributes to the global fish economy through both importing and exporting fish (6)
-
-![Malaysia's borders in Southeast Asia (7)](pictures/malaysia_map.png){width=60%}
-
-We can make a country-specific fishing effort plot by filtering our *actual* fishing effort data to just that country, appending the *predicted* 2020 fishing effort data for that country that we produced through our linear model.
+What does a single country's fishing trend look like? Let's consider the country of Malaysia in Southeast Asia. In 2015, Malaysia's fisheries sector employed 175,980 people and its contribution to national gross domestic product was 1.1%. The fish trade is valued at $1.7 billion (U.S. dollars), and the estimated average consumption of fish is 56.8 kg/person/year. Malaysian fisheries primarily capture shrimp, squid, and fish. Malaysia contributes to the global fish economy through both importing and exporting fish (6). We can make a country-specific fishing effort plot by filtering our *actual* fishing effort data to just that country, appending the *predicted* 2020 fishing effort data for that country that we produced through our linear model.
 
 ```{r}
 # filter fishing effort and yearly means from the original data 
@@ -264,7 +258,7 @@ mys_plot <- ggplot() +
 mys_plot
 ```
 
-![Malaysia's Fishing Effort: Actual vs Predicted 2017-2020](pictures/malaysia_fishing_effort_legend.png)
+![Malaysia's Fishing Effort: Actual vs Predicted 2017-2020](pictures/malaysia_fishing_effort_legend.png){width=85%}
 
 ### Statistical Significance
 
