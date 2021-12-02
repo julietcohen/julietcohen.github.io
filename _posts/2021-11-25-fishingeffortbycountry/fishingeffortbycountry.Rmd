@@ -365,7 +365,7 @@ Thank you for reading my statistical review of global fishing effort during the 
 
 #### Data Availability
 
-The data used in this analysis is openly available, but the user must make a free account on the Global Fishing watch website, which cna be accessed through this live link:\
+The data used in this analysis is openly available, but the user must make a free account on the Global Fishing watch website, which can be accessed through this live link:\
 [Global Fishing Watch Datasets and Code](https://globalfishingwatch.org/data-download/datasets/public-fishing-effort)\
 
 #### GitHub Repository Live Link
