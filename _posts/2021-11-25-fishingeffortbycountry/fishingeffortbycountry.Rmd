@@ -5,7 +5,7 @@ description: |
 author:
   - name: Juliet Cohen
     url: {}
-date: 11-25-2021
+date: 12-02-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -22,9 +22,13 @@ knitr::opts_chunk$set(echo = FALSE, eval = FALSE)
 
 ## How did global fishing activity change during the Covid-19 pandemic?
 
-2020 is a year we will never forget. Covid-19 spread rapidly across the globe and forced most of humanity into a state of quarantine. Covid-19 had clear devastating impacts on economies of all scales. Travel was heavily limited, and even when crossing country borders was possible, it was heavily monitored. However, the pandemic boosted some sectors of the economy and increased demand for certain goods. How did Covid-19 impact the fishing economy? Did fisheries respond to the pandemic by sending fishermen and fisherwomen home to quarantine, or did some countries see this as an opportunity to fish in the high seas more than ever before? Regulating fishing and other vessel activities across the globe is a challenge in itself (4). Databases often have large gaps due to various causes such as a lack of reliable data from automatic identification systems and voluntary vessel registration by the owners of the vessels. [Global Fishing Watch](https://globalfishingwatch.org/) is an organization that aims to revolutionize the way we monitor fishing activity across the world using remote sensing techniques from satellites combined with automatic identification systems. Global Fishing Watch collects and visualizes global fishing data with the goal of embracing ocean sustainability, transparency, and open-source science. They keep track of vessels from all different countries, including their movements, boat types, and time stamps for fishing and docking at ports. Without such efforts to monitor, publicize, and regulate ocean activity, our marine resources are at high risk of depletion. On a global scale, we are fishing faster than fish stocks can naturally replenish. This has severe economic impacts; according to the World Bank Report, the ensuing depletion of marine fish stocks causes economic losses of 50 billion US dollars annually (4). With modern data science and applied statistics, we can better understand fishing activity on a global scale and protect our planet's marine biodiversity.
+2020 is a year we will never forget. Covid-19 spread rapidly across the globe and forced most of humanity into a state of quarantine. Covid-19 had clear devastating impacts on economies of all scales. Travel was heavily limited, and even when crossing country borders was possible, it was heavily monitored. However, the pandemic boosted some sectors of the economy and increased demand for certain goods. How did Covid-19 impact the fishing economy? Did fisheries respond to the pandemic by sending fishermen and fisherwomen home to quarantine, or did some countries see this as an opportunity to fish in the high seas more than ever before? I could not find any literature that answers this question, which is likely due to the fact that 2020 was less than a year ago, and any formal studies on this topic might not have had time to be published.
 
-As an aspiring wildlife biologist and data scientist, I'm interested in applying statistical analysis to [Global Fishing Watch data](https://globalfishingwatch.org/datasets-and-code/) to learn how different countries' fishing effort changed in 2020, relative to those countries' fishing trends in the years leading up to 2020. In this dataset, fishing effort is defined by the amount of hours spent fishing (3). With Global Fishing Watch's expansive open-source data collection, we can approach this question by grouping all vessels' fishing hours by country, identifying a statistical trend up until 2019, and extrapolating that trend into 2020. By comparing this 2020 prediction to the actual fishing data available for 2020, we can glean how Covid-19 skewed large-scale fishing efforts. Perhaps the global fishing economy sky-rocketed, plummeted into near nonexistence, or remained unscathed by the pandemic. Quantitative analysis will help provide some insight.
+Regulating fishing and other vessel activities across the globe is a challenge in itself (4). Databases often have large gaps due to various causes such as a lack of reliable data from automatic identification systems and voluntary vessel registration by the owners of the vessels. [Global Fishing Watch](https://globalfishingwatch.org/) is an organization that aims to revolutionize the way we monitor fishing activity across the world using remote sensing techniques from satellites combined with automatic identification systems. Global Fishing Watch collects and visualizes global fishing data with the goal of embracing ocean sustainability, transparency, and open-source science. They keep track of vessels from all different countries, including their movements, boat types, and time stamps for fishing and docking at ports. Without such efforts to monitor, publicize, and regulate ocean activity, our marine resources are at high risk of depletion. On a global scale, we are fishing faster than fish stocks can naturally replenish. This has severe economic impacts; according to the World Bank Report, the ensuing depletion of marine fish stocks causes economic losses of 50 billion US dollars annually (4). With modern data science and applied statistics, we can better understand fishing activity on a global scale and protect our planet's marine biodiversity.
+
+As an aspiring wildlife biologist and data scientist, I'm interested in applying statistical analysis to [Global Fishing Watch data](https://globalfishingwatch.org/datasets-and-code/) to learn how different countries' fishing effort changed in 2020, relative to those countries' fishing trends in the years leading up to 2020. In this dataset, fishing effort is defined by the amount of hours spent fishing (3). I chose to use this dataset for my statistical analysis because it is already relatively clean, I know the data is relaible because Global Fishing Watch is a highly respected data resource with highly accurate remotely sensed data that is combined with locally collected automatic identification systems on shore, and I am interested in working with Global Fishing Watch and spatial data in the future. This data does not have spatial component since we treat countries as a categorical variable, and the temporal variable is limited to years. The only bias I believe might be present in this data is that it is limited to boats that either voluntarily allow their fishing hours to be tracked (such as through automatic identification systems) as well as boats that have been detected remotely by satellite.
+
+With Global Fishing Watch's expansive open-source data collection, we can approach this question by grouping all vessels' fishing hours by country, identifying a statistical trend up until 2019, and extrapolating that trend into 2020. By comparing this 2020 prediction to the actual fishing data available for 2020, we can glean how Covid-19 skewed large-scale fishing efforts. I chose this analysis approach because I am familiar with these processes (besides the for loop aspect) through my graduate statisics course and I believe it will be the simplest and most accurate way to derive a p-value that will reveal if there is a statistically significant difference between each country's actual mean fishing effort and their predicted mean fishing effort in 2020. Perhaps the global fishing economy sky-rocketed, plummeted into near nonexistence, or remained unscathed by the pandemic. Quantitative analysis will help provide some insight.
 
 Global Fishing Watch offers an [interactive map](https://globalfishingwatch.org/map/?latitude=19&longitude=-30&zoom=1.5&start=2021-08-26T23%3A00%3A00.000Z&end=2021-11-27T00%3A00%3A00.000Z) that displays fishing activity across the globe through a heat map. This visualization has the potential to inspire data scientists, fish enthusiasts, environmental justice advocates, pandemic researchers, and everyone in between to examine fishing activity during a time period of interest. 
 
@@ -39,6 +43,7 @@ library(tidyverse)
 library(lubridate)
 # gt helps make beautiful tables to summarize our data
 library(gt)
+library(broom)
 ```
 
 ```{r}
@@ -126,15 +131,15 @@ Now that the data is sufficiently clean and our years are of class `date`, we ca
 #   do(data.frame(., as.list(coef(lm(mean_effort~year, .)))))
 
 # try to adjust the code that worked earlier to be like this code
-# models <- sapply(unique(as.character(countries_clean$flag_gfw)),
-#                  function(country)as.numeric(coef(lm(mean_effort~year, countries_clean, subset = (flag_gfw == country)))),
-#                  simplify = FALSE, USE.NAMES = TRUE)
+models <- sapply(unique(as.character(countries_clean$flag_gfw)),
+                 function(country)as.numeric(coef(lm(mean_effort~year, countries_clean, subset = (flag_gfw == country)))),
+                 simplify = FALSE, USE.NAMES = TRUE)
 # #models[[4]]
 # #models
 # 
 prediction_data = NULL;
 for (i in 1:length(models)) {
-  predicted_effort_2020 <- models[[i]][1] + models[[i]][2]*3
+  predicted_effort_2020 <- models[[i]][1] + models[[i]][2]*4
   prediction_data <- rbind(prediction_data, predicted_effort_2020)
   print(paste0("In 2020, the predicted fishing hours is ", predicted_effort_2020))
 }
@@ -227,18 +232,18 @@ min_y_mys
 
 mys_plot <- ggplot() +
    geom_point(data = mys_countries_clean,
-              aes(x = year, y = actual_mean_effort, color = "firebrick"),
-              size = 7,
+              aes(x = year, y = actual_mean_effort, color = "brown1"),
+              size = 9,
               shape = 18) +
    geom_line(data = augment(mys_model_actual),
-             aes(x = year, y = .fitted, color = "firebrick"),
+             aes(x = year, y = .fitted, color = "brown1"),
              size = 2) + 
    geom_point(data = mys_countries_clean,
-              aes(x = year, y = prediction_2020, color = "green"),
-              size = 7,
+              aes(x = year, y = prediction_2020, color = "cyan3"),
+              size = 9,
               shape = 18) +
    geom_line(data = augment(mys_model_predicted),
-             aes(x = year, y = .fitted, color = "green"),
+             aes(x = year, y = .fitted, color = "cyan3"),
              size = 2) +
    scale_x_date(date_labels = "%Y",
                 date_breaks = "1 year") +
@@ -246,15 +251,15 @@ mys_plot <- ggplot() +
    xlab("Year") + 
    ylab("Mean Fishing Hours") +
    theme(panel.background = element_blank(),
-         axis.title.x = element_text(color = "black", size = 15),
-         axis.text.x = element_text(face = "bold", color = "black", size = 13),
-         axis.title.y = element_text(color = "black", size = 15),
-         axis.text.y = element_text(face = "bold", color = "black", size = 8),
+         axis.title.x = element_text(color = "black", size = 17),
+         axis.text.x = element_text(face = "bold", color = "black", size = 15),
+         axis.title.y = element_text(color = "black", size = 17),
+         axis.text.y = element_text(face = "bold", color = "black", size = 12),
          plot.title = element_text(color="black", size = 17, face = "bold"),
          panel.border = element_rect(colour = "black", fill = NA, size = 2),
          legend.position = "right") +
    scale_y_continuous(breaks = seq(min_y_mys, max_y_mys, by = 20)) +
-   scale_color_discrete(name = "Data Type", labels = c("Predicted Fishing Effort", "Actual Fishing Effort"))
+   scale_color_discrete(name = "Data Type", labels = c("Actual Fishing Effort", "Predicted Fishing Effort"))
 
 mys_plot
 ```
@@ -365,9 +370,9 @@ Thank you for reading my statistical review of global fishing effort during the 
 The data used in this analysis is openly available, but the user must make a free account on the Global Fishing watch website, which cna be accessed through this live link:\
 [Global Fishing Watch Datasets and Code](https://globalfishingwatch.org/data-download/datasets/public-fishing-effort)\
 
-#### GitHub Repository
+#### GitHub Repository Live Link
 
-[julietcohen's GitHub Repository: see to_pdf.Rmd](https://github.com/julietcohen/fishing_effort)
+[julietcohen's GitHub Repository](https://github.com/julietcohen/julietcohen.github.io/tree/Main/_posts/2021-11-25-fishingeffortbycountry)
 
 #### Acknowledgements:
 
