@@ -134,10 +134,10 @@ lm_df_unique <- lm_df[!duplicated(lm_df$flag_gfw),]
 
 prediction_data = NULL;
 for (i in 1:length(lm_df_unique$flag_gfw)) {
-  predicted_effort_2020[i] <- lm_df_unique$X.Intercept.[i] + lm_df_unique$year.1[i]*4
-  print(predicted_effort_2020[i])
-  prediction_data <- rbind(prediction_data, predicted_effort_2020[i])
-  print(paste0("In 2020, the predicted fishing hours is ", predicted_effort_2020[i]))
+  predicted_effort_2020 <- lm_df_unique$X.Intercept.[i] + lm_df_unique$year.1[i]*4
+  print(predicted_effort_2020)
+  prediction_data <- rbind(prediction_data, predicted_effort_2020)
+  print(paste0("In 2020, the predicted fishing hours is ", predicted_effort_2020))
 }
 
 # figure out which countries were used in the for loop so we can get the actual 2020 effort data for those countries only
