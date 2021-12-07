@@ -13,19 +13,36 @@ preview: Images/sst.png
 categories:
   -R
 ---
-## Data in the Santa Barbara Channel
+## The Santa Barbara Channel
+### A basin of oceanic data just waiting to be analyzed
 
-The rocky Santa Barbara coast is known for its beautiful weather, incredible surfing, and unique geographic features. Among these are the 4 channel islands which reside between 12 and 27 miles off shore from Santa Barabara, Ventura, and Oxnard. These include Santa Cruz, Anacapa, Santa Rosa, and San Miguel. The Santa Barbara Channel is a hotspot for biodiversity, including dolphins, sunfish, and whales. During certain seasons, whale sightings are quite common from both boat and from the shore. The whales' feed on krill in the channel, which rely on chorophyll to bloom. We can detect this chlorophyll via satellites, just as we can detect sea surface temperature. While strategizing the best time of year to spot these whales, we might want to consider the timing of these phytoplankton blooms. Do these blooms occur more often when we have warmer ocean temperatures? What time of year would that be? Is the ocean temperature impacted by wind? A few data-driven friends and I decided to combine data about wind, sea surface temperature, and chlorophyll in the Santa Barbara Channel to find the best time of year to go whale watching.
+The beautiful, biodiverse Santa Barbara coast is known for its sunny weather, gnarly swell, and unique geographic features. Among these are the four northern channel islands, Santa Cruz, Anacapa, Santa Rosa, and San Miguel, which reside between 12 and 27 miles off shore. The Santa Barbara Channel lies between these islands and the coastline, stretching from Los Angeles in the south to Pt. Conception in the north. 
+
+### Ocean Currents
+
+This channel harbors a unique combination of ocean currents that causes heterogeneity in environmental conditions across the islands and circulates nutrients throughout the ocean depths in seaosnal patterns. The California current brings a cold swell from the Gulf of Alaska down the coast, providing ideal temporal conditions for black rockfish, sunflower sea otters, red abalone, and other creatures around San Miguel and Santa Rosa Islands. In contrast to the southeast-bound California Current is the northwest-bound Southern California Counter-current from Baja California. This warm, relatively nutrient-poor water supports different marine species such as spiny lobsters, moray eels, and damselfish such as California's state fish: the Garibaldi. These species are more commonly found near the southeast islands ([1: Channel Islands National Park](https://www.nps.gov/chis/learn/nature/currents-upwelling.htm), [2: National Park Service](https://www.nps.gov/articles/garibaldi.htm#:~:text=The%20Garibaldi%20is%20the%20California%20State%20fish%20and%20is%20protected%20from%20fishing.&text=These%20fish%20mainly%20live%20in%20the%20kelp%20forest%20ecosystem.&text=This%20species%20of%20damselfish%20inhabits,reefs%20and%20among%20kelp%20forests.)).
+
+![Santa Barbara Channel currents and all eight channel islands (from west to east): San Miguel Island, Santa Rosa Island, Santa Cruz Island, Anacapa Island, San Nicolas Island, Santa Barbara Island, Santa Catalina Island, San Clemente Island (1).](images/channel_currents.png)
+
+![A garibaldi fish (*Hypsypops rubicundus*), California's state fish and a species found in the Santa Barbara Channel. This fish is protected from fishing, lives in kelp forest habitat, and males utilize red algae to build nests (2)](images/garibaldi.png)
+
+### Marine Wildlife
+
+This clashing current rendezvous turns the Santa Barbara Channel into a hotspot for biodiversity such as marine mammals like dolphins and whales, benthic invertebrates like purple urchins, plants such as giant kelp and and unique fish species such as the sunfish (the most majestic fish of all). 
+
+![A sunfish (*Mola mola*), the world's largest bony fish, are found throughout the Santa Barbara Channel and are so large (up to 11 feet in length) can even be spotted by Channel Islands field crew members communting the to islands by helicopter. These atypical fish can even be found as far north as Alaska during El Nino years. These fish often bask nearly motionless near the ocean surface and sometimes breach the surface in an apparent attempt to rid their bodies of external parasites (3).](images/mola.png)
+
+During late November through April, whale sightings are quite common in Santa Barbara. Thousands of Pacific gray whales migrate south towards the warm waters of Baja California and feed on krill in the channel along the way, which are tiny organisms that rely on oceanic chlorophyll blooms (4). We can detect chlorophyll and sea surface temperature via remote-sensing satellites. While trying to strategically determine the best time of year to spot these whales, we might want to consider the timing of these phytoplankton blooms. Do these blooms occur more often when we have warmer ocean temperatures? What time of year would that be, and does it align with the famous "whale season" known to be November through April? Is the ocean temperature impacted by wind? A few data-driven friends and I decided to combine data about wind, sea surface temperature, and chlorophyll in the Santa Barbara Channel to find the best time of year to go whale watching. My collaborators include Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. 
 
 Question: How did wind speed affect sea surface temperature and chlorophyll in the Santa Barbara Channel during 2020?
 
-## The National Oceanic Atmospheric Administration (NOAA)
+### The National Oceanic Atmospheric Administration (NOAA)
 
 **Methods**  
 
-The National Oceanic Atmospheric Administration has the perfect datasets to help us out, and they even have a handy application programming interface (API) to do the heavy lifting. Her
+The National Oceanic Atmospheric Administration has the perfect datasets to help us out, and they even have a handy application programming interface (API) to do the heavy lifting for us. The NOAA Aquamodis Satellite data can be found [here](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMWsstd3day_LonPM180.graph?sst%5B(last)%5D%5B(0.0)%5D%5B(33.1125):(34.9)%5D%5B(-120.6625):(-118.875)%5D&.draw=surface&.vars=longitude%7Clatitude%7Csst&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff). 
 
-The REDDAP API will pull sea surface temperature and chlorophyll data from the NOAA Aquamodis Satelite into Rstudio. In addition, we manually pulled wind speed data from NOAA's East Buoy, West Buoy, and the Santa Monica Buoy by downloading and decompressing the 2020 Standard Meteorological Data Files available online (see below for links). To coordinate all the data for our analysis, we used the function rbind() to combine the datasets with time as the primary key.
+The REDDAP API will import sea surface temperature and chlorophyll data directly from the NOAA Aquamodis Satellite. In addition, we manually pulled wind speed data from NOAA's [East Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46053), [West Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46054), and the [Santa Monica Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46025) by downloading and decompressing the 2020 Standard Meteorological Data Files. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
@@ -256,11 +273,42 @@ ggplot(data = chloro_wind_sst, aes(x = date, y = mean_chloro, color = location))
        color = "Location")
 ```
 
-![](images/monthly_wind.png)
+![Monthly wind in the Santa Barbara Channel in 2020, recorded by in-situ NOAA buoys](images/monthly_wind.png)
 
-![](images/sst.png)
+![Sea surface temperature in the Santa Barbara Channel in 2020, remotely sensed by satellites](images/sst.png)
 
-![](images/chlorophyll.png)
+![Chlorophyll in the Santa Barbara Channel in 2020, remotely sensed by satellites](images/chlorophyll.png)
+
+### Interpretation
+
+In the Santa Barbara Channel, the wind peaks in July. This aligns with low chlorophyll levels and about average sea surface temperature.
+
+The sea surface temperature peaked in October. This somewhat aligns with the start of the well-known whale watching season that spans from November to April. The whales are following warm water and food, after all!
+
+The chlorophyll peaked in April. This aligns with the well-known whale watching season that spans from November to April. The data shows that we would have the best luck whale watching in Santa Barbara in April.
+
+#### Acknowledgements
+
+- I would like to thank my exceptionally driven and creative team of collaborators on this project, Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. Thank you for your support, resources, and all the time you put into this code and analysis.\
+- Thank you to Julien Brun, a Senior Data Scientist at the [National Center for Ecological Analysis and Synthesis](https://www.nceas.ucsb.edu/), for teaching us about how to use API's and locate and utilize metadata. He helped us with our data cleaning and wrangling throughout this project, and we admire him for his dedication to open-source science and teaching the next generation of data scientists to program in with reproducible habits.\
+- Thank you to NOAA for providing the data that made this analysis possible and for providing an API to import it with ease.
+
+#### References
+
+1. [Channel Islands National Park](https://www.nps.gov/chis/learn/nature/currents-upwelling.htm)\
+2. [National Park Service](https://www.nps.gov/articles/garibaldi.htm#:~:text=The%20Garibaldi%20is%20the%20California%20State%20fish%20and%20is%20protected%20from%20fishing.&text=These%20fish%20mainly%20live%20in%20the%20kelp%20forest%20ecosystem.&text=This%20species%20of%20damselfish%20inhabits,reefs%20and%20among%20kelp%20forests.)\
+3. [Ocean Sunfish](http://www.oceanlight.com/html/mola_mola.html)\
+4. [Santa Barbara: The American Riveria](https://santabarbaraca.com/plan-your-trip/outdoor-recreation/whale-watching/)\
+5. [NOAA Aquamodis Satellite](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMWsstd3day_LonPM180.graph?sst%5B(last)%5D%5B(0.0)%5D%5B(33.1125):(34.9)%5D%5B(-120.6625):(-118.875)%5D&.draw=surface&.vars=longitude%7Clatitude%7Csst&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff)\
+- [NOAA Aquamodis Satellite metadata](https://coastwatch.pfeg.noaa.gov/erddap/info/erdMWsstd3day_LonPM180/index.html)\
+6. [East Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46053)\
+- [East Buoy metadata](https://www.ndbc.noaa.gov/measdes.shtml)\
+7. [West Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46054)\
+- [West Buoy Metadata](https://www.ndbc.noaa.gov/measdes.shtml)\
+8. [Santa Monica Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46025)\
+- [Santa Monica Buoy Metadata](https://www.ndbc.noaa.gov/measdes.shtml)
+
+
 
 Distill is a publication format for scientific and technical writing, native to the web.
 
