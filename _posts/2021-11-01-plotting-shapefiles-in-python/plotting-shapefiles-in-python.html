@@ -86,7 +86,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Plotting Shapefiles in Python</title>
+  <title>Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States</title>
 
   <meta property="description" itemprop="description" content="The basics for reading in shapefile data, plotting it, and adding a basemap."/>
 
@@ -97,26 +97,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta name="article:author" content="Juliet Cohen"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Plotting Shapefiles in Python"/>
+  <meta property="og:title" content="Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="The basics for reading in shapefile data, plotting it, and adding a basemap."/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Plotting Shapefiles in Python"/>
+  <meta property="twitter:title" content="Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States"/>
   <meta property="twitter:description" content="The basics for reading in shapefile data, plotting it, and adding a basemap."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Plotting Shapefiles in Python"]},{"type":"character","attributes":{},"value":["The basics for reading in shapefile data, plotting it, and adding a basemap.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["crit_hab_with_basemap.png"]},{"type":"character","attributes":{},"value":["-Python"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States"]},{"type":"character","attributes":{},"value":["The basics for reading in shapefile data, plotting it, and adding a basemap.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["crit_hab_with_basemap.png"]},{"type":"character","attributes":{},"value":["-Python"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["activate_cd.png","bat.png","columns.png","crit_hab_no_basemap.png","crit_hab_with_basemap.png","gdf.png","jupyter.png","lat_long.png","plot_code.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js","set_crs.png","shape.png","subset_end.png","text.png"]}
+  {"type":"character","attributes":{},"value":["images/activate_cd.png","images/bat.png","images/columns.png","images/crit_hab_no_basemap.png","images/crit_hab_with_basemap.png","images/gdf.png","images/jupyter.png","images/lat_long.png","images/plot_code.png","images/python.png","images/set_crs.png","images/shape.png","images/steelhead_crayfish.png","images/steelhead_dps.png","images/subset_end.png","images/text.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Plotting Shapefiles in Python","description":"The basics for reading in shapefile data, plotting it, and adding a basemap.","authors":[{"author":"Juliet Cohen","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-11-05T00:00:00.000-07:00","citationText":"Cohen, 2021"}
+{"title":"Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States","description":"The basics for reading in shapefile data, plotting it, and adding a basemap.","authors":[{"author":"Juliet Cohen","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-11-05T00:00:00.000-07:00","citationText":"Cohen, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1465,7 +1465,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Plotting Shapefiles in Python</h1>
+<h1>Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
 <div class="dt=tag">-Python</div>
@@ -1485,21 +1485,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#python-and-jupyter-notebooks">Python and Jupyter Notebooks</a></li>
-<li><a href="#import-some-packages-modules">Import Some Packages (<code>modules</code>)</a></li>
+<li><a href="#getting-started-with-python-and-jupyter-notebooks">Getting started with Python and Jupyter Notebooks</a></li>
+<li><a href="#importing-packages-modules">Importing Packages (<code>modules</code>)</a></li>
 <li><a href="#importing-data">Importing Data</a></li>
-<li><a href="#coordinate-reference-system">Coordinate Reference System</a></li>
-<li><a href="#plotting-shapefiles">Plotting Shapefiles</a></li>
+<li><a href="#setting-the-coordinate-reference-system">Setting the Coordinate Reference System</a></li>
+<li><a href="#plotting-shapefiles-on-a-basemap">Plotting Shapefiles on a Basemap</a></li>
+<li><a href="#future-analysis">Future Analysis</a></li>
+<li><a href="#a-local-california-use-case-example">A Local California Use Case Example</a>
+<ul>
+<li><a href="#sources-supplemental-information-on-listed-endangered-species-in-the-united-states">Sources &amp; supplemental information on listed endangered species in the United States:</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
+<p><img src="images/python.png" /></p>
+<p>Python is a wonderful programming language to plot shapefiles overlaid on top of basemaps, which gives us the user spatial context and opens doors for deeper analysis. Understanding where points, lines, and polygons exist in the world empowers data scientists to answer questions about correlated variables, consider new questions that arise throughout the analysis process, and communicate conclusions to audiences in an easily-digestible way.</p>
+<p>This blog post will walk you through this process, starting with installing the an integrated development environment (IDE) Jupyter Notebook and installing the necessary packages. If you prefer to use another IDE such as Visual Studio Code and have already installed the packages <code>geopandas</code>, feel free to jump ahead to the <strong>Importing Packages</strong> section.</p>
+<p>As a conservation biologist and an aspiring data scientist, I’m interested in plotting endangered species’ critical habitat ranges throughout the United States. I sourced my data from the U.S. Geological Survey <a href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html">here</a>. I’m a big fan of USGS datasets because they are usually relatively clean and provide comprehensive metadata.</p>
+<p>Let’s map the critical habitat ranges of the Florida Bonneted bat and many other species of concern on a basemap of the United States.</p>
 <figure>
-<img src="bat.png" alt="The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats." /><figcaption aria-hidden="true">The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.</figcaption>
+<img src="images/bat.png" alt="The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats." /><figcaption aria-hidden="true">The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.</figcaption>
 </figure>
-<p>Let’s map the critical habitat ranges of this bat and many other species of concern on a basemap of the United States.</p>
-<h3 id="python-and-jupyter-notebooks">Python and Jupyter Notebooks</h3>
-<p>Transitioning from <code>R</code> in <code>Rstudio</code>to <code>Python</code> in <code>Jupyter Notebook</code> can be difficult, as is learning any new language. We have to say goodbye to the exceptionally user-friendly RStudio interface with its git GUI, visible environment, and easily accessible console and terminal windows. Let’s dive into the objected oriented language of Python through Jupyter Notebook and the mysterious terminal. Personally, I struggled every step of this journey with lots of syntax errors, merge conflicts, and endless Google searching. I hope this post will help hold your hand as we make this change together.</p>
-<p>First things first, if you’re using Jupyter Notebooks to code in Python, you’re gonna have to install Anaconda Navigator and install <code>conda</code> into your home directory. As a PC user, installing <code>conda</code> really threw me and my laptop for a loop. But what better way to learn to use the terminal besides struggling to install stuff you desperately need for grad school? Errors and trouble-shooting is what makes us stronger data scientists, even if we don’t want to recognize that as we fight the urge to throw our computer out the window.</p>
+<h2 id="getting-started-with-python-and-jupyter-notebooks">Getting started with Python and Jupyter Notebooks</h2>
+<p>Transitioning from <code>R</code> in <code>Rstudio</code>to <code>Python</code> in <code>Jupyter Notebook</code> can be difficult, as is learning any new language. We have to say goodbye to the exceptionally user-friendly RStudio interface with its git graphical user interface, visible environment, and easily accessible console and terminal windows. Let’s dive into the objected oriented language of Python through Jupyter Notebook and the mysterious terminal. Personally, I struggled every step of this journey with lots of syntax errors, merge conflicts, and endless Google searching. I hope this post will help hold your hand as we make this change together.</p>
+<p>First things first, if you’re using Jupyter Notebooks to code in Python, you’re gonna have to install Python and Anaconda Navigator and install <code>Anaconda</code> into your home directory. (Note: there are plenty of other IDE’s for python, such as <a href="https://code.visualstudio.com/">visual studio code</a>, which I adopted later in my data science career).</p>
+<p>As a PC user, installing <code>Anaconda</code> really threw me and my laptop for a loop. But what better way to learn to use the terminal besides struggling to install stuff you desperately need for graduate school? Errors and trouble-shooting is what makes us stronger data scientists, even if we don’t want to recognize that as we fight the urge to throw our computer out the window. Click <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html">here</a> for a great resource to walk you through installing <code>Anaconda</code>. Either <code>Anaconda</code> or <code>Miniconda</code> will work fine.</p>
 <p>After installing Anaconda, start your journey plotting shapefiles in <code>Python</code> by opening up Jupyter Notebooks. I like to do this from the Anaconda Prompt (the Aanconda terminal), because I’m working on a PC and it’s tricky to get my normal command line or Bash to recognize that <code>conda</code> is indeed on my computer. My favorite flow is as follows:</p>
 <ul>
 <li>From the start menu, open a terminal through Anaconda Navigator that’s called “Anaconda Prompt”.<br />
@@ -1510,7 +1520,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </li>
 <li>Now that I am in my desired environment, I am going to navigate to the folder in my terminal in which I want to open and save my Jupyter Notebook. That command is <code>cd file/path/to/folder</code>. You know this worked if your terminal working directory now has that file path tacked onto the end. This file path step is <strong>not required</strong> if you want to include <strong>relative file paths</strong> to import data and save your notebook. Personally, I do not recommend using relative file paths if you can avoid it in any interface.</li>
 </ul>
-<p><img src="activate_cd.png" /></p>
+<p><img src="images/activate_cd.png" /></p>
 <ul>
 <li>Download your spatial data files to this folder to make your life easier in 2 minutes when you import your spatial data in Jupyter Notebook.<br />
 </li>
@@ -1518,11 +1528,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </li>
 <li>In the upper right side, open a new notebook.</li>
 </ul>
-<p><img src="jupyter.png" /></p>
+<p><img src="images/jupyter.png" /></p>
 <ul>
 <li>Note: the Anaconda terminal window you used to open this notebook should not be closed during your work session. It must remain open to keep your kernel connected and give you the ability to save! If you need to run any terminal commands after you have already opened this notebook, such as if you need to download a package or check a file location, just open up another terminal window and enter the geo_env environment to do so.</li>
 </ul>
-<h3 id="import-some-packages-modules">Import Some Packages (<code>modules</code>)</h3>
+<h2 id="importing-packages-modules">Importing Packages (<code>modules</code>)</h2>
 <p>For plotting shapefiles, you’ll want to import the following packages:</p>
 <p>import <code>pandas</code> as pd<br />
 import <code>numpy</code> as np<br />
@@ -1534,7 +1544,7 @@ import <code>contextily</code> as ctx</p>
 <p>Data source: US Fish and Wildlife <a href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html" class="uri">https://ecos.fws.gov/ecp/report/table/critical-habitat.html</a><br />
 - contains .shp, .dbf, and .shx polygon files that relate to critical species habiata in the United States - I chose the first zip file you see on this site<br />
 - good metadata available</p>
-<h3 id="importing-data">Importing Data</h3>
+<h2 id="importing-data">Importing Data</h2>
 <p>Let’s import your data! Now is the time you’re gonna be thanking yourself for placing your jupyter notebook in the same folder as your data. We will use <code>geopandas</code> to read in the <strong>shapefile</strong> with your polygons or lines or points of choice (you will not find a combination of these shapes in the same shapefile, because that’s just how the world works). You might take a look at all the data files and feel a little overwhelmed at the choices due to the way that shapefiles and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to import a <strong>shapefile</strong> of polygons, so that <strong>.shp</strong> file is the only one you need to read in:</p>
 <p>Import the data:<br />
 <code>gdf = gpd.read_file('CRITHAB_POLY.shp')</code><br />
@@ -1543,9 +1553,9 @@ Take a look at the first rows:<br />
 Ask Python how many rows and columns are in this dataframe:<br />
 <code>print(gdf.shape)</code></p>
 <p>My only complaint with the <code>head()</code> function is that it returns the first rows in a plain text format:</p>
-<p><img src="text.png" /></p>
+<p><img src="images/text.png" /></p>
 <p>If you want to see the first and last few rows of the dataframe in a format that looks more familiar (like how R studio presents dataframes), try just typing the name of the data frame, <code>gdf</code>:</p>
-<p><img src="gdf.png" /></p>
+<p><img src="images/gdf.png" /></p>
 <p>This shapefile I read in contains polygons that designate the critical habitat ranges for many endangered and threatened species in the United States. I chose to name it <code>gdf</code> for <em>geodataframe</em>. While you can name objects whatever you want, it is helpful to you and to those reading your code to name things meaningfully. Expect that you will be modifying this dataframe as you go through this mapping process (subsetting columns, filtering for certain factor levels, etc.) so you will likely be tacking on more words to <code>gdf</code> to tell these modified versions apart. Start naming things simply and clearly, and get more specific as you process your data.</p>
 <p>If your dataset has a lot of columns and you want to call them, you can use:</p>
 <p><code>print(gdf.columns)</code></p>
@@ -1553,11 +1563,11 @@ Ask Python how many rows and columns are in this dataframe:<br />
 <code>status_levels = gdf.listing_st.unique()</code><br />
 <code>status_levels</code></p>
 <p>Using U.S. Fish and Wildlife as an example, now that you know the factor levels of a categorical variable, you can subset for only <em>“endangered”</em> species, only <em>“threatened”</em> species, etc.</p>
-<p><img src="subset_end.png" /></p>
+<p><img src="images/subset_end.png" /></p>
 <p>Feel free to play around with your dataset a bit. Google some of the species, subset the columns, search for some NA values, or take the average of a numerical column. After you make a structural change, its a good habit to check the status or dimensions of your dataset.</p>
-<p>Check the number of rows and columns: <img src="shape.png" /></p>
-<p>Print the latitude and longitude pairs that make up a particular polygon: <img src="lat_long.png" /></p>
-<h3 id="coordinate-reference-system">Coordinate Reference System</h3>
+<p>Check the number of rows and columns: <img src="images/shape.png" /></p>
+<p>Print the latitude and longitude pairs that make up a particular polygon: <img src="images/lat_long.png" /></p>
+<h2 id="setting-the-coordinate-reference-system">Setting the Coordinate Reference System</h2>
 <p>As a last step before you plot, you have to make sure you set the data to the desired coordinate reference system (CRS). This is pretty standard for all kinds of spatial data, since your data might come with an unfamiliar CRS or have no CRS at all if you are making a mask, a raster, or executing similar geospatial processes. For information about coordinate reference systems, check out this guide:<br />
 <a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf" class="uri">https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf</a></p>
 <p>But you technically do not need to understand many details about datums and CRS’s for mapping shapefiles, so just for now you should know 3 common CRS’s:</p>
@@ -1575,11 +1585,11 @@ and<br />
 Check that the CRS is what you want:<br />
 <code>print(gdf_3857.crs)</code></p>
 <p>This code may take a minute to run. In Jupyter Notebook, you know that code chunk is still chuggin’ away if you see an asterisk in brackets to the left of the code chunk:</p>
-<p><img src="set_crs.png" /></p>
-<h3 id="plotting-shapefiles">Plotting Shapefiles</h3>
+<p><img src="images/set_crs.png" /></p>
+<h2 id="plotting-shapefiles-on-a-basemap">Plotting Shapefiles on a Basemap</h2>
 <p>Use the plot() function from matplotlib and make the fill depend on the species name: <code>gdf_3857.plot(column='comname',</code><br />
 <code>figsize=(20,20))</code></p>
-<p><img src="crit_hab_no_basemap.png" /></p>
+<p><img src="images/crit_hab_no_basemap.png" /></p>
 <p>Note that you did not have to call the package to use the function plot(). Instead, you can name the dataframe which you want to plot, which is <code>gdf_3857</code> in this case, <em>then</em> specify the function plot() and add arguments and supplemental plot structure changes as you go.</p>
 <p>The fig size can be whatever you want. 10-20 is usually good enough. You have finer control over the degree of zoom of the map with the arguments xlim() and ylim(), anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:</p>
 <p><code>crit_hab_polys = gdf_3857.plot(column='comname',</code><br />
@@ -1589,43 +1599,40 @@ Set the axis limits to zoom in on just the lower 48 states, rather than viewing 
 <code>plt.ylim([2350000,6350000])</code><br />
 Since the basemap within the contextily package is of the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States to best understand our data. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States are north of the equator (which is 0 in the North and South directions), so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted. <code>plt.xlim([-14000000,-6000000])</code> Notice that these values are negative. Along similar thinking to how we decided on our y limitation, these negative values are the result of how coordinate systems are designed. Consider the prime meridian (which lies at 0 degrees in the East and West directions) with West being negative. Since the United States are to the West of the prime meridian, we know that the x-range for our zoom should be negative. As for the magnitude, I just palyed around with the numbers until I got the East-West orientation that encompassed the United States. Use the <code>show()</code> function in <code>matplotlib</code> to tell Python to show the most recently created graph:<br />
 <code>plt.show()</code></p>
-<p><img src="plot_code.png" /> <img src="crit_hab_with_basemap.png" /></p>
-<p>You did it! Welcome to the wonderful world of geospatial data in Python. Now you can start answering questions like:<br />
-- “Which endangered species live near me?”<br />
-- “Which state or biome houses the most critical habitat for these species?”</p>
-<h4 id="sources-supplemental-information-on-listed-species-in-the-united-states">Sources &amp; supplemental information on listed species in the United States:</h4>
+<p><img src="images/plot_code.png" /> <img src="images/crit_hab_with_basemap.png" /></p>
+<p>You did it! Welcome to the wonderful world of geospatial data in Python.</p>
+<h2 id="future-analysis">Future Analysis</h2>
+<p>With this basic skill mastered, you can now dive deeper into this data to determine if variables are correlated across space. Considering state borders, you might ask <strong>which endangered species occupy ciritical habitat in your home state?</strong> and investigate the different wildlife protection policies across the United States. Alternatively, you could approach this data from an environmental perspective and ask <strong>which natural biomes contain the most critical habitat for these endangered species? Are these habitats degrading at a faster rate than those that contain less critical habitat?</strong></p>
+<h2 id="a-local-california-use-case-example">A Local California Use Case Example</h2>
+<p>Living in Santa Barbara, I’m interested in the critical habitat of the <a href="https://caltrout.org/projects/southern-steelhead-coalitions?gclid=Cj0KCQiAnuGNBhCPARIsACbnLzqlPTHi_8N97R1bTOP89j3yll1YHZG7ZSOuw0SDgKX-zrAOmTIzlckaAqfYEALw_wcB">Southern California Steelhead Trout</a>. Steelhead trout is a beautiful fish species that interbreeds with resident rainbow trout in many coastal regions throughout California, which are split into distinct population segments and managed as such.</p>
+<figure>
+<img src="images/steelhead_dps.png" alt="Southern California Steelhead Trout" /><figcaption aria-hidden="true">Southern California Steelhead Trout</figcaption>
+</figure>
+<p>I was lucky enough to conduct field work with these migratory fish in 2020-2021 through the California Department of Fish and Wildlife and the Pacific States Marine Fisheries Committee. I grew to appreciate their vital role in ecosystem processes and the culture of indigenous people who have interacted with them for centuries. This fish is currently in the process of being listed as a California endangered species starting in December of 2021, which will hopefully expand critical habitat range, increase monitoring of the populations, and help enforce illegal fishing and pollution regulation in their habitat. We can check out the steelhead’s critical habitat range before and after 2021 to see how it expands over time and space.</p>
+<figure>
+<img src="images/steelhead_crayfish.png" alt="Southern California Steelhead Trout with an invasive crayfish in a Southern California freshwater stream" /><figcaption aria-hidden="true">Southern California Steelhead Trout with an invasive crayfish in a Southern California freshwater stream</figcaption>
+</figure>
+<h3 id="sources-supplemental-information-on-listed-endangered-species-in-the-united-states">Sources &amp; supplemental information on listed endangered species in the United States:</h3>
 <ol type="1">
-<li><strong>Florida bonneted bat photo</strong><br />
+<li><a href="https://www.joelsartore.com/esa002-00161/n">Florida bonneted bat photo</a><br />
+</li>
+<li><a href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html">U.S. Fish and Wildlife data</a><br />
+</li>
+<li><a href="https://ecos.fws.gov/ecp/">U.S. Fish and Wildlife’s Environmental Conservation Online system</a><br />
+</li>
+<li><a href="https://ecos.fws.gov/ecp/report/species-listings-by-tax-group?statusCategory=Listed&amp;groupName=All%20Animals">U.S. Fish and Wildlife listed wildlife species</a><br />
 </li>
 </ol>
 <ul>
-<li><a href="https://www.joelsartore.com/esa002-00161/n" class="uri">https://www.joelsartore.com/esa002-00161/n</a><br />
+<li>this includes links for data on each each species and a map of their habitat<br />
 </li>
 </ul>
-<ol start="2" type="1">
-<li><strong>U.S. Fish and Wildlife data</strong><br />
-</li>
+<ol start="5" type="1">
+<li><a href="https://caltrout.org/projects/southern-steelhead-coalitions?gclid=Cj0KCQiAnuGNBhCPARIsACbnLzqlPTHi_8N97R1bTOP89j3yll1YHZG7ZSOuw0SDgKX-zrAOmTIzlckaAqfYEALw_wcB">Southern California Steelhead Trout</a></li>
+<li><a href="https://fsp.sdsu.edu/wp-content/uploads/2012/02/Southern_California_Steelhead_Recovery_Plan_Summary_Corrected_012712.pdf">Southern California Steelhead Trout distinct population segement map</a></li>
+<li><a href="https://www.istockphoto.com/photo/southern-california-steelhead-gm982288486-266730619">Southern California Steelhead Trout</a></li>
+<li><a href="https://ourcodeworld.com/articles/read/635/why-should-i-learn-python-programming-language">Python logo</a></li>
 </ol>
-<ul>
-<li><a href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html" class="uri">https://ecos.fws.gov/ecp/report/table/critical-habitat.html</a><br />
-</li>
-</ul>
-<ol start="3" type="1">
-<li><strong>U.S. Fish and Wildlife’s Environmental Conservation Online system</strong><br />
-</li>
-</ol>
-<ul>
-<li><a href="https://ecos.fws.gov/ecp/" class="uri">https://ecos.fws.gov/ecp/</a></li>
-</ul>
-<ol start="4" type="1">
-<li><strong>U.S. Fish and Wildlife listed wildlife species</strong><br />
-</li>
-</ol>
-<ul>
-<li><a href="https://ecos.fws.gov/ecp/report/species-listings-by-tax-group?statusCategory=Listed&amp;groupName=All%20Animals" class="uri">https://ecos.fws.gov/ecp/report/species-listings-by-tax-group?statusCategory=Listed&amp;groupName=All%20Animals</a><br />
-</li>
-<li>this includes links for data on each each species and a map of their habitat</li>
-</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
