@@ -26,9 +26,7 @@ library(janitor)
 
 ## Tidy data
 
-Whenever we start our journey transforming a dataset into something we can interpret and visualize, we 
-
-This lobster data set is in **Tidy** format, as is most of the data sets we work with. **Tidy** data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R's vectorized functions flourish with rows and columns in Tidy format.
+Whenever we start our journey transforming a dataset into an organized format we can interpret and visualize, it helps to to have the data in **Tidy** format. **Tidy** data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R's vectorized functions flourish with rows and columns in Tidy format.
 
 **Tidy** data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster data set, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succinct title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.
 
@@ -38,7 +36,7 @@ This lobster data set is in **Tidy** format, as is most of the data sets we work
 
 Your data isn't in **Tidy** format? That's alright! Check out the `tidyr::pivot_longer()` and `tidyr::pivot_wider()` functions to help you help R help you. In the example below, we have a tribble dataset that is not in **Tidy** format. We know this because there are multiple columns `(A:C)` that represent different individuals or observations of the same variable (like dog food brands). We can use `pivot_longer()` to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting **tidy** data may seem more complex at first galnce, it is easier to convert to a graph and structurally is more organized from a data science perspective.
 
-To demonstrate some simple data tidying, lets make a tribble (which is similar to a dataframe) and manipulate it using the pivot_longer() function. In this tibble, we are 
+To demonstrate some simple data tidying, lets make a tribble (which is similar to a dataframe) and manipulate it using the `pivot_longer()` function. In this example tibble, we are comparing the food preferences of 2 dogs. The dog food types are labeled as A, B, and C.
 
 ```{r, echo = TRUE}
 df <- tribble(
@@ -48,7 +46,6 @@ df <- tribble(
 )
 
 df
-
 ```
 
 This dataframe is not in tidy format, because the variable **ranking** is dispersed between multiple columns. We want a single variable in each column, so lets combine those columns and make it *tidier*:
@@ -61,11 +58,9 @@ df_long <- df %>%
 df_long
 ```
 
-## `case_when()` and Lobsters
+Wonderful, now let's apply these **Tidy** tools to a substantial dataset!
 
-Use this function to help tidy your data and prepare it for plotting. `case_when()` bins continuous data into manually defined categories and add it to your data set in the form of new column.
-
-`case_when()` is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this dataframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.
+## `case_when()` and Lobster Data
 
 ### First thing first, import your data
 
@@ -80,7 +75,9 @@ lobsters <- read_csv(file.path("data","Lobster_Abundance_All_Years_20210412.csv"
 head(lobsters)
 ```
 
-This data is ground-breaking! The world needs to see this and understand its implications. In order to plot this fasciating data in a meaningful way, we want to efficiently categorize our lobsters by legality status and color code their relative abundance in our visualization. Considering that the legal minimum size for a lobster is 79.76 (units), this is the threshold we will pass onto R to do the heavy lifting for us.
+Use the `case_when()` function to tidy this lobster data and prepare it for visualization. The `case_when()` function bins continuous data into manually defined categories and adds this categorization it to your data set in the form of new column. It doesn't change the values in the cells that already exist, and it does not delete any existing data.
+
+Lobsters must be a minimum size in order to harvest, and we can use `case_when()` to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster (each row) in this dataframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.
 
 ```{r, echo = TRUE}
 
@@ -93,7 +90,9 @@ lobsters_legality <- lobsters %>%
 
 ```
 
-Use ggplot() to make a bar graph that color codes the lobster abundance by legality status. We communicate that we want R to color the graph by this variable by passing the argument `color = legal` within aes(). Manually setting colors is set outside of aes(), but here it is an argument because it is determined by a variable.
+This data is ground-breaking! The world needs to see this and understand its implications. In order to plot this fascinating data in a meaningful way, we want to efficiently categorize our lobsters by legality status and color code their relative abundance in our visualization. Considering that the legal minimum size for a lobster is 79.76 (units), this is the threshold we will pass onto R to do the heavy lifting for us.
+
+Use `ggplot()` to make a bar graph that color codes the lobster abundance by legality status. We communicate that we want R to color the graph by this variable by passing the argument `color = legal` within `aes()`. Manually setting colors is set outside of `aes()`, but here it is an argument because it is determined by a variable.
 
 ```{r}
 proportion_legal_plot <- ggplot(lobsters_legality, aes(x = site, y = site_legal_count)) +
@@ -106,7 +105,6 @@ proportion_legal_plot <- ggplot(lobsters_legality, aes(x = site, y = site_legal_
 
 proportion_legal_plot
 ```
-
 
 Distill is a publication format for scientific and technical writing, native to the web.
 Learn more about using Distill at <https://rstudio.github.io/distill>.

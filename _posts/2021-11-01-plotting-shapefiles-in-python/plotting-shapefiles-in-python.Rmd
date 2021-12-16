@@ -178,7 +178,7 @@ With this basic skill mastered, you can now dive deeper into this data to determ
 
 Living in Santa Barbara, I'm interested in the critical habitat of the [Southern California Steelhead Trout](https://caltrout.org/projects/southern-steelhead-coalitions?gclid=Cj0KCQiAnuGNBhCPARIsACbnLzqlPTHi_8N97R1bTOP89j3yll1YHZG7ZSOuw0SDgKX-zrAOmTIzlckaAqfYEALw_wcB). Steelhead trout is a beautiful fish species that interbreeds with resident rainbow trout in many coastal regions throughout California, which are split into distinct population segments and managed as such. 
 
-![Southern California Steelhead Trout](images/steelhead_dps.png)
+![Southern California Steelhead Trout distinct population segment map with watershed landmarks](images/steelhead_dps.png)
 
 I was lucky enough to conduct field work with these migratory fish in 2020-2021 through the California Department of Fish and Wildlife and the Pacific States Marine Fisheries Committee. I grew to appreciate their vital role in ecosystem processes and the culture of indigenous people who have interacted with them for centuries. This fish is currently in the process of being listed as a California endangered species starting in December of 2021, which will hopefully expand critical habitat range, increase monitoring of the populations, and help enforce illegal fishing and pollution regulation in their habitat. We can check out the steelhead's critical habitat range before and after 2021 to see how it expands over time and space.
 
