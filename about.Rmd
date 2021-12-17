@@ -10,4 +10,38 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![A hike in the Ko'olau Mountains in Oahu, Hawaii (2019)](about_pics/hike_smile.jpg)
 
-My path to become a data scientist did not begin sitting in front of a computer, hacking away in R and Python day in and day out. My journey started as a raccoon trapper, a lizard hunter, an invasive species field technician, and a fisheries technician. I started out collecting data, learned to clean data and enter it into databases, and finally found my passion in gleaning meaningful observations from ecological and environmental data. I grew to love R, Python, and SQL slowly over time. Most importantly, I did not make this journey alone. I found mentors in academic scholars, field crew leaders, and data scientists from conservation organizations that saw my potential and provided the tools to help foster a love for data within me.
+
+
+My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an invasive species specialist, and a fisheries technician. I started out collecting data on mountaintops and underwater inside aquaculture nets, I learned to clean data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I grew to love R, Python, and SQL slowly over time, but now I'm too deep to ever turn back. However, I didn't make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that saw my potential and provided the tools to help foster a love for data within me.
+
+### Undergraduate Research at UC Santa Barbara
+
+I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in Dr. Doug McCauley's lab in the department of Ecology, Evolution, and Marine Biology. I worked closely with PhD candidate Molly Hardesty-Moore on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques for several months for each collar. While the study was primarily interested in luring raccoons into traps overnight, sometimes we had a surprise waiting for us:
+
+![native red fox (*Vulpes vulpes*) Santa Barbara, CA](about_pics/cox_cage.heic)
+
+### The Good Ol' Lizard Days
+
+My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I was working for the Herpetology Department at the San Diego Natural History Museum (SDNHM), and I was sent out into the field before I even walked at graduation. I lived in the hot, dry desert Monday through Friday, often working 50 hour weeks, and then returned to beautiful Santa Barbara on the weekends to admire all the plants because they were simply something different than the creosote bushes I stared at all week long.
+
+![]()
+
+Our team's mission was to systematically survey for flat-tailed horned lizards to determine its range throughout the landscape. This survey was SDNHM's attempt to prove a that this land is critical habitat for a threatened species and in turn prevent geothermal mining in the region. We did indeed find plenty of lizards, side winders, nighthawks, miscellaneous bones, insects, and kangaroo rat tracks, and badger holes. The sunrises and sunsets in the desert really enhance the beauty and solitude of the desert landscape, and I wouldn't trade those field days for anything. I still think about those flat-tailed horned lizards fairly often and wonder how they're holding up.
+
+### Hawaii & the Oahu Invasive Species Committee
+
+My second seasonal field job was a field technician and data specialist position at the Oahu Invasive Species Committee. I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive species in the lush forests of the Ko'olau mountains on the east side of the island. I quickly fell in love with the extreme ridgelines of the Ko`olau mountains, and I grew tough from the grueling difficulty of the survey field work itself. Despite the difficulty of ascending the elevation while bushwhacking through tangles of invasive specie like strawberry guava and lantana, I loved my time serving the Oahu Invasive Species Committee.
+
+![](about_pics/miconia.JPG)
+
+For special operations each month, we also surveyed for plant species in the high elevation forests and even n select regions of the other mountain range of the west side; the Waianae mountains.
+
+![](about_pics/west_side.HEIC)
+
+My coworkers taught me about the native flora and fauna, the history of the island's people and geology, and we became a family over time as we suffered through endless days bushwhacking and feeding mosquitos.
+
+![Our field crew for the day hiking in the lowland Ko`olau forest to reach a transect destination deep in the uluhe](about_pics/oahu_survey.jpg)
+
+
+
+=
