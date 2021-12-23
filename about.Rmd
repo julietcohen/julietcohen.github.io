@@ -14,13 +14,11 @@ My path to become a data scientist did not begin sitting in front of a computer.
 
 ### Undergraduate Research at UC Santa Barbara
 
-I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in Dr. Doug McCauley's lab in the department of Ecology, Evolution, and Marine Biology. I worked closely with PhD candidate Molly Hardesty-Moore on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques for several months for each collar. While the study was primarily interested in luring raccoons into traps overnight, sometimes we had a surprise waiting for us:
-
-![native red fox (*Vulpes vulpes*) Santa Barbara, CA](about_pics/cox_cage.heic)
+I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in Dr. Doug McCauley's lab in the department of Ecology, Evolution, and Marine Biology. I worked closely with PhD candidate Molly Hardesty-Moore on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques for several months for each collar. While the study was primarily interested in luring raccoons into traps overnight, we often caught other small carnivores and saw them peruse the landscape through camera traps trhoughout Santa Barbara County.
 
 ![native striped skunk caught on one of my camera traps](about_pics/skunk.jpg)
 
-### The Good Ol' Lizard Days
+### The Lizard Days
 
 After many months of applying to various ecological field jobs, I was finally deemed worthy enough to learn the art of herpetology. My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I committed to a three month season working with a small crew composed of three other female field technicians for the Herpetology Department at the San Diego Natural History Museum (SDNHM), and I was sent out into the field before I even walked at graduation in 2019. I surveyed through the hot, arid desert Monday through Friday, often working 50-hour weeks, and then returned to beautiful Santa Barbara on the weekends to reunite with my friends and pet gecko. These two-day vacations were often filled with indulging in the luxuries of civilization such as washing machines. I would take extensive walks along the bluffs just to admire all the diverse plant communinties because they were simply something different than the sea of sparse creosote bushes that surrounded me all week long.
 
@@ -30,7 +28,7 @@ Our team's mission was to systematically survey for flat-tailed horned lizards t
 
 ![The flat-tiled horned lizard crew admiring the first flat-tailed horned lized spotted that season sunning next to a creosote bush.](about_pics/fthl_group.JPG)
 
-### Hawaii & the Oahu Invasive Species Committee
+### Invasive Species in Hawaii
 
 My second seasonal field job was a field technician and data specialist position at the Oahu Invasive Species Committee. I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive species in the lush forests of the Ko'olau mountains on the east side of the island. I quickly fell in love with the extreme ridgelines of the Ko'olau mountains, and I grew tough from the grueling difficulty of the survey field work itself. Despite the difficulty of ascending the elevation while bushwhacking through tangles of invasive specie like strawberry guava and lantana, I loved my time serving the Oahu Invasive Species Committee.
 
@@ -41,7 +39,7 @@ For special operations each month, we also surveyed for plant species in the hig
 ![On an annual survey on the West side of the island, looking for *Chromolaeana odorata* ](about_pics/fence.jpg)
 ![]
 
-My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna on Oahu, the history of the island's people and geology, and how Hawaii is adapting to that change. We became a family as we suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and laugh-screaming when Kahekili or Josh, our helicopter pilots, took a dive bombs on aerial surveys just to see how close they could scrape the top of the invasive albezia trees that cover Manoa Valley. We talked politics and roasted each other on our radios while on surveys, smelled bad all the time, often farted the in the work trucks, and never missed an opportunity to chase each other around the baseyard. I miss the OISC crew more than any other part of my time in Hawaii.
+My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna on Oahu, the history of the island's people and geology, and how Hawaii's ecology is currently changing. We suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and involuntarily screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape the bird along the top of the invasive albezia trees that cover Manoa Valley. We talked politics and roasted each other on our radios while on surveys, smelled bad all the time, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
 
 ![My coworker and I admiring a waterfall near Waimanalo, Oahu in our *Miconia calvescens* survey uniforms](about_pics/waterall_jump.jpg)
 
