@@ -10,9 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![A hike in the Ko'olau Mountains in Oahu, Hawaii (2019)](about_pics/hike_smile.jpg)
 
-
-
-My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an invasive species specialist, and a fisheries technician. I started out collecting data on mountaintops and underwater inside aquaculture nets, I learned to clean data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I grew to love R, Python, and SQL slowly over time, but now I'm too deep to ever turn back. However, I didn't make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that saw my potential and provided the tools to help foster a love for data within me.
+My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an invasive species specialist, and a fisheries technician. I started out collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean field data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I grew to love R, Python, and SQL slowly over time. However, I didn't make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that provided the tools to help foster a love for data within me.
 
 ### Undergraduate Research at UC Santa Barbara
 
@@ -20,28 +18,35 @@ I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this 
 
 ![native red fox (*Vulpes vulpes*) Santa Barbara, CA](about_pics/cox_cage.heic)
 
+![native striped skunk caught on one of my camera traps](about_pics/skunk.jpg)
+
 ### The Good Ol' Lizard Days
 
-My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I was working for the Herpetology Department at the San Diego Natural History Museum (SDNHM), and I was sent out into the field before I even walked at graduation. I lived in the hot, dry desert Monday through Friday, often working 50 hour weeks, and then returned to beautiful Santa Barbara on the weekends to admire all the plants because they were simply something different than the creosote bushes I stared at all week long.
+After many months of applying to various ecological field jobs, I was finally deemed worthy enough to learn the art of herpetology. My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I committed to a three month season working with a small crew composed of three other female field technicians for the Herpetology Department at the San Diego Natural History Museum (SDNHM), and I was sent out into the field before I even walked at graduation in 2019. I surveyed through the hot, arid desert Monday through Friday, often working 50-hour weeks, and then returned to beautiful Santa Barbara on the weekends to reunite with my friends and pet gecko. These two-day vacations were often filled with indulging in the luxuries of civilization such as washing machines. I would take extensive walks along the bluffs just to admire all the diverse plant communinties because they were simply something different than the sea of sparse creosote bushes that surrounded me all week long.
 
-![]()
+![The first flat-tailed horned lizard we spotted during day 1 of survey season](about_pics/fthl.JPG)
 
 Our team's mission was to systematically survey for flat-tailed horned lizards to determine its range throughout the landscape. This survey was SDNHM's attempt to prove a that this land is critical habitat for a threatened species and in turn prevent geothermal mining in the region. We did indeed find plenty of lizards, side winders, nighthawks, miscellaneous bones, insects, and kangaroo rat tracks, and badger holes. The sunrises and sunsets in the desert really enhance the beauty and solitude of the desert landscape, and I wouldn't trade those field days for anything. I still think about those flat-tailed horned lizards fairly often and wonder how they're holding up.
 
+![The flat-tiled horned lizard crew admiring the first flat-tailed horned lized spotted that season sunning next to a creosote bush.](about_pics/fthl_group.JPG)
+
 ### Hawaii & the Oahu Invasive Species Committee
 
-My second seasonal field job was a field technician and data specialist position at the Oahu Invasive Species Committee. I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive species in the lush forests of the Ko'olau mountains on the east side of the island. I quickly fell in love with the extreme ridgelines of the Ko`olau mountains, and I grew tough from the grueling difficulty of the survey field work itself. Despite the difficulty of ascending the elevation while bushwhacking through tangles of invasive specie like strawberry guava and lantana, I loved my time serving the Oahu Invasive Species Committee.
+My second seasonal field job was a field technician and data specialist position at the Oahu Invasive Species Committee. I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive species in the lush forests of the Ko'olau mountains on the east side of the island. I quickly fell in love with the extreme ridgelines of the Ko'olau mountains, and I grew tough from the grueling difficulty of the survey field work itself. Despite the difficulty of ascending the elevation while bushwhacking through tangles of invasive specie like strawberry guava and lantana, I loved my time serving the Oahu Invasive Species Committee.
 
 ![](about_pics/miconia.JPG)
 
 For special operations each month, we also surveyed for plant species in the high elevation forests and even n select regions of the other mountain range of the west side; the Waianae mountains.
 
-![](about_pics/west_side.HEIC)
+![On an annual survey on the West side of the island, looking for *Chromolaeana odorata* ](about_pics/fence.jpg)
+![]
 
-My coworkers taught me about the native flora and fauna, the history of the island's people and geology, and we became a family over time as we suffered through endless days bushwhacking and feeding mosquitos.
+My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna on Oahu, the history of the island's people and geology, and how Hawaii is adapting to that change. We became a family as we suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and laugh-screaming when Kahekili or Josh, our helicopter pilots, took a dive bombs on aerial surveys just to see how close they could scrape the top of the invasive albezia trees that cover Manoa Valley. We talked politics and roasted each other on our radios while on surveys, smelled bad all the time, often farted the in the work trucks, and never missed an opportunity to chase each other around the baseyard. I miss the OISC crew more than any other part of my time in Hawaii.
 
-![Our field crew for the day hiking in the lowland Ko`olau forest to reach a transect destination deep in the uluhe](about_pics/oahu_survey.jpg)
+![My coworker and I admiring a waterfall near Waimanalo, Oahu in our *Miconia calvescens* survey uniforms](about_pics/waterall_jump.jpg)
 
-
+![Our field crew for the day hiking in the lowland Ko'olau forest to reach a transect destination deep in the uluhe](about_pics/oahu_survey.jpg)
+![Ascending a side of a mountian ridge in high-elevation native forest in the Ko'olau Mountains, surveying for native o`hia trees infected with an invasive fungal pathogen.](about_pics/first_heli.jpg)
+![In these moments I curesed whoever brought mosquitos to the Hawaiian Islands from the mainland.](about_pics/mosquito_survey.jpg)
 
 =

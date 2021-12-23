@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: From Field Technician to Data Scientist: My career path through the world of conservation biology</title>
@@ -455,7 +456,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2344,7 +2348,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2403,25 +2407,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <figure>
 <img src="about_pics/hike_smile.jpg" alt="A hike in the Ko’olau Mountains in Oahu, Hawaii (2019)" /><figcaption aria-hidden="true">A hike in the Ko’olau Mountains in Oahu, Hawaii (2019)</figcaption>
 </figure>
-<p>My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an invasive species specialist, and a fisheries technician. I started out collecting data on mountaintops and underwater inside aquaculture nets, I learned to clean data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I grew to love R, Python, and SQL slowly over time, but now I’m too deep to ever turn back. However, I didn’t make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that saw my potential and provided the tools to help foster a love for data within me.</p>
+<p>My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an invasive species specialist, and a fisheries technician. I started out collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean field data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I grew to love R, Python, and SQL slowly over time. However, I didn’t make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that provided the tools to help foster a love for data within me.</p>
 <h3 id="undergraduate-research-at-uc-santa-barbara">Undergraduate Research at UC Santa Barbara</h3>
 <p>I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in Dr. Doug McCauley’s lab in the department of Ecology, Evolution, and Marine Biology. I worked closely with PhD candidate Molly Hardesty-Moore on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques for several months for each collar. While the study was primarily interested in luring raccoons into traps overnight, sometimes we had a surprise waiting for us:</p>
 <figure>
 <img src="about_pics/cox_cage.heic" alt="native red fox (Vulpes vulpes) Santa Barbara, CA" /><figcaption aria-hidden="true">native red fox (<em>Vulpes vulpes</em>) Santa Barbara, CA</figcaption>
 </figure>
+<figure>
+<img src="about_pics/skunk.JPG" alt="native striped skunk caught on one of my camera traps" /><figcaption aria-hidden="true">native striped skunk caught on one of my camera traps</figcaption>
+</figure>
 <h3 id="the-good-ol-lizard-days">The Good Ol’ Lizard Days</h3>
-<p>My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I was working for the Herpetology Department at the San Diego Natural History Museum (SDNHM), and I was sent out into the field before I even walked at graduation. I lived in the hot, dry desert Monday through Friday, often working 50 hour weeks, and then returned to beautiful Santa Barbara on the weekends to admire all the plants because they were simply something different than the creosote bushes I stared at all week long.</p>
-<p><img src="" /></p>
+<p>After many months of applying to various ecological field jobs, I was finally deemed worthy enough to learn the art of herpetology. My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I committed to a three month season working with a small crew composed of three other female field technicians for the Herpetology Department at the San Diego Natural History Museum (SDNHM), and I was sent out into the field before I even walked at graduation in 2019. I surveyed through the hot, arid desert Monday through Friday, often working 50-hour weeks, and then returned to beautiful Santa Barbara on the weekends to reunite with my friends and pet gecko. These two-day vacations were often filled with indulging in the luxuries of civilization such as washing machines. I would take extensive walks along the bluffs just to admire all the diverse plant communinties because they were simply something different than the sea of sparse creosote bushes that surrounded me all week long.</p>
+<figure>
+<img src="about_pics/fthl.JPG" alt="The first flat-tailed horned lizard we spotted during day 1 of survey season" /><figcaption aria-hidden="true">The first flat-tailed horned lizard we spotted during day 1 of survey season</figcaption>
+</figure>
 <p>Our team’s mission was to systematically survey for flat-tailed horned lizards to determine its range throughout the landscape. This survey was SDNHM’s attempt to prove a that this land is critical habitat for a threatened species and in turn prevent geothermal mining in the region. We did indeed find plenty of lizards, side winders, nighthawks, miscellaneous bones, insects, and kangaroo rat tracks, and badger holes. The sunrises and sunsets in the desert really enhance the beauty and solitude of the desert landscape, and I wouldn’t trade those field days for anything. I still think about those flat-tailed horned lizards fairly often and wonder how they’re holding up.</p>
+<figure>
+<img src="about_pics/fthl_group.JPG" alt="The flat-tiled horned lizard crew admiring the first flat-tailed horned lized spotted that season sunning next to a creosote bush." /><figcaption aria-hidden="true">The flat-tiled horned lizard crew admiring the first flat-tailed horned lized spotted that season sunning next to a creosote bush.</figcaption>
+</figure>
 <h3 id="hawaii-the-oahu-invasive-species-committee">Hawaii &amp; the Oahu Invasive Species Committee</h3>
 <p>My second seasonal field job was a field technician and data specialist position at the Oahu Invasive Species Committee. I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive species in the lush forests of the Ko’olau mountains on the east side of the island. I quickly fell in love with the extreme ridgelines of the Ko`olau mountains, and I grew tough from the grueling difficulty of the survey field work itself. Despite the difficulty of ascending the elevation while bushwhacking through tangles of invasive specie like strawberry guava and lantana, I loved my time serving the Oahu Invasive Species Committee.</p>
 <p><img src="about_pics/miconia.JPG" /></p>
 <p>For special operations each month, we also surveyed for plant species in the high elevation forests and even n select regions of the other mountain range of the west side; the Waianae mountains.</p>
-<p><img src="about_pics/west_side.HEIC" /></p>
-<p>My coworkers taught me about the native flora and fauna, the history of the island’s people and geology, and we became a family over time as we suffered through endless days bushwhacking and feeding mosquitos.</p>
+<p><img src="about_pics/fence.jpg" /></p>
+<p>My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna on Oahu, the history of the island’s people and geology, and how Hawaii is adapting to that change. We became a family as we suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and laugh-screaming when Kahekili or Josh, our helicopter pilots, took a dive bombs on aerial surveys just to see how close they could scrape the top of the invasive albezia trees that cover Manoa Valley. We talked politics and roasted each other on our radios while on surveys, smelled bad all the time, often farted the in the work trucks, and never missed an opportunity to chase each other around the baseyard. I miss the OISC crew more than any other part of my time in Hawaii.</p>
 <figure>
-<img src="about_pics/oahu_survey.jpg" alt="Our field crew for the day hiking in the lowland Ko`olau forest to reach a transect destination deep in the uluhe" /><figcaption aria-hidden="true">Our field crew for the day hiking in the lowland Ko`olau forest to reach a transect destination deep in the uluhe</figcaption>
+<img src="about_pics/waterall_jump.jpg" alt="My coworker and I admiring a waterfall near Waimanalo, Oahu in our Miconia calvescens survey uniforms" /><figcaption aria-hidden="true">My coworker and I admiring a waterfall near Waimanalo, Oahu in our <em>Miconia calvescens</em> survey uniforms</figcaption>
 </figure>
+<p><img src="about_pics/oahu_survey.jpg" alt="Our field crew for the day hiking in the lowland Ko’olau forest to reach a transect destination deep in the uluhe" /> <img src="about_pics/first_heli.jpg" alt="Ascending a side of a mountian ridge in high-elevation native forest in the Ko’olau Mountains, surveying for native o`hia trees infected with an invasive fungal pathogen." /> <img src="about_pics/mosquito_survey.jpg" alt="In these moments I curesed whoever brought mosquitos to the Hawaiian Islands from the mainland." /></p>
 <p>=</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
