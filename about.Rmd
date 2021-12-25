@@ -10,13 +10,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![A hike in the Ko'olau Mountains in Oahu, Hawaii (2019)](about_pics/hike_smile.jpg)
 
-My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an invasive species specialist, and a fisheries technician. I started out collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean field data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I grew to love R, Python, and SQL slowly over time. However, I didn't make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that provided the tools to help foster a love for data within me.
+My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an island invasive species technician, and a fisheries technician. I started out collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean field data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, and SQL slowly over time. However, I didn't make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that provided the tools to help me grow as a scientist.
 
 ### Undergraduate Research at UC Santa Barbara
 
 I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in Dr. Doug McCauley's lab in the department of Ecology, Evolution, and Marine Biology. I worked closely with PhD candidate Molly Hardesty-Moore on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques for several months for each collar. While the study was primarily interested in luring raccoons into traps overnight, we often caught other small carnivores and saw them peruse the landscape through camera traps trhoughout Santa Barbara County.
 
 ![native striped skunk caught on one of my camera traps](about_pics/skunk.jpg)
+I completed two independent research projects in undergrad: one investigating spatial and temporal niche overlap anomg urban mammals, and one looking at water filtration rates among different bivalve species in Costa Rican Mariculture systems.
+
+![Measuring the water displacement of individual bivalves at the end of a field day with my colleague Erin, who was relaxing after a day of snorkeling and data collection for her own research.](about_pics/bivalve_erin.JPG)
+
+![Measuring the turbidity of my various species-specific buckets at regular time intervals.](about_pics/turbidity_measurement.JPG)
 
 ### The Lizard Days
 
@@ -45,6 +50,15 @@ My coworkers were at the root of my fondness towards my experience working at th
 
 ![Our field crew for the day hiking in the lowland Ko'olau forest to reach a transect destination deep in the uluhe](about_pics/oahu_survey.jpg)
 ![Ascending a side of a mountian ridge in high-elevation native forest in the Ko'olau Mountains, surveying for native o`hia trees infected with an invasive fungal pathogen.](about_pics/first_heli.jpg)
+![](about_pics/JC_PK_KKC.jpg)
+
 ![In these moments I curesed whoever brought mosquitos to the Hawaiian Islands from the mainland.](about_pics/mosquito_survey.jpg)
 
-=
+### Southern California Steelhead Trout
+
+
+
+
+
+
+
