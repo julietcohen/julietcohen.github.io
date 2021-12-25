@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,39 +85,40 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
-  <!--radix_placeholder_meta_tags-->
-<title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Tidy data and the case_when() function in R</title>
 
-<meta property="description" itemprop="description" content="A gem within the expansive tidyverse."/>
+  <!--radix_placeholder_meta_tags-->
+<title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python</title>
+
+<meta property="description" itemprop="description" content="Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021."/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2021-08-23"/>
-<meta property="article:created" itemprop="dateCreated" content="2021-08-23"/>
+<meta property="article:published" itemprop="datePublished" content="2021-12-24"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-12-24"/>
 <meta name="article:author" content="Juliet Cohen"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Tidy data and the case_when() function in R"/>
+<meta property="og:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="A gem within the expansive tidyverse."/>
+<meta property="og:description" content="Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Tidy data and the case_when() function in R"/>
-<meta property="twitter:description" content="A gem within the expansive tidyverse."/>
+<meta property="twitter:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python"/>
+<meta property="twitter:description" content="Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["Tidy data and the case_when() function in R"]},{"type":"character","attributes":{},"value":["A gem within the expansive tidyverse."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]}]}]},{"type":"character","attributes":{},"value":["08-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["-R"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python"]},{"type":"character","attributes":{},"value":["Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-12-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["case_when_files/anchor-4.2.2/anchor.min.js","case_when_files/bowser-1.9.3/bowser.min.js","case_when_files/distill-2.2.21/template.v2.js","case_when_files/figure-html5/unnamed-chunk-2-1.png","case_when_files/figure-html5/unnamed-chunk-5-1.png","case_when_files/figure-html5/unnamed-chunk-6-1.png","case_when_files/header-attrs-2.10/header-attrs.js","case_when_files/header-attrs-2.9/header-attrs.js","case_when_files/jquery-1.11.3/jquery.min.js","case_when_files/popper-2.6.0/popper.min.js","case_when_files/tippy-6.2.7/tippy-bundle.umd.min.js","case_when_files/tippy-6.2.7/tippy-light-border.css","case_when_files/tippy-6.2.7/tippy.css","case_when_files/tippy-6.2.7/tippy.umd.min.js","case_when_files/webcomponents-2.0.0/webcomponents.js","data/Lobster_Abundance_All_Years_20210412.csv","hello.html","hello_files/anchor-4.2.2/anchor.min.js","hello_files/bowser-1.9.3/bowser.min.js","hello_files/distill-2.2.21/template.v2.js","hello_files/figure-html5/unnamed-chunk-2-1.png","hello_files/header-attrs-2.9/header-attrs.js","hello_files/jquery-1.11.3/jquery.min.js","hello_files/popper-2.6.0/popper.min.js","hello_files/tippy-6.2.7/tippy-bundle.umd.min.js","hello_files/tippy-6.2.7/tippy-light-border.css","hello_files/tippy-6.2.7/tippy.css","hello_files/tippy-6.2.7/tippy.umd.min.js","hello_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["datetime.png","pics/final_sst_df.png","pics/sst_graph.png","pics/sst_raw_df.png","pics/time_sst_df.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2355,8 +2356,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2376,7 +2377,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Tidy data and the case_when() function in R","description":"A gem within the expansive tidyverse.","authors":[{"author":"Juliet Cohen","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-23T00:00:00.000-07:00","citationText":"Cohen, 2021"}
+{"title":"Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python","description":"Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021.","authors":[{"author":"Juliet Cohen","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-12-24T00:00:00.000-08:00","citationText":"Cohen, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2405,113 +2406,72 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Tidy data and the case_when() function in R</h1>
+<h1>Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python</h1>
 <!--radix_placeholder_categories-->
-<div class="dt-tags">
-  <a href="../../blog.html#category:-R" class="dt-tag">-R</a>
-</div>
 <!--/radix_placeholder_categories-->
-<p><p>A gem within the expansive tidyverse.</p></p>
+<p><p>Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021.</p></p>
 </div>
 
 <div class="d-byline">
-  Juliet Cohen  
+  Juliet Cohen true 
   
-<br/>08-23-2021
+<br/>2021-12-24
 </div>
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
+<p>Plotting time series data from 2 different datasets can be tricky in Python. Here, we will plot sea surface temperature (SST) and sea ice concentration (SIC) in the same plot from the years 1981-2021 to visualize how climate change has impacted these environmental variables over time.</p>
+<h3 id="datasets">Datasets:</h3>
+<h5 id="sst-noaas-14-daily-optimum-interpolation-sea-surface-temperature-oisst-version-2-or-oisstv2">SST: NOAA’s 1/4° Daily Optimum Interpolation Sea Surface Temperature (OISST) version 2, or OISSTv2<br />
+</h5>
 <ul>
-<li><a href="#tidy-data">Tidy data</a></li>
-<li><a href="#case_when-and-lobsters"><code>case_when()</code> and Lobsters</a>
-<ul>
-<li><a href="#first-thing-first-import-your-data">First thing first, import your data</a></li>
-</ul></li>
+<li><a href="https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00844/html">Data source and metadata: NOAA National Centers for Environmental Information</a></li>
+<li><a href="https://www.ncei.noaa.gov/products/climate-data-records/sea-surface-temperature-optimum-interpolation">NOAA Sea Surface Temperature Optimum Interpolation methods</a></li>
 </ul>
-</nav>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='co'># use this to tidy the data</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sfirke/janitor'>janitor</a></span><span class='op'>)</span>
-<span class='co'># use this to tidy the columns names</span>
-</code></pre>
-</div>
-</div>
-<h2 id="tidy-data">Tidy data</h2>
-<p>Whenever we start our journey transforming a dataset into something we can interpret and visualize, we</p>
-<p>This lobster data set is in <strong>Tidy</strong> format, as is most of the data sets we work with. <strong>Tidy</strong> data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R’s vectorized functions flourish with rows and columns in Tidy format.</p>
-<p><strong>Tidy</strong> data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster data set, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succinct title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.</p>
-<p><strong>Tidy</strong> format encourages collaboration between people and data sets because we are easily able to combine data from different sources using join functions. If the data contains columns with shared variables, R can easily recognize those columns and associate its rows <code>(observations)</code> with the observations of the complementary data set. Using <code>full_join()</code> is a common join function to utilize as it maintains all data from both sources.</p>
-<p><strong>Tidy</strong> format helps you easily make subsets of your data for specific graphs and summary tables. Consider the <code>filter()</code> and <code>select()</code> functions, which help you subset to only view variable or observations of interest. In these cases, it is especially important to have only one value in each cell and standardize the way you document observations. You always want to record each lobster species with the same spelling, each size with the same number of decimal places, and each date with the same format (such as <code>YYYY-MM-DD</code>). For variables such as length that might need units, always include these units in the column header rather than the cell. This streamlines our coding and keeps cells to a single class. If you include numerical and character values in one cell, it will be documented as a character, which can restrict your analysis process.</p>
-<p>Your data isn’t in <strong>Tidy</strong> format? That’s alright! Check out the <code>tidyr::pivot_longer()</code> and <code>tidyr::pivot_wider()</code> functions to help you help R help you. In the example below, we have a tribble dataset that is not in <strong>Tidy</strong> format. We know this because there are multiple columns <code>(A:C)</code> that represent different individuals or observations of the same variable (like dog food brands). We can use <code>pivot_longer()</code> to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting <strong>tidy</strong> data may seem more complex at first galnce, it is easier to convert to a graph and structurally is more organized from a data science perspective.</p>
-<p>To demonstrate some simple data tidying, lets make a tribble (which is similar to a dataframe) and manipulate it using the pivot_longer() function. In this tibble, we are</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'>tribble</span><span class='op'>(</span>
-  <span class='op'>~</span><span class='va'>name</span>, <span class='op'>~</span><span class='va'>A</span>, <span class='op'>~</span><span class='va'>B</span>, <span class='op'>~</span><span class='va'>C</span>,
-  <span class='st'>"dog_1"</span>, <span class='fl'>4</span>, <span class='fl'>5</span>, <span class='fl'>6</span>,
-  <span class='st'>"dog_2"</span>, <span class='fl'>9</span>, <span class='fl'>10</span>, <span class='fl'>8</span>
-<span class='op'>)</span>
-
-<span class='va'>df</span>
-</code></pre>
-</div>
-<pre><code># A tibble: 2 x 4
-  name      A     B     C
-  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 dog_1     4     5     6
-2 dog_2     9    10     8</code></pre>
-</div>
-<p>This dataframe is not in tidy format, because the variable <strong>ranking</strong> is dispersed between multiple columns. We want a single variable in each column, so lets combine those columns and make it <em>tidier</em>:</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 x 3
-  name  dog_food_brand ranking
-  &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
-1 dog_1 A                    4
-2 dog_1 B                    5
-3 dog_1 C                    6
-4 dog_2 A                    9
-5 dog_2 B                   10
-6 dog_2 C                    8</code></pre>
-</div>
-<h2 id="case_when-and-lobsters"><code>case_when()</code> and Lobsters</h2>
-<p>Use this function to help tidy your data and prepare it for plotting. <code>case_when()</code> bins continuous data into manually defined categories and add it to your data set in the form of new column.</p>
-<p><code>case_when()</code> is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this dataframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.</p>
-<h3 id="first-thing-first-import-your-data">First thing first, import your data</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 x 9
-   year month date       site  transect replicate size_mm num_ao  area
-  &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
-1  2012     8 2012-08-20 IVEE         3 A              70      0   300
-2  2012     8 2012-08-20 IVEE         3 B              60      0   300
-3  2012     8 2012-08-20 IVEE         3 B              65      0   300
-4  2012     8 2012-08-20 IVEE         3 B              70      0   300
-5  2012     8 2012-08-20 IVEE         3 B              85      0   300
-6  2012     8 2012-08-20 IVEE         3 C              60      0   300</code></pre>
-</div>
-<p>This data is ground-breaking! The world needs to see this and understand its implications. In order to plot this fasciating data in a meaningful way, we want to efficiently categorize our lobsters by legality status and color code their relative abundance in our visualization. Considering that the legal minimum size for a lobster is 79.76 (units), this is the threshold we will pass onto R to do the heavy lifting for us.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lobsters_legality</span> <span class='op'>&lt;-</span> <span class='va'>lobsters</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>legal <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
-    <span class='va'>size_mm</span> <span class='op'>&gt;=</span> <span class='fl'>79.76</span> <span class='op'>~</span> <span class='st'>"yes"</span>,
-    <span class='va'>size_mm</span> <span class='op'>&lt;</span> <span class='fl'>79.76</span> <span class='op'>~</span> <span class='st'>"no"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-   <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>site</span>, <span class='va'>legal</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>summarize</span><span class='op'>(</span>site_legal_count <span class='op'>=</span> <span class='fu'>n</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Use ggplot() to make a bar graph that color codes the lobster abundance by legality status. We communicate that we want R to color the graph by this variable by passing the argument <code>color = legal</code> within aes(). Manually setting colors is set outside of aes(), but here it is an argument because it is determined by a variable.</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="case_when_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
-</div>
-<p>Distill is a publication format for scientific and technical writing, native to the web. Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h5 id="sic-monthly-mean-hadley-centre-sea-ice-and-sst-dataset-version-1-hadisst1">SIC: Monthly Mean Hadley Centre Sea Ice and SST dataset version 1 (HadISST1)</h5>
+<ul>
+<li><a href="https://dashrepo.ucar.edu/dataset/158_asphilli.html">Data source and metadata: UCAR/NCAR - DASH Repository</a></li>
+<li><a href="https://journals.ametsoc.org/view/journals/clim/21/19/2008jcli2292.1.xml">Journal of Climate article explaining why the datasets were merged</a></li>
+</ul>
+<h3 id="load-necessary-packages">Load necessary packages</h3>
+<p><code>import xarray as xr</code><br />
+<code>import pandas as pd</code><br />
+<code>import matplotlib.pyplot as plt</code><br />
+<code>import glob</code></p>
+<h3 id="import-sea-surface-temperature-data">Import Sea Surface Temperature Data</h3>
+<p>I manually downloaded 40 years of datasets from the sea surface temperature data source, one day from each year (October 17th) and now I will import them with a for loop. Each dataset has a standardized name that only differs in the year it was collected, so the <code>glob()</code> function makes importing them all at once a piece of cake. We can use * as a wild card to represent any year in the file names.</p>
+<p><code>filenames = sorted(glob.glob('Data/oisst-avhrr-v02r01*'))</code><br />
+<strong>#Use a for loop to open all data files as datasets</strong><br />
+<strong>#Take the means of the ‘lat’ and ‘long’ because we want to decrease the quantity of this extraneous data so we can easily convert these datasets to dataframes</strong><br />
+<strong>#Converting the datasets to dataframes within this for loop will allow us to concatenate them and view the combined data in a way we can easily understand</strong><br />
+<code>new = [xr.open_dataset(f).mean('lon').mean('lat').to_dataframe(dim_order=None) for f in filenames]</code><br />
+<code>df = pd.concat(new)</code><br />
+<code>df</code></p>
+<p><img src="pics/sst_raw_df.png" /> We need to organize the dataframe further before creating matplotlib visualizations for sea surface temperature over time. This dataframe defaulted to using time as an index, so we need to convert time to a column and subset the columns to just time and sea surface temperature.</p>
+<h3 id="dataframe-wrangling">Dataframe Wrangling</h3>
+<p><strong>#Subset the columns: we choose only ‘sst’ here because ‘time’ is considered the index (note: subsetting this dataframe turns the type into a pandas ‘series’)</strong><br />
+<code>df_subset = df['sst']</code><br />
+<strong>#reset the ‘time’ from an index to a column</strong><br />
+<code>sst_means = df_subset.reset_index()</code><br />
+<strong>#subset to get rid of the useless variable “zlev”</strong><br />
+<code>sst_means = sst_means[['time', 'sst']]</code><br />
+<code>sst_means</code></p>
+<p><img src="pics/time_sst_df.png" /> Ensure that the type of the time cariable is datetime64.</p>
+<p><img src="pics/datetime.png" /> As a last step in processing this dataframe, we will pull the year out of the time variable. We do this because the day and time is consistent for each sea surface temperature file, and therefore it is negligible. Furthermore, will process the sea ice concentration data to only include year, and we need the sea surface temperature time variable to be of the same format as the sea ice concentration time variable.</p>
+<p><strong># add a column of just the year, so when we pair the sst data with the ice data, the time variable will match</strong> <code>sst_means['year'] = pd.DatetimeIndex(sst_means['time']).year</code><br />
+<code>sst_means</code></p>
+<p><img src="pics/final_sst_df.png" /> ### Plot Sea Surface Temperature Over Time</p>
+<p>Now that we finished processing the sea surface temperature data, we can plot the sea surface temperature over our time period using <code>matplotlib</code> to see if can recognize a trend. It appears that sea surface temperature fluctuates over short time periods spanning a few years, but over the course of the full 40-year time period there is a clear positive correlation between time and temperature. This trend is what we would expect based on our knowledge of climate change and other sources of data that show rising sea temperatures across the globe.</p>
+<p><code>plt.figure(figsize=(10,7))</code><br />
+<code>plt.plot(sst_means['year'], sst_means['sst'], color='red')</code><br />
+<code>plt.xlabel('Year', fontsize=14)</code><br />
+<code>plt.ylabel('Sea Surface Temperature (degrees C)', fontsize=14)</code><br />
+<code>plt.title('Mean global Sea Surface Temperature in October between 1981 and 2020', fontsize=15)</code></p>
+<p><img src="pics/sst_graph.png" /></p>
+<h3 id="import-sea-ice-data">Import Sea Ice Data</h3>
+<p>This code importing process is similar to my code for importing the sea surface temperature data. One of my collaborators on this project, <a href="https://petermenzies.github.io/">Peter Menzies</a>, wrote the code to import the sea ice data.</p>
+<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
+<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
