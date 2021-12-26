@@ -1,5 +1,5 @@
 ---
-title: "Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States"
+title: "Plotting Shapefiles on a Basemap in Python: endangered species habitat"
 description: |
   The basics for reading in shapefile data, plotting it, and adding a basemap.
 author:

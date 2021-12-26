@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,10 +85,11 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
-  <!--radix_placeholder_meta_tags-->
-<title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel</title>
 
-<meta property="description" itemprop="description" content="Interpretting marine processes by combining multiple data sets."/>
+  <!--radix_placeholder_meta_tags-->
+<title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Using an API to visualize environmental conditions in the Santa Barbara Channel</title>
+
+<meta property="description" itemprop="description" content="Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind."/>
 
 
 <!--  https://schema.org/Article -->
@@ -97,22 +98,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Juliet Cohen"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel"/>
+<meta property="og:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Using an API to visualize environmental conditions in the Santa Barbara Channel"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Interpretting marine processes by combining multiple data sets."/>
+<meta property="og:description" content="Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel"/>
-<meta property="twitter:description" content="Interpretting marine processes by combining multiple data sets."/>
+<meta property="twitter:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Using an API to visualize environmental conditions in the Santa Barbara Channel"/>
+<meta property="twitter:description" content="Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel"]},{"type":"character","attributes":{},"value":["Interpretting marine processes by combining multiple data sets."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Images/sst.png"]},{"type":"character","attributes":{},"value":["-R"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Using an API to visualize environmental conditions in the Santa Barbara Channel"]},{"type":"character","attributes":{},"value":["Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Images/sst.png"]},{"type":"character","attributes":{},"value":["-R"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2144,7 +2145,7 @@ html {
   --body-size:       1.06rem;
   --code-size:       10px;
   --aside-size:      12px;
-  --fig-cap-size:    13px;
+  --fig-cap-size:    15px;
   /*-- Main font colors --*/
   --title-color:     seagreen;
   --header-color:    black;
@@ -2184,7 +2185,7 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       25px;
+  --title-size:       15px;
   --text-color:       black;
   --text-size:        20px;
   --hover-color:      dimgray;
@@ -2355,8 +2356,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2376,7 +2377,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel","description":"Interpretting marine processes by combining multiple data sets.","authors":[{"author":"Juliet Cohen","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-11-05T00:00:00.000-07:00","citationText":"Cohen, 2021"}
+{"title":"Using an API to visualize environmental conditions in the Santa Barbara Channel","description":"Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind.","authors":[{"author":"Juliet Cohen","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-11-05T00:00:00.000-07:00","citationText":"Cohen, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2404,13 +2405,13 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel</h1>
+<h1>Using an API to visualize environmental conditions in the Santa Barbara Channel</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
   <a href="../../blog.html#category:-R" class="dt-tag">-R</a>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>Interpretting marine processes by combining multiple data sets.</p></p>
+<p><p>Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind.</p></p>
 </div>
 
 <div class="d-byline">
@@ -2465,22 +2466,22 @@ d-appendix d-footnote-list a.footnote-backlink {
  time <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2020-01-01T12:00:00Z'</span>,<span class='st'>'2021-01-01T12:00:00Z'</span><span class='op'>)</span>, <span class='co'># Full year time period 2020</span>
  latitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>34.0</span>, <span class='fl'>34.5</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
  longitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>119.5</span>, <span class='op'>-</span><span class='fl'>120</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
- fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span>  <span class='op'>%&gt;%</span> 
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"east"</span><span class='op'>)</span> <span class='co'>#add ID column</span>
+ fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span>  <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"east"</span><span class='op'>)</span> <span class='co'>#add ID column</span>
 
 <span class='va'>W_sst</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://docs.ropensci.org/rerddap/reference/griddap.html'>griddap</a></span><span class='op'>(</span><span class='st'>'erdMWsstd8day_LonPM180'</span>, <span class='co'># 8 day composite SST W_buoy</span>
  time <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2020-01-01T12:00:00Z'</span>,<span class='st'>'2021-01-01T12:00:00Z'</span><span class='op'>)</span>, <span class='co'># Full year time period 2020</span>
  latitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>34.0</span>, <span class='fl'>34.5</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
  longitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>120</span>, <span class='op'>-</span><span class='fl'>120.5</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
- fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"west"</span><span class='op'>)</span> <span class='co'>#add ID column</span>
+ fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"west"</span><span class='op'>)</span> <span class='co'>#add ID column</span>
 
 <span class='va'>SM_sst</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://docs.ropensci.org/rerddap/reference/griddap.html'>griddap</a></span><span class='op'>(</span><span class='st'>'erdMWsstd8day_LonPM180'</span>, <span class='co'># 8 day composite SST SM_buoy</span>
  time <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2020-01-01T12:00:00Z'</span>,<span class='st'>'2021-01-01T12:00:00Z'</span><span class='op'>)</span>, <span class='co'># Full year time period 2020</span>
  latitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>33.5</span>, <span class='fl'>34.0</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
  longitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>118.75</span>, <span class='op'>-</span><span class='fl'>119.25</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
- fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='co'>#add ID column</span>
+ fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='co'>#add ID column</span>
 
 <span class='va'>sst</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>E_sst</span>, <span class='va'>W_sst</span>, <span class='va'>SM_sst</span><span class='op'>)</span> <span class='co'>#bind data</span>
 
@@ -2491,22 +2492,22 @@ d-appendix d-footnote-list a.footnote-backlink {
   time <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2020-01-01T12:00:00Z'</span>,<span class='st'>'2021-01-01T12:00:00Z'</span><span class='op'>)</span>, <span class='co'># Full year time period 2020</span>
   latitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>34.0</span>, <span class='fl'>34.5</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
   longitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>119.5</span>, <span class='op'>-</span><span class='fl'>120</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
-  fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"east"</span><span class='op'>)</span> <span class='co'>#add location term</span>
+  fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"east"</span><span class='op'>)</span> <span class='co'>#add location term</span>
 
 <span class='va'>W_chloro</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://docs.ropensci.org/rerddap/reference/griddap.html'>griddap</a></span><span class='op'>(</span><span class='st'>'erdMWchla8day_LonPM180'</span>, <span class='co'># 8 day composite Chlorophyll E_buoy</span>
   time <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2020-01-01T12:00:00Z'</span>,<span class='st'>'2021-01-01T12:00:00Z'</span><span class='op'>)</span>, <span class='co'># Full year time period 2020</span>
   latitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>34.0</span>, <span class='fl'>34.5</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
   longitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>120</span>, <span class='op'>-</span><span class='fl'>120.5</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
-  fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"west"</span><span class='op'>)</span> <span class='co'>#add location term</span>
+  fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"west"</span><span class='op'>)</span> <span class='co'>#add location term</span>
 
 <span class='va'>SM_chloro</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://docs.ropensci.org/rerddap/reference/griddap.html'>griddap</a></span><span class='op'>(</span><span class='st'>'erdMWchla8day_LonPM180'</span>, <span class='co'># 8 day composite Chlorophyll SM_buoy</span>
   time <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2020-01-01T12:00:00Z'</span>,<span class='st'>'2021-01-01T12:00:00Z'</span><span class='op'>)</span>, <span class='co'># Full year time period 2020</span>
   latitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>33.5</span>, <span class='fl'>34.0</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
   longitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>118.75</span>, <span class='op'>-</span><span class='fl'>119.25</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
-  fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span><span class='op'>%&gt;%</span> 
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='co'>#add location term</span>
+  fmt <span class='op'>=</span> <span class='st'>"csv"</span><span class='op'>)</span><span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='co'>#add location term</span>
 
 <span class='va'>chloro</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>E_chloro</span>, <span class='va'>W_chloro</span>, <span class='va'>SM_chloro</span><span class='op'>)</span> <span class='co'>#Bind data</span>
 
@@ -2516,10 +2517,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='va'>tab_E</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"data"</span>,<span class='st'>"east_wind.txt"</span><span class='op'>)</span>, comment<span class='op'>=</span><span class='st'>""</span>, header<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'>#convert .txt file to .csv</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/write.table.html'>write.csv</a></span><span class='op'>(</span><span class='va'>tab_E</span>, <span class='st'>"east_wind.csv"</span>, row.names<span class='op'>=</span><span class='cn'>F</span>, quote<span class='op'>=</span><span class='cn'>F</span><span class='op'>)</span>
 
-<span class='va'>E_wind</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"east_wind.csv"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># read in .csv, select columns and rename</span>
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"east"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>select</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X.YY"</span>, <span class='st'>"MM"</span>, <span class='st'>"DD"</span>, <span class='st'>"WSPD"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>  <span class='op'>%&gt;%</span> 
-  <span class='fu'>rename</span><span class='op'>(</span>year <span class='op'>=</span> <span class='va'>X.YY</span>,
+<span class='va'>E_wind</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"east_wind.csv"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># read in .csv, select columns and rename</span>
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"east"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X.YY"</span>, <span class='st'>"MM"</span>, <span class='st'>"DD"</span>, <span class='st'>"WSPD"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>  <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='va'>X.YY</span>,
          month <span class='op'>=</span> <span class='va'>MM</span>,
          day <span class='op'>=</span> <span class='va'>DD</span><span class='op'>)</span>
 <span class='va'>E_wind</span> <span class='op'>&lt;-</span> <span class='va'>E_wind</span><span class='op'>[</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>,<span class='op'>]</span>
@@ -2528,10 +2529,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='va'>tab_W</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"data"</span>,<span class='st'>"west_wind.txt"</span><span class='op'>)</span>, comment<span class='op'>=</span><span class='st'>""</span>, header<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'>#convert .txt file to .csv</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/write.table.html'>write.csv</a></span><span class='op'>(</span><span class='va'>tab_W</span>, <span class='st'>"west_wind.csv"</span>, row.names<span class='op'>=</span><span class='cn'>F</span>, quote<span class='op'>=</span><span class='cn'>F</span><span class='op'>)</span>
 
-<span class='va'>W_wind</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"west_wind.csv"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span> <span class='co'># read in .csv, select coloumns and rename</span>
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"west"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>select</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X.YY"</span>, <span class='st'>"MM"</span>, <span class='st'>"DD"</span>, <span class='st'>"WSPD"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>  <span class='op'>%&gt;%</span> 
-  <span class='fu'>rename</span><span class='op'>(</span>year <span class='op'>=</span> <span class='va'>X.YY</span>,
+<span class='va'>W_wind</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"west_wind.csv"</span><span class='op'>)</span><span class='op'>)</span><span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># read in .csv, select coloumns and rename</span>
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"west"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X.YY"</span>, <span class='st'>"MM"</span>, <span class='st'>"DD"</span>, <span class='st'>"WSPD"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>  <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='va'>X.YY</span>,
          month <span class='op'>=</span> <span class='va'>MM</span>,
          day <span class='op'>=</span> <span class='va'>DD</span><span class='op'>)</span>
 <span class='va'>W_wind</span> <span class='op'>&lt;-</span> <span class='va'>W_wind</span><span class='op'>[</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>,<span class='op'>]</span>
@@ -2540,10 +2541,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='va'>tab_SM</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"data"</span>,<span class='st'>"SM_wind.txt"</span><span class='op'>)</span>, comment<span class='op'>=</span><span class='st'>""</span>, header<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'>#convert .txt file to .csv</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/write.table.html'>write.csv</a></span><span class='op'>(</span><span class='va'>tab_SM</span>, <span class='st'>"SM_wind.csv"</span>, row.names<span class='op'>=</span><span class='cn'>F</span>, quote<span class='op'>=</span><span class='cn'>F</span><span class='op'>)</span>
 
-<span class='va'>SM_wind</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"SM_wind.csv"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span> <span class='co'># read in .csv, select coloumns and rename</span>
-  <span class='fu'>add_column</span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>select</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X.YY"</span>, <span class='st'>"MM"</span>, <span class='st'>"DD"</span>, <span class='st'>"WSPD"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>  <span class='op'>%&gt;%</span> 
-  <span class='fu'>rename</span><span class='op'>(</span>year <span class='op'>=</span> <span class='va'>X.YY</span>,
+<span class='va'>SM_wind</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"SM_wind.csv"</span><span class='op'>)</span><span class='op'>)</span><span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># read in .csv, select coloumns and rename</span>
+  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X.YY"</span>, <span class='st'>"MM"</span>, <span class='st'>"DD"</span>, <span class='st'>"WSPD"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>  <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='va'>X.YY</span>,
          month <span class='op'>=</span> <span class='va'>MM</span>,
          day <span class='op'>=</span> <span class='va'>DD</span><span class='op'>)</span>
 <span class='va'>SM_wind</span> <span class='op'>&lt;-</span> <span class='va'>SM_wind</span><span class='op'>[</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>,<span class='op'>]</span>
@@ -2557,16 +2558,16 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean date format and summarize with daily means for wind</span>
 
-<span class='va'>wind</span> <span class='op'>&lt;-</span> <span class='va'>wind</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>unite</span><span class='op'>(</span><span class='st'>"date"</span>, <span class='va'>year</span><span class='op'>:</span><span class='va'>month</span><span class='op'>:</span><span class='va'>day</span>, sep <span class='op'>=</span> <span class='st'>"-"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>WSPD <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>WSPD</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>wind</span> <span class='op'>&lt;-</span> <span class='va'>wind</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/unite.html'>unite</a></span><span class='op'>(</span><span class='st'>"date"</span>, <span class='va'>year</span><span class='op'>:</span><span class='va'>month</span><span class='op'>:</span><span class='va'>day</span>, sep <span class='op'>=</span> <span class='st'>"-"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>WSPD <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>WSPD</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'># see the data join chunk for na.rm explanation in code comment</span>
 
-<span class='va'>wind_avg</span> <span class='op'>&lt;-</span> <span class='va'>wind</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>summarize</span><span class='op'>(</span>mean_wind <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>WSPD</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>wind_avg</span> <span class='op'>&lt;-</span> <span class='va'>wind</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_wind <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>WSPD</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2574,27 +2575,27 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean data for sst date</span>
-<span class='va'>sst_clean</span> <span class='op'>&lt;-</span> <span class='va'>sst</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd_hms.html'>ymd_hms</a></span><span class='op'>(</span><span class='va'>time</span>, tz <span class='op'>=</span> <span class='st'>"UTC"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>ymd_date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>date <span class='op'>=</span> <span class='va'>ymd_date</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>select</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"latitude"</span>, <span class='st'>"longitude"</span>, <span class='st'>"sst"</span>, <span class='st'>"location"</span>, <span class='st'>"date"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>sst_clean</span> <span class='op'>&lt;-</span> <span class='va'>sst</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd_hms.html'>ymd_hms</a></span><span class='op'>(</span><span class='va'>time</span>, tz <span class='op'>=</span> <span class='st'>"UTC"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ymd_date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='va'>ymd_date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"latitude"</span>, <span class='st'>"longitude"</span>, <span class='st'>"sst"</span>, <span class='st'>"location"</span>, <span class='st'>"date"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Clean sst Data and summarize by daily means</span>
-<span class='va'>final_sst</span> <span class='op'>&lt;-</span> <span class='va'>sst_clean</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>sst</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'>#remove NAs</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>*</span> <span class='op'>(</span><span class='fl'>9</span><span class='op'>/</span><span class='fl'>5</span><span class='op'>)</span> <span class='op'>+</span> <span class='fl'>32</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'>#convert to F</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>-</span> <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#accounting for SST satellite error through anecdotal and buoy comparison. Jake's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements </span>
+<span class='va'>final_sst</span> <span class='op'>&lt;-</span> <span class='va'>sst_clean</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>sst</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'>#remove NAs</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>*</span> <span class='op'>(</span><span class='fl'>9</span><span class='op'>/</span><span class='fl'>5</span><span class='op'>)</span> <span class='op'>+</span> <span class='fl'>32</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'>#convert to F</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>-</span> <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#accounting for SST satellite error through anecdotal and buoy comparison. Jake's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements </span>
 
 <span class='co'># see the data join chunk for na.rm explanation in code comment</span>
 
-<span class='va'>final_sst_avg</span> <span class='op'>&lt;-</span> <span class='va'>final_sst</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>summarize</span><span class='op'>(</span>mean_sst <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>sst</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>final_sst_avg</span> <span class='op'>&lt;-</span> <span class='va'>final_sst</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_sst <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>sst</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2604,15 +2605,15 @@ d-appendix d-footnote-list a.footnote-backlink {
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean chloro data</span>
 <span class='co'># see the data join chunk for na.rm explanation in code comment</span>
 
-<span class='va'>chloro_clean</span> <span class='op'>&lt;-</span> <span class='va'>chloro</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd_hms.html'>ymd_hms</a></span><span class='op'>(</span><span class='va'>time</span>, tz <span class='op'>=</span> <span class='st'>"UTC"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>ymd_date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>date <span class='op'>=</span> <span class='va'>ymd_date</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>select</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"latitude"</span>, <span class='st'>"longitude"</span>, <span class='st'>"chlorophyll"</span>, <span class='st'>"location"</span>, <span class='st'>"date"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>chloro_clean</span> <span class='op'>&lt;-</span> <span class='va'>chloro</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd_hms.html'>ymd_hms</a></span><span class='op'>(</span><span class='va'>time</span>, tz <span class='op'>=</span> <span class='st'>"UTC"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ymd_date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='va'>ymd_date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"latitude"</span>, <span class='st'>"longitude"</span>, <span class='st'>"chlorophyll"</span>, <span class='st'>"location"</span>, <span class='st'>"date"</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='va'>final_chloro_avg</span> <span class='op'>&lt;-</span> <span class='va'>chloro_clean</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>summarize</span><span class='op'>(</span>mean_chloro <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>chlorophyll</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>final_chloro_avg</span> <span class='op'>&lt;-</span> <span class='va'>chloro_clean</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_chloro <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>chlorophyll</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2622,9 +2623,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># combine daily wind and sst and chloro means</span>
 <span class='co'># we decided to use inner join in order to not include any rows that lack values for ANY of the 3 variables. We do not want any NA values in one col and have data in another col, because when we map everything together that data would be represented as if there was a zero value for the variable that had NA. This change reduced the amount of rows by a couple hundred. This was primarily in the SST and cholorophyll data which had plenty of NA's but the wind data did not initially have NA's.</span>
 
-<span class='va'>wind_sst</span> <span class='op'>&lt;-</span> <span class='fu'>inner_join</span><span class='op'>(</span><span class='va'>wind_avg</span>, <span class='va'>final_sst_avg</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"date"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>wind_sst</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>inner_join</a></span><span class='op'>(</span><span class='va'>wind_avg</span>, <span class='va'>final_sst_avg</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"date"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='va'>chloro_wind_sst</span> <span class='op'>&lt;-</span> <span class='fu'>inner_join</span><span class='op'>(</span><span class='va'>wind_sst</span>, <span class='va'>final_chloro_avg</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"date"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>chloro_wind_sst</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>inner_join</a></span><span class='op'>(</span><span class='va'>wind_sst</span>, <span class='va'>final_chloro_avg</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"date"</span>, <span class='st'>"location"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2633,9 +2634,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Daily Average Sea Surface Temperature from East, West, and Santa Monica Buoys</span>
 
-<span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>chloro_wind_sst</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>mean_sst</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Date"</span>,
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>chloro_wind_sst</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>mean_sst</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Date"</span>,
        y <span class='op'>=</span> <span class='st'>"Daily Average Sea Surface Temperature (degC)"</span>,
        title <span class='op'>=</span> <span class='st'>"Daily Average Sea Surface Temperature from East, West, and Santa Monica Buoys"</span>,
        color <span class='op'>=</span> <span class='st'>"Location"</span><span class='op'>)</span>
@@ -2646,27 +2647,27 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Monthly Average Wind from East, West, and Santa Monica Buoys</span>
 
-<span class='va'>month_mean</span> <span class='op'>&lt;-</span> <span class='va'>chloro_wind_sst</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>select</span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span>, <span class='va'>mean_wind</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>month <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/month.html'>month</a></span><span class='op'>(</span><span class='va'>date</span>, label <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>month <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>month</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>month</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>summarize</span><span class='op'>(</span>mean_wind <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>mean_wind</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span> 
+<span class='va'>month_mean</span> <span class='op'>&lt;-</span> <span class='va'>chloro_wind_sst</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span>, <span class='va'>mean_wind</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>month <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/month.html'>month</a></span><span class='op'>(</span><span class='va'>date</span>, label <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>month <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>month</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>month</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_wind <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>mean_wind</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span> 
 
-<span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>month_mean</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>month</span>, y <span class='op'>=</span> <span class='va'>mean_wind</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Month"</span>,
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>month_mean</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>month</span>, y <span class='op'>=</span> <span class='va'>mean_wind</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Month"</span>,
        y <span class='op'>=</span> <span class='st'>"Monthly Average Wind Speed (knots)"</span>,
        title <span class='op'>=</span> <span class='st'>"Monthly Average Wind Speeds from East, West, and Santa Monica Buoys"</span>,
        color <span class='op'>=</span> <span class='st'>"Location"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://rdrr.io/r/graphics/plot.window.html'>ylim</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>15</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>scale_x_discrete</span><span class='op'>(</span>limits<span class='op'>=</span><span class='va'>month.abb</span><span class='op'>)</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/lims.html'>ylim</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>15</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_x_discrete</a></span><span class='op'>(</span>limits<span class='op'>=</span><span class='va'>month.abb</span><span class='op'>)</span>
 
 <span class='co'># Daily Average Chorophyll from East, West, and Santa Monica Buoys</span>
 
-<span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>chloro_wind_sst</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>mean_chloro</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Date"</span>,
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>chloro_wind_sst</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>mean_chloro</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Date"</span>,
        y <span class='op'>=</span> <span class='st'>"Daily Average Chlorophyll (mg m^-3)"</span>,
        title <span class='op'>=</span> <span class='st'>"Daily Average Chlorophyll levels from East, West, and Santa Monica Buoys"</span>,
        color <span class='op'>=</span> <span class='st'>"Location"</span><span class='op'>)</span>

@@ -27,7 +27,7 @@ June 2019
 - Study Abroad: Monteverde Institute, Costa Rica - Tropical Biology and Conservation Program  
 - Varsity rowing team
 
-### **RESEARCH**  
+### **RESEARCH PROJECTS AND PAPERS**  
 **------------------------------------------------------------------------------------------------------------**  
 
 **Senior thesis - Anthropogenic niche partitioning: mesocarnivore spatial and temporal coexistence along an urban gradient through camera traps**  
@@ -62,9 +62,16 @@ September 2018 – December 2018
 
 ### **CONSERVATION & DATA SCIENCE WORK EXPERIENCE**  
 **------------------------------------------------------------------------------------------------------------**  
-**Pacific States Marine Fisheries Commission & CDFW - Fisheries Technician**  
+
+**National Center for Ecological Analysis and Synthesis & National Science Foundation - Arctic Data Center Intern**\
+January 2022 - present\
+- Use application programming interfaces (API's) in R to upload and manage data and metadata for the Arctic Data Center\
+- Correspond with researchers to assist them in publishing open-source data and metadata to online repositories\
+- Contribute to open-source repository management for KNB, DataONE, and GitHub
+
+**Pacific States Marine Fisheries Commission & Califorinia Department of Fish and Wildlife - Fisheries Technician**  
 December 2020 – June 2021  
-- Monitor endangered Southern California steelhead trout (Oncorhynchus mykiss) populations  
+- Monitor endangered Southern California steelhead trout (*Oncorhynchus mykiss*) populations  
 - Utilize DIDSON underwater sonar cameras to monitor fish populations, train other employees in software  
 - Execute trout spawning surveys, electrofishing, and PIT tagging  
 - Conduct data analysis in ArcGIS and R to identify critical habitat  

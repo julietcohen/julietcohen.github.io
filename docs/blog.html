@@ -2134,7 +2134,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --body-size:       1.06rem;
     --code-size:       10px;
     --aside-size:      12px;
-    --fig-cap-size:    13px;
+    --fig-cap-size:    15px;
     /*-- Main font colors --*/
     --title-color:     seagreen;
     --header-color:    black;
@@ -2174,7 +2174,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* These properties only apply to Distill sites and blogs  */
 
   .distill-site-header {
-    --title-size:       25px;
+    --title-size:       15px;
     --text-color:       black;
     --text-size:        20px;
     --hover-color:      dimgray;
@@ -2378,7 +2378,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
-<a href="bio.html">Bio</a>
 <a href="cv.html">CV</a>
 <a href="blog.html">Programming Blog</a>
 <a href="about.html">Field Work Photo Gallery</a>
@@ -2528,18 +2527,41 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="My Blog">My Blog</h1>
+<a href="posts/2021-12-25-sqlwindpower/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["-Python -SQL"]}</script>
+<div class="metadata">
+<div class="publishedDate">Dec. 25, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Juliet Cohen</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-12-25-sqlwindpower/pics/iowa_mask.png"/>
+</div>
+<div class="description">
+<h2>Using SQL &amp; Python to Calculate Iowa's Wind Power Potential</h2>
+<div class="dt-tags">
+<div class="dt-tag">-Python -SQL</div>
+</div>
+<p>How many wind turbines can we legally fit into the state of Iowa, and how much renewable energy would that yield?</p>
+</div>
+</a>
 <a href="posts/2021-12-24-sstsicpython/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["-Python"]}</script>
 <div class="metadata">
 <div class="publishedDate">Dec. 24, 2021</div>
 <div class="dt-authors">
 <div class="dt-author">Juliet Cohen</div>
 </div>
 </div>
-<div class="thumbnail"></div>
+<div class="thumbnail">
+<img src="posts/2021-12-24-sstsicpython/pics/combined_graph.png"/>
+</div>
 <div class="description">
 <h2>Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">-Python</div>
+</div>
 <p>Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021.</p>
 </div>
 </a>
@@ -2574,7 +2596,7 @@ function init_posts_list() {
 <img src="posts/2021-11-01-plotting-shapefiles-in-python/images/crit_hab_with_basemap.png"/>
 </div>
 <div class="description">
-<h2>Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States</h2>
+<h2>Plotting Shapefiles on a Basemap in Python: endangered species habitat</h2>
 <div class="dt-tags">
 <div class="dt-tag">-Python</div>
 </div>
@@ -2593,11 +2615,11 @@ function init_posts_list() {
 <img src="posts/2021-11-05-sstchlorowind/Images/sst.png"/>
 </div>
 <div class="description">
-<h2>Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel</h2>
+<h2>Using an API to visualize environmental conditions in the Santa Barbara Channel</h2>
 <div class="dt-tags">
 <div class="dt-tag">-R</div>
 </div>
-<p>Interpretting marine processes by combining multiple data sets.</p>
+<p>Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind.</p>
 </div>
 </a>
 <a href="posts/2021-08-10-the-casewhen-function/" class="post-preview">
@@ -2609,7 +2631,7 @@ function init_posts_list() {
 </div>
 </div>
 <div class="thumbnail">
-<img src="posts/2021-08-10-the-casewhen-function/case_when_files/figure-html5/unnamed-chunk-6-1.png"/>
+<img data-src="posts/2021-08-10-the-casewhen-function/case_when_files/figure-html5/unnamed-chunk-6-1.png"/>
 </div>
 <div class="description">
 <h2>Tidy data and the case_when() function in R</h2>
@@ -2626,10 +2648,14 @@ function init_posts_list() {
 <ul>
 <li>
 <a href="#category:Articles">Articles</a>
-<span class="category-count">(5)</span>
+<span class="category-count">(6)</span>
 </li>
 <li>
 <a href="#category:-Python">-Python</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:-Python_-SQL">-Python -SQL</a>
 <span class="category-count">(1)</span>
 </li>
 <li>

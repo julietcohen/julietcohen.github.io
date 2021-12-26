@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,8 +85,9 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
-<title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States</title>
+<title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Shapefiles on a Basemap in Python: endangered species habitat</title>
 
 <meta property="description" itemprop="description" content="The basics for reading in shapefile data, plotting it, and adding a basemap."/>
 
@@ -97,7 +98,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Juliet Cohen"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States"/>
+<meta property="og:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Shapefiles on a Basemap in Python: endangered species habitat"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="The basics for reading in shapefile data, plotting it, and adding a basemap."/>
 <meta property="og:locale" content="en_US"/>
@@ -105,14 +106,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States"/>
+<meta property="twitter:title" content="Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Plotting Shapefiles on a Basemap in Python: endangered species habitat"/>
 <meta property="twitter:description" content="The basics for reading in shapefile data, plotting it, and adding a basemap."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States"]},{"type":"character","attributes":{},"value":["The basics for reading in shapefile data, plotting it, and adding a basemap."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["images/crit_hab_with_basemap.png"]},{"type":"character","attributes":{},"value":["-Python"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Plotting Shapefiles on a Basemap in Python: endangered species habitat"]},{"type":"character","attributes":{},"value":["The basics for reading in shapefile data, plotting it, and adding a basemap."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["images/crit_hab_with_basemap.png"]},{"type":"character","attributes":{},"value":["-Python"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2144,7 +2145,7 @@ html {
   --body-size:       1.06rem;
   --code-size:       10px;
   --aside-size:      12px;
-  --fig-cap-size:    13px;
+  --fig-cap-size:    15px;
   /*-- Main font colors --*/
   --title-color:     seagreen;
   --header-color:    black;
@@ -2184,7 +2185,7 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       25px;
+  --title-size:       15px;
   --text-color:       black;
   --text-size:        20px;
   --hover-color:      dimgray;
@@ -2355,8 +2356,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2376,7 +2377,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States","description":"The basics for reading in shapefile data, plotting it, and adding a basemap.","authors":[{"author":"Juliet Cohen","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-11-05T00:00:00.000-07:00","citationText":"Cohen, 2021"}
+{"title":"Plotting Shapefiles on a Basemap in Python: endangered species habitat","description":"The basics for reading in shapefile data, plotting it, and adding a basemap.","authors":[{"author":"Juliet Cohen","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-11-05T00:00:00.000-07:00","citationText":"Cohen, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2404,7 +2405,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Plotting Shapefiles on a Basemap in Python: Endangered Species Habitat in the United States</h1>
+<h1>Plotting Shapefiles on a Basemap in Python: endangered species habitat</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
   <a href="../../blog.html#category:-Python" class="dt-tag">-Python</a>
@@ -2545,7 +2546,7 @@ Since the basemap within the contextily package is of the entire world, we need 
 <h2 id="a-local-california-use-case-example">A Local California Use Case Example</h2>
 <p>Living in Santa Barbara, I’m interested in the critical habitat of the <a href="https://caltrout.org/projects/southern-steelhead-coalitions?gclid=Cj0KCQiAnuGNBhCPARIsACbnLzqlPTHi_8N97R1bTOP89j3yll1YHZG7ZSOuw0SDgKX-zrAOmTIzlckaAqfYEALw_wcB">Southern California Steelhead Trout</a>. Steelhead trout is a beautiful fish species that interbreeds with resident rainbow trout in many coastal regions throughout California, which are split into distinct population segments and managed as such.</p>
 <figure>
-<img src="images/steelhead_dps.png" alt="Southern California Steelhead Trout" /><figcaption aria-hidden="true">Southern California Steelhead Trout</figcaption>
+<img src="images/steelhead_dps.png" alt="Southern California Steelhead Trout distinct population segment map with watershed landmarks" /><figcaption aria-hidden="true">Southern California Steelhead Trout distinct population segment map with watershed landmarks</figcaption>
 </figure>
 <p>I was lucky enough to conduct field work with these migratory fish in 2020-2021 through the California Department of Fish and Wildlife and the Pacific States Marine Fisheries Committee. I grew to appreciate their vital role in ecosystem processes and the culture of indigenous people who have interacted with them for centuries. This fish is currently in the process of being listed as a California endangered species starting in December of 2021, which will hopefully expand critical habitat range, increase monitoring of the populations, and help enforce illegal fishing and pollution regulation in their habitat. We can check out the steelhead’s critical habitat range before and after 2021 to see how it expands over time and space.</p>
 <figure>

@@ -1,7 +1,7 @@
 ---
-title: "Visualizing sea surface temperature, chlorophyll, and wind in the Santa Barbara Channel"
+title: "Using an API to visualize environmental conditions in the Santa Barbara Channel"
 description: |
-  Interpretting marine processes by combining multiple data sets.
+  Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind.
 author:
   - name: Juliet Cohen
     url: {}

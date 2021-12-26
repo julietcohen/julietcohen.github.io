@@ -21,7 +21,7 @@ html {
   --body-size:       1.06rem;
   --code-size:       10px;
   --aside-size:      12px;
-  --fig-cap-size:    13px;
+  --fig-cap-size:    15px;
   /*-- Main font colors --*/
   --title-color:     seagreen;
   --header-color:    black;
@@ -61,7 +61,7 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       25px;
+  --title-size:       15px;
   --text-color:       black;
   --text-size:        20px;
   --hover-color:      dimgray;

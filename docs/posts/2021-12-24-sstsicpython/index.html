@@ -113,12 +113,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python"]},{"type":"character","attributes":{},"value":["Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-12-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python"]},{"type":"character","attributes":{},"value":["Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-12-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["pics/combined_graph.png"]},{"type":"character","attributes":{},"value":["-Python"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["datetime.png","pics/final_sst_df.png","pics/sst_graph.png","pics/sst_raw_df.png","pics/time_sst_df.png","sstsicpython_files/anchor-4.2.2/anchor.min.js","sstsicpython_files/bowser-1.9.3/bowser.min.js","sstsicpython_files/distill-2.2.21/template.v2.js","sstsicpython_files/header-attrs-2.11/header-attrs.js","sstsicpython_files/jquery-3.6.0/jquery-3.6.0.js","sstsicpython_files/jquery-3.6.0/jquery-3.6.0.min.js","sstsicpython_files/jquery-3.6.0/jquery-3.6.0.min.map","sstsicpython_files/popper-2.6.0/popper.min.js","sstsicpython_files/tippy-6.2.7/tippy-bundle.umd.min.js","sstsicpython_files/tippy-6.2.7/tippy-light-border.css","sstsicpython_files/tippy-6.2.7/tippy.css","sstsicpython_files/tippy-6.2.7/tippy.umd.min.js","sstsicpython_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["pics/combined_graph.png","pics/datetime.png","pics/final_sst_df.png","pics/sic_graph.png","pics/sic_table.png","pics/sst_graph.png","pics/sst_raw_df.png","pics/time_sst_df.png","sstsicpython_files/anchor-4.2.2/anchor.min.js","sstsicpython_files/bowser-1.9.3/bowser.min.js","sstsicpython_files/distill-2.2.21/template.v2.js","sstsicpython_files/header-attrs-2.11/header-attrs.js","sstsicpython_files/jquery-3.6.0/jquery-3.6.0.js","sstsicpython_files/jquery-3.6.0/jquery-3.6.0.min.js","sstsicpython_files/jquery-3.6.0/jquery-3.6.0.min.map","sstsicpython_files/popper-2.6.0/popper.min.js","sstsicpython_files/tippy-6.2.7/tippy-bundle.umd.min.js","sstsicpython_files/tippy-6.2.7/tippy-light-border.css","sstsicpython_files/tippy-6.2.7/tippy.css","sstsicpython_files/tippy-6.2.7/tippy.umd.min.js","sstsicpython_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2145,7 +2145,7 @@ html {
   --body-size:       1.06rem;
   --code-size:       10px;
   --aside-size:      12px;
-  --fig-cap-size:    13px;
+  --fig-cap-size:    15px;
   /*-- Main font colors --*/
   --title-color:     seagreen;
   --header-color:    black;
@@ -2185,7 +2185,7 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       25px;
+  --title-size:       15px;
   --text-color:       black;
   --text-size:        20px;
   --hover-color:      dimgray;
@@ -2407,6 +2407,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="d-title">
 <h1>Plotting Sea Surface Temperature and Sea Ice Concentration Over Time in Python</h1>
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+  <a href="../../blog.html#category:-Python" class="dt-tag">-Python</a>
+</div>
 <!--/radix_placeholder_categories-->
 <p><p>Using satellite data from the National Oceanic and Atmospheric Administration to detect global trends in sea surface temperature and sea ice concentration from 1981-2021.</p></p>
 </div>
@@ -2418,35 +2421,50 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#datasets">Datasets:</a></li>
+<li><a href="#load-necessary-packages">Load necessary packages</a></li>
+<li><a href="#import-sea-surface-temperature-data">Import Sea Surface Temperature Data</a></li>
+<li><a href="#sea-surface-temperature-dataframe-wrangling">Sea Surface Temperature Dataframe Wrangling</a></li>
+<li><a href="#import-sea-ice-data">Import Sea Ice Data</a></li>
+<li><a href="#sea-ice-data-wrangling">Sea Ice Data Wrangling</a></li>
+<li><a href="#plotting-sea-ice-data">Plotting Sea Ice Data</a></li>
+<li><a href="#combine-the-visualizations">Combine the Visualizations</a></li>
+</ul>
+</nav>
+</div>
 <p>Plotting time series data from 2 different datasets can be tricky in Python. Here, we will plot sea surface temperature (SST) and sea ice concentration (SIC) in the same plot from the years 1981-2021 to visualize how climate change has impacted these environmental variables over time.</p>
-<h3 id="datasets">Datasets:</h3>
-<h5 id="sst-noaas-14-daily-optimum-interpolation-sea-surface-temperature-oisst-version-2-or-oisstv2">SST: NOAA’s 1/4° Daily Optimum Interpolation Sea Surface Temperature (OISST) version 2, or OISSTv2<br />
-</h5>
+<h2 id="datasets">Datasets:</h2>
+<h4 id="sst-noaas-14-daily-optimum-interpolation-sea-surface-temperature-oisst-version-2-or-oisstv2">SST: NOAA’s 1/4° Daily Optimum Interpolation Sea Surface Temperature (OISST) version 2, or OISSTv2<br />
+</h4>
 <ul>
 <li><a href="https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00844/html">Data source and metadata: NOAA National Centers for Environmental Information</a></li>
 <li><a href="https://www.ncei.noaa.gov/products/climate-data-records/sea-surface-temperature-optimum-interpolation">NOAA Sea Surface Temperature Optimum Interpolation methods</a></li>
 </ul>
-<h5 id="sic-monthly-mean-hadley-centre-sea-ice-and-sst-dataset-version-1-hadisst1">SIC: Monthly Mean Hadley Centre Sea Ice and SST dataset version 1 (HadISST1)</h5>
+<h4 id="sic-monthly-mean-hadley-centre-sea-ice-and-sst-dataset-version-1-hadisst1">SIC: Monthly Mean Hadley Centre Sea Ice and SST dataset version 1 (HadISST1)</h4>
 <ul>
 <li><a href="https://dashrepo.ucar.edu/dataset/158_asphilli.html">Data source and metadata: UCAR/NCAR - DASH Repository</a></li>
 <li><a href="https://journals.ametsoc.org/view/journals/clim/21/19/2008jcli2292.1.xml">Journal of Climate article explaining why the datasets were merged</a></li>
 </ul>
-<h3 id="load-necessary-packages">Load necessary packages</h3>
+<h2 id="load-necessary-packages">Load necessary packages</h2>
 <p><code>import xarray as xr</code><br />
 <code>import pandas as pd</code><br />
 <code>import matplotlib.pyplot as plt</code><br />
 <code>import glob</code></p>
-<h3 id="import-sea-surface-temperature-data">Import Sea Surface Temperature Data</h3>
+<h2 id="import-sea-surface-temperature-data">Import Sea Surface Temperature Data</h2>
 <p>I manually downloaded 40 years of datasets from the sea surface temperature data source, one day from each year (October 17th) and now I will import them with a for loop. Each dataset has a standardized name that only differs in the year it was collected, so the <code>glob()</code> function makes importing them all at once a piece of cake. We can use * as a wild card to represent any year in the file names.</p>
 <p><code>filenames = sorted(glob.glob('Data/oisst-avhrr-v02r01*'))</code><br />
-<strong>#Use a for loop to open all data files as datasets</strong><br />
+<strong>#Use a for loop to open all data files as datasets (prior to this step, data files were manually pulled from source and stored locally)</strong><br />
 <strong>#Take the means of the ‘lat’ and ‘long’ because we want to decrease the quantity of this extraneous data so we can easily convert these datasets to dataframes</strong><br />
 <strong>#Converting the datasets to dataframes within this for loop will allow us to concatenate them and view the combined data in a way we can easily understand</strong><br />
 <code>new = [xr.open_dataset(f).mean('lon').mean('lat').to_dataframe(dim_order=None) for f in filenames]</code><br />
 <code>df = pd.concat(new)</code><br />
 <code>df</code></p>
 <p><img src="pics/sst_raw_df.png" /> We need to organize the dataframe further before creating matplotlib visualizations for sea surface temperature over time. This dataframe defaulted to using time as an index, so we need to convert time to a column and subset the columns to just time and sea surface temperature.</p>
-<h3 id="dataframe-wrangling">Dataframe Wrangling</h3>
+<h2 id="sea-surface-temperature-dataframe-wrangling">Sea Surface Temperature Dataframe Wrangling</h2>
 <p><strong>#Subset the columns: we choose only ‘sst’ here because ‘time’ is considered the index (note: subsetting this dataframe turns the type into a pandas ‘series’)</strong><br />
 <code>df_subset = df['sst']</code><br />
 <strong>#reset the ‘time’ from an index to a column</strong><br />
@@ -2454,11 +2472,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 <strong>#subset to get rid of the useless variable “zlev”</strong><br />
 <code>sst_means = sst_means[['time', 'sst']]</code><br />
 <code>sst_means</code></p>
-<p><img src="pics/time_sst_df.png" /> Ensure that the type of the time cariable is datetime64.</p>
+<p><img src="pics/time_sst_df.png" /> Ensure that the type of the time variable is datetime64.</p>
 <p><img src="pics/datetime.png" /> As a last step in processing this dataframe, we will pull the year out of the time variable. We do this because the day and time is consistent for each sea surface temperature file, and therefore it is negligible. Furthermore, will process the sea ice concentration data to only include year, and we need the sea surface temperature time variable to be of the same format as the sea ice concentration time variable.</p>
 <p><strong># add a column of just the year, so when we pair the sst data with the ice data, the time variable will match</strong> <code>sst_means['year'] = pd.DatetimeIndex(sst_means['time']).year</code><br />
 <code>sst_means</code></p>
-<p><img src="pics/final_sst_df.png" /> ### Plot Sea Surface Temperature Over Time</p>
+<p><img src="pics/final_sst_df.png" /> ## Plot Sea Surface Temperature Over Time</p>
 <p>Now that we finished processing the sea surface temperature data, we can plot the sea surface temperature over our time period using <code>matplotlib</code> to see if can recognize a trend. It appears that sea surface temperature fluctuates over short time periods spanning a few years, but over the course of the full 40-year time period there is a clear positive correlation between time and temperature. This trend is what we would expect based on our knowledge of climate change and other sources of data that show rising sea temperatures across the globe.</p>
 <p><code>plt.figure(figsize=(10,7))</code><br />
 <code>plt.plot(sst_means['year'], sst_means['sst'], color='red')</code><br />
@@ -2466,8 +2484,64 @@ d-appendix d-footnote-list a.footnote-backlink {
 <code>plt.ylabel('Sea Surface Temperature (degrees C)', fontsize=14)</code><br />
 <code>plt.title('Mean global Sea Surface Temperature in October between 1981 and 2020', fontsize=15)</code></p>
 <p><img src="pics/sst_graph.png" /></p>
-<h3 id="import-sea-ice-data">Import Sea Ice Data</h3>
-<p>This code importing process is similar to my code for importing the sea surface temperature data. One of my collaborators on this project, <a href="https://petermenzies.github.io/">Peter Menzies</a>, wrote the code to import the sea ice data.</p>
+<h2 id="import-sea-ice-data">Import Sea Ice Data</h2>
+<p>The sea ice data import process is similar to my code for importing the sea surface temperature data. One of my collaborators on this project, <a href="https://petermenzies.github.io/">Peter Menzies</a>, wrote the following code to import the sea ice data.</p>
+<p><strong># read in ice dataset with xarray (prior to this step, data files were manually pulled from source and compiled into a single local netCDF file)</strong><br />
+<code>ds_ice = xr.open_dataset("Data/MODEL.ICE.HAD187001-198110.OI198111-202109.nc")</code><br />
+</p>
+<h2 id="sea-ice-data-wrangling">Sea Ice Data Wrangling</h2>
+<p><strong># create empty dataframe with columns year and ice_conc</strong><br />
+<code>ice_time = pd.DataFrame(columns=['year', 'ice_conc'])</code><br />
+<strong># create empty lists to populate with values from dataset</strong> <code>ice_year = []</code><br />
+<code>ice_conc = []</code><br />
+</p>
+<p>Use another for loop to pull sea ice values from October of each year 1981 to 2020, and compile them in a dataframe:</p>
+<p><code>for i in range(0, 40):</code><br />
+<strong># indexing the SEAICE attributes of our years of interest, finding the mean value, and outputting value as a float</strong><br />
+<strong># 1341 is the index for October 1981 - we need to add 12 in each iteration to get the month from the next year</strong><br />
+<code>ice_i = float(ice['SEAICE'][1341 + (12 * i)].mean())</code><br />
+<strong># storing the year associated with ice concentration value</strong><br />
+<code>year_i = 1981 + i</code><br />
+<strong># add year to list</strong><br />
+<code>ice_year.append(year_i)</code><br />
+<strong># add ice concentration to list</strong><br />
+<code>ice_conc.append(ice_i)</code></p>
+<p><strong># populated dataframe with the two lists as columns</strong><br />
+<code>ice_time['year'] = ice_year</code><br />
+<code>ice_time['ice_conc'] = ice_conc</code><br />
+<strong># check out our resulting dataframe</strong> <code>ice_time</code></p>
+<p><img src="pics/sic_table.png" /></p>
+<h2 id="plotting-sea-ice-data">Plotting Sea Ice Data</h2>
+<p><code>plt.figure(figsize=(10,7))</code><br />
+<code>plt.plot(ice_time['year'], ice_time['ice_conc'])</code><br />
+<code>plt.xlabel('Year', fontsize=14)</code><br />
+<code>plt.ylabel('Seaice concentration (%)', fontsize=14)</code><br />
+<code>plt.title('Mean global seaice concentration in October between 1981 and 2020', fontsize=15)</code><br />
+</p>
+<p><img src="pics/sic_graph.png" /></p>
+<h2 id="combine-the-visualizations">Combine the Visualizations</h2>
+<p>Use <code>matplotlib</code> to combine the sea surface temperature and sea ice concentration data into one figure.</p>
+<p><strong># use the fig, ax method so that we have flexibility plotting each variable</strong><br />
+<code>fig, ax = plt.subplots(figsize=(15,10))</code><br />
+<strong># assign a label to the ice data so we can reference it when we create the legend</strong><br />
+<code>ice, = ax.plot(ice_time['year'], ice_time['ice_conc'], color='blue')</code><br />
+<strong># ax represents the axis for the ice data</strong><br />
+<code>ax.tick_params(axis='y', labelcolor='blue')</code><br />
+<code>plt.xlabel('Year', fontsize = 18)</code><br />
+<code>ax.set_ylabel('Sea Ice Concentration (%)', fontsize = 18)</code><br />
+<strong># ax2 represents the axis for the sea surface temperature data</strong><br />
+<code>ax2 = ax.twinx()</code><br />
+<strong># assign a label to the sst data so we can reference it when we create the legend</strong><br />
+<code>sst, = ax2.plot(sst_means['year'], sst_means['sst'], color='red')</code><br />
+<code>ax2.tick_params(axis='y', labelcolor='red')</code><br />
+<code>ax2.set_ylabel('Sea Surface Temperature (degrees C)', fontsize = 18)</code><br />
+<strong># create an initial legend so that we can overwrite it with legend with both variables</strong><br />
+<code>leg1 = ax.legend(loc='center left')</code><br />
+<code>leg2 = ax.legend([ice, sst],['ice','sst'], loc='center left', fontsize = 18)</code><br />
+<code>ax.set_title('Sea Ice Concentration and Sea Surface Temperature 1981-2020', fontsize = 18)</code><br />
+<code>plt.show()</code></p>
+<p><img src="pics/combined_graph.png" /></p>
+<p>This plot and this code is just a portion of a larger environmental programming project completed by myself and my two collaborators <a href="https://petermenzies.github.io/">Peter Menzies</a> and <a href="https://ryanmunnikhuis.github.io/">Ryan Munnikhuis</a>. See our complete repository <a href="https://github.com/EDS220-Fall2021-org/Homework_3">here</a>, which contains a binder in the README so anyone can run all the code with ease. Check out the anntoated code to learn how to turn these two datasets into rasterized images and GIF’s!</p>
 <p>Distill is a publication format for scientific and technical writing, native to the web.</p>
 <p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>

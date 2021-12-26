@@ -10,18 +10,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![A hike in the Ko'olau Mountains in Oahu, Hawaii (2019)](about_pics/hike_smile.jpg)
 
-My path to become a data scientist did not begin sitting in front of a computer. My journey started as a raccoon trapper, a lizard hunter, an island invasive species technician, and a fisheries technician. I started out collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean field data and enter it into databases, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, and SQL slowly over time. However, I didn't make this journey alone. I found mentors in academic advisors, field crew leaders, and data scientists that provided the tools to help me grow as a scientist.
+My path to become a data scientist began as a raccoon trapper, a lizard hunter, an island invasive species specialist, and a fisheries technician. I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean data and enter it into databases in ArcGIS, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, SQL, and EML slowly over time. However, I didn't make this journey alone. I found mentors in academic advisers, field crew leaders, and data scientists that provided the tools to help me grow as a data scientist.
 
 ### Undergraduate Research at UC Santa Barbara
 
-I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in Dr. Doug McCauley's lab in the department of Ecology, Evolution, and Marine Biology. I worked closely with PhD candidate Molly Hardesty-Moore on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques for several months for each collar. While the study was primarily interested in luring raccoons into traps overnight, we often caught other small carnivores and saw them peruse the landscape through camera traps throughout Santa Barbara County.
+I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in [Dr. Doug McCauley's lab](https://labs.eemb.ucsb.edu/mccauley/doug/) in the department of [Ecology, Evolution, and Marine Biology](https://www.eemb.ucsb.edu/). I worked closely with PhD candidate [Molly Hardesty-Moore](https://backyardcarnivores.weebly.com/) on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques. Molly used this spatial data in conjunction with hair samples from raccoons, foxes, skunks, and opossums to compare behavior and dietary trends in raccoons that live in urban versus rural habitats. While the study was primarily interested in luring raccoons into traps overnight, we often caught other small carnivores and watched them peruse the landscape via camera traps throughout Santa Barbara County.
 
 ![native striped skunk caught on one of my camera traps](about_pics/skunk.jpg)
-I completed two independent research projects in undergrad: one investigating spatial and temporal niche overlap anomg urban mammals, and one looking at water filtration rates among different bivalve species in Costa Rican Mariculture systems. The latter turned into my first scientific paper, and I had the chance to present my research at a biologicla research symposium in Monteverde, Costa Rica in 2018.
+I completed two independent research projects in undergrad: one investigating spatial and temporal niche overlap among urban mammals, and one looking at water filtration rates among different bivalve species in Costa Rican mariculture systems. The latter turned into my first scientific paper, and I had the chance to present my research at a biological research symposium in Monteverde, Costa Rica in 2018.
 
 ![Measuring the water displacement of individual bivalves at the end of a field day with my colleague Erin, who was relaxing on the boat after a day of snorkeling and data collection for her own research.](about_pics/bivalve_erin.JPG)
 
-![Measuring the turbidity of my various species-specific buckets at regular time intervals.](about_pics/turbidity_measurement.JPG)
+![Measuring the turbidity of my various species-specific buckets at regular time intervals. I would dive into the mariculture nets each day to collect new bivalve species, run my sechi disk filtration trials with algae and bryozoans in the buckets, then return the bivalves to their natural habitat at the end of the day.](about_pics/turbidity_measurement.JPG)
 
 ### The Lizard Days
 
@@ -35,40 +35,50 @@ Our team's mission was to systematically survey for flat-tailed horned lizards t
 
 ### Invasive Species in Hawaii
 
-My second seasonal field job was a field technician and data specialist position at the Oahu Invasive Species Committee. I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive species in the lush forests of the Ko'olau mountains on the east side of the island. I quickly fell in love with the extreme ridgelines of the Ko'olau mountains, and I grew tough from the grueling difficulty of the survey field work itself. Despite the difficulty of ascending the elevation while bushwhacking through tangles of invasive specie like strawberry guava and lantana, I loved my time serving the Oahu Invasive Species Committee.
+My second seasonal field job was a field technician and data specialist position at the [Oahu Invasive Species Committee](https://www.oahuisc.org/). I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu. I quickly fell in love with the extreme ridgelines of the Ko'olau mountains, and I grew tough from the grueling difficulty of the survey field work. Despite the danger of traversing perilous mountain ranges while bushwhacking through impossible tangles of invasive species like thick strawberry guava tree groves and spikey lantana, I loved my time serving the Oahu Invasive Species Committee.
 
-![](about_pics/miconia.JPG)
+![Deep in a humid, mosquito-filled gulch, I spotted a juvenile *Miconia calvescens* plant and plucked it with enthusaism.](about_pics/miconia.JPG)
 
-For special operations each month, we also surveyed for plant species in the high elevation forests and in select regions of the other mountain range of the west side; the Waianae mountains.
 
-![On an annual survey on the West side of the island, looking for *Chromolaeana odorata* ](about_pics/fence.jpg)
+For special operations each month, we also surveyed for plant species in the high elevation forests and in select regions of the other mountain range of the west side; the Wai'anae mountains.
 
-![An aerial survey for *Miconia calvescens* in the Ko'olau Mountains with my supervisor at the Oahu Invasive Species Committee.](about_pics/KKC_heli.jpg)
+![Taking a break from tedious plants surveys to admire the the views of the west side of the island. In the upper elevations of the Wai'anae Mountains, we surveyed for the incipient invasive plant species *Chromolaeana odorata*](about_pics/fence.jpg)
+
+![An aerial survey for *Miconia calvescens* in the Ko'olau Mountains with my coworker Nick at the Oahu Invasive Species Committee.](about_pics/KKC_heli.jpg)
 
 My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna on Oahu, the history of the island's people and geology, and how Hawaii's ecology is currently changing. We suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and involuntarily screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape the bird along the top of the invasive albezia trees that cover Manoa Valley. We talked politics and roasted each other on our radios while on surveys, smelled bad all the time, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
 
-![My coworker and I admiring a waterfall near Waimanalo, Oahu in our *Miconia calvescens* survey uniforms](about_pics/waterall_jump.jpg)
+![My coworker Ryan and I admiring a waterfall near Waimanalo, Oahu in our *Miconia calvescens* survey uniforms](about_pics/waterall_jump.jpg)
 
-![Our field crew for the day hiking in the lowland Ko'olau forest to reach a transect destination deep in the uluhe](about_pics/oahu_survey.jpg)
+![Our field crew for the day hiking in the lowland Ko'olau forest to reach a remote transect destination area that was  filled with mosquitos, mud, and tangled hao plant.](about_pics/oahu_survey.jpg)
 
-![Ascending a side of a mountian ridge in high-elevation native forest in the Ko'olau Mountains, surveying for native o`hia trees infected with an invasive fungal pathogen.](about_pics/first_heli.jpg)
-![](about_pics/JC_PK_KKC.jpg)
+![Ascending a side of a mountian ridge in high-elevation native forest in the Ko'olau Mountains, surveying for native o'hia trees infected with an invasive fungal pathogen called Rapid O'hia Death.](about_pics/first_heli.jpg)
 
-![In these moments I curesed whoever brought mosquitos to the Hawaiian Islands from the mainland.](about_pics/mosquito_survey.jpg)
+
+![My coworkers Phill and Kepano and I discussing the day's survey plan in the middle of native uluhe (the plant species you see here) on a ridge oh the east side of the island in the lowland Ko'olau Mountains](about_pics/JC_PK_KKC.jpg)
+
+![two invasive Jackson's chameleons we found on survey in low-elevation forest. As our job was to remove invasive species to prevent harm to native Hawaiian flora and fauna, we confiscate these individuals from the field because they prey upon native Hawaiian snails.](about_pics/jacksons.jpg)
 
 ### Southern California Steelhead Trout
 
-I served as a fisheries technician for the Pacific States Marine Fisheries Commission to survey for the endangered Southern California Steelhead Trout in Santa Barbara, Ventura, and some more southern regions such as Topanga Creek. We conducted surveys for the fish themselves, taking data on their abundance, size, and the environmental conditions of the freshwater streams in which they resided. We also conducted redd surveys, taking data on their nests in shallow freshwater streams, and electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag larger individuals to track their migration upstream during breeding season in December - April, and their return to the Pacific Ocean around April-May.
+I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California Steelhead Trout. We conducted surveys for the migratory fish themselves and their resident counterparts, rainbow trout. We collected data on their abundance, size, and the environmental conditions of the freshwater streams in which they resided (temperature, gravel quailty, etc.). We also conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow freshwater streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag larger individuals to track their migration upstream during breeding season in December - April, and their return to the Pacific Ocean around April-May.
 
 ![A redd survey in Gobernador Creek in Carpinteria](about_pics/KC_survey.jpg)
 
 ![A redd survey in Matilija Creek in Ojai](about_pics/HA_survey.jpg)
 
-![Electric fishing in Topanga Creek with the goal of PIT tagging large trout we capture](about_pics/efishing.jpg)
+![Electric fishing in Topanga Creek with the goal of PIT tagging adult trout. We administer a mild shock into the water with that large backpack pictured here, scoop the stunned fish into buckets of oxygenated water, medicate the fish, insert a PIT tag, and release them back into the creek when they have fully recovered.](about_pics/efishing.jpg)
 
 ![Measuring a small trout we caught while electric fishing before returning it to the creek.](about_pics/measure_fish.JPG)
 
 
+![We often found two-striped garter snakes on survey in riparian habiat. This snake species is not aggressive towards predators such as humans, but rather predates on fish (like chub and trout), insects, and other smaller prey.](about_pics/snake_arm.JPG)
+
+Lastly, we utilized [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/products/didson-sonars) to film our freshwater streams 24/7 to capture steelhead migrations. We deployed cameras in the Ventura River, Salispuedes Creek, and the Santa Ynez Rvier. These very high-tech cameras utilize sound waves to detect both biotic and abiotic movement in the water, and it was my job to detect trout and other species, such as native chub and invasive catfish, based on their sillouettes in the camera footage.
+
+![Data entry: reviewing sonar footage of fish, debris, and the occassional water bird and freshwater turtle in steelhead trout habitat](about_pics/DIDSON_data_review.JPG)
+
+![The DIDSON crew all geared up to snorkel around the Ventura River camera to find the invasive catfish species we repeatedly saw during footage review.](about_pics/snorkel_gang.JPG)
 
 
 
