@@ -21,8 +21,11 @@ categories:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+<center>
 
-![](pics/turbines.png)
+![](pics/turbines.png){width=50%}
+
+</center>
 
 ### Objective
 
@@ -122,7 +125,7 @@ water, waterway,
 ST_BUFFER(way, (2 * {H})) as way
 FROM planet_osm_line 
 WHERE (railway NOT IN ('abandoned', 'disused')) 
-OR highway IN ('motorway', 'trunk', 'primary', 'seconday', 'primary_link', 'second
+OR highway IN ('motorway', 'trunk', 'primary', 'seconday', 'primary_link', 'second'"""
 
 sql_leisure = f"""SELECT osm_id, building, landuse, aeroway, military, highway, railway, leisure, "natural",
 water, waterway, way
@@ -162,7 +165,7 @@ WHERE "generator:source" IS NOT NULL"""
 
 ### Mega-Query
 
-Combine the subqueries into one mega-query so we can subtract all these restricted geometries as one unit. These subtracted geometries can be considered a "mask" in the world of spatial data science.
+Combine the subqueries into one mega-query so we can subtract all these restricted geometries as one unit. These subtracted geometries can be considered a "mask" in spatial data science jargon.
 
 ```python
 mask_1 = f"""{sql_buildings_residential}
@@ -235,11 +238,15 @@ Sum the energy production over all the cells into a single statewide number for 
 total_energy_product_1 = sum(suitable_cells_1['energy_prod_per_cell'])
 ```
 
-The maximum annual potential wind energy production available to the state of Iowa is 1036574.26 GWh.
+#### The maximum annual potential wind energy production available to the state of Iowa is 1036574.26 GWh.
+
+Please feel free to reach out with any similar applications for this notebook, and I welcome all questions and suggestions about my code. May the wind empower us to continue to study sustainable energy through the lens fo data science!
 
 ### Acknowledgements
 
-- I would like to thank my partner on this project, [Sydney Rilum](https://bren.ucsb.edu/people/sydney-rilum) from the Bren School of Environmental Science and Management, for her contributions. I will never forget the hours we spent drawing widn turbine circles on paper and adjusting the mathematical calculations to refelct different rotor diameters and how that changes the wind power potential for the state of Iowa.
+- I would like to thank my collaborator on this project, [Sydney Rilum](https://bren.ucsb.edu/people/sydney-rilum) from the Bren School of Environmental Science and Management, for her contributions. I will always remember the excessive amount of time we spent drawing wind turbine circles on scratch paper and adjusting the mathematical calculations to reflect different rotor diameters and how that changes the wind power potential for the state of Iowa.
+
+- Thank you, Dr. James Frew from the Bren School of Environmental Science and Management, for prompting us to investigate this question.
 
 - [wind turtbine photo source](https://newscenter.lbl.gov/2021/08/30/technology-advancement-and-value-of-wind-energy/)
 

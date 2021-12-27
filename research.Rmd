@@ -1,0 +1,20 @@
+---
+title: "Undergraduate Research"
+description: |
+  "Mammals and Bivalves"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Undergraduate Research at UC Santa Barbara
+
+### Anthropogenic niche partitioning: mesocarnivore spatial and temporal coexistence along an urban gradient
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.77]{research_pics/URCA_Poster_PDF.pdf}
+
+### Bivalves
+
