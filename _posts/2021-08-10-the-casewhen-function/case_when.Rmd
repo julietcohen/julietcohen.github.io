@@ -11,7 +11,7 @@ output:
     toc: true
     toc_float: true
 categories:
-  -R
+  - R
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)

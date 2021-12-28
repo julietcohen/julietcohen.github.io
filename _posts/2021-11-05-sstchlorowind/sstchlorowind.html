@@ -112,12 +112,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Using an API to visualize environmental conditions in the Santa Barbara Channel"]},{"type":"character","attributes":{},"value":["Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Images/sst.png"]},{"type":"character","attributes":{},"value":["-R"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Using an API to visualize environmental conditions in the Santa Barbara Channel"]},{"type":"character","attributes":{},"value":["Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["Images/sst.png"]},{"type":"character","attributes":{},"value":["R"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Images/bembe.jpg","Images/channel_currents.png","Images/chlorophyll.png","Images/garibaldi.png","Images/me_and_bembe.jpg","Images/mola.png","Images/monthly_wind.png","Images/sst.png","sstchlorowind_files/anchor-4.2.2/anchor.min.js","sstchlorowind_files/bowser-1.9.3/bowser.min.js","sstchlorowind_files/distill-2.2.21/template.v2.js","sstchlorowind_files/header-attrs-2.10/header-attrs.js","sstchlorowind_files/jquery-1.11.3/jquery.min.js","sstchlorowind_files/popper-2.6.0/popper.min.js","sstchlorowind_files/tippy-6.2.7/tippy-bundle.umd.min.js","sstchlorowind_files/tippy-6.2.7/tippy-light-border.css","sstchlorowind_files/tippy-6.2.7/tippy.css","sstchlorowind_files/tippy-6.2.7/tippy.umd.min.js","sstchlorowind_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["Images/bembe.jpg","Images/channel_currents.png","Images/chlorophyll.png","Images/garibaldi.png","Images/me_and_bembe.jpg","Images/mola.png","Images/monthly_wind.png","Images/sst.png","sstchlorowind_files/anchor-4.2.2/anchor.min.js","sstchlorowind_files/bowser-1.9.3/bowser.min.js","sstchlorowind_files/distill-2.2.21/template.v2.js","sstchlorowind_files/header-attrs-2.10/header-attrs.js","sstchlorowind_files/header-attrs-2.11/header-attrs.js","sstchlorowind_files/jquery-1.11.3/jquery.min.js","sstchlorowind_files/jquery-3.6.0/jquery-3.6.0.js","sstchlorowind_files/jquery-3.6.0/jquery-3.6.0.min.js","sstchlorowind_files/jquery-3.6.0/jquery-3.6.0.min.map","sstchlorowind_files/popper-2.6.0/popper.min.js","sstchlorowind_files/tippy-6.2.7/tippy-bundle.umd.min.js","sstchlorowind_files/tippy-6.2.7/tippy-light-border.css","sstchlorowind_files/tippy-6.2.7/tippy.css","sstchlorowind_files/tippy-6.2.7/tippy.umd.min.js","sstchlorowind_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1472,7 +1472,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>Using an API to visualize environmental conditions in the Santa Barbara Channel</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
-<div class="dt=tag">-R</div>
+<div class="dt=tag">R</div>
 </div>
 <!--/radix_placeholder_categories-->
 <p><p>Interpretting marine processes by combining data sets of sea surface temperature, chlorophyll, and wind.</p></p>
@@ -1489,18 +1489,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="a-basin-of-oceanic-data-just-waiting-to-be-analyzed">A basin of oceanic data just waiting to be analyzed</h3>
 <p>The beautiful, biodiverse Santa Barbara coast is known for its sunny weather, gnarly swell, and unique geographic features. Among these are the four northern channel islands, Santa Cruz, Anacapa, Santa Rosa, and San Miguel, which reside between 12 and 27 miles off shore. The Santa Barbara Channel lies between these islands and the coastline, stretching from Los Angeles in the south to Pt. Conception in the north.</p>
 <h3 id="ocean-currents">Ocean Currents</h3>
-<p>This channel harbors a unique combination of ocean currents that causes heterogeneity in environmental conditions across the islands and circulates nutrients throughout the ocean depths in seaosnal patterns. The California current brings a cold swell from the Gulf of Alaska down the coast, providing ideal temporal conditions for black rockfish, sunflower sea otters, red abalone, and other creatures around San Miguel and Santa Rosa Islands. In contrast to the southeast-bound California Current is the northwest-bound Southern California Counter-current from Baja California. This warm, relatively nutrient-poor water supports different marine species such as spiny lobsters, moray eels, and damselfish such as California’s state fish: the Garibaldi. These species are more commonly found near the southeast islands (<a href="https://www.nps.gov/chis/learn/nature/currents-upwelling.htm">1: Channel Islands National Park</a>, <a href="https://www.nps.gov/articles/garibaldi.htm#:~:text=The%20Garibaldi%20is%20the%20California%20State%20fish%20and%20is%20protected%20from%20fishing.&amp;text=These%20fish%20mainly%20live%20in%20the%20kelp%20forest%20ecosystem.&amp;text=This%20species%20of%20damselfish%20inhabits,reefs%20and%20among%20kelp%20forests.">2: National Park Service</a>).</p>
+<p>This channel harbors a unique combination of ocean currents that causes heterogeneity in environmental conditions across the islands and circulates nutrients throughout the ocean depths in seaosnal patterns.</p>
 <figure>
 <img src="Images/channel_currents.png" alt="Santa Barbara Channel currents and all eight channel islands (from west to east): San Miguel Island, Santa Rosa Island, Santa Cruz Island, Anacapa Island, San Nicolas Island, Santa Barbara Island, Santa Catalina Island, San Clemente Island (1)." /><figcaption aria-hidden="true">Santa Barbara Channel currents and all eight channel islands (from west to east): San Miguel Island, Santa Rosa Island, Santa Cruz Island, Anacapa Island, San Nicolas Island, Santa Barbara Island, Santa Catalina Island, San Clemente Island (1).</figcaption>
 </figure>
+<p>The California current brings a cold swell from the Gulf of Alaska down the coast, providing ideal temporal conditions for black rockfish, sunflower sea otters, red abalone, and other creatures around San Miguel and Santa Rosa Islands. In contrast to the southeast-bound California Current is the northwest-bound Southern California Counter-current from Baja California. This warm, relatively nutrient-poor water supports different marine species such as spiny lobsters, moray eels, and damselfish such as California’s state fish: the Garibaldi. These species are more commonly found near the southeast islands (<a href="https://www.nps.gov/chis/learn/nature/currents-upwelling.htm">1: Channel Islands National Park</a>, <a href="https://www.nps.gov/articles/garibaldi.htm#:~:text=The%20Garibaldi%20is%20the%20California%20State%20fish%20and%20is%20protected%20from%20fishing.&amp;text=These%20fish%20mainly%20live%20in%20the%20kelp%20forest%20ecosystem.&amp;text=This%20species%20of%20damselfish%20inhabits,reefs%20and%20among%20kelp%20forests.">2: National Park Service</a>).</p>
+<center>
 <figure>
-<img src="Images/garibaldi.png" alt="A garibaldi fish (Hypsypops rubicundus), California’s state fish and a species found in the Santa Barbara Channel. This fish is protected from fishing, lives in kelp forest habitat, and males utilize red algae to build nests (2)" /><figcaption aria-hidden="true">A garibaldi fish (<em>Hypsypops rubicundus</em>), California’s state fish and a species found in the Santa Barbara Channel. This fish is protected from fishing, lives in kelp forest habitat, and males utilize red algae to build nests (2)</figcaption>
+<img src="Images/garibaldi.png" style="width:50.0%" alt="A garibaldi fish (Hypsypops rubicundus), California’s state fish and a species found in the Santa Barbara Channel. This fish is protected from fishing, lives in kelp forest habitat, and males utilize red algae to build nests (2)" /><figcaption aria-hidden="true">A garibaldi fish (<em>Hypsypops rubicundus</em>), California’s state fish and a species found in the Santa Barbara Channel. This fish is protected from fishing, lives in kelp forest habitat, and males utilize red algae to build nests (2)</figcaption>
 </figure>
+</center>
 <h3 id="marine-wildlife">Marine Wildlife</h3>
 <p>This clashing current rendezvous turns the Santa Barbara Channel into a hotspot for biodiversity such as marine mammals like dolphins and whales, benthic invertebrates like purple urchins, plants such as giant kelp and and unique fish species such as the sunfish (the most majestic fish of all).</p>
+<center>
 <figure>
-<img src="Images/mola.png" alt="A sunfish (Mola mola), the world’s largest bony fish, are found throughout the Santa Barbara Channel and are so large (up to 11 feet in length) can even be spotted by Channel Islands field crew members communting the to islands by helicopter. These atypical fish can even be found as far north as Alaska during El Nino years. These fish often bask nearly motionless near the ocean surface and sometimes breach the surface in an apparent attempt to rid their bodies of external parasites (3)." /><figcaption aria-hidden="true">A sunfish (<em>Mola mola</em>), the world’s largest bony fish, are found throughout the Santa Barbara Channel and are so large (up to 11 feet in length) can even be spotted by Channel Islands field crew members communting the to islands by helicopter. These atypical fish can even be found as far north as Alaska during El Nino years. These fish often bask nearly motionless near the ocean surface and sometimes breach the surface in an apparent attempt to rid their bodies of external parasites (3).</figcaption>
+<img src="Images/mola.png" style="width:50.0%" alt="A sunfish (Mola mola), the world’s largest bony fish, are found throughout the Santa Barbara Channel and are so large (up to 11 feet in length) can even be spotted by Channel Islands field crew members communting the to islands by helicopter. These atypical fish can even be found as far north as Alaska during El Nino years. These fish often bask nearly motionless near the ocean surface and sometimes breach the surface in an apparent attempt to rid their bodies of external parasites (3)." /><figcaption aria-hidden="true">A sunfish (<em>Mola mola</em>), the world’s largest bony fish, are found throughout the Santa Barbara Channel and are so large (up to 11 feet in length) can even be spotted by Channel Islands field crew members communting the to islands by helicopter. These atypical fish can even be found as far north as Alaska during El Nino years. These fish often bask nearly motionless near the ocean surface and sometimes breach the surface in an apparent attempt to rid their bodies of external parasites (3).</figcaption>
 </figure>
+</center>
 <p>During late November through April, whale sightings are quite common in Santa Barbara. Thousands of Pacific gray whales migrate south towards the warm waters of Baja California and feed on krill in the channel along the way, which are tiny organisms that rely on oceanic chlorophyll blooms (4). We can detect chlorophyll and sea surface temperature via remote-sensing satellites. While trying to strategically determine the best time of year to spot these whales, we might want to consider the timing of these phytoplankton blooms. Do these blooms occur more often when we have warmer ocean temperatures? What time of year would that be, and does it align with the famous “whale season” known to be November through April? Is the ocean temperature impacted by wind? A few data-driven friends and I decided to combine data about wind, sea surface temperature, and chlorophyll in the Santa Barbara Channel to find the best time of year to go whale watching. My collaborators include Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management.</p>
 <p>Question: How did wind speed affect sea surface temperature and chlorophyll in the Santa Barbara Channel during 2020?</p>
 <h3 id="the-national-oceanic-atmospheric-administration-noaa">The National Oceanic Atmospheric Administration (NOAA)</h3>
@@ -1617,7 +1622,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<p>We averaged the wind by month rather than day, as we did for the other 2 variables, because the wind varies more each day by a large margin. Therefore, the wind data on a daily basis shows lots of noise and no interpretable trends. On a monthly scale, however, we can make sense of its broader fluctuations over the year.</p>
+<p>We averaged the wind by month rather than by day, as we did for the other two variables, because the wind varies more each day by a large margin. Therefore, the wind data on a daily basis shows lots of noise and no interpretable trends. On a monthly scale, however, we can make sense of its broader fluctuations over the year.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean date format and summarize with daily means for wind</span>
@@ -1635,7 +1640,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<p>Here we cleaned the remotely-sensed sea surface temperature data and summarized it by day:</p>
+<p>Here we cleaned the remotely-sensed sea surface temperature data, summarizing it by day:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean data for sst date</span>
@@ -1663,7 +1668,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<p>Here we cleaned the remotely-sensed chlorophyll data and summarized it by day:</p>
+<p>Here we cleaned the remotely-sensed chlorophyll data, summarizing it by day:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean chloro data</span>
@@ -1681,7 +1686,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<p>We used inner_join() in 2 steps to combine the cleaned data from the 3 variables into one dataframe:</p>
+<p>We used inner_join() in two steps to combine the cleaned data from the three variables into one dataframe:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># combine daily wind and sst and chloro means</span>
@@ -1693,7 +1698,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<p>Now the fun part: visualization! We made 3 plots separated by variable, representing data from all 3 buoys. We marked the sea surface temperature maximum in all 3 plots since the combined data seems to reveal a temporal correlation between sea surface temperature and wind.</p>
+<p>Now the fun part: visualization! We made three plots, one for each variable. Each plot represents data from all three buoys. We marked the sea surface temperature maximum in all plots since the combined data reveals a temporal correlation between sea surface temperature and wind.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Daily Average Sea Surface Temperature from East, West, and Santa Monica Buoys</span>
@@ -1704,12 +1709,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
        y <span class='op'>=</span> <span class='st'>"Daily Average Sea Surface Temperature (degC)"</span>,
        title <span class='op'>=</span> <span class='st'>"Daily Average Sea Surface Temperature from East, West, and Santa Monica Buoys"</span>,
        color <span class='op'>=</span> <span class='st'>"Location"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Monthly Average Wind from East, West, and Santa Monica Buoys</span>
+
+<span class='co'># Monthly Average Wind from East, West, and Santa Monica Buoys</span>
 
 <span class='va'>month_mean</span> <span class='op'>&lt;-</span> <span class='va'>chloro_wind_sst</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span>, <span class='va'>mean_wind</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
@@ -1799,8 +1800,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="https://www.ndbc.noaa.gov/measdes.shtml">Santa Monica Buoy Metadata</a></li>
 </ul>
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

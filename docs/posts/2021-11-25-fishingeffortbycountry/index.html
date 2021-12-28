@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
 <title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Global Fishing Effort &amp; Covid-19: A Statistical Analysis</title>
@@ -112,12 +113,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Global Fishing Effort & Covid-19: A Statistical Analysis"]},{"type":"character","attributes":{},"value":["A statistical approach to answer the question: How did Covid-19 impact global fishing efforts in 2020?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["12-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["pictures/fishing_gfw_map_2020.png"]},{"type":"character","attributes":{},"value":["-R"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Global Fishing Effort & Covid-19: A Statistical Analysis"]},{"type":"character","attributes":{},"value":["A statistical approach to answer the question: How did Covid-19 impact global fishing efforts in 2020?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["12-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["pictures/fishing_gfw_map_2020.png"]},{"type":"character","attributes":{},"value":["R"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/fishing-vessels-v2.csv","fishingeffortbycountry_files/anchor-4.2.2/anchor.min.js","fishingeffortbycountry_files/bowser-1.9.3/bowser.min.js","fishingeffortbycountry_files/distill-2.2.21/template.v2.js","fishingeffortbycountry_files/header-attrs-2.10/header-attrs.js","fishingeffortbycountry_files/jquery-1.11.3/jquery.min.js","fishingeffortbycountry_files/popper-2.6.0/popper.min.js","fishingeffortbycountry_files/tippy-6.2.7/tippy-bundle.umd.min.js","fishingeffortbycountry_files/tippy-6.2.7/tippy-light-border.css","fishingeffortbycountry_files/tippy-6.2.7/tippy.css","fishingeffortbycountry_files/tippy-6.2.7/tippy.umd.min.js","fishingeffortbycountry_files/webcomponents-2.0.0/webcomponents.js","pictures/cod.png","pictures/fishing_gfw_map_2019.png","pictures/fishing_gfw_map_2020.png","pictures/flag_vessels_gfw_map.png","pictures/good_bad_table_correct.png","pictures/malaysia_fishing_effort_legend.png","pictures/malaysia_map.png","pictures/ttest_highlighted.png"]}
+  {"type":"character","attributes":{},"value":["data/fishing-vessels-v2.csv","fishingeffortbycountry_files/anchor-4.2.2/anchor.min.js","fishingeffortbycountry_files/bowser-1.9.3/bowser.min.js","fishingeffortbycountry_files/distill-2.2.21/template.v2.js","fishingeffortbycountry_files/header-attrs-2.10/header-attrs.js","fishingeffortbycountry_files/header-attrs-2.11/header-attrs.js","fishingeffortbycountry_files/jquery-1.11.3/jquery.min.js","fishingeffortbycountry_files/jquery-3.6.0/jquery-3.6.0.js","fishingeffortbycountry_files/jquery-3.6.0/jquery-3.6.0.min.js","fishingeffortbycountry_files/jquery-3.6.0/jquery-3.6.0.min.map","fishingeffortbycountry_files/popper-2.6.0/popper.min.js","fishingeffortbycountry_files/tippy-6.2.7/tippy-bundle.umd.min.js","fishingeffortbycountry_files/tippy-6.2.7/tippy-light-border.css","fishingeffortbycountry_files/tippy-6.2.7/tippy.css","fishingeffortbycountry_files/tippy-6.2.7/tippy.umd.min.js","fishingeffortbycountry_files/webcomponents-2.0.0/webcomponents.js","pictures/cod.png","pictures/fishing_gfw_map_2019.png","pictures/fishing_gfw_map_2020.png","pictures/flag_vessels_gfw_map.png","pictures/good_bad_table_correct.png","pictures/malaysia_fishing_effort_legend.png","pictures/malaysia_map.png","pictures/ttest_highlighted.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2355,8 +2356,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2408,7 +2409,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h1>Global Fishing Effort &amp; Covid-19: A Statistical Analysis</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
-  <a href="../../blog.html#category:-R" class="dt-tag">-R</a>
+  <a href="../../blog.html#category:R" class="dt-tag">R</a>
 </div>
 <!--/radix_placeholder_categories-->
 <p><p>A statistical approach to answer the question: How did Covid-19 impact global fishing efforts in 2020?</p></p>
@@ -2482,9 +2483,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+<center>
 <figure>
-<img src="pictures/good_bad_table_correct.png" alt="Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country" /><figcaption aria-hidden="true">Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country</figcaption>
+<img src="pictures/good_bad_table_correct.png" style="width:70.0%" alt="Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country" /><figcaption aria-hidden="true">Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country</figcaption>
 </figure>
+</center>
 <p>This color-coded table reveals that 85% of the countries included in this analysis <em>decreased</em> their fishing effort during the Covid-19 pandemic in 2020 relative to their fishing trend leading up to 2020, while 15% of the countries included in this analysis <em>increased</em> their fishing effort. The vast majority of countries’ fishing sectors seemed to follow the same stay-at-home order that was enforced across the globe. While this may have had a detrimental impact on the global fish economy, hopefully the marine fish populations we able to recover and thrive during this period of reprieve from human predation. The results of my statistical analysis match the conclusion of a 2021 scientific study investigating the change in marine recreational fishing activity during the first year of the pandemic (5).</p>
 <h3 id="future-steps">Future Steps</h3>
 <p>In order to improve this analysis in the future, I recommend using more than three years of fishing effort data to produce a more accurate linear model. Additionally, I would recommend using a different statistical approach instead of iterating a for loop over each country’s fishing effort data, because this method produced outliers and coefficients that did not line up with observed fishing effort data. Lastly, I recommend running this analysis on fishing effort data from other sources in addition to Global Fishing Watch’s data. This will provide certainty that the data is accurate and the results are reproducible.</p>

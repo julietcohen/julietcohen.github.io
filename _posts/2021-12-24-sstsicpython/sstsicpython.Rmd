@@ -13,7 +13,7 @@ output:
     toc_float: true
 preview: pics/combined_graph.png
 categories:
-  -Python
+  - Python
 ---
 
 
@@ -21,26 +21,29 @@ categories:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+###### Global sea surface temperature and sea ice concentration as raster images
+![](pics/sst_raster.png){width=50%}![](pics/sci_raster.png){width=50%}
+
 Plotting time series data from 2 different datasets can be tricky in Python. Here, we will plot sea surface temperature (SST) and sea ice concentration (SIC) in the same plot from the years 1981-2021 to visualize how climate change has impacted these environmental variables over time. 
 
-## Datasets:
+### Datasets:
 
-#### SST: NOAA's 1/4° Daily Optimum Interpolation Sea Surface Temperature (OISST) version 2, or OISSTv2\
+#### 1. Sea Surface Tmnerpature: NOAA's 1/4° Daily Optimum Interpolation Sea Surface Temperature (OISST) version 2, or OISSTv2\
 - [Data source and metadata: NOAA National Centers for Environmental Information](https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00844/html)
 - [NOAA Sea Surface Temperature Optimum Interpolation methods](https://www.ncei.noaa.gov/products/climate-data-records/sea-surface-temperature-optimum-interpolation)
 
-#### SIC: Monthly Mean Hadley Centre Sea Ice and SST dataset version 1 (HadISST1)
+#### 2. Sea Ice Concentration: Monthly Mean Hadley Centre Sea Ice and SST dataset version 1 (HadISST1)
 
 - [Data source and metadata: UCAR/NCAR - DASH Repository](https://dashrepo.ucar.edu/dataset/158_asphilli.html)
 - [Journal of Climate article explaining why the datasets were merged](https://journals.ametsoc.org/view/journals/clim/21/19/2008jcli2292.1.xml)
 
-## Load necessary packages
+### Load necessary packages
 `import xarray as xr`\
 `import pandas as pd`\
 `import matplotlib.pyplot as plt`\
 `import glob`
 
-## Import Sea Surface Temperature Data
+### Import Sea Surface Temperature Data
 
 I manually downloaded 40 years of datasets from the sea surface temperature data source, one day from each year (October 17th) and now I will import them with a for loop. Each dataset has a standardized name that only differs in the year it was collected, so the `glob()` function makes importing them all at once a piece of cake. We can use * as a wild card to represent any year in the file names.
 
@@ -52,10 +55,10 @@ I manually downloaded 40 years of datasets from the sea surface temperature data
 `df = pd.concat(new)`\
 `df`
 
-![](pics/sst_raw_df.png)
+![](pics/sst_raw_df.png){widht=90%}
 We need to organize the dataframe further before creating matplotlib visualizations for sea surface temperature over time. This dataframe defaulted to using time as an index, so we need to convert time to a column and subset the columns to just time and sea surface temperature.
 
-## Sea Surface Temperature Dataframe Wrangling
+### Sea Surface Temperature Dataframe Wrangling
 
 **#Subset the columns: we choose only 'sst' here because 'time' is considered the index (note: subsetting this dataframe turns the type into a pandas 'series')**\
 `df_subset = df['sst']`\
@@ -65,18 +68,18 @@ We need to organize the dataframe further before creating matplotlib visualizati
 `sst_means = sst_means[['time', 'sst']]`\
 `sst_means`
 
-![](pics/time_sst_df.png)
+![](pics/time_sst_df.png){width=60%}
 Ensure that the type of the time variable is datetime64.
 
-![](pics/datetime.png)
+![](pics/datetime.png){width=75%}
 As a last step in processing this dataframe, we will pull the year out of the time variable. We do this because the day and time is consistent for each sea surface temperature file, and therefore it is negligible. Furthermore, will process the sea ice concentration data to only include year, and we need the sea surface temperature time variable to be of the same format as the sea ice concentration time variable.
 
 **# add a column of just the year, so when we pair the sst data with the ice data, the time variable will match**
 `sst_means['year'] = pd.DatetimeIndex(sst_means['time']).year`\
 `sst_means`
 
-![](pics/final_sst_df.png)
-## Plot Sea Surface Temperature Over Time
+![](pics/final_sst_df.png){width=60%}
+### Plot Sea Surface Temperature Over Time
 
 Now that we finished processing the sea surface temperature data, we can plot the sea surface temperature over our time period using `matplotlib` to see if can recognize a trend. It appears that sea surface temperature fluctuates over short time periods spanning a few years, but over the course of the full 40-year time period there is a clear positive correlation between time and temperature. This trend is what we would expect based on our knowledge of climate change and other sources of data that show rising sea temperatures across the globe.
 
@@ -88,14 +91,14 @@ Now that we finished processing the sea surface temperature data, we can plot th
 
 ![](pics/sst_graph.png)
 
-## Import Sea Ice Data
+### Import Sea Ice Data
 
 The sea ice data import process is similar to my code for importing the sea surface temperature data. One of my collaborators on this project, [Peter Menzies](https://petermenzies.github.io/), wrote the following code to import the sea ice data.
 
 **# read in ice dataset with xarray (prior to this step, data files were manually pulled from source and compiled into a single local netCDF file)**\
 `ds_ice = xr.open_dataset("Data/MODEL.ICE.HAD187001-198110.OI198111-202109.nc")`\
 
-## Sea Ice Data Wrangling
+### Sea Ice Data Wrangling
 
 **# create empty dataframe with columns year and ice_conc**\
 `ice_time = pd.DataFrame(columns=['year', 'ice_conc'])`\
@@ -122,9 +125,9 @@ Use another for loop to pull sea ice values from October of each year 1981 to 20
 **# check out our resulting dataframe**
 `ice_time`
 
-![](pics/sic_table.png)
+![](pics/sic_table.png){width=40%}
 
-## Plotting Sea Ice Data
+### Plotting Sea Ice Data
 
 `plt.figure(figsize=(10,7))`\
 `plt.plot(ice_time['year'], ice_time['ice_conc'])`\
@@ -134,7 +137,7 @@ Use another for loop to pull sea ice values from October of each year 1981 to 20
 
 ![](pics/sic_graph.png)
 
-## Combine the Visualizations
+### Combine the Visualizations
 
 Use `matplotlib` to combine the sea surface temperature and sea ice concentration data into one figure.
 
@@ -162,8 +165,5 @@ Use `matplotlib` to combine the sea surface temperature and sea ice concentratio
 
 This plot and this code is just a portion of a larger environmental programming project completed by myself and my two collaborators [Peter Menzies](https://petermenzies.github.io/) and [Ryan Munnikhuis](https://ryanmunnikhuis.github.io/). See our complete repository [here](https://github.com/EDS220-Fall2021-org/Homework_3), which contains a binder in the README so anyone can run all the code with ease. Check out the anntoated code to learn how to turn these two datasets into rasterized images and GIF's!
 
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
 
 

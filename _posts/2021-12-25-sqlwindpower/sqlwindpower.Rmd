@@ -13,8 +13,8 @@ output:
     toc_float: true
 preview: pics/iowa_mask.png
 categories:
-  -Python
-  -SQL
+  - Python
+  - SQL
 ---
 
 

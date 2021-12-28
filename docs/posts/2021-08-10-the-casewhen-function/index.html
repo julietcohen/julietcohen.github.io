@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
 <title>Juliet Cohen : Wildlife Enthusiast and Aspiring Data Scientist: Tidy data and the case_when() function in R</title>
@@ -112,12 +113,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["Tidy data and the case_when() function in R"]},{"type":"character","attributes":{},"value":["A gem within the expansive tidyverse."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]}]}]},{"type":"character","attributes":{},"value":["08-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["-R"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["Tidy data and the case_when() function in R"]},{"type":"character","attributes":{},"value":["A gem within the expansive tidyverse."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]}]}]},{"type":"character","attributes":{},"value":["08-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["R"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["case_when_files/anchor-4.2.2/anchor.min.js","case_when_files/bowser-1.9.3/bowser.min.js","case_when_files/distill-2.2.21/template.v2.js","case_when_files/figure-html5/unnamed-chunk-2-1.png","case_when_files/figure-html5/unnamed-chunk-5-1.png","case_when_files/figure-html5/unnamed-chunk-6-1.png","case_when_files/header-attrs-2.10/header-attrs.js","case_when_files/header-attrs-2.9/header-attrs.js","case_when_files/jquery-1.11.3/jquery.min.js","case_when_files/popper-2.6.0/popper.min.js","case_when_files/tippy-6.2.7/tippy-bundle.umd.min.js","case_when_files/tippy-6.2.7/tippy-light-border.css","case_when_files/tippy-6.2.7/tippy.css","case_when_files/tippy-6.2.7/tippy.umd.min.js","case_when_files/webcomponents-2.0.0/webcomponents.js","data/Lobster_Abundance_All_Years_20210412.csv","hello.html","hello_files/anchor-4.2.2/anchor.min.js","hello_files/bowser-1.9.3/bowser.min.js","hello_files/distill-2.2.21/template.v2.js","hello_files/figure-html5/unnamed-chunk-2-1.png","hello_files/header-attrs-2.9/header-attrs.js","hello_files/jquery-1.11.3/jquery.min.js","hello_files/popper-2.6.0/popper.min.js","hello_files/tippy-6.2.7/tippy-bundle.umd.min.js","hello_files/tippy-6.2.7/tippy-light-border.css","hello_files/tippy-6.2.7/tippy.css","hello_files/tippy-6.2.7/tippy.umd.min.js","hello_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["case_when_files/anchor-4.2.2/anchor.min.js","case_when_files/bowser-1.9.3/bowser.min.js","case_when_files/distill-2.2.21/template.v2.js","case_when_files/figure-html5/unnamed-chunk-2-1.png","case_when_files/figure-html5/unnamed-chunk-5-1.png","case_when_files/figure-html5/unnamed-chunk-6-1.png","case_when_files/header-attrs-2.10/header-attrs.js","case_when_files/header-attrs-2.9/header-attrs.js","case_when_files/jquery-1.11.3/jquery.min.js","case_when_files/popper-2.6.0/popper.min.js","case_when_files/tippy-6.2.7/tippy-bundle.umd.min.js","case_when_files/tippy-6.2.7/tippy-light-border.css","case_when_files/tippy-6.2.7/tippy.css","case_when_files/tippy-6.2.7/tippy.umd.min.js","case_when_files/webcomponents-2.0.0/webcomponents.js","data/Lobster_Abundance_All_Years_20210412.csv","hello_files/anchor-4.2.2/anchor.min.js","hello_files/bowser-1.9.3/bowser.min.js","hello_files/distill-2.2.21/template.v2.js","hello_files/figure-html5/unnamed-chunk-2-1.png","hello_files/header-attrs-2.9/header-attrs.js","hello_files/jquery-1.11.3/jquery.min.js","hello_files/popper-2.6.0/popper.min.js","hello_files/tippy-6.2.7/tippy-bundle.umd.min.js","hello_files/tippy-6.2.7/tippy-light-border.css","hello_files/tippy-6.2.7/tippy.css","hello_files/tippy-6.2.7/tippy.umd.min.js","hello_files/webcomponents-2.0.0/webcomponents.js","hello.html"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2355,8 +2356,8 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2408,7 +2409,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h1>Tidy data and the case_when() function in R</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
-  <a href="../../blog.html#category:-R" class="dt-tag">-R</a>
+  <a href="../../blog.html#category:R" class="dt-tag">R</a>
 </div>
 <!--/radix_placeholder_categories-->
 <p><p>A gem within the expansive tidyverse.</p></p>
@@ -2426,7 +2427,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h3>Contents</h3>
 <ul>
 <li><a href="#tidy-data">Tidy data</a></li>
-<li><a href="#case_when-and-lobsters"><code>case_when()</code> and Lobsters</a>
+<li><a href="#case_when-and-lobster-data"><code>case_when()</code> and Lobster Data</a>
 <ul>
 <li><a href="#first-thing-first-import-your-data">First thing first, import your data</a></li>
 </ul></li>
@@ -2443,16 +2444,15 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 </div>
 <h2 id="tidy-data">Tidy data</h2>
-<p>Whenever we start our journey transforming a dataset into something we can interpret and visualize, we</p>
-<p>This lobster data set is in <strong>Tidy</strong> format, as is most of the data sets we work with. <strong>Tidy</strong> data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R’s vectorized functions flourish with rows and columns in Tidy format.</p>
+<p>Whenever we start our journey transforming a dataset into an organized format we can interpret and visualize, it helps to to have the data in <strong>Tidy</strong> format. <strong>Tidy</strong> data is a structure for data sets that helps R do the most work possible when it comes to analysis, summary statistics, and combining data sets. R’s vectorized functions flourish with rows and columns in Tidy format.</p>
 <p><strong>Tidy</strong> data has each variable in columns, each observation has its own row, and each cell contains a single value. For the lobster data set, each lobster caught has its own row with each column describing one aspect of that lobster. Each column has a succinct title for the variable it contains, and ideally includes underscores where we would normally have spaces and has no capitalization to make our coding as easy as possible. There should be NA in any cells that do not have values, which is a default that many R functions recognize as default. When we utilize this data, we can easily remove these values in our code by referring to them as NA.</p>
 <p><strong>Tidy</strong> format encourages collaboration between people and data sets because we are easily able to combine data from different sources using join functions. If the data contains columns with shared variables, R can easily recognize those columns and associate its rows <code>(observations)</code> with the observations of the complementary data set. Using <code>full_join()</code> is a common join function to utilize as it maintains all data from both sources.</p>
 <p><strong>Tidy</strong> format helps you easily make subsets of your data for specific graphs and summary tables. Consider the <code>filter()</code> and <code>select()</code> functions, which help you subset to only view variable or observations of interest. In these cases, it is especially important to have only one value in each cell and standardize the way you document observations. You always want to record each lobster species with the same spelling, each size with the same number of decimal places, and each date with the same format (such as <code>YYYY-MM-DD</code>). For variables such as length that might need units, always include these units in the column header rather than the cell. This streamlines our coding and keeps cells to a single class. If you include numerical and character values in one cell, it will be documented as a character, which can restrict your analysis process.</p>
 <p>Your data isn’t in <strong>Tidy</strong> format? That’s alright! Check out the <code>tidyr::pivot_longer()</code> and <code>tidyr::pivot_wider()</code> functions to help you help R help you. In the example below, we have a tribble dataset that is not in <strong>Tidy</strong> format. We know this because there are multiple columns <code>(A:C)</code> that represent different individuals or observations of the same variable (like dog food brands). We can use <code>pivot_longer()</code> to put the column headers into their own column, rename that column, and pivot their values into their own column while maintaining their association with A, B, and C. Although the resulting <strong>tidy</strong> data may seem more complex at first galnce, it is easier to convert to a graph and structurally is more organized from a data science perspective.</p>
-<p>To demonstrate some simple data tidying, lets make a tribble (which is similar to a dataframe) and manipulate it using the pivot_longer() function. In this tibble, we are</p>
+<p>To demonstrate some simple data tidying, lets make a tribble (which is similar to a dataframe) and manipulate it using the <code>pivot_longer()</code> function. In this example tibble, we are comparing the food preferences of 2 dogs. The dog food types are labeled as A, B, and C.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'>tribble</span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/tribble.html'>tribble</a></span><span class='op'>(</span>
   <span class='op'>~</span><span class='va'>name</span>, <span class='op'>~</span><span class='va'>A</span>, <span class='op'>~</span><span class='va'>B</span>, <span class='op'>~</span><span class='va'>C</span>,
   <span class='st'>"dog_1"</span>, <span class='fl'>4</span>, <span class='fl'>5</span>, <span class='fl'>6</span>,
   <span class='st'>"dog_2"</span>, <span class='fl'>9</span>, <span class='fl'>10</span>, <span class='fl'>8</span>
@@ -2461,7 +2461,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span class='va'>df</span>
 </code></pre>
 </div>
-<pre><code># A tibble: 2 x 4
+<pre><code># A tibble: 2 × 4
   name      A     B     C
   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 1 dog_1     4     5     6
@@ -2469,7 +2469,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <p>This dataframe is not in tidy format, because the variable <strong>ranking</strong> is dispersed between multiple columns. We want a single variable in each column, so lets combine those columns and make it <em>tidier</em>:</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 x 3
+<pre><code># A tibble: 6 × 3
   name  dog_food_brand ranking
   &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
 1 dog_1 A                    4
@@ -2479,12 +2479,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 5 dog_2 B                   10
 6 dog_2 C                    8</code></pre>
 </div>
-<h2 id="case_when-and-lobsters"><code>case_when()</code> and Lobsters</h2>
-<p>Use this function to help tidy your data and prepare it for plotting. <code>case_when()</code> bins continuous data into manually defined categories and add it to your data set in the form of new column.</p>
-<p><code>case_when()</code> is used in this example to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster we caught in this dataframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.</p>
+<p>Wonderful, now let’s apply these <strong>Tidy</strong> tools to a substantial dataset!</p>
+<h2 id="case_when-and-lobster-data"><code>case_when()</code> and Lobster Data</h2>
 <h3 id="first-thing-first-import-your-data">First thing first, import your data</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 x 9
+<pre><code># A tibble: 6 × 9
    year month date       site  transect replicate size_mm num_ao  area
   &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
 1  2012     8 2012-08-20 IVEE         3 A              70      0   300
@@ -2494,19 +2493,21 @@ d-appendix d-footnote-list a.footnote-backlink {
 5  2012     8 2012-08-20 IVEE         3 B              85      0   300
 6  2012     8 2012-08-20 IVEE         3 C              60      0   300</code></pre>
 </div>
-<p>This data is ground-breaking! The world needs to see this and understand its implications. In order to plot this fasciating data in a meaningful way, we want to efficiently categorize our lobsters by legality status and color code their relative abundance in our visualization. Considering that the legal minimum size for a lobster is 79.76 (units), this is the threshold we will pass onto R to do the heavy lifting for us.</p>
+<p>Use the <code>case_when()</code> function to tidy this lobster data and prepare it for visualization. The <code>case_when()</code> function bins continuous data into manually defined categories and adds this categorization it to your data set in the form of new column. It doesn’t change the values in the cells that already exist, and it does not delete any existing data.</p>
+<p>Lobsters must be a minimum size in order to harvest, and we can use <code>case_when()</code> to categorize lobsters into size bins based on the legal size minimum for fishing. This function processes each individual lobster (each row) in this dataframe and returns if it is large enough to legally harvest from various locations along the Santa Barbara coast.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lobsters_legality</span> <span class='op'>&lt;-</span> <span class='va'>lobsters</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>legal <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lobsters_legality</span> <span class='op'>&lt;-</span> <span class='va'>lobsters</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>legal <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
     <span class='va'>size_mm</span> <span class='op'>&gt;=</span> <span class='fl'>79.76</span> <span class='op'>~</span> <span class='st'>"yes"</span>,
-    <span class='va'>size_mm</span> <span class='op'>&lt;</span> <span class='fl'>79.76</span> <span class='op'>~</span> <span class='st'>"no"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-   <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>site</span>, <span class='va'>legal</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>summarize</span><span class='op'>(</span>site_legal_count <span class='op'>=</span> <span class='fu'>n</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='va'>size_mm</span> <span class='op'>&lt;</span> <span class='fl'>79.76</span> <span class='op'>~</span> <span class='st'>"no"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> 
+   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>site</span>, <span class='va'>legal</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/janitor/man/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>site_legal_count <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<p>Use ggplot() to make a bar graph that color codes the lobster abundance by legality status. We communicate that we want R to color the graph by this variable by passing the argument <code>color = legal</code> within aes(). Manually setting colors is set outside of aes(), but here it is an argument because it is determined by a variable.</p>
+<p>This data is ground-breaking! The world needs to see this and understand its implications. In order to plot this fascinating data in a meaningful way, we want to efficiently categorize our lobsters by legality status and color code their relative abundance in our visualization. Considering that the legal minimum size for a lobster is 79.76 (units), this is the threshold we will pass onto R to do the heavy lifting for us.</p>
+<p>Use <code>ggplot()</code> to make a bar graph that color codes the lobster abundance by legality status. We communicate that we want R to color the graph by this variable by passing the argument <code>color = legal</code> within <code>aes()</code>. Manually setting colors is set outside of <code>aes()</code>, but here it is an argument because it is determined by a variable.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="case_when_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>

@@ -11,7 +11,7 @@ output:
     self_contained: false
 preview: pictures/fishing_gfw_map_2020.png
 categories:
-  -R
+  - R
 ---
 
 ```{r setup, include=FALSE}
@@ -353,7 +353,11 @@ good_bad_table <- comparison_rearranged_simplified %>%
 good_bad_table
 ```
 
-![Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country](pictures/good_bad_table_correct.png)
+<center>
+
+![Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country](pictures/good_bad_table_correct.png){width=70%}
+
+</center>
 
 This color-coded table reveals that 85% of the countries included in this analysis *decreased* their fishing effort during the Covid-19 pandemic in 2020 relative to their fishing trend leading up to 2020, while 15% of the countries included in this analysis *increased* their fishing effort. The vast majority of countries' fishing sectors seemed to follow the same stay-at-home order that was enforced across the globe. While this may have had a detrimental impact on the global fish economy, hopefully the marine fish populations we able to recover and thrive during this period of reprieve from human predation. The results of my statistical analysis match the conclusion of a 2021 scientific study investigating the change in marine recreational fishing activity during the first year of the pandemic (5).
 

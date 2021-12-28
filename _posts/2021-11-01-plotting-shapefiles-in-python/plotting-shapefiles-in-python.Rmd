@@ -13,7 +13,7 @@ output:
     toc_float: true
 preview: images/crit_hab_with_basemap.png
 categories:
-  -Python
+  - Python
 ---
 
 ```{r setup, include=FALSE}
