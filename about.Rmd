@@ -10,11 +10,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <center>
 
-![A hike in the Ko'olau Mountains in Oahu, Hawaii (2019)](about_pics/hike_smile.jpg){width="63%"}![](about_pics/desert_snake.jpg){width="37%"}
+![Upper Matilija Creek in Ojai, CA.](about_pics/waterfall.jpg){width="90%"}
+
+</center>
+
+<center>
+
+![Overlooking Olomana ("three peaks) on the east side of Oahu, Hawaii.](about_pics/overlook_oahu.jpg){width=90%}
 
 </center>
 
 My path to become a data scientist began as a raccoon trapper, a lizard hunter, an island invasive species specialist, and a fisheries technician. I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean data and enter it into databases in ArcGIS, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, SQL, and EML slowly over time. However, I didn't make this journey alone. I found mentors in academic advisers, field crew leaders, and data scientists that provided the tools to help me grow as a data scientist.
+
+![My coworker at the Oahu Invasive Species Committee laughing as the field crew makes our way down a ridgeline.](about_pics/phill.jpg){width=90%}
 
 ### Undergraduate Research at UC Santa Barbara
 
@@ -26,13 +34,19 @@ I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this 
 
 </center>
 
-I completed two independent research projects in undergrad: one investigating spatial and temporal niche overlap among urban mammals, and one looking at water filtration rates among different bivalve species in Costa Rican mariculture systems. The latter turned into my first scientific paper, and I had the chance to present my research at a biological research symposium in Monteverde, Costa Rica in 2018.
+I completed two independent research projects in undergrad: one investigating spatial and temporal niche overlap among urban mammals, and one looking at water filtration rates among different bivalve species in Costa Rican mariculture systems. The latter turned into my first scientific paper, and I had the chance to present my research at a biological research symposium in Monteverde, Costa Rica in 2018. (Check out these projects under the **Research** tab.)
 
-![](about_pics/bivalve_erin.JPG){width="50%"}![](about_pics/turbidity_measurement.JPG){width="50%"}
+<center>
 
-###### Left: Measuring the water displacement of individual bivalves at the end of a field day with my colleague Erin, who was relaxing on the boat after a day of snorkeling and data collection for her own research.
+![Measuring the water displacement of individual bivalves at the end of a field day with my colleague Erin, who was relaxing on the boat after a day of snorkeling and data collection for her own research.](about_pics/bivalve_erin.JPG){width=65%}
 
-###### Right: Measuring the turbidity of my various species-specific buckets at regular time intervals. I would dive into the mariculture nets each day to collect new bivalve species, run my secchi disk filtration trials with algae and bryozoans in the buckets, then return the bivalves to their natural habitat at the end of the day.
+</center>
+
+![](about_pics/turbidity_measurement.JPG){width="70%"}![](about_pics/buckets.png){width=30%}
+
+###### left: Measuring the turbidity of my various species-specific buckets at regular time intervals. I would dive into the mariculture nets each day to collect new bivalve species, run my secchi disk filtration trials with algae and bryozoans in the buckets, then return the bivalves to their natural habitat at the end of the day.
+
+###### Right: One of my bivlavle filtration trials a the off-shore mariculture site. The different species of bilvalves in each filtered the algae and bryozoans at different rates, resulting in different levels of turbidity. 
 
 ### The Lizard Days
 
@@ -41,6 +55,12 @@ My first job post graduation was a seasonal field technician position surveying 
 <center>
 
 ![The first flat-tailed horned lizard we spotted during day 1 of survey season](about_pics/fthl.JPG){width="60%"}
+
+</center>
+
+<center>
+
+![This iguana has a unique strategy to avoid the hot desert floor.](about_pics/lizard_bush.jpg){width=65%}
 
 </center>
 
@@ -58,7 +78,7 @@ My second seasonal field job was a field technician and data specialist position
 
 <center>
 
-![Deep in a humid, mosquito-filled gulch, I spotted a juvenile *Miconia calvescens* plant and plucked it with enthusiasm.](about_pics/miconia.JPG){width="65%"}
+![Deep in a humid, mosquito-filled gulch, I spotted a juvenile *Miconia calvescens* plant and plucked it with enthusiasm.](about_pics/miconia.JPG){width="75%"}
 
 </center>
 
@@ -66,11 +86,11 @@ For special operations each month, we also surveyed for plant species in the hig
 
 <center>
 
-![Taking a break from tedious plants surveys to admire the the views of the west side of the island. In the upper elevations of the Wai'anae Mountains, we surveyed for the incipient invasive plant species Chromolaeana odorata](about_pics/fence.jpg){width="65%"}
+![Taking a break from tedious plants surveys to admire the the views of the west side of the island. In the upper elevations of the Wai'anae Mountains, we surveyed for the incipient invasive plant species Chromolaeana odorata](about_pics/fence.jpg){width="75%"}
 
 </center>
 
-![](about_pics/KKC_heli.jpg){width="50%"}![](about_pics/first_heli.jpg){width="50%"}
+![](about_pics/KKC_heli.jpg){width="55%"}![](about_pics/first_heli.jpg){width="45%"}
 
 ###### Left: An aerial survey for *Miconia calvescens* in the Ko'olau Mountains with my coworker Nick at the Oahu Invasive Species Committee.
 
@@ -84,7 +104,7 @@ My coworkers were at the root of my fondness towards my experience working at th
 
 ###### Right: Our field crew for the day hiking in the lowland Ko'olau forest to reach a remote transect destination area that was filled with mosquitos, mud, and tangled hao plant.
 
-![](about_pics/JC_PK_KKC.jpg){width=50%}![](about_pics/jacksons.jpg){width=50%}
+![](about_pics/JC_PK_KKC.jpg){width="50%"}![](about_pics/jacksons.jpg){width="50%"}
 
 ###### Left: My coworkers Phill and Kepano and I discussing the day's survey plan in the middle of native uluhe (the plant species you see here) on a ridge oh the east side of the island
 
@@ -94,18 +114,32 @@ My coworkers were at the root of my fondness towards my experience working at th
 
 I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California Steelhead Trout. We conducted surveys for the migratory fish themselves and their resident counterparts, rainbow trout. We collected data on their abundance, size, and the environmental conditions of the freshwater streams in which they resided (temperature, gravel quailty, etc.). We also conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow freshwater streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag larger individuals to track their migration upstream during breeding season in December - April, and their return to the Pacific Ocean around April-May.
 
-![A redd survey in Gobernador Creek in Carpinteria](about_pics/KC_survey.jpg){wifth=65%}
+![](about_pics/KC_survey.jpg){width="50%"}![](about_pics/HA_survey.jpg){width="50%"}
 
-![A redd survey in Matilija Creek in Ojai](about_pics/HA_survey.jpg){width=65%}
+###### Left: A redd survey in Gobernador Creek in Carpinteria, CA.
 
-![Electric fishing in Topanga Creek with the goal of PIT tagging adult trout. We administer a mild shock into the water with that large backpack pictured here, scoop the stunned fish into buckets of oxygenated water, medicate the fish, insert a PIT tag, and release them back into the creek when they have fully recovered.](about_pics/efishing.jpg){width=70%}
+###### Right: A redd survey in Matilija Creek in Ojai, CA.
 
-![Measuring a small trout we caught while electric fishing before returning it to the creek.](about_pics/measure_fish.JPG){width=50%}
+<center>
 
-![We often found two-striped garter snakes on survey in riparian habiat. This snake species is not aggressive towards predators such as humans, but rather predates on fish (like chub and trout), insects, and other smaller prey.](about_pics/snake_arm.JPG){width=65%}
+![Electric fishing in Topanga Creek with the goal of PIT tagging adult trout. We administer a mild shock into the water with that large backpack pictured here, scoop the stunned fish into buckets of oxygenated water, medicate the fish, insert a PIT tag, and release them back into the creek when they have fully recovered.](about_pics/efishing.jpg){width="70%"}
+
+![](about_pics/measure_fish.JPG){width="50%"}![](about_pics/snake_arm.JPG){width="50%"}
+
+###### Left: Measuring a small trout we caught while electric fishing before returning it to the creek.
+
+###### Right: We often found two-striped garter snakes on survey in riparian habiat. This snake species is not aggressive towards predators such as humans, but rather predates on fish (like chub and trout), insects, and other smaller prey.
 
 Lastly, we utilized [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/products/didson-sonars) to film our freshwater streams 24/7 to capture steelhead migrations. We deployed cameras in the Ventura River, Salispuedes Creek, and the Santa Ynez Rvier. These very high-tech cameras utilize sound waves to detect both biotic and abiotic movement in the water, and it was my job to detect trout and other species, such as native chub and invasive catfish, based on their sillouettes in the camera footage.
 
-![Data entry: reviewing sonar footage of fish, debris, and the occassional water bird and freshwater turtle in steelhead trout habitat](about_pics/DIDSON_data_review.JPG){width=65%}
+<center>
 
-![The DIDSON crew all geared up to snorkel around the Ventura River camera to find the invasive catfish species we repeatedly saw during footage review.](about_pics/snorkel_gang.JPG){width=65%}
+![Data entry: reviewing sonar footage of fish, debris, and the occassional water bird and freshwater turtle in steelhead trout habitat](about_pics/DIDSON_data_review.JPG){width="65%"}
+
+</center>
+
+<center>
+
+![The DIDSON crew all geared up to snorkel around the Ventura River camera to find the invasive catfish species we repeatedly saw during footage review.](about_pics/snorkel_gang.JPG){width="65%"}
+
+</center>
