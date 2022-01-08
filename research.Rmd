@@ -12,6 +12,10 @@ Undergraduate Research at UC Santa Barbara
 
 ### Anthropogenic niche partitioning: mesocarnivore spatial and temporal coexistence along an urban gradient
 
+#### ABSTRACT
+
+###### We understand little about how our urbanizing world influences temporal and spatial niche partitioning among synathropic mammals. My research objectives include (1) to analyze how species shift temporal coexistence in response to varying degrees of urbanization, and (2) evaluate spatial niche partitioning by calculating relative mammalian diversity along an urban gradient. Urban species include the North American raccoon, striped skunk, red fox, brush rabbit, and Virginia opossum. Nine camera traps are deployed throughout three distinct habitats along an urban gradient. Urbanization positively correlates with nocturnality, and seasonality strongly predicts activity patterns that differ between species. Shifting activity patterns can disrupt delicate ecological relationships and specialized resource exploitation.
+
 ```{r image-ref-for-in-text, echo = FALSE, message=FALSE, fig.align='center', fig.cap='My Undergraduate thesis', out.width='0.75\\linewidth', fig.pos='H'}
 knitr::include_graphics("./research/URCA_Poster_PDF.pdf")
 
