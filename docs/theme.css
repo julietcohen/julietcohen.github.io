@@ -61,7 +61,7 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       15px;
+  --title-size:       14px;
   --text-color:       black;
   --text-size:        20px;
   --hover-color:      dimgray;
@@ -70,10 +70,11 @@ d-appendix {
 
 .distill-site-footer {
   --text-color:       rgba(255, 255, 255, 0.8);
-  --text-size:        15px;
+  --text-size:        10px;
   --hover-color:      slategray;
   --bkgd-color:       lightblue;
 }
 
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
+

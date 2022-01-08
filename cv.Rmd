@@ -62,10 +62,10 @@ Selected Coursework:
 - Awarded based on promise of productive scholarship for $9,999   
 - Allocated towards the Environmental Data Science program at the Bren School of Environmental Science and Management
 
-### **CONSERVATION & DATA SCIENCE WORK EXPERIENCE**  
+### **DATA SCIENCE & CONSERVATION WORK EXPERIENCE**  
 **------------------------------------------------------------------------------------------------------------**  
 
-### **National Center for Ecological Analysis and Synthesis & National Science Foundation - Arctic Data Center Intern**\
+### **National Center for Ecological Analysis and Synthesis - Arctic Data Center Intern**\
 *January 2022 - present*\
 - Use application programming interfaces (API's) in R to upload and manage data and metadata for the Arctic Data Center\
 - Correspond with researchers to assist them in publishing open-source data and metadata to online repositories\
