@@ -291,7 +291,96 @@ The p-value is 0.0000000312, and 0.0000000312 < 0.05, so we can reject our null 
 
 ### Summary: Which countries increased their fishing effort during the pandemic, relative to their trend leading up to 2020?
 
-To best visualize this fishing effort data in a table, we can color code the countries that **increased** their fishing effort as red and color the countries that **decreased** their fishing effort in green.
+To best visualize this fishing effort data in a table, we can color code the countries that **increased** their fishing effort as red and color the countries that **decreased** their fishing effort in green. We can represent this data both on a map as well as a table.
+
+```{r}
+library(RColorBrewer)
+library(rgeos)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(sf)
+library(sp)
+library(spData)
+#library(spDataLarge)
+library(tidyverse)
+library(janitor)
+library(tmap)
+library(paletteer)
+library(readr)
+library(here)
+```
+
+```{r}
+# Load world dataset from 'spData' package into environment
+world_data <- world %>% 
+  clean_names()
+
+# import the new csv with long names and codes for countries so we can do a join later
+key_df <- read_csv(here("data/countries_codes_and_coordinates.csv")) %>% 
+  clean_names()
+
+# match country name column titles in each dataset in order to join
+colnames(comparison_rearranged_simplified)[which(names(comparison_rearranged_simplified) == "flag_gfw")] <- "alpha_3_code"
+
+# merge the names data to get full country names on prediction data set before combining fishing predictions with world data
+names_merged <- left_join(comparison_rearranged_simplified, key_df)
+
+# rename the column again, this time to match the world and fishing data to map
+names_merged <- names_merged %>% 
+  rename(name_long = country)
+
+# merge the tree data with world data
+fishing_map_data <- left_join(world_data, names_merged)
+
+# create legend title
+legend_title = expression("Difference in 2020 Fishing Hours: Actual - Predicted")
+
+# create map credits text
+color_explanation = expression("Darker green countries represent those that\n reduced their fishing hours during the 2020\n Covid-19 pandemic, and lighter countries\n represent those that increased their fishing\n hours during the 2020 Covid-19 pandemic.")
+
+main_title = "2020 Fishing Hours by Country, Relative to Predicted Fishing Hours Based on Historical Trend"
+
+# make a world map of tree density
+fishing_effort_map = tm_shape(fishing_map_data) + 
+  tm_borders() + 
+  tm_fill(col = "difference_a_minus_p", 
+          title = legend_title,
+          textNA = "No data",
+          colorNA = "gray65",
+          style = "quantile",
+          #breaks = c(-30464, -25000, -17000, -10000, -6000, -3000, 0, 500, 1958),
+          # step 1 to reverse color assignment order:
+          palette = "seq",
+          legend.format = list(text.align = "right"),
+          legend.reverse = FALSE,
+          auto.palette.mapping=FALSE,
+          n=5) +
+  tm_layout(main.title = main_title, 
+            main.title.position = "left",
+            main.title.size = 0.9,
+            bg.color = "lightblue3",
+            # step 2 to reverse color assignment order:
+            aes.palette = list(seq = "-RdYlGn")) +
+  tm_compass(type = "8star",
+             size = 2,
+             position = c("right", "bottom")) +
+  tm_credits(text = color_explanation,
+             size = 0.55,
+             position = c(0.01, 0.2),
+             #position = c("left", "center"),
+             align = "left") +
+  tm_layout(legend.outside = TRUE,
+            legend.outside.position = "right",
+            frame.double.line = TRUE,
+            legend.title.size=0.7)
+
+# save tree map as a png
+tmap_save(fishing_effort_map, "pictures/fishing_effort_map.png")
+
+fishing_effort_map
+```
+
+![](pictures/fishing_effort_map.png)
 
 ```{r}
 # convert the comparison_tidy data to a table
