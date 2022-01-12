@@ -30,7 +30,13 @@ Selected Coursework:
 ### **RESEARCH PROJECTS AND PAPERS**  
 **------------------------------------------------------------------------------------------------------------**  
 
-### **Senior thesis - Anthropogenic niche partitioning: mesocarnivore spatial and temporal coexistence along an urban gradient through camera traps**  
+### **A machine learning approach to analyse crop yields and environmental change in Sub-Saharan Africa through satellite imagery**  
+*January 2022 - present*  
+- UC Santa Barbara Bren School of Environmental Data Science master's capstone project  
+- Developing an open-source pipeline in Python to streamline the process of analyzing crop yields through satellite imagery  
+- Empower resource-poor countries to montior their own crop yields and the impact of climate change on food security  
+
+### **Anthropogenic niche partitioning: mesocarnivore spatial and temporal coexistence along an urban gradient through camera traps**  
 *June 2018 – June 2019*  
 - Independent senior thesis project conducted throughout Santa Barbara County  
 - Funded through Undergraduate Research and Creative Activities Grant  
