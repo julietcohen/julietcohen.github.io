@@ -30,9 +30,9 @@ Selected Coursework:
 ### **RESEARCH PROJECTS AND PAPERS**  
 **------------------------------------------------------------------------------------------------------------**  
 
-### **A machine learning approach to analyse crop yields and environmental change in Sub-Saharan Africa through satellite imagery**  
+### **A machine learning approach to analyze crop yields and environmental change in Sub-Saharan Africa through satellite imagery**  
 *January 2022 - present*  
-- UC Santa Barbara Bren School of Environmental Data Science master's capstone project  
+- UC Santa Barbara Bren School of Environmental Data Science capstone project for the Master of Environmental Data Science program
 - Developing an open-source pipeline in Python to streamline the process of analyzing crop yields through satellite imagery  
 - Empower resource-poor countries to montior their own crop yields and the impact of climate change on food security  
 
