@@ -1,7 +1,7 @@
 ---
 title: "Undergraduate Research"
 description: |
-  "Mammals and Bivalves"
+  
 ---
 
 ```{r setup, include=FALSE}
