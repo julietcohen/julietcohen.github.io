@@ -20,7 +20,11 @@ categories:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-![](images/python.png)
+<center>
+
+![](images/python.png){width=70%}
+
+</center>
 
 Python is a wonderful programming language to plot shapefiles overlaid on top of basemaps, which gives us the user spatial context and opens doors for deeper analysis. Understanding where points, lines, and polygons exist in the world empowers data scientists to answer questions about correlated variables, consider new questions that arise throughout the analysis process, and communicate conclusions to audiences in an easily-digestible way.
 
@@ -30,7 +34,11 @@ As a conservation biologist and an aspiring data scientist, I'm interested in pl
 
 Let's map the critical habitat ranges of the Florida Bonneted bat and many other species of concern on a basemap of the United States.
 
-![The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.](images/bat.png)
+<center>
+
+![The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.](images/bat.png){width=85%}
+
+</center>
 
 ## Getting started with Python and Jupyter Notebooks
 
@@ -61,32 +69,37 @@ After installing Anaconda, start your journey plotting shapefiles in `Python` by
 
 For plotting shapefiles, you'll want to import the following packages:  
 
-import `pandas` as pd  
-import `numpy` as np  
-import `geopandas` as gpd  
-import `matplotlib.pyplot` as plt  
-import `contextily` as ctx  
+```python
+import pandas as pd  
+import numpy as np  
+import geopandas as gpd  
+import matplotlib.pyplot as plt  
+import contextily as ctx  
+```
 
 `matplotlib` will allow us to plot our data and manipulate the plot as we see fit.
 `contextily` will allow us to add a default basemap under our polygons of interest. If you do not already have this installed, consider using a channel and conda forge to install it in the terminal.
 
 As a proponent of reproducibility and credditing those who provided the data, I like to include a markdown chunk following my package imports that includes a URL link to where I found my data, along with a citation if necessary and any notes about how I downloaded it:
 
-Data source: US Fish and Wildlife https://ecos.fws.gov/ecp/report/table/critical-habitat.html  
-- contains .shp, .dbf, and .shx polygon files that relate to critical species habiata in the United States
-- I chose the first zip file you see on this site  
-- good metadata available  
+Data source: [US Fish and Wildlife](https://ecos.fws.gov/ecp/report/table/critical-habitat.html)\ 
+- contains .shp, .dbf, and .shx polygon files that relate to critical species habiata in the United States\
+- I chose the first zip file you see on this site\
+- USFW provided great metadata\  
 
 ## Importing Data
 
 Let's import your data! Now is the time you're gonna be thanking yourself for placing your jupyter notebook in the same folder as your data. We will use `geopandas` to read in the **shapefile** with your polygons or lines or points of choice (you will not find a combination of these shapes in the same shapefile, because that's just how the world works). You might take a look at all the data files and feel a little overwhelmed at the choices due to the way that shapefiles and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to import a **shapefile** of polygons, so that **.shp** file is the only one you need to read in:   
 
 Import the data:  
-`gdf = gpd.read_file('CRITHAB_POLY.shp')`  
-Take a look at the first rows:  
-`print(gdf.head())`  
-Ask Python how many rows and columns are in this dataframe:  
-`print(gdf.shape)`   
+
+```python
+gdf = gpd.read_file('CRITHAB_POLY.shp')
+# Take a look at the first rows:
+print(gdf.head())  
+# Ask Python how many rows and columns are in this dataframe
+print(gdf.shape)
+```
 
 My only complaint with the `head()` function is that it returns the first rows in a plain text format:
 
@@ -98,19 +111,24 @@ If you want to see the first and last few rows of the dataframe in a format that
 
 This shapefile I read in contains polygons that designate the critical habitat ranges for many endangered and threatened species in the United States. I chose to name it `gdf` for *geodataframe*. While you can name objects whatever you want, it is helpful to you and to those reading your code to name things meaningfully. Expect that you will be modifying this dataframe as you go through this mapping process (subsetting columns, filtering for certain factor levels, etc.) so you will likely be tacking on more words to `gdf` to tell these modified versions apart. Start naming things simply and clearly, and get more specific as you process your data.  
 
-If your dataset has a lot of columns and you want to call them, you can use:  
+Call the column names in the dataset:  
 
-`print(gdf.columns)`  
+```python
+print(gdf.columns)
+```
 
-Wanna check the different factor levels in this dataset? Run the following:   
-`status_levels = gdf.listing_st.unique()`  
-`status_levels`  
+Check the factor levels for the columns `listing_st`:  
+
+```python
+status_levels = gdf.listing_st.unique()
+status_levels
+```
 
 Using U.S. Fish and Wildlife as an example, now that you know the factor levels of a categorical variable, you can subset for only *"endangered"* species, only *"threatened"* species, etc.  
 
 ![](images/subset_end.png)
 
-Feel free to play around with your dataset a bit. Google some of the species, subset the columns, search for some NA values, or take the average of a numerical column. After you make a structural change, its a good habit to check the status or dimensions of your dataset.
+Play around with your dataset a bit; Google some of the species, subset the columns, search for some NA values, or take the average of a numerical column. After you make a structural change, its a good habit to check the status or dimensions of your dataset.
 
 Check the number of rows and columns:
 ![](images/shape.png)
@@ -132,10 +150,13 @@ and
 - **Mercator (EPSG: 3857)**, which is used for tiles from Google Maps, Open Street Maps, and Stamen
 Maps. I will use this one today because I want to overlay my polygons onto a Google basemap with `contextily`.  
 
-Set the crs:  
-`gdf_3857=gdf.to_crs(epsg=3857)`  
-Check that the CRS is what you want:  
-`print(gdf_3857.crs)`  
+Set the CRS to ESPG 3857:  
+
+```python
+gdf_3857=gdf.to_crs(epsg=3857)
+#Check that the CRS is what you want:  
+print(gdf_3857.crs)
+```
 
 This code may take a minute to run. In Jupyter Notebook, you know that code chunk is still chuggin' away if you see an asterisk in brackets to the left of the code chunk:
 
@@ -144,8 +165,11 @@ This code may take a minute to run. In Jupyter Notebook, you know that code chun
 ## Plotting Shapefiles on a Basemap
 
 Use the plot() function from matplotlib and make the fill depend on the species name:
-`gdf_3857.plot(column='comname',`   
-             `figsize=(20,20))`  
+
+```python
+gdf_3857.plot(column='comname',
+             figsize=(20,20))
+```
              
 ![](images/crit_hab_no_basemap.png)
 
@@ -153,14 +177,26 @@ Note that you did not have to call the package to use the function plot(). Inste
              
 The fig size can be whatever you want. 10-20 is usually good enough. You have finer control over the degree of zoom of the map with the arguments xlim() and ylim(), anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:  
 
-`crit_hab_polys = gdf_3857.plot(column='comname',`  
-             `figsize=(20,20))`  
+```python
+crit_hab_polys = gdf_3857.plot(column='comname',
+             figsize=(20,20))
+```       
+      
 Notice that I used an argument in the plot function, setting the `column = 'comname'`, which is a column within the `gdf_3857` geodataframe that specifies the common name for the species in that row. This argument sets a unique color to each common name, which will help us tell the difference between each species' habitat on the map, even if 1 species' habitat is composed of multiple polygons.
-`ctx.add_basemap(crit_hab_polys)`  
-Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:  
-`plt.ylim([2350000,6350000])`  
-Since the basemap within the contextily package is of the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States to best understand our data. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States are north of the equator (which is 0 in the North and South directions), so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted.
-`plt.xlim([-14000000,-6000000])` 
+
+```python
+ctx.add_basemap(crit_hab_polys)
+
+# Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:  
+plt.ylim([2350000,6350000])
+```
+
+Since the basemap within the `contextily` package is of the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States to best understand our data. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States are north of the equator (which is 0 in the North and South directions), so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted.
+
+```python
+plt.xlim([-14000000,-6000000])
+```
+
 Notice that these values are negative. Along similar thinking to how we decided on our y limitation, these negative values are the result of how coordinate systems are designed. Consider the prime meridian (which lies at 0 degrees in the East and West directions) with West being negative. Since the United States are to the West of the prime meridian, we know that the x-range for our zoom should be negative. As for the magnitude, I just palyed around with the numbers until I got the East-West orientation that encompassed the United States.
 Use the `show()` function in `matplotlib` to tell Python to show the most recently created graph:  
 `plt.show()`   
@@ -182,7 +218,11 @@ Living in Santa Barbara, I'm interested in the critical habitat of the [Southern
 
 I was lucky enough to conduct field work with these migratory fish in 2020-2021 through the California Department of Fish and Wildlife and the Pacific States Marine Fisheries Committee. I grew to appreciate their vital role in ecosystem processes and the culture of indigenous people who have interacted with them for centuries. This fish is currently in the process of being listed as a California endangered species starting in December of 2021, which will hopefully expand critical habitat range, increase monitoring of the populations, and help enforce illegal fishing and pollution regulation in their habitat. We can check out the steelhead's critical habitat range before and after 2021 to see how it expands over time and space.
 
-![Southern California Steelhead Trout with an invasive crayfish in a Southern California freshwater stream](images/steelhead_crayfish.png)
+<center>
+
+![Southern California Steelhead Trout with an invasive crayfish in a Southern California freshwater stream](images/steelhead_crayfish.png){width=85%}
+
+</center>
 
 ### Sources & supplemental information on listed endangered species in the United States:
 
