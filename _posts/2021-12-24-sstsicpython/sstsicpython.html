@@ -1493,6 +1493,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#load-necessary-packages">Load necessary packages</a></li>
 <li><a href="#import-sea-surface-temperature-data">Import Sea Surface Temperature Data</a></li>
 <li><a href="#sea-surface-temperature-dataframe-wrangling">Sea Surface Temperature Dataframe Wrangling</a></li>
+<li><a href="#plot-sea-surface-temperature-over-time">Plot Sea Surface Temperature Over Time</a></li>
 <li><a href="#import-sea-ice-data">Import Sea Ice Data</a></li>
 <li><a href="#sea-ice-data-wrangling">Sea Ice Data Wrangling</a></li>
 <li><a href="#plotting-sea-ice-data">Plotting Sea Ice Data</a></li>
@@ -1516,99 +1517,102 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="https://journals.ametsoc.org/view/journals/clim/21/19/2008jcli2292.1.xml">Journal of Climate article explaining why the datasets were merged</a></li>
 </ul>
 <h3 id="load-necessary-packages">Load necessary packages</h3>
-<p><code>import xarray as xr</code><br />
-<code>import pandas as pd</code><br />
-<code>import matplotlib.pyplot as plt</code><br />
-<code>import glob</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span></code></pre></div>
 <h3 id="import-sea-surface-temperature-data">Import Sea Surface Temperature Data</h3>
 <p>I manually downloaded 40 years of datasets from the sea surface temperature data source, one day from each year (October 17th) and now I will import them with a for loop. Each dataset has a standardized name that only differs in the year it was collected, so the <code>glob()</code> function makes importing them all at once a piece of cake. We can use * as a wild card to represent any year in the file names.</p>
-<p><code>filenames = sorted(glob.glob('Data/oisst-avhrr-v02r01*'))</code><br />
-<strong>#Use a for loop to open all data files as datasets (prior to this step, data files were manually pulled from source and stored locally)</strong><br />
-<strong>#Take the means of the ‘lat’ and ‘long’ because we want to decrease the quantity of this extraneous data so we can easily convert these datasets to dataframes</strong><br />
-<strong>#Converting the datasets to dataframes within this for loop will allow us to concatenate them and view the combined data in a way we can easily understand</strong><br />
-<code>new = [xr.open_dataset(f).mean('lon').mean('lat').to_dataframe(dim_order=None) for f in filenames]</code><br />
-<code>df = pd.concat(new)</code><br />
-<code>df</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>filenames <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(<span class="st">&#39;Data/oisst-avhrr-v02r01*&#39;</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Use a for loop to open all data files as datasets (prior to this step, data files were manually pulled from source and stored locally)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Take the means of the &#39;lat&#39; and &#39;long&#39; because we want to decrease the quantity of this extraneous data so we can easily convert these datasets to dataframes</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Converting the datasets to dataframes within this for loop will allow us to concatenate them and view the combined data in a way we can easily understand</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>new <span class="op">=</span> [xr.open_dataset(f).mean(<span class="st">&#39;lon&#39;</span>).mean(<span class="st">&#39;lat&#39;</span>).to_dataframe(dim_order<span class="op">=</span><span class="va">None</span>) <span class="cf">for</span> f <span class="kw">in</span> filenames]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(new)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <p><img src="pics/sst_raw_df.png" data-widht="90%" /> We need to organize the dataframe further before creating matplotlib visualizations for sea surface temperature over time. This dataframe defaulted to using time as an index, so we need to convert time to a column and subset the columns to just time and sea surface temperature.</p>
 <h3 id="sea-surface-temperature-dataframe-wrangling">Sea Surface Temperature Dataframe Wrangling</h3>
-<p><strong>#Subset the columns: we choose only ‘sst’ here because ‘time’ is considered the index (note: subsetting this dataframe turns the type into a pandas ‘series’)</strong><br />
-<code>df_subset = df['sst']</code><br />
-<strong>#reset the ‘time’ from an index to a column</strong><br />
-<code>sst_means = df_subset.reset_index()</code><br />
-<strong>#subset to get rid of the useless variable “zlev”</strong><br />
-<code>sst_means = sst_means[['time', 'sst']]</code><br />
-<code>sst_means</code></p>
-<p><img src="pics/time_sst_df.png" style="width:60.0%" /> Ensure that the type of the time variable is datetime64.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Subset the columns: we choose only &#39;sst&#39; here because &#39;time&#39; is considered the index (note: subsetting this dataframe turns the type into a pandas &#39;series&#39;)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df[<span class="st">&#39;sst&#39;</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#reset the &#39;time&#39; from an index to a column</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sst_means <span class="op">=</span> df_subset.reset_index()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#subset to get rid of the useless variable &quot;zlev&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>sst_means <span class="op">=</span> sst_means[[<span class="st">&#39;time&#39;</span>, <span class="st">&#39;sst&#39;</span>]]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sst_means</span></code></pre></div>
+<p><img src="pics/time_sst_df.png" style="width:60.0%" /></p>
+<p>Ensure that the type of the time variable is datetime64.</p>
 <p><img src="pics/datetime.png" style="width:75.0%" /> As a last step in processing this dataframe, we will pull the year out of the time variable. We do this because the day and time is consistent for each sea surface temperature file, and therefore it is negligible. Furthermore, will process the sea ice concentration data to only include year, and we need the sea surface temperature time variable to be of the same format as the sea ice concentration time variable.</p>
-<p><strong># add a column of just the year, so when we pair the sst data with the ice data, the time variable will match</strong> <code>sst_means['year'] = pd.DatetimeIndex(sst_means['time']).year</code><br />
-<code>sst_means</code></p>
-<p><img src="pics/final_sst_df.png" style="width:60.0%" /> ### Plot Sea Surface Temperature Over Time</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a column of just the year, so when we pair the sst data with the ice data, the time variable will match</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sst_means[<span class="st">&#39;year&#39;</span>] <span class="op">=</span> pd.DatetimeIndex(sst_means[<span class="st">&#39;time&#39;</span>]).year</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sst_means</span></code></pre></div>
+<p><img src="pics/final_sst_df.png" style="width:60.0%" /></p>
+<h3 id="plot-sea-surface-temperature-over-time">Plot Sea Surface Temperature Over Time</h3>
 <p>Now that we finished processing the sea surface temperature data, we can plot the sea surface temperature over our time period using <code>matplotlib</code> to see if can recognize a trend. It appears that sea surface temperature fluctuates over short time periods spanning a few years, but over the course of the full 40-year time period there is a clear positive correlation between time and temperature. This trend is what we would expect based on our knowledge of climate change and other sources of data that show rising sea temperatures across the globe.</p>
-<p><code>plt.figure(figsize=(10,7))</code><br />
-<code>plt.plot(sst_means['year'], sst_means['sst'], color='red')</code><br />
-<code>plt.xlabel('Year', fontsize=14)</code><br />
-<code>plt.ylabel('Sea Surface Temperature (degrees C)', fontsize=14)</code><br />
-<code>plt.title('Mean global Sea Surface Temperature in October between 1981 and 2020', fontsize=15)</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">7</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.plot(sst_means[<span class="st">&#39;year&#39;</span>], sst_means[<span class="st">&#39;sst&#39;</span>], color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Year&#39;</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Sea Surface Temperature (degrees C)&#39;</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Mean global Sea Surface Temperature in October between 1981 and 2020&#39;</span>, fontsize<span class="op">=</span><span class="dv">15</span>)</span></code></pre></div>
 <p><img src="pics/sst_graph.png" /></p>
 <h3 id="import-sea-ice-data">Import Sea Ice Data</h3>
 <p>The sea ice data import process is similar to my code for importing the sea surface temperature data. One of my collaborators on this project, <a href="https://petermenzies.github.io/">Peter Menzies</a>, wrote the following code to import the sea ice data.</p>
-<p><strong># read in ice dataset with xarray (prior to this step, data files were manually pulled from source and compiled into a single local netCDF file)</strong><br />
-<code>ds_ice = xr.open_dataset("Data/MODEL.ICE.HAD187001-198110.OI198111-202109.nc")</code><br />
-</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in ice dataset with xarray (prior to this step, data files were manually pulled from source and compiled into a single local netCDF file)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ds_ice <span class="op">=</span> xr.open_dataset(<span class="st">&quot;Data/MODEL.ICE.HAD187001-198110.OI198111-202109.nc&quot;</span>)</span></code></pre></div>
 <h3 id="sea-ice-data-wrangling">Sea Ice Data Wrangling</h3>
-<p><strong># create empty dataframe with columns year and ice_conc</strong><br />
-<code>ice_time = pd.DataFrame(columns=['year', 'ice_conc'])</code><br />
-<strong># create empty lists to populate with values from dataset</strong> <code>ice_year = []</code><br />
-<code>ice_conc = []</code><br />
-</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create empty dataframe with columns year and ice_conc</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ice_time <span class="op">=</span> pd.DataFrame(columns<span class="op">=</span>[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;ice_conc&#39;</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create empty lists to populate with values from dataset</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ice_year <span class="op">=</span> []</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ice_conc <span class="op">=</span> []</span></code></pre></div>
 <p>Use another for loop to pull sea ice values from October of each year 1981 to 2020, and compile them in a dataframe:</p>
-<p><code>for i in range(0, 40):</code><br />
-<strong># indexing the SEAICE attributes of our years of interest, finding the mean value, and outputting value as a float</strong><br />
-<strong># 1341 is the index for October 1981 - we need to add 12 in each iteration to get the month from the next year</strong><br />
-<code>ice_i = float(ice['SEAICE'][1341 + (12 * i)].mean())</code><br />
-<strong># storing the year associated with ice concentration value</strong><br />
-<code>year_i = 1981 + i</code><br />
-<strong># add year to list</strong><br />
-<code>ice_year.append(year_i)</code><br />
-<strong># add ice concentration to list</strong><br />
-<code>ice_conc.append(ice_i)</code></p>
-<p><strong># populated dataframe with the two lists as columns</strong><br />
-<code>ice_time['year'] = ice_year</code><br />
-<code>ice_time['ice_conc'] = ice_conc</code><br />
-<strong># check out our resulting dataframe</strong> <code>ice_time</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">40</span>):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># indexing the SEAICE attributes of our years of interest, finding the mean value, and outputting value as a float</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1341 is the index for October 1981 - we need to add 12 in each iteration to get the month from the next year</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    ice_i <span class="op">=</span> <span class="bu">float</span>(ice[<span class="st">&#39;SEAICE&#39;</span>][<span class="dv">1341</span> <span class="op">+</span> (<span class="dv">12</span> <span class="op">*</span> i)].mean())</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span><span class="co"># storing the year associated with ice concentration value</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    year_i <span class="op">=</span> <span class="dv">1981</span> <span class="op">+</span> i</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add year to list</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    ice_year.append(year_i)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add ice concentration to list</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    ice_conc.append(ice_i)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># populated dataframe with the two lists as columns</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>ice_time[<span class="st">&#39;year&#39;</span>] <span class="op">=</span> ice_year</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>ice_time[<span class="st">&#39;ice_conc&#39;</span>] <span class="op">=</span> ice_conc</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># check out our resulting dataframe</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>ice_time</span></code></pre></div>
 <p><img src="pics/sic_table.png" style="width:40.0%" /></p>
 <h3 id="plotting-sea-ice-data">Plotting Sea Ice Data</h3>
-<p><code>plt.figure(figsize=(10,7))</code><br />
-<code>plt.plot(ice_time['year'], ice_time['ice_conc'])</code><br />
-<code>plt.xlabel('Year', fontsize=14)</code><br />
-<code>plt.ylabel('Seaice concentration (%)', fontsize=14)</code><br />
-<code>plt.title('Mean global seaice concentration in October between 1981 and 2020', fontsize=15)</code><br />
-</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">7</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.plot(ice_time[<span class="st">&#39;year&#39;</span>], ice_time[<span class="st">&#39;ice_conc&#39;</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Year&#39;</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Seaice concentration (%)&#39;</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Mean global seaice concentration in October between 1981 and 2020&#39;</span>, fontsize<span class="op">=</span><span class="dv">15</span>)</span></code></pre></div>
 <p><img src="pics/sic_graph.png" /></p>
 <h3 id="combine-the-visualizations">Combine the Visualizations</h3>
 <p>Use <code>matplotlib</code> to combine the sea surface temperature and sea ice concentration data into one figure.</p>
-<p><strong># use the fig, ax method so that we have flexibility plotting each variable</strong><br />
-<code>fig, ax = plt.subplots(figsize=(15,10))</code><br />
-<strong># assign a label to the ice data so we can reference it when we create the legend</strong><br />
-<code>ice, = ax.plot(ice_time['year'], ice_time['ice_conc'], color='blue')</code><br />
-<strong># ax represents the axis for the ice data</strong><br />
-<code>ax.tick_params(axis='y', labelcolor='blue')</code><br />
-<code>plt.xlabel('Year', fontsize = 18)</code><br />
-<code>ax.set_ylabel('Sea Ice Concentration (%)', fontsize = 18)</code><br />
-<strong># ax2 represents the axis for the sea surface temperature data</strong><br />
-<code>ax2 = ax.twinx()</code><br />
-<strong># assign a label to the sst data so we can reference it when we create the legend</strong><br />
-<code>sst, = ax2.plot(sst_means['year'], sst_means['sst'], color='red')</code><br />
-<code>ax2.tick_params(axis='y', labelcolor='red')</code><br />
-<code>ax2.set_ylabel('Sea Surface Temperature (degrees C)', fontsize = 18)</code><br />
-<strong># create an initial legend so that we can overwrite it with legend with both variables</strong><br />
-<code>leg1 = ax.legend(loc='center left')</code><br />
-<code>leg2 = ax.legend([ice, sst],['ice','sst'], loc='center left', fontsize = 18)</code><br />
-<code>ax.set_title('Sea Ice Concentration and Sea Surface Temperature 1981-2020', fontsize = 18)</code><br />
-<code>plt.show()</code></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fig, ax method so that we have flexibility plotting each variable</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">10</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># assign a label to the ice data so we can reference it when we create the legend</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>ice, <span class="op">=</span> ax.plot(ice_time[<span class="st">&#39;year&#39;</span>], ice_time[<span class="st">&#39;ice_conc&#39;</span>], color<span class="op">=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ax represents the axis for the ice data</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">&#39;y&#39;</span>, labelcolor<span class="op">=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Year&#39;</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;Sea Ice Concentration (%)&#39;</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ax2 represents the axis for the sea surface temperature data</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> ax.twinx()</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># assign a label to the sst data so we can reference it when we create the legend</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>sst, <span class="op">=</span> ax2.plot(sst_means[<span class="st">&#39;year&#39;</span>], sst_means[<span class="st">&#39;sst&#39;</span>], color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>ax2.tick_params(axis<span class="op">=</span><span class="st">&#39;y&#39;</span>, labelcolor<span class="op">=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Sea Surface Temperature (degrees C)&#39;</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># create an initial legend so that we can overwrite it with legend with both variables</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>leg1 <span class="op">=</span> ax.legend(loc<span class="op">=</span><span class="st">&#39;center left&#39;</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>leg2 <span class="op">=</span> ax.legend([ice, sst],[<span class="st">&#39;ice&#39;</span>,<span class="st">&#39;sst&#39;</span>], loc<span class="op">=</span><span class="st">&#39;center left&#39;</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Sea Ice Concentration and Sea Surface Temperature 1981-2020&#39;</span>, fontsize <span class="op">=</span> <span class="dv">18</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="pics/combined_graph.png" /></p>
 <p>This plot and this code is just a portion of a larger environmental programming project completed by myself and my two collaborators <a href="https://petermenzies.github.io/">Peter Menzies</a> and <a href="https://ryanmunnikhuis.github.io/">Ryan Munnikhuis</a>. See our complete repository <a href="https://github.com/EDS220-Fall2021-org/Homework_3">here</a>, which contains a binder in the README so anyone can run all the code with ease. Check out the anntoated code to learn how to turn these two datasets into rasterized images and GIF’s!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
