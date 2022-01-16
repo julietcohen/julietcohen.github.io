@@ -2463,6 +2463,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 </div>
+<p>Use the <code>rerddap</code> API to read in the sea surface and chlorophyll data from NOAA. Assign the respective temperature and chlorophyll data to its respective buoy, then bind the <code>Tidy</code> data together into one dataframe using <code>rbind()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Read in Aqua Modis Data from their website</span>
@@ -2491,10 +2492,13 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='co'>#add ID column</span>
 
 <span class='va'>sst</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>E_sst</span>, <span class='va'>W_sst</span>, <span class='va'>SM_sst</span><span class='op'>)</span> <span class='co'>#bind data</span>
-
-<span class='co'>#----------------------------------------------------------------------------------------</span>
-
-<span class='co'># Chloro for each Buoy</span>
+</code></pre>
+</div>
+</div>
+<p>Now for chlorophyll:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Chloro for each Buoy</span>
 <span class='va'>E_chloro</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://docs.ropensci.org/rerddap/reference/griddap.html'>griddap</a></span><span class='op'>(</span><span class='st'>'erdMWchla8day_LonPM180'</span>,  <span class='co'># 8 day composite Chlorophyll E_buoy</span>
   time <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2020-01-01T12:00:00Z'</span>,<span class='st'>'2021-01-01T12:00:00Z'</span><span class='op'>)</span>, <span class='co'># Full year time period 2020</span>
   latitude <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>34.0</span>, <span class='fl'>34.5</span><span class='op'>)</span>, <span class='co'>#grid surrounding buoy</span>
@@ -2517,10 +2521,13 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>location <span class='op'>=</span> <span class='st'>"SM"</span><span class='op'>)</span> <span class='co'>#add location term</span>
 
 <span class='va'>chloro</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>E_chloro</span>, <span class='va'>W_chloro</span>, <span class='va'>SM_chloro</span><span class='op'>)</span> <span class='co'>#Bind data</span>
-
-<span class='co'>#----------------------------------------------------------------------------------------</span>
-
-<span class='co'># Wind data for each buoy and data cleaning</span>
+</code></pre>
+</div>
+</div>
+<p>We downlaoded the wind data manually from <a href="https://www.ndbc.noaa.gov/station_history.php?station=46053">NOAA’s website</a>, so we import it from the local Rproj, using the <code>here()</code> function. This file path will work on your local machine, helping make this log post as reproducible as possible.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Wind data for each buoy and data cleaning</span>
 <span class='va'>tab_E</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.table</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"data"</span>,<span class='st'>"east_wind.txt"</span><span class='op'>)</span>, comment<span class='op'>=</span><span class='st'>""</span>, header<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span> <span class='co'>#convert .txt file to .csv</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/write.table.html'>write.csv</a></span><span class='op'>(</span><span class='va'>tab_E</span>, <span class='st'>"east_wind.csv"</span>, row.names<span class='op'>=</span><span class='cn'>F</span>, quote<span class='op'>=</span><span class='cn'>F</span><span class='op'>)</span>
 
@@ -2560,18 +2567,16 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 </div>
-<p>We averaged the wind by month rather than by day, as we did for the other two variables, because the wind varies more each day by a large margin. Therefore, the wind data on a daily basis shows lots of noise and no interpretable trends. On a monthly scale, however, we can make sense of its broader fluctuations over the year.</p>
+<p>My team averaged the wind by month rather than by day because the wind varies more each day by a large margin. Therefore, the wind data on a daily basis shows lots of noise and no interpretable trends. On a monthly scale, however, we can make sense of its broader fluctuations over the year.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean date format and summarize with daily means for wind</span>
-
 <span class='va'>wind</span> <span class='op'>&lt;-</span> <span class='va'>wind</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://tidyr.tidyverse.org/reference/unite.html'>unite</a></span><span class='op'>(</span><span class='st'>"date"</span>, <span class='va'>year</span><span class='op'>:</span><span class='va'>month</span><span class='op'>:</span><span class='va'>day</span>, sep <span class='op'>=</span> <span class='st'>"-"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>WSPD <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>WSPD</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'># see the data join chunk for na.rm explanation in code comment</span>
-
 <span class='va'>wind_avg</span> <span class='op'>&lt;-</span> <span class='va'>wind</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_wind <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>WSPD</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
@@ -2587,19 +2592,14 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ymd_date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='va'>ymd_date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"latitude"</span>, <span class='st'>"longitude"</span>, <span class='st'>"sst"</span>, <span class='st'>"location"</span>, <span class='st'>"date"</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Clean sst Data and summarize by daily means</span>
+
+<span class='co'># Clean sst Data and summarize by daily means</span>
 <span class='va'>final_sst</span> <span class='op'>&lt;-</span> <span class='va'>sst_clean</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>sst</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'>#remove NAs</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>*</span> <span class='op'>(</span><span class='fl'>9</span><span class='op'>/</span><span class='fl'>5</span><span class='op'>)</span> <span class='op'>+</span> <span class='fl'>32</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'>#convert to F</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>-</span> <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#accounting for SST satellite error through anecdotal and buoy comparison. Jake's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements </span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>sst</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># remove NAs</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>*</span> <span class='op'>(</span><span class='fl'>9</span><span class='op'>/</span><span class='fl'>5</span><span class='op'>)</span> <span class='op'>+</span> <span class='fl'>32</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># convert to F...there's probably a function for this</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sst <span class='op'>=</span> <span class='op'>(</span><span class='va'>sst</span> <span class='op'>-</span> <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># accounting for SST satellite error through anecdotal and buoy comparison. A team member's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements </span>
 
 <span class='co'># see the data join chunk for na.rm explanation in code comment</span>
-
 <span class='va'>final_sst_avg</span> <span class='op'>&lt;-</span> <span class='va'>final_sst</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>mean_sst <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>sst</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
@@ -2611,9 +2611,8 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># clean chloro data</span>
 <span class='co'># see the data join chunk for na.rm explanation in code comment</span>
-
 <span class='va'>chloro_clean</span> <span class='op'>&lt;-</span> <span class='va'>chloro</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd_hms.html'>ymd_hms</a></span><span class='op'>(</span><span class='va'>time</span>, tz <span class='op'>=</span> <span class='st'>"UTC"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd_hms.html'>ymd_hms</a></span><span class='op'>(</span><span class='va'>time</span>, tz <span class='op'>=</span> <span class='st'>"UTC"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>  <span class='co'># sometimes datetime conversions can be tricky, never forget to check the timezone!</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ymd_date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></span><span class='op'>(</span><span class='va'>date</span>, tz <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='va'>ymd_date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"latitude"</span>, <span class='st'>"longitude"</span>, <span class='st'>"chlorophyll"</span>, <span class='st'>"location"</span>, <span class='st'>"date"</span><span class='op'>)</span><span class='op'>)</span>
@@ -2636,11 +2635,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 </div>
-<p>Now the fun part: visualization! We made three plots, one for each variable. Each plot represents data from all three buoys. We marked the sea surface temperature maximum in all plots since the combined data reveals a temporal correlation between sea surface temperature and wind.</p>
+<p>Now the fun part: visualization! My team and I made three plots, one for each variable. Each plot represents data from all three buoys. We marked the sea surface temperature maximum in all plots since the combined data reveals a temporal correlation between sea surface temperature and wind.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Daily Average Sea Surface Temperature from East, West, and Santa Monica Buoys</span>
-
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>chloro_wind_sst</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>mean_sst</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Date"</span>,
@@ -2649,7 +2647,6 @@ d-appendix d-footnote-list a.footnote-backlink {
        color <span class='op'>=</span> <span class='st'>"Location"</span><span class='op'>)</span>
 
 <span class='co'># Monthly Average Wind from East, West, and Santa Monica Buoys</span>
-
 <span class='va'>month_mean</span> <span class='op'>&lt;-</span> <span class='va'>chloro_wind_sst</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>location</span>, <span class='va'>date</span>, <span class='va'>mean_wind</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>month <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/month.html'>month</a></span><span class='op'>(</span><span class='va'>date</span>, label <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
@@ -2667,7 +2664,6 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_x_discrete</a></span><span class='op'>(</span>limits<span class='op'>=</span><span class='va'>month.abb</span><span class='op'>)</span>
 
 <span class='co'># Daily Average Chorophyll from East, West, and Santa Monica Buoys</span>
-
 <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>chloro_wind_sst</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>date</span>, y <span class='op'>=</span> <span class='va'>mean_chloro</span>, color <span class='op'>=</span> <span class='va'>location</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Date"</span>,
@@ -2692,7 +2688,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>The chlorophyll peaked in April. This aligns with the well-known whale watching season that spans from November to April. The data shows that we would have the best luck whale watching in Santa Barbara in April.</p>
 <h4 id="acknowledgements">Acknowledgements</h4>
 <ul>
-<li>I would like to thank my exceptionally driven and creative team of collaborators on this project, Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. Thank you for your support, resources, and all the time you put into this code and analysis.<br />
+<li>I would like to thank my exceptionally driven and creative team of collaborators on this project, Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. Thank you for your time, resources, and all the energy you put into this code and analysis.<br />
 </li>
 <li>Thank you to Julien Brun, a Senior Data Scientist at the <a href="https://www.nceas.ucsb.edu/">National Center for Ecological Analysis and Synthesis</a>, for teaching us about how to use API’s and locate and utilize metadata. He helped us with our data cleaning and wrangling throughout this project, and we admire him for his dedication to open-source science and teaching the next generation of data scientists to program in with reproducible habits.<br />
 </li>

@@ -69,6 +69,8 @@ library(lubridate)
 # use lubridate to work with datetimes (parsing dates and changing the class)
 ```
 
+Use the `rerddap` API to read in the sea surface and chlorophyll data from NOAA. Assign the respective temperature and chlorophyll data to its respective buoy, then bind the `Tidy` data together into one dataframe using `rbind()`.
+
 ```{r}
 # Read in Aqua Modis Data from their website
 require("rerddap")
@@ -97,8 +99,11 @@ SM_sst <- griddap('erdMWsstd8day_LonPM180', # 8 day composite SST SM_buoy
 
 sst <- rbind(E_sst, W_sst, SM_sst) #bind data
 
-#----------------------------------------------------------------------------------------
+```
 
+Now for chlorophyll:
+
+```{r}
 # Chloro for each Buoy
 E_chloro <- griddap('erdMWchla8day_LonPM180',  # 8 day composite Chlorophyll E_buoy
   time = c('2020-01-01T12:00:00Z','2021-01-01T12:00:00Z'), # Full year time period 2020
@@ -122,9 +127,11 @@ SM_chloro <- griddap('erdMWchla8day_LonPM180', # 8 day composite Chlorophyll SM_
   add_column(location = "SM") #add location term
 
 chloro <- rbind(E_chloro, W_chloro, SM_chloro) #Bind data
+```
 
-#----------------------------------------------------------------------------------------
+We downlaoded the wind data manually from [NOAA's website](https://www.ndbc.noaa.gov/station_history.php?station=46053), so we import it from the local Rproj, using the `here()` function. This file path will work on your local machine, helping make this log post as reproducible as possible.
 
+```{r}
 # Wind data for each buoy and data cleaning
 tab_E <- read.table(here("data","east_wind.txt"), comment="", header=TRUE) #convert .txt file to .csv
 write.csv(tab_E, "east_wind.csv", row.names=F, quote=F)
@@ -162,22 +169,18 @@ SM_wind <- read.csv(here("SM_wind.csv"))%>% # read in .csv, select coloumns and 
 SM_wind <- SM_wind[-c(1),]
 
 wind <- rbind(E_wind, W_wind, SM_wind) #bind data
-
-
 ```
 
-We averaged the wind by month rather than by day, as we did for the other two variables, because the wind varies more each day by a large margin. Therefore, the wind data on a daily basis shows lots of noise and no interpretable trends. On a monthly scale, however, we can make sense of its broader fluctuations over the year.
+My team averaged the wind by month rather than by day because the wind varies more each day by a large margin. Therefore, the wind data on a daily basis shows lots of noise and no interpretable trends. On a monthly scale, however, we can make sense of its broader fluctuations over the year.
 
 ```{r}
 # clean date format and summarize with daily means for wind
-
 wind <- wind %>%
   unite("date", year:month:day, sep = "-") %>% 
   mutate(date = ymd(date, tz = NULL)) %>% 
   mutate(WSPD = as.numeric(WSPD))
 
 # see the data join chunk for na.rm explanation in code comment
-
 wind_avg <- wind %>% 
   group_by(location, date) %>% 
   summarize(mean_wind = mean(WSPD, na.rm = T))
@@ -193,18 +196,14 @@ sst_clean <- sst %>%
   mutate(ymd_date = ymd(date, tz = NULL)) %>% 
   mutate(date = ymd_date) %>% 
   select(c("latitude", "longitude", "sst", "location", "date"))
-```
 
-
-```{r}
 # Clean sst Data and summarize by daily means
 final_sst <- sst_clean %>% 
-  filter(sst > 0) %>% #remove NAs
-  mutate(sst = (sst * (9/5) + 32 )) %>% #convert to F
-  mutate(sst = (sst - 3)) #accounting for SST satellite error through anecdotal and buoy comparison. Jake's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements 
+  filter(sst > 0) %>% # remove NAs
+  mutate(sst = (sst * (9/5) + 32 )) %>% # convert to F...there's probably a function for this
+  mutate(sst = (sst - 3)) # accounting for SST satellite error through anecdotal and buoy comparison. A team member's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements 
 
 # see the data join chunk for na.rm explanation in code comment
-
 final_sst_avg <- final_sst %>% 
   group_by(location, date) %>% 
   summarize(mean_sst = mean(sst, na.rm = T))
@@ -215,9 +214,8 @@ Here we cleaned the remotely-sensed chlorophyll data, summarizing it by day:
 ```{r}
 # clean chloro data
 # see the data join chunk for na.rm explanation in code comment
-
 chloro_clean <- chloro %>% 
-  mutate(date = ymd_hms(time, tz = "UTC")) %>% 
+  mutate(date = ymd_hms(time, tz = "UTC")) %>%  # sometimes datetime conversions can be tricky, never forget to check the timezone!
   mutate(ymd_date = ymd(date, tz = NULL)) %>% 
   mutate(date = ymd_date) %>% 
   select(c("latitude", "longitude", "chlorophyll", "location", "date"))
@@ -240,11 +238,10 @@ chloro_wind_sst <- inner_join(wind_sst, final_chloro_avg, by = c("date", "locati
 
 ```
 
-Now the fun part: visualization! We made three plots, one for each variable. Each plot represents data from all three buoys. We marked the sea surface temperature maximum in all plots since the combined data reveals a temporal correlation between sea surface temperature and wind.
+Now the fun part: visualization! My team and I made three plots, one for each variable. Each plot represents data from all three buoys. We marked the sea surface temperature maximum in all plots since the combined data reveals a temporal correlation between sea surface temperature and wind.
 
 ```{r}
 # Daily Average Sea Surface Temperature from East, West, and Santa Monica Buoys
-
 ggplot(data = chloro_wind_sst, aes(x = date, y = mean_sst, color = location)) +
   geom_line() +
   labs(x = "Date",
@@ -253,7 +250,6 @@ ggplot(data = chloro_wind_sst, aes(x = date, y = mean_sst, color = location)) +
        color = "Location")
 
 # Monthly Average Wind from East, West, and Santa Monica Buoys
-
 month_mean <- chloro_wind_sst %>%
   select(location, date, mean_wind) %>%
   mutate(month = month(date, label = TRUE)) %>%
@@ -271,7 +267,6 @@ ggplot(data = month_mean, aes(x = month, y = mean_wind, color = location)) +
   scale_x_discrete(limits=month.abb)
 
 # Daily Average Chorophyll from East, West, and Santa Monica Buoys
-
 ggplot(data = chloro_wind_sst, aes(x = date, y = mean_chloro, color = location)) +
   geom_line() +
   labs(x = "Date",
@@ -296,7 +291,7 @@ The chlorophyll peaked in April. This aligns with the well-known whale watching 
 
 #### Acknowledgements
 
-- I would like to thank my exceptionally driven and creative team of collaborators on this project, Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. Thank you for your support, resources, and all the time you put into this code and analysis.\
+- I would like to thank my exceptionally driven and creative team of collaborators on this project, Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. Thank you for your time, resources, and all the energy you put into this code and analysis.\
 - Thank you to Julien Brun, a Senior Data Scientist at the [National Center for Ecological Analysis and Synthesis](https://www.nceas.ucsb.edu/), for teaching us about how to use API's and locate and utilize metadata. He helped us with our data cleaning and wrangling throughout this project, and we admire him for his dedication to open-source science and teaching the next generation of data scientists to program in with reproducible habits.\
 - Thank you to NOAA for providing the data that made this analysis possible and for providing an API to import it with ease.
 
