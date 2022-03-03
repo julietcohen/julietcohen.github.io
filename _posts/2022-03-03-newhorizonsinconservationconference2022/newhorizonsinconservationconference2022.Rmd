@@ -1,0 +1,31 @@
+---
+title: "New Horizons in Conservation Conference 2022 - Yale School of the Environment"
+description: |
+  A short description of the post.
+author:
+  - name: Juliet Cohen
+    url: {}
+date: 2022-03-03
+output:
+  distill::distill_article:
+    self_contained: false
+draft: True
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+![New Horizons in Conservation Conference 2022 - Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference)
+
+# An open-source pipleline for remote sensing of crop yields under environmental change in sub-Saharan Africa
+
+![](poster_video/New_Horizons_Poster_CropMOSAIKS_blog_post.pdf){width=99%}
+
+![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4)
+
+
+
+
+
