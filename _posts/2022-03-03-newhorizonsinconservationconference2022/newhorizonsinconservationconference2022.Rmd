@@ -49,9 +49,15 @@ The environmental and social impacts of climate change are disproportionately di
 
 My teammates and I were invited to attend the [New Horizons in Conservation Conference 2022 at the Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference). Having the opportunity to participate in this conference is an honor and a privilege, and we are very grateful to the Yale School of the Environment for showing interest in our project and giving us the chance to explore how other equity-driven scientists are expanding the horizons of the data world.
 
-My teammates and I are very passionate about the tool and data products we are contributoing to the remote sensing field. We hope other data scientists will be able to use it and improve upon it in the future, especially as we will face more extreme weather events and climate trends as global warming progresses. 
+**My teammates and I are very passionate about the tool and data products we are contributoing to the remote sensing field. We hope other data scientists will be able to use it and improve upon it in the future, especially as we will face more extreme weather events and climate trends as global warming progresses.**
 
-As part of our participation in this conference, we created a video and poster to share our progress thus far as well as our vision for the end products. We are very grateful to be able to showcase this novel open-source tool that will hopefully increase access to powerful remote sensing products. Moving forward, we aim to contribute our data, code, and instructional workflow to the [MOSAIKS API](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/). This user-friendly API will allow anyone to access our data and use it for their needs. Users may be environmental policy-makers, politicians involved in food security, researchers interested in environmental trends, or anyone else! The interface allows users to download "feature data" for any place on earth and run analysis over space and time, for any task of interest, given that the data is available for that region.
+As part of our participation in this conference, we created a video and poster to share our progress thus far as well as our vision for the end products. We are very grateful to be able to showcase this novel open-source tool that will hopefully increase access to powerful remote sensing products.
+
+#### The MOSAIKS API
+
+Moving forward, we aim to contribute our data, code, and instructional workflow to the [MOSAIKS API](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/). This user-friendly API will allow anyone to access our data and use it for their needs. Users may be environmental policy-makers, politicians involved in food security, researchers interested in environmental trends, or anyone else! The interface allows users to download "feature data" for any place on earth and run analysis over space and time, for any task of interest, given that the data is available for that region.
+
+#### What is a task of interest?
 
 **An example of a task is determining how a characteristic of the landscape changes over time, such as how forest cover changes over time in the Congo or how wetland habitat shrinks in droughts. Detailed Jupyter notebooks hold the user's hand as they execute adapt Python code to their needs and expand their horizons beyond what they ever thought was possible.**
 
@@ -59,10 +65,9 @@ The MOSAIKS API database contains geolocated data files with task-agnostic "feat
 
 **Please check out this 3-minute video that describes our project's objective, approach, and how it relates to equity and inclusion in the world of environmental data science:**
 
-
 <center>
 
-![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4){width=60%}
+![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4){width=90%}
 
 </center>
 
