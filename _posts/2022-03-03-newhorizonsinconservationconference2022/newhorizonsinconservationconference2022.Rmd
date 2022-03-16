@@ -27,19 +27,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </center>
 
-As a student in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management, I am working on a capstone project that involves creating an open-source tool to predict crop yields in sub-Saharan Africa.
+As a student in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management, I am working on a capstone project that involves creating an open-source tool to predict crop yields in sub-Saharan Africa. My teammates are Grace Lewin, Cullen Molitor, and Steven Cognac, and our advisor is Dr. Tamma Carleton. We are a highly collaborative group of data scientists interested in the relationship between environmental trends and food security in regions of the world that suffer from data scarcity. I am very fortunate to be a part of this wonderful team.
 
 <center>
 
-![](poster_video/meds_hex.png){width=20%}![](poster_video/data_science_hex.png){width=20%}
+![](poster_video/data_science_hex.png){width=30%}
 
 </center>
-
-### New Horizons in Conservation Conference 2022 - Yale School of the Environment
-
-My teammates and I were invited to attend the [New Horizons in Conservation Conference 2022 at the Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference). Having the opportunity to participate in this conference is an honor and a privilege, and we are very grateful to the Yale School of the Environment for showing interest in our project and givign us the chance to explore how other equity-driven scientists are expanding the horizons of the data world. My teammates and I are very passionate about the tool and data products we are developing, and we hope other data scientists will be able to use it and improve upon it. This tool is a
-
-As part of our participation in this conference, we created a video and poster to share our progress thus far as well as our vision for the end products. We are very grateful to be able to showcase this novel open-source tool that will hopefully increase access to powerful remote sensing products. Moving forward, we aim to contribute our data, code, and instructional workflow to the [MOSAIKS API](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/). This API will allow users to access our data and use it for their needs. The interface allows users to download feature data for any place on earth and run analysis over space and time, for any task of interest. Detailed notebooks hold the user's hand as they execute adapt code and expand their horizons beyond what they ever thought was possible. 
 
 ### ABSTRACT: 
 
@@ -47,7 +41,19 @@ The environmental and social impacts of climate change are disproportionately di
 
 <center>
 
-![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4)
+![](poster_video/meds_hex.png){width=30%}
+
+</center>
+
+### New Horizons in Conservation Conference 2022 - Yale School of the Environment
+
+My teammates and I were invited to attend the [New Horizons in Conservation Conference 2022 at the Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference). Having the opportunity to participate in this conference is an honor and a privilege, and we are very grateful to the Yale School of the Environment for showing interest in our project and giving us the chance to explore how other equity-driven scientists are expanding the horizons of the data world. My teammates and I are very passionate about the tool and data products we are contributoing to the remote sensing field. We hope other data scientists will be able to use it and improve upon it in the future, especially as we will face more extreme weather events and climate trends as global warming progresses. 
+
+As part of our participation in this conference, we created a video and poster to share our progress thus far as well as our vision for the end products. We are very grateful to be able to showcase this novel open-source tool that will hopefully increase access to powerful remote sensing products. Moving forward, we aim to contribute our data, code, and instructional workflow to the [MOSAIKS API](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/). This user-freindly API will allow anyone to access our data and use it for their needs. Users may be environmental policy-makers, politicians involved in food security, researchers interested in environmental trends, or anyone else! The interface allows users to download "feature data" for any place on earth and run analysis over space and time, for any task of interest, given that the data is available for that region. Detailed Jupyter notebooks hold the user's hand as they execute adapt Python code to their needs and expand their horizons beyond what they ever thought was possible. 
+
+<center>
+
+![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4){width=60%}
 
 </center>
 
@@ -57,7 +63,7 @@ The MOSAIKS system and its resulting products can provide policy-makers, researc
 sub-Saharan Africa with a tool to address environmental questions in less time with fewer resources.
 Innovative remote sensing tools and machine learning can fill in the current gaps in data for many
 regions of the world. By filling in these data gaps, decision-makers can study how a region might be
-affected by global climate change and develop mitigation efforts accordingly.
+affected by global climate change and develop mitigation efforts accordingly. This way, countries can compare environmental trends on a broader scale, establish collaborative food security policies, and fight climate change from well-informed perspectives.
 
 <center>
 
