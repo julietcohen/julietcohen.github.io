@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2022-03-03-newhorizonsinconservationconference2022/",
+    "title": "New Horizons in Conservation Conference 2022 - Yale School of the Environment",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Juliet Cohen",
+        "url": {}
+      }
+    ],
+    "date": "2022-03-03",
+    "categories": [
+      "Python"
+    ],
+    "contents": "\nNew Horizons in Conservation Conference 2022 - Yale School of the Environment\nAn open-source pipleline for remote sensing of crop yields under environmental change in sub-Saharan Africa\n\nVideo\n\n\n\n",
+    "preview": "posts/2022-03-03-newhorizonsinconservationconference2022/poster_video/africa.png",
+    "last_modified": "2022-03-15T17:22:24-07:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-12-25-sqlwindpower/",
     "title": "Using SQL & Python to Calculate Iowa's Wind Power Potential",
     "description": "How many wind turbines can we legally fit into the state of Iowa, and how much renewable energy would that yield?",

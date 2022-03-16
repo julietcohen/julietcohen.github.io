@@ -9,7 +9,9 @@ date: 2022-03-03
 output:
   distill::distill_article:
     self_contained: false
-draft: True
+preview: poster_video/africa.png
+categories:
+  - Python
 ---
 
 
@@ -17,7 +19,7 @@ draft: True
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-![New Horizons in Conservation Conference 2022 - Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference)
+[New Horizons in Conservation Conference 2022 - Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference)
 
 # An open-source pipleline for remote sensing of crop yields under environmental change in sub-Saharan Africa
 
