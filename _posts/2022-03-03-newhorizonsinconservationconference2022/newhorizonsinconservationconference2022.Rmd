@@ -29,27 +29,42 @@ knitr::opts_chunk$set(echo = FALSE)
 
 As a student in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management, I am working on a capstone project that involves creating an open-source tool to predict crop yields in sub-Saharan Africa.
 
+<center>
+
+![](poster_video/meds_hex.png){width=20%}![](poster_video/data_science_hex.png){width=20%}
+
+</center>
+
+### New Horizons in Conservation Conference 2022 - Yale School of the Environment
+
+My teammates and I were invited to attend the [New Horizons in Conservation Conference 2022 at the Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference). Having the opportunity to participate in this conference is an honor and a privilege, and we are very grateful to the Yale School of the Environment for showing interest in our project and givign us the chance to explore how other equity-driven scientists are expanding the horizons of the data world. My teammates and I are very passionate about the tool and data products we are developing, and we hope other data scientists will be able to use it and improve upon it. This tool is a
+
+As part of our participation in this conference, we created a video and poster to share our progress thus far as well as our vision for the end products. We are very grateful to be able to showcase this novel open-source tool that will hopefully increase access to powerful remote sensing products. Moving forward, we aim to contribute our data, code, and instructional workflow to the [MOSAIKS API](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/). This API will allow users to access our data and use it for their needs. The interface allows users to download feature data for any place on earth and run analysis over space and time, for any task of interest. Detailed notebooks hold the user's hand as they execute adapt code and expand their horizons beyond what they ever thought was possible. 
+
 ### ABSTRACT: 
 
 The environmental and social impacts of climate change are disproportionately distributed worldwide. Many highly impacted regions lack the assets to monitor and generate resource predictions, and therefore lack high-quality environmental and social data. As a result, it is difficult to make predictions about the impacts of climate change for these regions using conventional modeling. Recently, machine learning approaches applied to high-resolution satellite imagery have been successful in making predictions of a wide range of social and environmental variables. However, generating these predictions comes with significant barriers, including high computational, data storage, expertise, and financial resource costs. Reducing the financial and computational burden of machine learning approaches is essential to increasing the equity of environmental monitoring processes and outputs. Sub-Saharan Africa is one of these data-limited regions and is likely to suffer some of the largest impacts from climate change globally. To enable increased monitoring and data access across the sub-continent, we apply the novel machine learning approach, MOSAIKS, to create tabular features for sub-Saharan Africa using satellite imagery. These features, paired with ground-truthed crop data from three countries, will be used to build a model that predicts crop yields over time in regions without crop data. This model will provide new insights into the historical crop yields of the region. Furthermore, these tabular features of satellite imagery, and the methodology developed to create them, will enable more people around the globe to build models and generate predictions of other social and environmental variables in this region.
 
 <center>
 
-![](poster_video/meds_hex.png){width=30%}![](poster_video/data_science_hex.png){width=30%}
+![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4)
 
 </center>
 
-### New Horizons in Conservation Conference 2022 - Yale School of the Environment
+### How does this remote sensing tool increase equity in the field of environmental data science?
 
-My teammates and I were invited to attend the [New Horizons in Conservation Conference 2022 at the Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference), for which we created a video and poster. We are very excited to contribute to this open-source tool as we strengthen our data science skills in Python.
+The MOSAIKS system and its resulting products can provide policy-makers, researchers, and users in
+sub-Saharan Africa with a tool to address environmental questions in less time with fewer resources.
+Innovative remote sensing tools and machine learning can fill in the current gaps in data for many
+regions of the world. By filling in these data gaps, decision-makers can study how a region might be
+affected by global climate change and develop mitigation efforts accordingly.
 
 <center>
 
-![](poster_video/New_Horizons_Poster_CropMOSAIKS_blog_post.pdf){width=99%}
+![](poster_video/poster_png.png){width=99%}
 
 </center>
 
-![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4)
 
 
 
