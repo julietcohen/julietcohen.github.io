@@ -27,11 +27,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </center>
 
-As a student in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management, I am working on a capstone project that involves creating an open-source tool to predict crop yields in sub-Saharan Africa. My teammates are Grace Lewin, Cullen Molitor, and Steven Cognac, and our advisor is Dr. Tamma Carleton. We are a highly collaborative group of data scientists interested in the relationship between environmental trends and food security in regions of the world that suffer from data scarcity. I am very fortunate to be a part of this wonderful team.
+As a student in the Master of Environmental Data Science program at the Bren School of Environmental Science and Management, I am working on a capstone project aiming to create an open-source tool to predict crop yields over time in sub-Saharan Africa using remote sensing techniques. My teammates are Grace Lewin, Cullen Molitor, and Steven Cognac, and our advisor is Dr. Tamma Carleton from the Bren School and the [MOSAIKS team at the Global Policy Lab](http://www.globalpolicy.science/mosaiks). We are a collaborative group of data scientists interested in the relationship between environmental trends and food security in regions of the world that suffer from data scarcity. I am very fortunate to be a part of this wonderful team working towards a better understanding of environmental implications on human well-being. 
+
+**The MOSAIKS capstone team:**
 
 <center>
 
-![](poster_video/data_science_hex.png){width=30%}
+![From left to right: Grace Lewin, Cullen Molitor, Juliet Cohen, Steven Cognac. Photo taken at the National Center for Ecological Analysis and Synthesis, March 2022.](poster_video/faculty_review_terrace.jpg){width=70%}
 
 </center>
 
@@ -41,33 +43,33 @@ The environmental and social impacts of climate change are disproportionately di
 
 <center>
 
-![](poster_video/meds_hex.png){width=30%}
+![](poster_video/meds_hex.png){width=20%}![](poster_video/data_science_hex.png){width=20%}
 
 </center>
 
 ### New Horizons in Conservation Conference 2022 - Yale School of the Environment
 
-My teammates and I were invited to attend the [New Horizons in Conservation Conference 2022 at the Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference). Having the opportunity to participate in this conference is an honor and a privilege, and we are very grateful to the Yale School of the Environment for showing interest in our project and giving us the chance to explore how other equity-driven scientists are expanding the horizons of the data world.
+My teammates and I were invited to attend the [New Horizons in Conservation Conference 2022 at the Yale School of the Environment](https://jedsi.yale.edu/new-horizons-conference/2022-conference). Having the opportunity to participate in this conference is an honor and a privilege. We are grateful to the Yale School of the Environment for showing interest in our project and giving us the chance to explore how other equity-driven scientists are expanding the horizons of the data world.
 
-**My teammates and I are very passionate about the tool and data products we are contributoing to the remote sensing field. We hope other data scientists will be able to use it and improve upon it in the future, especially as we will face more extreme weather events and climate trends as global warming progresses.**
+**My teammates and I are very passionate about the tool and data products we are contributing to the remote sensing field. We hope other scientists and  users will be able to improve upon it in the future, especially as we expect to face more extreme climate fluctuations moving forward with climate change.**
 
-As part of our participation in this conference, we created a video and poster to share our progress thus far as well as our vision for the end products. We are very grateful to be able to showcase this novel open-source tool that will hopefully increase access to powerful remote sensing products.
+As part of our participation in this conference, we created a video and poster to share our progress as well as our vision for the end products. We look forward to showcasing this novel open-source tool that will hopefully increase access to powerful remote sensing products.
 
-#### The MOSAIKS API
+### The MOSAIKS API
 
-Moving forward, we aim to contribute our data, code, and instructional workflow to the [MOSAIKS API](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/). This user-friendly API will allow anyone to access our data and use it for their needs. Users may be environmental policy-makers, politicians involved in food security, researchers interested in environmental trends, or anyone else! The interface allows users to download "feature data" for any place on earth and run analysis over space and time, for any task of interest, given that the data is available for that region.
+Moving forward, we aim to contribute our data, code, and instructional documentation to the [MOSAIKS API](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/). This user-friendly API will allow anyone to access our data and use it for their needs. Users may take the form of environmental policy-makers, politicians involved in food security in sub-Saharan Africa, researchers interested in environmental or socioeconomic trends, or anyone else! The interface allows users to download "feature data" for any place on earth and run analysis over space and time, for any task of interest, given that the data is available for that region.
 
-#### What is a task of interest?
+The MOSAIKS API database contains geolocated data files with task-agnostic "features" for many regions of the world. These features are satellite image data converted to meaningful numbers through a mathematical process called "random convolutional featurization." This approach is a subset of unsupervised deep learning that is praised for its accuracy and computational efficiency. Users can access this tabular feature data and run statistical analysis (such as ridge regression) to answer their environmental and socioeconomic questions.
 
-**An example of a task is determining how a characteristic of the landscape changes over time, such as how forest cover changes over time in the Congo or how wetland habitat shrinks in droughts. Detailed Jupyter notebooks hold the user's hand as they execute adapt Python code to their needs and expand their horizons beyond what they ever thought was possible.**
+### What is a task of interest?
 
-The MOSAIKS API database contains geolocated data files with task-agnostic "features" for many regions of the world. These "features" are satellite image data that has been converted to meaningful numbers through a process called "random convolutional featurization." This is a subset of deep machine learning that is praised for its accuracy and computational efficiency. Users can access these "features" and run statistical analysis to answer their environmental and socioeconomic questions. 
+An example of a task is determining how a characteristic of the landscape changes over time, such as how forest cover changes in the Congo or how wetland habitat fluctuates. Satellite images can help us understand these trends, and a single set of feature data is task-agnostic because the features were originally created using unsupervised machine learning, and the MOSAIKS model is then trained on those features and task-specific data using supervised machine learning. Detailed Jupyter notebooks hold the user's hand as they execute adapt Python code to fit their task's needs and expand the horizons beyond what they ever thought was possible with remote sensing data.**
 
-**Please check out this 3-minute video that describes our project's objective, approach, and how it relates to equity and inclusion in the world of environmental data science:**
+### View this 3-minute video to learn more about our project's objective, approach, and how it relates to equity and inclusion in the world of environmental data science:
 
 <center>
 
-![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4){width=90%}
+![](poster_video/New_Horizons_Video_CropMOSAIKS_blog_post.mp4){width=99%}
 
 </center>
 
@@ -77,7 +79,7 @@ The MOSAIKS system and its resulting products can provide policy-makers, researc
 sub-Saharan Africa with a tool to address environmental questions in less time with fewer resources.
 Innovative remote sensing tools and machine learning can fill in the current gaps in data for many
 regions of the world. By filling in these data gaps, decision-makers can study how a region might be
-affected by global climate change and develop mitigation efforts accordingly. This way, countries can compare environmental trends on a broader scale, establish collaborative food security policies, and fight climate change from well-informed perspectives.
+affected by global climate change and develop mitigation efforts accordingly. With this tool, countries can compare environmental trends on a broader scale, establish collaborative food security policies, and fight climate change from well-informed perspectives.
 
 <center>
 
@@ -85,7 +87,7 @@ affected by global climate change and develop mitigation efforts accordingly. Th
 
 </center>
 
-
+If you are interested in learning more about this project, or if you have suggestions to improve our methodology or data products, please feel free to contact my team at **cp-cropmosaiks.bren.ucsb.edu** or create an issue on our github organization, [cropMOSAIKS](https://github.com/cropmosaiks). Thank you for reading, and happy coding!
 
 
 
