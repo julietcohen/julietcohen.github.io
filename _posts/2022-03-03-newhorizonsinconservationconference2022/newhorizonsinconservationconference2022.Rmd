@@ -53,7 +53,7 @@ My teammates and I were invited to attend the [New Horizons in Conservation Conf
 
 **My teammates and I are very passionate about the tool and data products we are contributing to the remote sensing field. We hope other scientists and  users will be able to improve upon it in the future, especially as we expect to face more extreme climate fluctuations moving forward with climate change.**
 
-As part of our participation in this conference, we created a video and poster to share our progress as well as our vision for the end products. We look forward to showcasing this novel open-source tool that will hopefully increase access to powerful remote sensing products.
+As part of our participation in this conference, we created a video and poster to share our progress as well as our vision for the end-products. We look forward to showcasing this novel open-source tool that will hopefully increase access to powerful remote sensing products.
 
 ### The MOSAIKS API
 
@@ -63,7 +63,7 @@ The MOSAIKS API database contains geolocated data files with task-agnostic "feat
 
 ### What is a task of interest?
 
-An example of a task is determining how a characteristic of the landscape changes over time, such as how forest cover changes in the Congo or how wetland habitat fluctuates. Satellite images can help us understand these trends, and a single set of feature data is task-agnostic because the features were originally created using unsupervised machine learning, and the MOSAIKS model is then trained on those features and task-specific data using supervised machine learning. Detailed Jupyter notebooks hold the user's hand as they execute adapt Python code to fit their task's needs and expand the horizons beyond what they ever thought was possible with remote sensing data.**
+An example of a task is determining how a characteristic of the landscape changes over time, such as how forest cover changes in the Congo or how wetland habitat fluctuates. Satellite images can help us understand these trends, and a single set of feature data is task-agnostic because the features were originally created using unsupervised machine learning, and the MOSAIKS model is then trained on those features and task-specific data using supervised machine learning. Detailed Jupyter notebooks hold the user's hand as they  adapt Python code to fit their task's needs and expand the horizons beyond what they ever thought was possible with remote sensing data.**
 
 ### View this 3-minute video to learn more about our project's objective, approach, and how it relates to equity and inclusion in the world of environmental data science:
 
