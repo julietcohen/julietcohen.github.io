@@ -12,29 +12,17 @@ output:
   postcards::trestles
 site: distill::distill_website
 ---
-### Biography
+### Bio
 
-I am a conservation biologist and aspiring data scientist interested in the interaction between landscapes and wildlife population dynamics in the face of climate change. I'm currently pursuing a Master’s degree in Environmental Data Science from UC Santa Barbara’s Bren School of Environmental Science and Management. Prior to the Bren School, I earned a Bachelor’s degree in Ecology and Evolution with distinction in the major from UC Santa Barbara in 2019 and studied abroad in Costa Rica, specializing in tropical ecology and mariculture. My undergraduate research investigated mammalian spatial ecology throughout local urban communities and the role of bivalves in aquaculture systems.
+I am a conservation biologist and aspiring data scientist interested in the interaction between landscapes and wildlife population dynamics in the face of climate change. I'm currently pursuing a Master’s degree in Environmental Data Science from **UC Santa Barbara’s Bren School of Environmental Science and Management.** Prior to the Bren School, I earned a Bachelor’s degree in Ecology and Evolution with distinction in the major from UC Santa Barbara in 2019 and studied abroad in Costa Rica, specializing in tropical ecology and mariculture. My undergraduate research investigated mammalian spatial ecology and the role of bivalves in aquaculture systems.
 
 Following this research, I served as a field technician studying endangered populations of flat-tailed horned lizards and steelhead trout in Southern California. With a growing interest in dynamic urban ecosystems, I went on to study incipient invasive species across the Hawaiian islands. These projects and diverse field roles inspired me to delve into environmental data science in order to recognize broad ecological patterns across diverse scientific disciplines.
 
-Going forward, I aim to utilize modelling techniques and spatial data science to understand the population dynamics of species that are most imperiled by urban expansion and climate change. With open source programming tools and a collaborative approach, I hope to advise preventative policies to protect wildlife from anthropogenic influence.
-
-<center>
-
-![](_posts/2022-03-03-newhorizonsinconservationconference2022/poster_video/meds_hex.png){width=12%}
-
-</center>
+Going forward, I aim to utilize **modelling techniques** and **spatial data science** to understand the population dynamics of species that are most imperiled by urban expansion and climate change. With open source programming tools and a collaborative approach, I hope to advise preventative policies to protect wildlife from anthropogenic influence.
 
 ### Arctic Data & Marine Science
 
 I currently work in environmental data analysis, curation, and communication at the **National Center for Ecological Analysis and Synthesis**. I served as a member of the Arctic Data Center team, and I currently serve as a Data Analyst Fellow at the **Ocean Health Index** where I contribute to our understanding of marine health on a global scale.
-
-<center>
-
-![](_posts/2022-03-03-newhorizonsinconservationconference2022/poster_video/data_science_hex.png){width=12%}
-
-</center>
 
 ### Education
 
