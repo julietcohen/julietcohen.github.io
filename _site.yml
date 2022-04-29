@@ -7,8 +7,8 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "CV"
-      href: Resume_20220329_pdf_copy.pdf
+    - text: "Resume"
+      href: Resume_Cohen_Juliet_copy.pdf
     - text: "Programming Blog"
       href: blog.html
     - text: "Field Work Photo Gallery"
