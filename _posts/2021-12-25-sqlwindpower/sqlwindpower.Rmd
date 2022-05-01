@@ -246,7 +246,7 @@ Please feel free to reach out with any similar applications for this notebook, a
 
 - I would like to thank my collaborator on this project, [Sydney Rilum](https://bren.ucsb.edu/people/sydney-rilum) from the Bren School of Environmental Science and Management, for her contributions. I will always remember the excessive amount of time we spent drawing wind turbine circles on scratch paper and adjusting the mathematical calculations to reflect different rotor diameters and how that changes the wind power potential for the state of Iowa.
 
-- Thank you, Dr. James Frew from the Bren School of Environmental Science and Management, for prompting us to investigate this question.
+- Thank you, Dr. James Frew and Niklas Griessbaum from the Bren School of Environmental Science and Management, for prompting us to investigate this question. Your expertise in spatial data science has inspired me to answer more questions like this in my future career. 
 
 - [wind turtbine photo source](https://newscenter.lbl.gov/2021/08/30/technology-advancement-and-value-of-wind-energy/)
 
