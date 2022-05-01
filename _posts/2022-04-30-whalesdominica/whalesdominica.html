@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["outputs/dominica_outline.png","outputs/dominica.png","outputs/fine_grid.png","outputs/grid.png","outputs/hull_poly.png","outputs/speed_zone_dominica.png","outputs/sperm_whale.png","outputs/subset_union.png","outputs/vessel_data.png","outputs/vessel_points.png","outputs/vessels_shifted.png","whalessantabarbara_files/anchor-4.2.2/anchor.min.js","whalessantabarbara_files/bowser-1.9.3/bowser.min.js","whalessantabarbara_files/distill-2.2.21/template.v2.js","whalessantabarbara_files/header-attrs-2.13/header-attrs.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.map","whalessantabarbara_files/popper-2.6.0/popper.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-bundle.umd.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-light-border.css","whalessantabarbara_files/tippy-6.2.7/tippy.css","whalessantabarbara_files/tippy-6.2.7/tippy.umd.min.js","whalessantabarbara_files/webcomponents-2.0.0/webcomponents.js","whalessantabarbara.html"]}
+  {"type":"character","attributes":{},"value":["outputs/dominica_outline.png","outputs/dominica.png","outputs/fine_grid.png","outputs/grid.png","outputs/hull_poly.png","outputs/speed_zone_dominica.png","outputs/sperm_whale.png","outputs/subset_union.png","outputs/vessel_data.png","outputs/vessel_points.png","outputs/vessels_shifted.png","whalesdominica_files/anchor-4.2.2/anchor.min.js","whalesdominica_files/bowser-1.9.3/bowser.min.js","whalesdominica_files/distill-2.2.21/template.v2.js","whalesdominica_files/header-attrs-2.13/header-attrs.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.min.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.min.map","whalesdominica_files/popper-2.6.0/popper.min.js","whalesdominica_files/tippy-6.2.7/tippy-bundle.umd.min.js","whalesdominica_files/tippy-6.2.7/tippy-light-border.css","whalesdominica_files/tippy-6.2.7/tippy.css","whalesdominica_files/tippy-6.2.7/tippy.umd.min.js","whalesdominica_files/webcomponents-2.0.0/webcomponents.js","whalessantabarbara_files/anchor-4.2.2/anchor.min.js","whalessantabarbara_files/bowser-1.9.3/bowser.min.js","whalessantabarbara_files/distill-2.2.21/template.v2.js","whalessantabarbara_files/header-attrs-2.13/header-attrs.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.map","whalessantabarbara_files/popper-2.6.0/popper.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-bundle.umd.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-light-border.css","whalessantabarbara_files/tippy-6.2.7/tippy.css","whalessantabarbara_files/tippy-6.2.7/tippy.umd.min.js","whalessantabarbara_files/webcomponents-2.0.0/webcomponents.js","whalessantabarbara.html"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1496,20 +1496,19 @@ mean for those vessels.</p></p>
 <li><a href="#protecting-whales-from-ships">Protecting Whales from
 Ships</a>
 <ul>
+<li><a href="#load-packages">Load packages</a></li>
 <li><a href="#read-in-the-data">Read in the data:</a></li>
-</ul></li>
-<li><a href="#whale-sightings-data">Whale Sightings Data</a>
-<ul>
+<li><a href="#whale-sightings-data">Whale Sightings Data</a></li>
 <li><a href="#create-grid">Create Grid</a></li>
-</ul></li>
 <li><a href="#extract-whale-habitat">Extract Whale Habitat</a></li>
 <li><a href="#plot-the-speed-reduction-zone">Plot the Speed Reduction
 Zone</a></li>
 <li><a href="#vessel-data">Vessel Data</a></li>
 <li><a href="#calculate-distance-and-speed-of-vessels">Calculate
-Distance and Speed of Vessels</a>
-<ul>
+Distance and Speed of Vessels</a></li>
 <li><a href="#acknowledgements">Acknowledgements</a></li>
+<li><a href="#related-resources">Related Resources</a></li>
+<li><a href="#photo-sources">Photo Sources:</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1554,7 +1553,7 @@ alt="Scotts Head, Dominica" />
 <p>Let’s open up a fresh Jupyter Notebook and get started investigating
 the intersection of whale migration and human marine traffic in
 Dominica.</p>
-<p>Load packages</p>
+<h3 id="load-packages">Load packages</h3>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1590,7 +1589,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <center>
 <img src="outputs/dominica_outline.png" style="width:20.0%" />
 </center>
-<h2 id="whale-sightings-data">Whale Sightings Data</h2>
+<h3 id="whale-sightings-data">Whale Sightings Data</h3>
 <p>Bootstrap the geometries from the latitude &amp; longitude and set
 the CRS to <code>EPSG 4326</code> initially, and we will convert it to
 2002 when we are done appending the geometries. This ensures that the
@@ -1661,7 +1660,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a hr
 <center>
 <p><img src="outputs/fine_grid.png" style="width:30.0%" /></p>
 </center>
-<h2 id="extract-whale-habitat">Extract Whale Habitat</h2>
+<h3 id="extract-whale-habitat">Extract Whale Habitat</h3>
 <p>Execute an inner spatial join of the sightings data, with the grid
 being the first dataset named because we want the output to be in grid
 cells rather than points:</p>
@@ -1718,8 +1717,8 @@ Dominica; <code>EPSG 2002</code></p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>grid_subset_hull_gdf <span class="op">=</span> gpd.GeoDataFrame(index<span class="op">=</span>[<span class="dv">0</span>], </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                                        crs<span class="op">=</span> projected_EPSG, </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                                        geometry<span class="op">=</span>[grid_subset_hull_poly])</span></code></pre></div>
-<h2 id="plot-the-speed-reduction-zone">Plot the Speed Reduction
-Zone</h2>
+<h3 id="plot-the-speed-reduction-zone">Plot the Speed Reduction
+Zone</h3>
 <p>Now that we have determined the grid cells with whale sightings
 around Dominica, lets move on to defining the ideal speed reduction
 zones for ships in this region. Cargo ships, large fishing vessels, and
@@ -1748,7 +1747,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a h
 <center>
 <img src="outputs/speed_zone_dominica.png" style="width:30.0%" />
 </center>
-<h2 id="vessel-data">Vessel Data</h2>
+<h3 id="vessel-data">Vessel Data</h3>
 <p>Marine commercial vessels or any vessel of at least 300 gross tonnage
 are required to be fitted with an “automatic identification system”
 receiver to monitor their movement. The beacons emitted from these
@@ -1800,8 +1799,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a h
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set the TIMESTAMP column to type datetime</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>vessel[<span class="st">&#39;TIMESTAMP&#39;</span>] <span class="op">=</span> pd.to_datetime(vessel[<span class="st">&#39;TIMESTAMP&#39;</span>], </span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                     <span class="bu">format</span> <span class="op">=</span> <span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S&#39;</span>)</span></code></pre></div>
-<h2 id="calculate-distance-and-speed-of-vessels">Calculate Distance and
-Speed of Vessels</h2>
+<h3 id="calculate-distance-and-speed-of-vessels">Calculate Distance and
+Speed of Vessels</h3>
 <p>We will calculate the distance between two successive locations of
 the same vessel, as well as the time difference between the time stamps
 of those two locations. We will use the tried and true equation we have
@@ -1876,8 +1875,16 @@ to days</p>
 <div class="sourceCode" id="cb28"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(vessel_joined_mmsi_match[<span class="st">&#39;time_diff_actual_vs_10k&#39;</span>]<span class="op">/</span> <span class="dv">60</span><span class="op">/</span><span class="dv">60</span><span class="op">/</span><span class="dv">24</span>)</span></code></pre></div>
 <p>The difference between the time that it actually took and how much it
-would have taken at 10 knots is approximately 27.87 days, on
-average.</p>
+would have taken at 10 knots is approximately 27.87 days, on average.
+Mission accomplished.</p>
+<p>Can we use this analysis to help support a policy change in Dominica
+to enforce a speed reduction zone and protect the vulnerable sperm whale
+population? Future investigation of this data might include diving into
+the MMSI codes for the vessels to determine which vessels are speeding
+more often, revealing which vessels should be targeted in this policy.
+Additionally, after such a policy is put into place, we can compare the
+whale sightings afterward to those before, and hopefully see an increase
+in whale activity!</p>
 <h3 id="acknowledgements">Acknowledgements</h3>
 <ul>
 <li><p>I would like to thank my collaborator on this project, <a
@@ -1885,7 +1892,7 @@ href="https://bren.ucsb.edu/people/sydney-rilum">Sydney Rilum</a> from
 the Bren School of Environmental Science and Management, for her
 contributions. I will always remember the excessive amount of time we
 spent googling coordinate reference systems, adjusting our vessel speed
-calculations, and itertating through different grid cell sizes.</p></li>
+calculations, and iterating through different grid cell sizes.</p></li>
 <li><p>Thank you, Dr. James Frew and Niklas Griessbaum from the Bren
 School of Environmental Science and Management, for prompting us to
 investigate this question. Your expertise in spatial data science
@@ -1897,6 +1904,7 @@ me with any suggestions or comments at my GitHub page <a
 href="https://github.com/julietcohen">here</a> or via email (<a
 href="mailto:jscohen@bren.ucsb.edu"
 class="email">jscohen@bren.ucsb.edu</a>)</p>
+<h3 id="related-resources">Related Resources</h3>
 <p>If you are interested in acoustic whale monitoring in the Caribbean,
 check out <a
 href="https://www.frontiersin.org/articles/10.3389/fmars.2019.00347/full">this
@@ -1910,7 +1918,7 @@ mapping and analysis tool</a> from the Benioff Ocean Initiative! You can
 also subscribe to their weekly emails to stay up-to-date with recent
 visual and acoustic whale detections of all the species that live in the
 Channel.</p>
-<h4 id="photo-sources">Photo Sources:</h4>
+<h3 id="photo-sources">Photo Sources:</h3>
 <p><a
 href="https://www.smithsonianmag.com/smart-news/your-high-end-perfume-likely-part-whale-mucus-180958767/">sperm
 whale photo</a></p>

@@ -41,7 +41,7 @@ In this anaysis in Python, we aim to determine the spatial outline of a speed re
 
 Let's open up a fresh Jupyter Notebook and get started investigating the intersection of whale migration and human marine traffic in Dominica. 
 
-Load packages
+### Load packages
 ```python
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -52,6 +52,7 @@ import datetime as dt
 ```
 
 ### Read in the data:
+
 1. A spatial data file that defines the boundaries of Dominica, the island country in the Caribbean where our ship & whale investigation takes place.\
 2. Whale sightings data, which contains times and locations of approximately 5,000 whale sightings in Dominica between 2008 and 2015.
 ```python
@@ -77,7 +78,7 @@ dominica_outline
 ![](outputs/dominica_outline.png){width=20%}
 </center>
 
-## Whale Sightings Data
+### Whale Sightings Data
 
 Bootstrap the geometries from the latitude & longitude and set the CRS to `EPSG 4326` initially, and we will convert it to 2002 when we are done appending the geometries. This ensures that the latitude and longitude are projected correctly. 
 ```python
@@ -157,7 +158,7 @@ grid.boundary.plot(figsize=(20,20))
 
 </center>
 
-## Extract Whale Habitat
+### Extract Whale Habitat
 
 Execute an inner spatial join of the sightings data, with the grid being the first dataset named because we want the output to be in grid cells rather than points:
 ```python
@@ -225,7 +226,7 @@ grid_subset_hull_gdf = gpd.GeoDataFrame(index=[0],
                                         geometry=[grid_subset_hull_poly])
 ```
 
-## Plot the Speed Reduction Zone
+### Plot the Speed Reduction Zone
 
 Now that we have determined the grid cells with whale sightings around Dominica, lets move on to defining the ideal speed reduction zones for ships in this region. Cargo ships, large fishing vessels, and ecotourism vessels all pose a threat to whales. If the ships travel slower and are more vigilant of the surrounding marine life, perhaps we can find a middle ground in which whales can safely migrate alongside humans in the marine region around Dominica. To make this compromise, we aim to determine the portion of the seascape that is most critical to reduce speed, rather than trying to restrict speeds everywhere, which is unrealistic as it would be impossible to regulate. Furthermore, if whales are not observed often in a certain region of the ocea, restricting speeds there would be more disruptive to human livelihoods than beneficial to whale movement. 
 
@@ -248,7 +249,7 @@ plt.ylabel('Longitude (meters)')
 ![](outputs/speed_zone_dominica.png){width=30%}
 </center>
 
-## Vessel Data 
+### Vessel Data 
 
 Marine commercial vessels or any vessel of at least 300 gross tonnage are required to be fitted with an "automatic identification system" receiver to monitor their movement. The beacons emitted from these transmitters are received, encoded, and archived by terrestrial stations.
 
@@ -303,7 +304,7 @@ vessel['TIMESTAMP'] = pd.to_datetime(vessel['TIMESTAMP'],
                                      format = '%Y-%m-%d %H:%M:%S')
 ```
 
-## Calculate Distance and Speed of Vessels
+### Calculate Distance and Speed of Vessels
 
 We will calculate the distance between two successive locations of the same vessel, as well as the time difference between the time stamps of those two locations. We will use the tried and true equation we have memorized from middle school:\
 `distance = rate * time` 
@@ -383,29 +384,25 @@ Sum up the time difference values and convert the units from seconds to days
 sum(vessel_joined_mmsi_match['time_diff_actual_vs_10k']/ 60/60/24)
 ```
 
-The difference between the time that it actually took and how much it would have taken at 10 knots is approximately 27.87 days, on average.
+The difference between the time that it actually took and how much it would have taken at 10 knots is approximately 27.87 days, on average. Mission accomplished.
+
+Can we use this analysis to help support a policy change in Dominica to enforce a speed reduction zone and protect the vulnerable sperm whale population? Future investigation of this data might include diving into the MMSI codes for the vessels to determine which vessels are speeding more often, revealing which vessels should be targeted in this policy. Additionally, after such a policy is put into place, we can compare the whale sightings afterward to those before, and hopefully see an increase in whale activity!
 
 ### Acknowledgements
 
-- I would like to thank my collaborator on this project, [Sydney Rilum](https://bren.ucsb.edu/people/sydney-rilum) from the Bren School of Environmental Science and Management, for her contributions. I will always remember the excessive amount of time we spent googling coordinate reference systems, adjusting our vessel speed calculations, and itertating through different grid cell sizes. 
+- I would like to thank my collaborator on this project, [Sydney Rilum](https://bren.ucsb.edu/people/sydney-rilum) from the Bren School of Environmental Science and Management, for her contributions. I will always remember the excessive amount of time we spent googling coordinate reference systems, adjusting our vessel speed calculations, and iterating through different grid cell sizes. 
 
 - Thank you, Dr. James Frew and Niklas Griessbaum from the Bren School of Environmental Science and Management, for prompting us to investigate this question. Your expertise in spatial data science continues to inspire me to answer more questions like this in my future career.
 
 Thank you for following along with this analysis, and please contact me with any suggestions or comments at my GitHub page [here](https://github.com/julietcohen) or via email (jscohen@bren.ucsb.edu)
 
-
-
-
-
-
-
-
+### Related Resources
 
 If you are interested in acoustic whale monitoring in the Caribbean, check out [this paper by Heenehan el al. 2019](https://www.frontiersin.org/articles/10.3389/fmars.2019.00347/full) that discusses Caribbean soundscapes of these magnificent marine mammals and anthropogenic influences that challenge their survival. 
 
 If you are interested in exploring how migratory whales and human vessels are being tracked and regulated in the Santa Barbara Channel, please check out the novel [Whale Safe mapping and analysis tool](https://whalesafe.com/) from the Benioff Ocean Initiative! You can also subscribe to their weekly emails to stay up-to-date with recent visual and acoustic whale detections of all the species that live in the Channel. 
 
-#### Photo Sources:
+### Photo Sources:
 
 [sperm whale photo](https://www.smithsonianmag.com/smart-news/your-high-end-perfume-likely-part-whale-mucus-180958767/)
 
