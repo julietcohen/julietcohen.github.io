@@ -112,7 +112,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Global Fishing Effort & Covid-19: A Statistical Analysis"]},{"type":"character","attributes":{},"value":["A statistical approach to answer the question: How did Covid-19 impact global fishing efforts in 2020?\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["12-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["pictures/fishing_gfw_map_2020.png"]},{"type":"character","attributes":{},"value":["R"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Global Fishing Effort & Covid-19: A Statistical Analysis"]},{"type":"character","attributes":{},"value":["A statistical approach to answer the question: How did Covid-19 impact global fishing efforts in 2020?\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["12-02-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["pictures/fishing_gfw_map_2020.png"]},{"type":"character","attributes":{},"value":["R","Statistics"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1438,7 +1438,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="fishingeffortbycountry_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="fishingeffortbycountry_files/header-attrs-2.13/header-attrs.js"></script>
   <script src="fishingeffortbycountry_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="fishingeffortbycountry_files/popper-2.6.0/popper.min.js"></script>
   <link href="fishingeffortbycountry_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1473,9 +1473,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
 <div class="dt=tag">R</div>
+<div class="dt=tag">Statistics</div>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>A statistical approach to answer the question: How did Covid-19 impact global fishing efforts in 2020?</p></p>
+<p><p>A statistical approach to answer the question: How did Covid-19
+impact global fishing efforts in 2020?</p></p>
 </div>
 
 <div class="d-byline">
@@ -1486,17 +1488,104 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <figure>
-<img src="pictures/cod.png" alt="A cod fish, one of the top species captured by marine fisheries (8)" /><figcaption aria-hidden="true">A cod fish, one of the top species captured by marine fisheries (8)</figcaption>
+<img src="pictures/cod.png"
+alt="A cod fish, one of the top species captured by marine fisheries (8)" />
+<figcaption aria-hidden="true">A cod fish, one of the top species
+captured by marine fisheries (8)</figcaption>
 </figure>
-<h2 id="how-did-global-fishing-activity-change-during-the-covid-19-pandemic">How did global fishing activity change during the Covid-19 pandemic?</h2>
-<p>2020 is a year the world will never forget. Covid-19 spread rapidly across the globe and forced most of humanity into a state of quarantine. The pandemic had clear devastating impacts on economies of all scales. On the other hand, the pandemic boosted some sectors of the economy and increased demand for certain goods. How did Covid-19 impact the global fishing economy? Did fisheries respond to the pandemic by sending fishermen and fisherwomen home to quarantine, and instead allocate resources towards public health initiatives? Alternatively, did some countries see this as an opportunity to fish unregulated in the high seas more than ever before? There is very limited literature that addresses this question, which is likely due to the fact that 2020 was less than a year ago, and any formal scientific studies on this topic might not have had time to be published. <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.735741/full">Pita et al. 2021</a> assessed Covid-19’s impact on global marine recreational fisheries via a questionnaire, but this research differs from my statistical analysis in that it did not use vessel data or quantitatively calculate how fishing hours differed over time, and the study only includes 16 countries (5).</p>
-<p>Regulating and documenting fishing activity and other vessel activities across the globe is a major challenge (4). Databases often have substantial gaps due to a lack of reliable data from automatic identification systems and voluntary vessel registration. <a href="https://globalfishingwatch.org/">Global Fishing Watch</a> is an organization that aims to revolutionize the way we monitor fishing activity across the world using remote sensing techniques from satellites combined with automatic identification systems. Global Fishing Watch collects and visualizes global fishing data with the goal of embracing ocean sustainability, transparency, and open-source science. They keep track of vessels from all different countries, including their movements, boat types, and time stamps for fishing and docking at ports (9). Without such efforts to monitor, publicize, and regulate ocean activity, our marine resources are at high risk of depletion. On a global scale, we are fishing faster than fish stocks can naturally replenish. This has severe economic impacts; according to the World Bank Report, the ensuing depletion of marine fish stocks causes economic losses of 50 billion US dollars annually (4). With modern data science and applied statistics, we can better understand fishing activity on a global scale and protect our planet’s marine biodiversity.</p>
-<p>As an aspiring wildlife biologist and data scientist, I’m interested in applying statistical analysis to <a href="https://globalfishingwatch.org/datasets-and-code/">Global Fishing Watch data</a> data to learn how different countries’ fishing effort changed in 2020, relative to those countries’ fishing trends in the years leading up to 2020. In this dataset, fishing effort is defined by the amount of hours spent fishing (3). I chose to use this dataset for my statistical analysis because it is already relatively clean, and I know the data is reliable because Global Fishing Watch is a highly respected data resource with highly accurate remotely sensed data that is combined with locally collected automatic identification systems on shore. Furthermore, I am interested in working with Global Fishing Watch and spatial data in the future. This data does not have a spatial component since country is a categorical variable, and the temporal variable is limited to years. The only bias I believe might be present in this data is that it is limited to boats that either voluntarily allow their fishing hours to be tracked (such as through automatic identification systems) as well as boats that have been detected remotely by satellite. With Global Fishing Watch’s expansive open-source data collection, we can approach this question by grouping all vessels’ fishing hours by country, identifying a statistical trend up until 2019, and extrapolating that trend into 2020. By comparing this 2020 prediction to the actual fishing data available for 2020, we can glean how Covid-19 skewed large-scale fishing efforts. I chose this analysis approach because I am familiar with many of these processes through my graduate statistics course, and I believe it will be a simple and accurate way to derive a p-value that will reveal if there is a statistically significant difference between each country’s actual mean fishing effort and their predicted mean fishing effort in 2020. Perhaps the global fishing economy sky-rocketed, plummeted into near nonexistence, or remained unscathed by the pandemic. Quantitative analysis will help provide some insight.</p>
-<p>Global Fishing Watch offers an <a href="https://globalfishingwatch.org/map/?latitude=19&amp;longitude=-30&amp;zoom=1.5&amp;start=2021-08-26T23%3A00%3A00.000Z&amp;end=2021-11-27T00%3A00%3A00.000Z">interactive heat map</a> that displays fishing activity across the globe. This visualization has the potential to inspire data scientists, fish enthusiasts, environmental justice advocates, pandemic researchers, and everyone in between to examine fishing activity during a time period of interest.</p>
+<h2
+id="how-did-global-fishing-activity-change-during-the-covid-19-pandemic">How
+did global fishing activity change during the Covid-19 pandemic?</h2>
+<p>2020 is a year the world will never forget. Covid-19 spread rapidly
+across the globe and forced most of humanity into a state of quarantine.
+The pandemic had clear devastating impacts on economies of all scales.
+On the other hand, the pandemic boosted some sectors of the economy and
+increased demand for certain goods. How did Covid-19 impact the global
+fishing economy? Did fisheries respond to the pandemic by sending
+fishermen and fisherwomen home to quarantine, and instead allocate
+resources towards public health initiatives? Alternatively, did some
+countries see this as an opportunity to fish unregulated in the high
+seas more than ever before? There is very limited literature that
+addresses this question, which is likely due to the fact that 2020 was
+less than a year ago, and any formal scientific studies on this topic
+might not have had time to be published. <a
+href="https://www.frontiersin.org/articles/10.3389/fmars.2021.735741/full">Pita
+et al. 2021</a> assessed Covid-19’s impact on global marine recreational
+fisheries via a questionnaire, but this research differs from my
+statistical analysis in that it did not use vessel data or
+quantitatively calculate how fishing hours differed over time, and the
+study only includes 16 countries (5).</p>
+<p>Regulating and documenting fishing activity and other vessel
+activities across the globe is a major challenge (4). Databases often
+have substantial gaps due to a lack of reliable data from automatic
+identification systems and voluntary vessel registration. <a
+href="https://globalfishingwatch.org/">Global Fishing Watch</a> is an
+organization that aims to revolutionize the way we monitor fishing
+activity across the world using remote sensing techniques from
+satellites combined with automatic identification systems. Global
+Fishing Watch collects and visualizes global fishing data with the goal
+of embracing ocean sustainability, transparency, and open-source
+science. They keep track of vessels from all different countries,
+including their movements, boat types, and time stamps for fishing and
+docking at ports (9). Without such efforts to monitor, publicize, and
+regulate ocean activity, our marine resources are at high risk of
+depletion. On a global scale, we are fishing faster than fish stocks can
+naturally replenish. This has severe economic impacts; according to the
+World Bank Report, the ensuing depletion of marine fish stocks causes
+economic losses of 50 billion US dollars annually (4). With modern data
+science and applied statistics, we can better understand fishing
+activity on a global scale and protect our planet’s marine
+biodiversity.</p>
+<p>As an aspiring wildlife biologist and data scientist, I’m interested
+in applying statistical analysis to <a
+href="https://globalfishingwatch.org/datasets-and-code/">Global Fishing
+Watch data</a> data to learn how different countries’ fishing effort
+changed in 2020, relative to those countries’ fishing trends in the
+years leading up to 2020. In this dataset, fishing effort is defined by
+the amount of hours spent fishing (3). I chose to use this dataset for
+my statistical analysis because it is already relatively clean, and I
+know the data is reliable because Global Fishing Watch is a highly
+respected data resource with highly accurate remotely sensed data that
+is combined with locally collected automatic identification systems on
+shore. Furthermore, I am interested in working with Global Fishing Watch
+and spatial data in the future. This data does not have a spatial
+component since country is a categorical variable, and the temporal
+variable is limited to years. The only bias I believe might be present
+in this data is that it is limited to boats that either voluntarily
+allow their fishing hours to be tracked (such as through automatic
+identification systems) as well as boats that have been detected
+remotely by satellite. With Global Fishing Watch’s expansive open-source
+data collection, we can approach this question by grouping all vessels’
+fishing hours by country, identifying a statistical trend up until 2019,
+and extrapolating that trend into 2020. By comparing this 2020
+prediction to the actual fishing data available for 2020, we can glean
+how Covid-19 skewed large-scale fishing efforts. I chose this analysis
+approach because I am familiar with many of these processes through my
+graduate statistics course, and I believe it will be a simple and
+accurate way to derive a p-value that will reveal if there is a
+statistically significant difference between each country’s actual mean
+fishing effort and their predicted mean fishing effort in 2020. Perhaps
+the global fishing economy sky-rocketed, plummeted into near
+nonexistence, or remained unscathed by the pandemic. Quantitative
+analysis will help provide some insight.</p>
+<p>Global Fishing Watch offers an <a
+href="https://globalfishingwatch.org/map/?latitude=19&amp;longitude=-30&amp;zoom=1.5&amp;start=2021-08-26T23%3A00%3A00.000Z&amp;end=2021-11-27T00%3A00%3A00.000Z">interactive
+heat map</a> that displays fishing activity across the globe. This
+visualization has the potential to inspire data scientists, fish
+enthusiasts, environmental justice advocates, pandemic researchers, and
+everyone in between to examine fishing activity during a time period of
+interest.</p>
 <figure>
-<img src="pictures/fishing_gfw_map_2020.png" alt="Global fishing activity from January 1, 2020 through January 1, 2021" /><figcaption aria-hidden="true">Global fishing activity from January 1, 2020 through January 1, 2021</figcaption>
+<img src="pictures/fishing_gfw_map_2020.png"
+alt="Global fishing activity from January 1, 2020 through January 1, 2021" />
+<figcaption aria-hidden="true">Global fishing activity from January 1,
+2020 through January 1, 2021</figcaption>
 </figure>
-<p>Global Fishing Watch and their partners also provide an <a href="https://globalfishingwatch.org/carrier-portal/?latitude=12.7069821&amp;longitude=19.1776829&amp;zoom=1.1903704&amp;layer%5B0%5D=encounter&amp;layer%5B1%5D=cp_rfmo&amp;layer%5B2%5D=cp_next_port&amp;dataset=carriers:v20211001&amp;tab=flags">interactive vessel map</a> that allows users to interact with vessel activity across the globe, filter by country, and overlay port locations on coastlines.</p>
+<p>Global Fishing Watch and their partners also provide an <a
+href="https://globalfishingwatch.org/carrier-portal/?latitude=12.7069821&amp;longitude=19.1776829&amp;zoom=1.1903704&amp;layer%5B0%5D=encounter&amp;layer%5B1%5D=cp_rfmo&amp;layer%5B2%5D=cp_next_port&amp;dataset=carriers:v20211001&amp;tab=flags">interactive
+vessel map</a> that allows users to interact with vessel activity across
+the globe, filter by country, and overlay port locations on
+coastlines.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -1504,45 +1593,134 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </div>
 <h3 id="data-cleaning-and-wrangling">Data Cleaning and Wrangling</h3>
-<p>Global Fishing Watch’s data includes fishing effort and vessel information from 167 countries over the years 2012-2020 (3). First, we select our variables of interest, group by country, and take the fishing effort means per year.</p>
+<p>Global Fishing Watch’s data includes fishing effort and vessel
+information from 167 countries over the years 2012-2020 (3). First, we
+select our variables of interest, group by country, and take the fishing
+effort means per year.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>Our goal is to run a linear regression on each country’s fishing effort over multiple years, but many countries have <code>NA</code> data for certain years. Considering that we have data available for 2012-2020, we can subset these years for the model. We want to minimize the amount of <code>NA</code> values because we will drop all <code>NA</code> rows, and we want to maintain the maximum amount of rows possible (which represent vessels and countries). We want to select a chunk of continuous years leading up to 2020 with minimal data gaps. In order to choose the start year for the time period that we will feed into the linear regression, take a look at the amount of <code>NA</code> values in the years leading up to 2020. It turns out that 2017, 2018, and 2019 have the least amount of <code>NA</code> values, so we will use 2017 to start our 3-year data period to feed to the linear regression. Next, we convert the data into <strong>Tidy</strong> format using the <code>pivot_longer()</code> function so we can run a time series linear regression analysis.</p>
+<p>Our goal is to run a linear regression on each country’s fishing
+effort over multiple years, but many countries have <code>NA</code> data
+for certain years. Considering that we have data available for
+2012-2020, we can subset these years for the model. We want to minimize
+the amount of <code>NA</code> values because we will drop all
+<code>NA</code> rows, and we want to maintain the maximum amount of rows
+possible (which represent vessels and countries). We want to select a
+chunk of continuous years leading up to 2020 with minimal data gaps. In
+order to choose the start year for the time period that we will feed
+into the linear regression, take a look at the amount of <code>NA</code>
+values in the years leading up to 2020. It turns out that 2017, 2018,
+and 2019 have the least amount of <code>NA</code> values, so we will use
+2017 to start our 3-year data period to feed to the linear regression.
+Next, we convert the data into <strong>Tidy</strong> format using the
+<code>pivot_longer()</code> function so we can run a time series linear
+regression analysis.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>Our dates are in years, and currently their class is <code>character</code> from the original dataset. We need these years in <code>date</code> format in order to run a linear regression over time. We will convert these years and remove all countries that only have data for only one or two years, because we need multiple years of data to feed into the regression and we want each country to have equal amounts of data and start in the year 2017.</p>
+<p>Our dates are in years, and currently their class is
+<code>character</code> from the original dataset. We need these years in
+<code>date</code> format in order to run a linear regression over time.
+We will convert these years and remove all countries that only have data
+for only one or two years, because we need multiple years of data to
+feed into the regression and we want each country to have equal amounts
+of data and start in the year 2017.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <h3 id="linear-regression">Linear Regression</h3>
-<p>Now that the data is sufficiently clean and our years are of class <code>date</code>, we can run a time series linear regression on every country’s fishing effort from 2017-2019 and use the output coefficients to glean which direction each country is trending, meaning if the country is fishing more or less over time. We can do this with the <code>do()</code> function, grouping by country. Then we can feed this output into a for loop! Plug in each country’s fishing effort intercept and slope coefficients into a linear equation to predict the fishing effort in 2020 based on that country’s historical trend. Subsequently, we can combine the predicted 2020 fishing effort data with the actual 2020 fishing effort data into a single dataframe to compare by country. We can make a new column that takes the difference of the actual and predicted values, and then add a column that explicitly states whether that country increased or decreased their fishing effort in 2020 relative to their trend leading up to 2020.</p>
+<p>Now that the data is sufficiently clean and our years are of class
+<code>date</code>, we can run a time series linear regression on every
+country’s fishing effort from 2017-2019 and use the output coefficients
+to glean which direction each country is trending, meaning if the
+country is fishing more or less over time. We can do this with the
+<code>do()</code> function, grouping by country. Then we can feed this
+output into a for loop! Plug in each country’s fishing effort intercept
+and slope coefficients into a linear equation to predict the fishing
+effort in 2020 based on that country’s historical trend. Subsequently,
+we can combine the predicted 2020 fishing effort data with the actual
+2020 fishing effort data into a single dataframe to compare by country.
+We can make a new column that takes the difference of the actual and
+predicted values, and then add a column that explicitly states whether
+that country increased or decreased their fishing effort in 2020
+relative to their trend leading up to 2020.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h3 id="plotting-actual-fishing-effort-versus-predicted-fishing-effort-for-malaysia">Plotting Actual Fishing Effort versus Predicted Fishing Effort for Malaysia</h3>
-<p>What does a single country’s fishing trend look like? Let’s consider the country of Malaysia in Southeast Asia. In 2015, Malaysia’s fisheries sector employed 175,980 people and its contribution to national gross domestic product was 1.1%. The fish trade is valued at $1.7 billion (U.S. dollars), and the estimated average consumption of fish is 56.8 kg/person/year. Malaysian fisheries primarily capture shrimp, squid, and fish. Malaysia contributes to the global fish economy through both importing and exporting fish (6).</p>
-<p>We can make a country-specific fishing effort plot by filtering our combined <em>actual and predicted</em> fishing effort dataframe to just that country and using <code>ggplot()</code>.</p>
+<h3
+id="plotting-actual-fishing-effort-versus-predicted-fishing-effort-for-malaysia">Plotting
+Actual Fishing Effort versus Predicted Fishing Effort for Malaysia</h3>
+<p>What does a single country’s fishing trend look like? Let’s consider
+the country of Malaysia in Southeast Asia. In 2015, Malaysia’s fisheries
+sector employed 175,980 people and its contribution to national gross
+domestic product was 1.1%. The fish trade is valued at $1.7 billion
+(U.S. dollars), and the estimated average consumption of fish is 56.8
+kg/person/year. Malaysian fisheries primarily capture shrimp, squid, and
+fish. Malaysia contributes to the global fish economy through both
+importing and exporting fish (6).</p>
+<p>We can make a country-specific fishing effort plot by filtering our
+combined <em>actual and predicted</em> fishing effort dataframe to just
+that country and using <code>ggplot()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <figure>
-<img src="pictures/malaysia_fishing_effort_legend.png" alt="Malaysia’s Fishing Effort: Actual vs Predicted 2017-2020" /><figcaption aria-hidden="true">Malaysia’s Fishing Effort: Actual vs Predicted 2017-2020</figcaption>
+<img src="pictures/malaysia_fishing_effort_legend.png"
+alt="Malaysia’s Fishing Effort: Actual vs Predicted 2017-2020" />
+<figcaption aria-hidden="true">Malaysia’s Fishing Effort: Actual vs
+Predicted 2017-2020</figcaption>
 </figure>
 <h3 id="statistical-significance">Statistical Significance</h3>
-<p>It’s time to run a t-test to determine if there is a statistical difference between the countries’ predicted fishing effort in 2020 and their actual fishing effort in 2020. A t-test is a handy tool in statistics that reveals how significant the differences between groups are. If the difference between the means of two groups could have easily happened by chance, the p-value will be greater than 0.05 (which is the standard threshold in statistics and environmental data science). If it is highly unlikely (less than a 5% chance) that a difference in means at least this extreme could have occurred by chance, the p-value is less than 0.05 and the results are considered statistically significant. A statistically significant outcome allows us to reject our <strong>null hypothesis</strong>.</p>
-<p><strong>Null Hypothesis:</strong> There is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. <span class="math display">\[H_{0}: \mu_{predicted} - \mu_{actual} = 0\]</span> <strong>Alternative Hypothesis:</strong> There is a difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. Because of the pandemic in 2020, I predict that fishing effort decreased, meaning that the actual country-specific fishing effort is less than the predicted country-specific fishing effort. <span class="math display">\[H_{A}: \mu_{predicted} - \mu_{actual} \neq 0\]</span></p>
-<p>Don’t forget to convert the data to <strong>Tidy format</strong> so we can run the t-test!</p>
+<p>It’s time to run a t-test to determine if there is a statistical
+difference between the countries’ predicted fishing effort in 2020 and
+their actual fishing effort in 2020. A t-test is a handy tool in
+statistics that reveals how significant the differences between groups
+are. If the difference between the means of two groups could have easily
+happened by chance, the p-value will be greater than 0.05 (which is the
+standard threshold in statistics and environmental data science). If it
+is highly unlikely (less than a 5% chance) that a difference in means at
+least this extreme could have occurred by chance, the p-value is less
+than 0.05 and the results are considered statistically significant. A
+statistically significant outcome allows us to reject our <strong>null
+hypothesis</strong>.</p>
+<p><strong>Null Hypothesis:</strong> There is no difference between the
+predicted country-specific predicted fishing effort in 2020 and the
+actual country-specific fishing effort in 2020. <span
+class="math display">\[H_{0}: \mu_{predicted} - \mu_{actual} =
+0\]</span> <strong>Alternative Hypothesis:</strong> There is a
+difference between the predicted country-specific predicted fishing
+effort in 2020 and the actual country-specific fishing effort in 2020.
+Because of the pandemic in 2020, I predict that fishing effort
+decreased, meaning that the actual country-specific fishing effort is
+less than the predicted country-specific fishing effort. <span
+class="math display">\[H_{A}: \mu_{predicted} - \mu_{actual} \neq
+0\]</span></p>
+<p>Don’t forget to convert the data to <strong>Tidy format</strong> so
+we can run the t-test!</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <figure>
-<img src="pictures/ttest_highlighted.png" alt="t-test output" /><figcaption aria-hidden="true"><strong>t-test output</strong></figcaption>
+<img src="pictures/ttest_highlighted.png" alt="t-test output" />
+<figcaption aria-hidden="true"><strong>t-test
+output</strong></figcaption>
 </figure>
-<p>The p-value is 0.0000000312, and 0.0000000312 &lt; 0.05, so we can reject our null hypothesis that there is no difference between the predicted country-specific predicted fishing effort in 2020 and the actual country-specific fishing effort in 2020. Many countries clearly changed their fishing effort in 2020 relative to their historical trend!</p>
-<h3 id="summary-which-countries-increased-their-fishing-effort-during-the-pandemic-relative-to-their-trend-leading-up-to-2020">Summary: Which countries increased their fishing effort during the pandemic, relative to their trend leading up to 2020?</h3>
-<p>To best visualize this fishing effort data in a table, we can color code the countries that <strong>increased</strong> their fishing effort as red and color the countries that <strong>decreased</strong> their fishing effort in green. We can represent this data both on a map as well as a table.</p>
+<p>The p-value is 0.0000000312, and 0.0000000312 &lt; 0.05, so we can
+reject our null hypothesis that there is no difference between the
+predicted country-specific predicted fishing effort in 2020 and the
+actual country-specific fishing effort in 2020. Many countries clearly
+changed their fishing effort in 2020 relative to their historical
+trend!</p>
+<h3
+id="summary-which-countries-increased-their-fishing-effort-during-the-pandemic-relative-to-their-trend-leading-up-to-2020">Summary:
+Which countries increased their fishing effort during the pandemic,
+relative to their trend leading up to 2020?</h3>
+<p>To best visualize this fishing effort data in a table, we can color
+code the countries that <strong>increased</strong> their fishing effort
+as red and color the countries that <strong>decreased</strong> their
+fishing effort in green. We can represent this data both on a map as
+well as a table.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -1555,50 +1733,128 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <center>
 <figure>
-<img src="pictures/good_bad_table_correct.png" style="width:70.0%" alt="Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country" /><figcaption aria-hidden="true">Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country</figcaption>
+<img src="pictures/good_bad_table_correct.png" style="width:70.0%"
+alt="Differences between actual 2020 fishing effort and predicted 2020 fishing effort by country" />
+<figcaption aria-hidden="true">Differences between actual 2020 fishing
+effort and predicted 2020 fishing effort by country</figcaption>
 </figure>
 </center>
-<p>This color-coded table reveals that 85% of the countries included in this analysis <em>decreased</em> their fishing effort during the Covid-19 pandemic in 2020 relative to their fishing trend leading up to 2020, while 15% of the countries included in this analysis <em>increased</em> their fishing effort. The vast majority of countries’ fishing sectors seemed to follow the same stay-at-home order that was enforced across the globe. While this may have had a detrimental impact on the global fish economy, hopefully the marine fish populations we able to recover and thrive during this period of reprieve from human predation. The results of my statistical analysis match the conclusion of a 2021 scientific study investigating the change in marine recreational fishing activity during the first year of the pandemic (5).</p>
+<p>This color-coded table reveals that 85% of the countries included in
+this analysis <em>decreased</em> their fishing effort during the
+Covid-19 pandemic in 2020 relative to their fishing trend leading up to
+2020, while 15% of the countries included in this analysis
+<em>increased</em> their fishing effort. The vast majority of countries’
+fishing sectors seemed to follow the same stay-at-home order that was
+enforced across the globe. While this may have had a detrimental impact
+on the global fish economy, hopefully the marine fish populations we
+able to recover and thrive during this period of reprieve from human
+predation. The results of my statistical analysis match the conclusion
+of a 2021 scientific study investigating the change in marine
+recreational fishing activity during the first year of the pandemic
+(5).</p>
 <h3 id="future-steps">Future Steps</h3>
-<p>In order to improve this analysis in the future, I recommend using more than three years of fishing effort data to produce a more accurate linear model. Additionally, I would recommend using a different statistical approach instead of iterating a for loop over each country’s fishing effort data, because this method produced outliers and coefficients that did not line up with observed fishing effort data. Lastly, I recommend running this analysis on fishing effort data from other sources in addition to Global Fishing Watch’s data. This will provide certainty that the data is accurate and the results are reproducible.</p>
-<p>Thank you for reading my statistical review of global fishing effort during the 2020 Covid-19 pandemic! I hope I have inspired you to run your own time series analysis, t-tests, and create visualizations that help communicate trends in environmental data science. Please feel free to contact me at <strong><a href="mailto:jscohen@ucsb.edu" class="email">jscohen@ucsb.edu</a></strong> with any questions, comments, or suggestions. You may also create issues or pull requests for this analysis through GitHub (repository linked below).</p>
+<p>In order to improve this analysis in the future, I recommend using
+more than three years of fishing effort data to produce a more accurate
+linear model. Additionally, I would recommend using a different
+statistical approach instead of iterating a for loop over each country’s
+fishing effort data, because this method produced outliers and
+coefficients that did not line up with observed fishing effort data.
+Lastly, I recommend running this analysis on fishing effort data from
+other sources in addition to Global Fishing Watch’s data. This will
+provide certainty that the data is accurate and the results are
+reproducible.</p>
+<p>Thank you for reading my statistical review of global fishing effort
+during the 2020 Covid-19 pandemic! I hope I have inspired you to run
+your own time series analysis, t-tests, and create visualizations that
+help communicate trends in environmental data science. Please feel free
+to contact me at <strong><a href="mailto:jscohen@ucsb.edu"
+class="email">jscohen@ucsb.edu</a></strong> with any questions,
+comments, or suggestions. You may also create issues or pull requests
+for this analysis through GitHub (repository linked below).</p>
 <h4 id="data-availability">Data Availability</h4>
-<p>The data used in this analysis is openly available, but the user must make a free account on the Global Fishing watch website, which can be accessed through this live link:<br />
-<a href="https://globalfishingwatch.org/data-download/datasets/public-fishing-effort">Global Fishing Watch Datasets and Code</a><br />
+<p>The data used in this analysis is openly available, but the user must
+make a free account on the Global Fishing watch website, which can be
+accessed through this live link:<br />
+<a
+href="https://globalfishingwatch.org/data-download/datasets/public-fishing-effort">Global
+Fishing Watch Datasets and Code</a><br />
 </p>
 <h4 id="github-repository-live-link">GitHub Repository Live Link</h4>
-<p><a href="https://github.com/julietcohen/julietcohen.github.io/tree/Main/_posts/2021-11-25-fishingeffortbycountry">julietcohen’s GitHub Repository</a></p>
+<p><a
+href="https://github.com/julietcohen/julietcohen.github.io/tree/Main/_posts/2021-11-25-fishingeffortbycountry">julietcohen’s
+GitHub Repository</a></p>
 <h4 id="acknowledgements">Acknowledgements:</h4>
 <ul>
-<li>I would like to acknowledge Dr. Tamma Carleton, my professor in Statistics for Environmental Data Science at the U.C. Santa Barbara Bren School for Environmental Science and Management, for all her support throughout this project and this quarter.<br />
+<li>I would like to acknowledge Dr. Tamma Carleton, my professor in
+Statistics for Environmental Data Science at the U.C. Santa Barbara Bren
+School for Environmental Science and Management, for all her support
+throughout this project and this quarter.<br />
 </li>
-<li>I would also like to thank my peers in the Master of Environmental Data Science Program for being so open to collaboration and supporting each other with resources, programming tools, and open-source science.<br />
+<li>I would also like to thank my peers in the Master of Environmental
+Data Science Program for being so open to collaboration and supporting
+each other with resources, programming tools, and open-source
+science.<br />
 </li>
-<li>Lastly, I would like to thank Global Fishing Watch for inspiring me to give a hoot about global fishing effort by country, and for providing the data that made this project possible.</li>
+<li>Lastly, I would like to thank Global Fishing Watch for inspiring me
+to give a hoot about global fishing effort by country, and for providing
+the data that made this project possible.</li>
 </ul>
 <h4 id="resources-live-links">Resources (live links):</h4>
 <ol type="1">
-<li><a href="https://globalfishingwatch.org/map/?latitude=19&amp;longitude=-30&amp;zoom=1.5&amp;start=2021-08-26T23%3A00%3A00.000Z&amp;end=2021-11-27T00%3A00%3A00.000Z">Interactive World Map of Fishing Activity: Picture 1 and Map Link 1 - Global Fishing Watch</a><br />
+<li><a
+href="https://globalfishingwatch.org/map/?latitude=19&amp;longitude=-30&amp;zoom=1.5&amp;start=2021-08-26T23%3A00%3A00.000Z&amp;end=2021-11-27T00%3A00%3A00.000Z">Interactive
+World Map of Fishing Activity: Picture 1 and Map Link 1 - Global Fishing
+Watch</a><br />
 </li>
-<li><a href="https://globalfishingwatch.org/carrier-portal/?latitude=12.7069821&amp;longitude=19.1776829&amp;zoom=1.1903704&amp;layer%5B0%5D=encounter&amp;layer%5B1%5D=cp_rfmo&amp;layer%5B2%5D=cp_next_port&amp;dataset=carriers:v20211001&amp;tab=flags">Interactive World Map of Fishing by Country: Map Link 2 - Global Fishing Watch</a><br />
+<li><a
+href="https://globalfishingwatch.org/carrier-portal/?latitude=12.7069821&amp;longitude=19.1776829&amp;zoom=1.1903704&amp;layer%5B0%5D=encounter&amp;layer%5B1%5D=cp_rfmo&amp;layer%5B2%5D=cp_next_port&amp;dataset=carriers:v20211001&amp;tab=flags">Interactive
+World Map of Fishing by Country: Map Link 2 - Global Fishing
+Watch</a><br />
 </li>
-<li><a href="https://globalfishingwatch.org/data-download/datasets/public-fishing-effort">Global Fishing Watch: Datasets and Code, Fishing effort data</a><br />
+<li><a
+href="https://globalfishingwatch.org/data-download/datasets/public-fishing-effort">Global
+Fishing Watch: Datasets and Code, Fishing effort data</a><br />
 note: Users must make a free account in order to access datasets<br />
 </li>
-<li><a href="https://www.sciencedirect.com/science/article/pii/S0165783610002754?casa_token=o12VmHrPGdkAAAAA:Y0YdOekq7DtNi7wVL0WNShArvCUl6x_S5yURGiEVKNe95eaYAM9y4GP-uqr1bl1bp71A8rNgWj4">Global Fishing Effort (1950–2010): Trends, Gaps, and Implications.</a><br />
-Anticamara, J. A., R. Watson, A. Gelchu, and D. Pauly. “Global Fishing Effort (1950–2010): Trends, Gaps, and Implications.” Fisheries Research 107, no. 1 (2011): 131–36. <a href="https://doi.org/10.1016/j.fishres.2010.10.016.\" class="uri">https://doi.org/10.1016/j.fishres.2010.10.016.\</a></li>
-<li><a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.735741/full">First Assessment of the Impacts of the COVID-19 Pandemic on Global Marine Recreational Fisheries.</a>:<br />
-Pita, Pablo, Gillian B. Ainsworth, Bernardino Alba, Antônio B. Anderson, Manel Antelo, Josep Alós, Iñaki Artetxe, et al. “First Assessment of the Impacts of the COVID-19 Pandemic on Global Marine Recreational Fisheries.” Frontiers in Marine Science 8 (2021): 1533. <a href="https://doi.org/10.3389/fmars.2021.735741.\" class="uri">https://doi.org/10.3389/fmars.2021.735741.\</a></li>
-<li><a href="http://www.seafdec.org/fisheries-country-profile-malaysia/#:~:text=Fish%20trade%20is%20valued%20at,56.8%20kg%2Fperson%2Fyear.&amp;text=Marine%20capture%20fisheries%20is%20the,providing%20work%20to%20132%2C305%20people.">Malaysia’s Fisheries Economy</a><br />
+<li><a
+href="https://www.sciencedirect.com/science/article/pii/S0165783610002754?casa_token=o12VmHrPGdkAAAAA:Y0YdOekq7DtNi7wVL0WNShArvCUl6x_S5yURGiEVKNe95eaYAM9y4GP-uqr1bl1bp71A8rNgWj4">Global
+Fishing Effort (1950–2010): Trends, Gaps, and Implications.</a><br />
+Anticamara, J. A., R. Watson, A. Gelchu, and D. Pauly. “Global Fishing
+Effort (1950–2010): Trends, Gaps, and Implications.” Fisheries Research
+107, no. 1 (2011): 131–36. <a
+href="https://doi.org/10.1016/j.fishres.2010.10.016.\"
+class="uri">https://doi.org/10.1016/j.fishres.2010.10.016.\</a></li>
+<li><a
+href="https://www.frontiersin.org/articles/10.3389/fmars.2021.735741/full">First
+Assessment of the Impacts of the COVID-19 Pandemic on Global Marine
+Recreational Fisheries.</a>:<br />
+Pita, Pablo, Gillian B. Ainsworth, Bernardino Alba, Antônio B. Anderson,
+Manel Antelo, Josep Alós, Iñaki Artetxe, et al. “First Assessment of the
+Impacts of the COVID-19 Pandemic on Global Marine Recreational
+Fisheries.” Frontiers in Marine Science 8 (2021): 1533. <a
+href="https://doi.org/10.3389/fmars.2021.735741.\"
+class="uri">https://doi.org/10.3389/fmars.2021.735741.\</a></li>
+<li><a
+href="http://www.seafdec.org/fisheries-country-profile-malaysia/#:~:text=Fish%20trade%20is%20valued%20at,56.8%20kg%2Fperson%2Fyear.&amp;text=Marine%20capture%20fisheries%20is%20the,providing%20work%20to%20132%2C305%20people.">Malaysia’s
+Fisheries Economy</a><br />
 </li>
-<li><a href="https://www.google.com/maps/place/Malaysia/@4.1279224,105.1196274,6z/data=!3m1!4b1!4m5!3m4!1s0x3034d3975f6730af:0x745969328211cd8!8m2!3d4.210484!4d101.975766">Google Maps: Malaysia</a><br />
+<li><a
+href="https://www.google.com/maps/place/Malaysia/@4.1279224,105.1196274,6z/data=!3m1!4b1!4m5!3m4!1s0x3034d3975f6730af:0x745969328211cd8!8m2!3d4.210484!4d101.975766">Google
+Maps: Malaysia</a><br />
 </li>
-<li><a href="https://en.wikipedia.org/wiki/Ocean_fisheries#:~:text=The%20ocean%20has%20some%20of,hake%2C%20herring%2C%20and%20mackerel.">Wikipedia: Top Marine Fisheries Species Captured</a></li>
-<li><a href="https://globalfishingwatch.org/about-us/">Global Fishing Watch - About Us</a></li>
+<li><a
+href="https://en.wikipedia.org/wiki/Ocean_fisheries#:~:text=The%20ocean%20has%20some%20of,hake%2C%20herring%2C%20and%20mackerel.">Wikipedia:
+Top Marine Fisheries Species Captured</a></li>
+<li><a href="https://globalfishingwatch.org/about-us/">Global Fishing
+Watch - About Us</a></li>
 </ol>
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Distill is a publication format for scientific and technical writing,
+native to the web.</p>
+<p>Learn more about using Distill at <a
+href="https://rstudio.github.io/distill"
+class="uri">https://rstudio.github.io/distill</a>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

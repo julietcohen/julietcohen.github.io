@@ -12,6 +12,7 @@ output:
 preview: poster_video/africa.png
 categories:
   - Python
+  - Diversity, Equity, & Inclusion
 ---
 
 

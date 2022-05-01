@@ -113,12 +113,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Using SQL & Python to Calculate Iowa's Wind Power Potential"]},{"type":"character","attributes":{},"value":["How many wind turbines can we legally fit into the state of Iowa, and how much renewable energy would that yield?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-12-25"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["pics/iowa_mask.png"]},{"type":"character","attributes":{},"value":["Python","SQL"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview","categories"]}},"value":[{"type":"character","attributes":{},"value":["Using SQL & Python to Calculate Iowa's Wind Power Potential"]},{"type":"character","attributes":{},"value":["How many wind turbines can we legally fit into the state of Iowa, and how much renewable energy would that yield?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Juliet Cohen"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2021-12-25"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["pics/iowa_mask.png"]},{"type":"character","attributes":{},"value":["Python","SQL","Spatial Analysis"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["pics/iowa_mask.png","pics/restrictions.png","pics/turbines.png","sqlwindpower_files/anchor-4.2.2/anchor.min.js","sqlwindpower_files/bowser-1.9.3/bowser.min.js","sqlwindpower_files/distill-2.2.21/template.v2.js","sqlwindpower_files/header-attrs-2.11/header-attrs.js","sqlwindpower_files/jquery-3.6.0/jquery-3.6.0.js","sqlwindpower_files/jquery-3.6.0/jquery-3.6.0.min.js","sqlwindpower_files/jquery-3.6.0/jquery-3.6.0.min.map","sqlwindpower_files/popper-2.6.0/popper.min.js","sqlwindpower_files/tippy-6.2.7/tippy-bundle.umd.min.js","sqlwindpower_files/tippy-6.2.7/tippy-light-border.css","sqlwindpower_files/tippy-6.2.7/tippy.css","sqlwindpower_files/tippy-6.2.7/tippy.umd.min.js","sqlwindpower_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["pics/iowa_mask.png","pics/restrictions.png","pics/turbines.png","sqlwindpower_files/anchor-4.2.2/anchor.min.js","sqlwindpower_files/bowser-1.9.3/bowser.min.js","sqlwindpower_files/distill-2.2.21/template.v2.js","sqlwindpower_files/header-attrs-2.11/header-attrs.js","sqlwindpower_files/header-attrs-2.13/header-attrs.js","sqlwindpower_files/jquery-3.6.0/jquery-3.6.0.js","sqlwindpower_files/jquery-3.6.0/jquery-3.6.0.min.js","sqlwindpower_files/jquery-3.6.0/jquery-3.6.0.min.map","sqlwindpower_files/popper-2.6.0/popper.min.js","sqlwindpower_files/tippy-6.2.7/tippy-bundle.umd.min.js","sqlwindpower_files/tippy-6.2.7/tippy-light-border.css","sqlwindpower_files/tippy-6.2.7/tippy.css","sqlwindpower_files/tippy-6.2.7/tippy.umd.min.js","sqlwindpower_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2412,6 +2412,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="dt-tags">
   <a href="../../blog.html#category:Python" class="dt-tag">Python</a>
   <a href="../../blog.html#category:SQL" class="dt-tag">SQL</a>
+  <a href="../../blog.html#category:Spatial_Analysis" class="dt-tag">Spatial Analysis</a>
 </div>
 <!--/radix_placeholder_categories-->
 <p><p>How many wind turbines can we legally fit into the state of Iowa,
@@ -2686,10 +2687,11 @@ contributions. I will always remember the excessive amount of time we
 spent drawing wind turbine circles on scratch paper and adjusting the
 mathematical calculations to reflect different rotor diameters and how
 that changes the wind power potential for the state of Iowa.</p></li>
-<li><p>Thank you, Dr. James Frew from the Bren School of Environmental
-Science and Management, for prompting us to investigate this question.
-Your expertise in spatial data science has inspired me to answer more
-questions like this in my future career.</p></li>
+<li><p>Thank you, Dr. James Frew and Niklas Griessbaum from the Bren
+School of Environmental Science and Management, for prompting us to
+investigate this question. Your expertise in spatial data science has
+inspired me to answer more questions like this in my future
+career.</p></li>
 <li><p><a
 href="https://newscenter.lbl.gov/2021/08/30/technology-advancement-and-value-of-wind-energy/">wind
 turtbine photo source</a></p></li>

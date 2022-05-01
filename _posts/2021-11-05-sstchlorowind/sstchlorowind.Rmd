@@ -12,6 +12,7 @@ output:
 preview: Images/sst.png
 categories:
   - R
+  - Spatial Analysis
 ---
 ## The Santa Barbara Channel
 ### A basin of oceanic data just waiting to be analyzed

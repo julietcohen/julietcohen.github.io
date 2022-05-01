@@ -14,6 +14,7 @@ output:
 preview: images/crit_hab_with_basemap.png
 categories:
   - Python
+  - Spatial Analysis
 ---
 
 ```{r setup, include=FALSE}

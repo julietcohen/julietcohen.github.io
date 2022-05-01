@@ -12,6 +12,7 @@ output:
 preview: pictures/fishing_gfw_map_2020.png
 categories:
   - R
+  - Statistics
 ---
 
 ```{r setup, include=FALSE}

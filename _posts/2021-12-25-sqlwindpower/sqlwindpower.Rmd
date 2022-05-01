@@ -15,6 +15,7 @@ preview: pics/iowa_mask.png
 categories:
   - Python
   - SQL
+  - Spatial Analysis
 ---
 
 

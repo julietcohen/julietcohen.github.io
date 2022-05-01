@@ -14,6 +14,7 @@ output:
 preview: outputs/speed_zone_dominica.png
 categories:
   - Python
+  - Spatial Analysis
 ---
 
 
