@@ -1,0 +1,180 @@
+---
+title: "Whale Migration & Ship Routes in the Santa Baraba Channel"
+description: |
+  A short description of the post.
+draft: true
+author:
+  - name: Juliet Cohen
+    url: {}
+date: 2022-04-30
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Protecting Whales from Ships
+
+In this project, we aim to determine the spatial outline of a speed reduction zone for boats in Dominca and its effect on the local marine traffic The reduction zone should ideally encompass the preferred habitat of the local sperm whales, which will be approximated using frequent whale sightings data.
+
+Load packages
+```python
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+from shapely.geometry import Polygon
+import datetime as dt
+```
+
+### Read in the data:
+1. A spatial data file that defines the boundaries of Dominica, the island country in the Caribbean where our ship & whale investigation takes place\
+2. Whale sightings data, which contains times and locations of approximately 5,000 whale sightings in Dominica between 2008 and 2015.
+```python
+# import dominca's spatial data as a geodataframe
+dominica_outline = gpd.read_file('data/dominica/dma_admn_adm0_py_s1_dominode_v2.shp')
+
+# import sightings as a geodataframe 
+sightings = gpd.read_file('data/sightings2005_2018.csv')
+```
+
+Set coordinate reference systems we will use in this analysis: 
+```python
+projected_EPSG = 2002   # Dominica 1945 / British West Indies Grid
+geodetic_EPSG  = 4326   # WGS 84 (use as default CRS for incoming lat & lon)
+
+# switch to crs 2002
+dominica_outline = dominica_outline.to_crs(projected_EPSG)
+```
+
+## Whale Sightings Data
+
+Bootstrap the geometries from the latitude & longitude and set the CRS to `EPSG 4326` initially, and we will convert it to 2002 when we are done appending the geometries. This ensures that the latitude and longitude are projected correctly. 
+```python
+sightings_geom = gpd.points_from_xy(x = sightings.Long, 
+                                    y = sightings.Lat, 
+                                    crs = geodetic_EPSG)
+
+# append the geometries to the sightings data
+sightings = sightings.set_geometry(sightings_geom)
+
+# set CRS to local EPSG
+sightings = sightings.to_crs(epsg = projected_EPSG)
+```
+### Create Grid
+
+Create a basic grid object that will be the starting point for the oceanic grid around Dominica that will be tailored to whale habitat:
+```python
+fig, ax = plt.subplots(figsize=(3, 3), 
+                       dpi=200)
+```
+
+Determine the minimum and maximum `x` and `y` bounds of all sightings using the `total_bound()` function:
+```python
+minx, miny, maxx, maxy = sightings.total_bounds
+minx, miny, maxx, maxy
+# total_bounds in meters:
+# (408480.65208368783, 1532792.7459409237, 498500.3049570159, 1796964.399702923)
+```
+
+Create `arrays` of the indices of our grid, with the values denoting the southwest corner of each grid cell:
+
+```python
+# the grid cell dimensions are 2000 meters in both the x and y direction
+xs = np.arange(minx, 
+               maxx, 
+               2000)
+               
+ys = np.arange(miny, 
+               maxy, 
+               2000)
+               
+# convert the corner points into proper cell polygons
+def make_cell(x, y, cell_size):
+    ring = [
+        (x, y),
+        (x + cell_size, y),
+        (x + cell_size, y + cell_size),
+        (x, y + cell_size)
+    ]
+    cell = Polygon(ring)
+    return cell
+    
+# iterate over each combination of x and y coordinates in a nested for loop
+cells = []
+for x in xs:
+    for y in ys:
+        cell = make_cell(x, y, 2000)
+        cells.append(cell)
+
+grid = gpd.GeoDataFrame({'geometry': cells}, 
+                        crs = projected_EPSG)
+
+# plot the grid and the dominica outline for reference
+grid.boundary.plot(figsize=(20,20))
+
+# plot the boundary and increase the figure size to better visualize the grid without a fill color
+dominica_outline.plot(figsize=(20,20))
+```
+
+## Extract Whale Habitat
+
+Execute an inner spatial join of the sightings data, with the grid being the first dataset named because we want the output to be in grid cells rather than points:
+```python
+# the join produces a row for each intersection of each grid cell with each sighting
+joined = grid.sjoin(sightings, 
+                    how = "inner")
+                    
+# plot the whale habitat in the form of cells
+joined.plot(figsize = (15, 15))
+```
+
+Group the rows of the joined dataset to be able to count the number of whale sightings per cell:
+```python
+grid['count'] = joined.groupby(joined.index).count()['index_right']
+joined
+```
+
+Count the minimum and maximum number of whales observed in the grid cells to get an idea of the range of observations over space:
+```python
+# check the max count of whales in 1 cell
+max_count = grid['count'].max()
+# check the minimum count of whales in 1 cell
+min_count = grid['count'].min()
+
+# check the unique values in the count column to get an idea about the range of the sightings per cell
+grid['count'].unique()
+```
+
+Subsample the grid cells for only those with 20 or mores observations:
+```python
+# fitler the data for only sightings that included more than 20 whales
+grid_subset = grid[grid['count'] > 20]
+grid_subset
+```
+
+Execute a `unary union` and take the convex hull of that union to determine a comprehensive speed reduction zone. Next, take the `convex hull` of the `unary union` in order to desginate the speed reduction zone, essentially rounding out the cell polygons from the `unary union`.
+```python
+# unary union
+grid_subset_union = grid_subset.unary_union
+
+# convex hull
+grid_subset_hull_poly = grid_subset_union.convex_hull
+grid_subset_hull_poly
+```
+
+Convert grid_subset_hull to a geodataframe with the local CRS for Dominica; `EPSG 2002`
+```python
+grid_subset_hull_gdf = gpd.GeoDataFrame(index=[0], 
+                                        crs= projected_EPSG, 
+                                        geometry=[grid_subset_hull_poly])
+```
+
+
+
+
+

@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-04-30-whalessantabarbara/",
+    "title": "Whale Migration & Ship Routes in the Santa Baraba Channel",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Juliet Cohen",
+        "url": {}
+      }
+    ],
+    "date": "2022-04-30",
+    "categories": [],
+    "contents": "\nProtecting Whales from Ships\nLoad packages\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport numpy as np\nfrom shapely.geometry import Polygon\nimport datetime as dt\nRead in the data:\nA spatial data file that defines the boundaries of Dominica, the\nisland country in the Caribbean where our ship & whale investigation\ntakes place\nWhale sightings data, which contains times and locations of\napproximately 5,000 whale sightings in Dominica between 2008 and\n2015.\n# import dominca's spatial data as a geodataframe\ndominica_outline = gpd.read_file('data/dominica/dma_admn_adm0_py_s1_dominode_v2.shp')\n\n# import sightings as a geodataframe \nsightings = gpd.read_file('data/sightings2005_2018.csv')\nSet coordinate reference systems we will use in this analysis:\nprojected_EPSG = 2002   # Dominica 1945 / British West Indies Grid\ngeodetic_EPSG  = 4326   # WGS 84 (use as default CRS for incoming lat & lon)\n\n# switch to crs 2002\ndominica_outline = dominica_outline.to_crs(projected_EPSG)\nWhale Sightings\nBootstrap the geometries from the latitude & longitude and set\nthe CRS to EPSG 4326 initially, and we will convert it to\n2002 when we are done appending the geometries. This ensures that the\nlatitude and longitude are projected correctly.\nsightings_geom = gpd.points_from_xy(x = sightings.Long, \n                                    y = sightings.Lat, \n                                    crs = geodetic_EPSG)\n\n# append the geometries to the sightings data\nsightings = sightings.set_geometry(sightings_geom)\n\n# set CRS to local EPSG\nsightings = sightings.to_crs(epsg = projected_EPSG)\nCreate Grid\nCreate a basic grid object that will be the starting point for the\noceanic grid around Dominica that will be tailored to whale habitat:\nfig, ax = plt.subplots(figsize=(3, 3), \n                       dpi=200)\nDetermine the minimum and maximum x and y\nbounds of all sightings using the total_bound()\nfunction\nminx, miny, maxx, maxy = sightings.total_bounds\nminx, miny, maxx, maxy\n# total_bounds in meters:\n# (408480.65208368783, 1532792.7459409237, 498500.3049570159, 1796964.399702923)\nCreate arrays of the indices of our grid, with the\nvalues denoting the southwest corner of each grid cell\n# the grid cell dimensions are 2000 meters in both the x and y direction\nxs = np.arange(minx, \n               maxx, \n               2000)\n               \nys = np.arange(miny, \n               maxy, \n               2000)\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-04-30T21:50:55-07:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-03-03-newhorizonsinconservationconference2022/",
     "title": "New Horizons in Conservation Conference 2022 - Yale School of the Environment",
     "description": "Using remote sensing tools to predict crop yield in sub-Saharan Africa",
