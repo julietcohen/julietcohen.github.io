@@ -1,7 +1,7 @@
 ---
-title: "Whale Migration & Vessel Routes in the Caribbean"
+title: "Whale Habitat & Vessel Collisions in the Caribbean"
 description: |
-  Whales migrate through seascapes that are heavily utilied by humans. Perhaps a reduction in vessel speed help reduce ship-whale collisions. Using spatial tools in Python, we investigate the marine overlap of these two components and calculate what speed reduction would mean for those vessels.
+  Whales migrate and raise their young in seascapes that are heavily utilized for cargo transport, ecotourism, and fishing. Perhaps reducing vessel speed in these whale-inhabited zones will reduce ship-whale collisions. Using spatial tools in Python, we investigate the overlap of these two components and calculate the increase in vessel commute time in a hypothetically enforced speed reduction zone.
 author:
   - name: Juliet Cohen
     url: {}
@@ -24,11 +24,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Protecting Whales from Ships
 
-In this anaysis in Python, we aim to determine the spatial outline of a speed reduction zone for boats in Dominica, an island in the Caribbean. Furthermore we calculate the effect of this speed reduction zone on the local marine traffic. The reduction zone should ideally encompass the preferred habitat of the local sperm whales, which will be approximated using frequent whale sightings data.
+In this analysis in Python, we aim to determine the spatial outline of a speed reduction zone for boats in Dominica, an island country in the Caribbean that is well-known for its year-round sperm whale population ([source](https://discoverdominica.com/en/lists/35/whale-watching#:~:text=Dominica%20is%20the%20only%20country,the%20calm%20turquoise%20Caribbean%20Sea.)). We do this by creating a grid on the seascape with each cell representing the number of reported whale sightings in that subregion. We then use automatic identification system data to track the vessel movement in this same region. Lastly, we calculate the effect of a hypothetical speed reduction zone on the local traffic.
 
 <center>
 
-![A sperm whale, the species that migrated though the seascape around Dominica](outputs/sperm_whale.png){width=60%}
+![A sperm whale, the species that migrates though the seascape around Dominica.](outputs/sperm_whale.png){width=60%}
 
 </center>
 
@@ -36,7 +36,7 @@ In this anaysis in Python, we aim to determine the spatial outline of a speed re
 
 <center>
 
-![Scotts Head, Dominica](outputs/dominica.png){width=70%}
+![Scotts Head, Dominica, a location frequented by sperm whales](outputs/dominica.png){width=70%}
 
 </center>
 
@@ -52,7 +52,7 @@ from shapely.geometry import Polygon
 import datetime as dt
 ```
 
-### Read in the data:
+### Read in two data files:
 
 1. A spatial data file that defines the boundaries of Dominica, the island country in the Caribbean where our ship & whale investigation takes place.\
 2. Whale sightings data, which contains times and locations of approximately 5,000 whale sightings in Dominica between 2008 and 2015.
@@ -250,9 +250,17 @@ plt.ylabel('Longitude (meters)')
 ![](outputs/speed_zone_dominica.png){width=30%}
 </center>
 
+Now we have completed the whale habitat delineation!
+
 ### Vessel Data 
 
 Marine commercial vessels or any vessel of at least 300 gross tonnage are required to be fitted with an "automatic identification system" receiver to monitor their movement. The beacons emitted from these transmitters are received, encoded, and archived by terrestrial stations.
+
+<center>
+
+![](outputs/boat.jpeg){width=60%}
+
+</center>
 
 Similarly to how we used whale sightings to determine the spatial extent of whale habitat, we will use temporal and spatial aspects of automatic identification system data to determine vessel speeds in the same region.
 
@@ -265,7 +273,7 @@ Read in the vessel data:
 vessel = gpd.read_file('data/station1249.csv')
 ```
 
-Similarly to what we did above, bootstrap the geometries from the latitude & longitude initially set the CRS to `EPSG 4326`, and we will convert it to the local `EPSG 2002` after we append the geometries:
+Similarly to what we processed the spatial sightings data, here we bootstrap the vessel geometries from the latitude & longitude and initially set the CRS to `EPSG 4326`. We will convert it to the local `EPSG 2002` after we append the geometries:
 ```python
 vessel_geom = gpd.points_from_xy(x = vessel.LON, 
                                  y = vessel.LAT, 
@@ -409,3 +417,4 @@ If you are interested in exploring how migratory whales and human vessels are be
 
 [Scotts Head, Dominca](https://www.istockphoto.com/photos/dominica)
 
+[cargo vessel](https://www.overstockboats.com/classifieds/110-ro-ro-cargo-vessel-in-caribbean-o749.html)
