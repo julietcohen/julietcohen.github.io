@@ -118,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/activate_cd.png","images/bat.png","images/columns.png","images/crit_hab_no_basemap.png","images/crit_hab_with_basemap.png","images/gdf.png","images/jupyter.png","images/lat_long.png","images/plot_code.png","images/python.png","images/set_crs.png","images/shape.png","images/steelhead_crayfish.png","images/steelhead_dps.png","images/subset_end.png","images/text.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.11/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.map","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["images/activate_cd.png","images/bat.png","images/columns.png","images/crit_hab_no_basemap.png","images/crit_hab_with_basemap.png","images/gdf.png","images/jupyter.png","images/lat_long.png","images/plot_code.png","images/python.png","images/set_crs.png","images/shape.png","images/steelhead_crayfish.png","images/steelhead_dps.png","images/subset_end.png","images/text.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.11/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.13/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.map","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2453,19 +2453,20 @@ United States:</a></li>
 <center>
 <p><img src="images/python.png" style="width:70.0%" /></p>
 </center>
-<p>Python is a wonderful programming language to plot shapefiles
-overlaid on top of basemaps, which gives us the user spatial context and
-opens doors for deeper analysis. Understanding where points, lines, and
-polygons exist in the world empowers data scientists to answer questions
-about correlated variables, consider new questions that arise throughout
-the analysis process, and communicate conclusions to audiences in an
+<p>Python is a powerful programming language for spatial analyses. In
+this tutorial, we learn the basics of plotting shapefiles overlaid on
+top of a basemap, which gives us spatial context and opens doors for
+deeper analysis. Understanding where points, lines, and polygons exist
+in the world empowers data scientists to answer questions about
+correlated variables, consider new questions that arise throughout the
+analysis process, and communicate conclusions to audiences in an
 easily-digestible way.</p>
-<p>This blog post will walk you through this process, starting with
-installing the an integrated development environment (IDE) Jupyter
-Notebook and installing the necessary packages. If you prefer to use
-another IDE such as Visual Studio Code and have already installed the
-packages <code>geopandas</code>, feel free to jump ahead to the
-<strong>Importing Packages</strong> section.</p>
+<p>We start with the basics; installing the integrated development
+environment (IDE) Jupyter Notebook and installing the necessary
+packages. If you prefer to use another IDE such as Visual Studio Code
+and have already installed the packages <code>geopandas</code>, feel
+free to jump ahead to the <strong>Importing Packages</strong>
+section.</p>
 <p>As a conservation biologist and an aspiring data scientist, I’m
 interested in plotting endangered species’ critical habitat ranges
 throughout the United States. I sourced my data from the U.S. Geological
@@ -2488,23 +2489,22 @@ would be a better place with more bonneted bats.</figcaption>
 </center>
 <h2 id="getting-started-with-python-and-jupyter-notebooks">Getting
 started with Python and Jupyter Notebooks</h2>
-<p>Transitioning from <code>R</code> in <code>Rstudio</code>to
-<code>Python</code> in <code>Jupyter Notebook</code> can be difficult,
-as is learning any new language. We have to say goodbye to the
-exceptionally user-friendly RStudio interface with its git graphical
-user interface, visible environment, and easily accessible console and
-terminal windows. Let’s dive into the objected oriented language of
-Python through Jupyter Notebook and the mysterious terminal. Personally,
-I struggled every step of this journey with lots of syntax errors, merge
-conflicts, and endless Google searching. I hope this post will help hold
-your hand as we make this change together.</p>
+<p>Transitioning from <code>R</code> and <code>Rstudio</code> to
+<code>Python</code> and <code>Jupyter</code> can be difficult, as is
+learning any new language or IDE. We have to say goodbye to the
+exceptionally user-friendly <code>RStudio</code> interface with its
+convenient graphical user interface and easily accessible console and
+terminal windows. Let’s dive into the objected-oriented language of
+Python and the mysterious terminal. Personally, I struggled every step
+of this journey with lots of syntax errors, merge conflicts, and endless
+Googling I hope this post will help hold your hand as we make this
+transition together.</p>
 <p>First things first, if you’re using Jupyter Notebooks to code in
-Python, you’re gonna have to install Python and Anaconda Navigator and
-install <code>Anaconda</code> into your home directory or an environment
-(I recommend making an environment!). (Note: there are plenty of other
-IDE’s for python, such as <a
+Python, you’re gonna have to install Python and Anaconda Navigator.
+Install <code>Anaconda</code> into your home directory. (Note: there are
+plenty of other IDE’s for Python, such as <a
 href="https://code.visualstudio.com/">visual studio code</a>, which I
-adopted later in my data science career).</p>
+adopted later in my data science journey).</p>
 <p>As I had a PC when I first started coding in Python, installing
 <code>Anaconda</code> really threw me and my laptop for a loop. But what
 better way to learn to use the terminal besides struggling to install
@@ -2518,11 +2518,11 @@ for a great resource to walk you through installing
 <code>Miniconda</code> will work fine whether you have a PC or Mac.</p>
 <p>After installing Anaconda, start your journey plotting shapefiles in
 <code>Python</code> by opening up Jupyter Notebooks. On a Mac, I can
-activate <code>conda</code> in the regular ternimal with no issue
-(<code>conda activate</code>) On a PC, I like to do this from the
+activate <code>conda</code> in the regular terminal
+(<code>conda activate</code>). On a PC, I like to do this from the
 Anaconda Prompt (the <code>Aanconda</code> terminal) because it’s tricky
 to get my normal command line or Bash to recognize that
-<code>conda</code> is indeed on my computer. My favorite flow is as
+<code>conda</code> is indeed on my computer. My favorite workflow is as
 follows:</p>
 <ul>
 <li>From the start menu, open a terminal through Anaconda Navigator
@@ -2539,12 +2539,8 @@ I tried installing <code>geopandas</code> in my base environment, but it
 was difficult to install all the correct versions of all the
 dependencies, so I decided to take the easy route and just make a new
 environment for <code>geopandas</code> and any other spatial analysis
-packages I’ll need. Maybe one day I’ll get familiar with
-version-specific terminal installations and I will be able to install
-whatever my heart pleases in my base environment.<br />
-</li>
-<li>Activate the environment in which you have installed the
-<code>geopandas</code> package. I named that environment
+packages I’ll need. - Activate the environment in which you have
+installed the <code>geopandas</code> package. I named that environment
 <code>geo_env</code>, so I type <code>activate geo_env</code>.<br />
 </li>
 <li>Now that I am in my desired environment, I am going to navigate to
@@ -2575,8 +2571,8 @@ should not be closed during your work session. It must remain open to
 keep your kernel connected and give you the ability to save! If you need
 to run any terminal commands after you have already opened this
 notebook, such as if you need to download a package or check a file
-location, just open up another terminal window and enter the geo_env
-environment to do so.</li>
+location, just open up another terminal window and enter the
+<code>geo_env</code> environment to do so.</li>
 </ul>
 <h2 id="importing-packages-modules">Importing Packages
 (<code>modules</code>)</h2>
@@ -2586,17 +2582,16 @@ packages:</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd  </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> contextily <span class="im">as</span> ctx  </span></code></pre></div>
-<p><code>matplotlib</code> will allow us to plot our data and manipulate
-the plot as we see fit. <code>contextily</code> will allow us to add a
-default basemap under our polygons of interest. If you do not already
-have this installed, consider using a channel and conda forge to install
-it in the terminal.</p>
-<p>As a proponent of reproducibility and credditing those who provided
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># plot our data and manipulate the plot</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> contextily <span class="im">as</span> ctx <span class="co"># add a default basemap under our polygons of interest</span></span></code></pre></div>
+<p>If you do not already have <code>contextily</code> installed, use a
+<code>conda forge</code> command to install it in the terminal in your
+geospatial environment.</p>
+<p>As a proponent of reproducibility and crediting those who provided
 the data, I like to include a markdown chunk following my package
 imports that includes a URL link to where I found my data, along with a
-citation if necessary and any notes about how I downloaded it:</p>
+citation if necessary and any notes about how I downloaded it for myself
+or anyone else working through my code:</p>
 <p>Data source: <a
 href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html">US
 Fish and Wildlife</a>  - contains .shp, .dbf, and .shx polygon files
@@ -2604,9 +2599,9 @@ that relate to critical species habiata in the United States<br />
 - I chose the first zip file you see on this site<br />
 - USFW provided great metadata </p>
 <h2 id="importing-data">Importing Data</h2>
-<p>Let’s import your data! Now is the time you’re gonna be thanking
-yourself for placing your jupyter notebook in the same folder as your
-data. We will use <code>geopandas</code> to read in the
+<p>Let’s import your data! Now is the time you’re gonna thank yourself
+for placing your data in the same folder as your Jupyter notebook. We
+will use <code>geopandas</code> to read in the
 <strong>shapefile</strong> with your polygons or lines or points of
 choice (you will not find a combination of these shapes in the same
 shapefile, because that’s just how the world works). You might take a
@@ -2615,7 +2610,6 @@ due to the way that shapefiles and their metadata are stored separately
 (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to
 import a <strong>shapefile</strong> of polygons, so that
 <strong>.shp</strong> file is the only one you need to read in:</p>
-<p>Import the data:</p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(<span class="st">&#39;CRITHAB_POLY.shp&#39;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look at the first rows:</span></span>
@@ -2626,21 +2620,20 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 returns the first rows in a plain text format:</p>
 <p><img src="images/text.png" /></p>
 <p>If you want to see the first and last few rows of the dataframe in a
-format that looks more familiar (like how R studio presents dataframes),
+format that looks more familiar (like how Rstudio presents dataframes),
 try just typing the name of the data frame, <code>gdf</code>:</p>
 <p><img src="images/gdf.png" /></p>
 <p>This shapefile I read in contains polygons that designate the
 critical habitat ranges for many endangered and threatened species in
 the United States. I chose to name it <code>gdf</code> for
-<em>geodataframe</em>. While you can name objects whatever you want, it
-is helpful to you and to those reading your code to name things
-meaningfully. Expect that you will be modifying this dataframe as you go
-through this mapping process (subsetting columns, filtering for certain
-factor levels, etc.) so you will likely be tacking on more words to
-<code>gdf</code> to tell these modified versions apart. Start naming
-things simply and clearly, and get more specific as you process your
-data.</p>
-<p>Call the column names in the dataset:</p>
+<em>geodataframe</em>. Expect that you will be modifying this dataframe
+as you go through this mapping process (subsetting columns, filtering
+for certain factor levels, etc.) so you will likely be tacking on more
+words to <code>gdf</code> to tell these modified versions apart. Start
+naming things simply and clearly, and get more specific as you process
+your data.</p>
+<p>Practice cimple commans like calling all the column names in the
+dataframe:</p>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdf.columns)</span></code></pre></div>
 <p>Check the factor levels for the columns <code>listing_st</code>:</p>
@@ -2652,10 +2645,10 @@ factor levels of a categorical variable, you can subset for only
 <em>“endangered”</em> species, only <em>“threatened”</em> species,
 etc.</p>
 <p><img src="images/subset_end.png" /></p>
-<p>Play around with your dataset a bit; Google some of the species,
-subset the columns, search for some NA values, or take the average of a
-numerical column. After you make a structural change, its a good habit
-to check the status or dimensions of your dataset.</p>
+<p>Play around with your dataframe a bit; Google some of the species,
+subset the columns, search for <code>NA</code> values, or take the
+average of a column. After you make a structural change, its a good
+habit to check the status or dimensions of your dataframe.</p>
 <p>Check the number of rows and columns: <img
 src="images/shape.png" /></p>
 <p>Print the latitude and longitude pairs that make up a particular
@@ -2667,13 +2660,10 @@ data to the desired coordinate reference system (CRS). This is pretty
 standard for all kinds of spatial data, since your data might come with
 an unfamiliar CRS or have no CRS at all if you are making a mask, a
 raster, or executing similar geospatial processes. For information about
-coordinate reference systems, check out this guide:<br />
-<a
-href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf"
-class="uri">https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf</a></p>
-<p>But you technically do not need to understand many details about
-datums and CRS’s for mapping shapefiles, so just for now you should know
-3 common CRS’s:</p>
+coordinate reference systems, check out <a
+href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf">this
+guide.</a></p>
+<p>Three common CRS’s are as follows:</p>
 <ul>
 <li><strong>WGS84 (EPSG: 4326)</strong>, which is commonly used for GIS
 data across the globe or across multiple countries<br />
@@ -2688,35 +2678,31 @@ Google Maps, Open Street Maps, and Stamen Maps. I will use this one
 today because I want to overlay my polygons onto a Google basemap with
 <code>contextily</code>.</li>
 </ul>
-<p>Set the CRS to ESPG 3857:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gdf_3857<span class="op">=</span>gdf.to_crs(epsg<span class="op">=</span><span class="dv">3857</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Check that the CRS is what you want:  </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdf_3857.crs)</span></code></pre></div>
-<p>This code may take a minute to run. In Jupyter Notebook, you know
-that code chunk is still chuggin’ away if you see an asterisk in
-brackets to the left of the code chunk:</p>
+<p>Set the CRS to ESPG 3857. This code may take a minute to run. In
+Jupyter Notebook, you know that code chunk is still chuggin’ away if you
+see an asterisk in brackets to the left of the code chunk:</p>
 <p><img src="images/set_crs.png" /></p>
 <h2 id="plotting-shapefiles-on-a-basemap">Plotting Shapefiles on a
 Basemap</h2>
-<p>Use the plot() function from matplotlib and make the fill depend on
-the species name:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gdf_3857.plot(column<span class="op">=</span><span class="st">&#39;comname&#39;</span>,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>             figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
+<p>Use the plot() function from matplotlib and make the polygon color
+represent each species:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gdf_3857.plot(column<span class="op">=</span><span class="st">&#39;comname&#39;</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>             figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
 <p><img src="images/crit_hab_no_basemap.png" /></p>
 <p>Note that you did not have to call the package to use the function
-plot(). Instead, you can name the dataframe which you want to plot,
-which is <code>gdf_3857</code> in this case, <em>then</em> specify the
-function plot() and add arguments and supplemental plot structure
+<code>plot()</code>. Instead, you can name the dataframe which you want
+to plot, which is <code>gdf_3857</code> in this case, <em>then</em>
+<code>plot()</code> and add arguments and supplemental plot structure
 changes as you go.</p>
 <p>The fig size can be whatever you want. 10-20 is usually good enough.
 You have finer control over the degree of zoom of the map with the
-arguments xlim() and ylim(), anyway. These polygons are just floating in
-space, so lets add a basemap to give us geographical context:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>crit_hab_polys <span class="op">=</span> gdf_3857.plot(column<span class="op">=</span><span class="st">&#39;comname&#39;</span>,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>             figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
+arguments <code>xlim()</code> and <code>ylim()</code>, anyway. These
+polygons are just floating in space, so lets add a basemap to give us
+geographical context:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>crit_hab_polys <span class="op">=</span> gdf_3857.plot(column<span class="op">=</span><span class="st">&#39;comname&#39;</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>             figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
 <p>Notice that I used an argument in the plot function, setting the
 <code>column = 'comname'</code>, which is a column within the
 <code>gdf_3857</code> geodataframe that specifies the common name for
@@ -2724,11 +2710,11 @@ the species in that row. This argument sets a unique color to each
 common name, which will help us tell the difference between each
 species’ habitat on the map, even if 1 species’ habitat is composed of
 multiple polygons.</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ctx.add_basemap(crit_hab_polys)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:  </span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">2350000</span>,<span class="dv">6350000</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ctx.add_basemap(crit_hab_polys)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:  </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">2350000</span>,<span class="dv">6350000</span>])</span></code></pre></div>
 <p>Since the basemap within the <code>contextily</code> package is of
 the entire world, we need to specify the x-limitations and y-limitations
 for our map so we can zoom in on the United States to best understand
@@ -2737,20 +2723,19 @@ my units in millions, too. When considering if I should plug in positive
 or negative values, I considered the way that coordinate reference
 systems are designed with positive values for North and East, and
 negative values for South and West. I considered that the United States
-are north of the equator (which is 0 in the North and South directions),
-so I should have positive values for the min and max y. As for the
-magnitude of my values, I simply looked at the map for a starting point
-and played around with different numbers until I got the view I
-wanted.</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="dv">14000000</span>,<span class="op">-</span><span class="dv">6000000</span>])</span></code></pre></div>
+is north of the equator, so I should have positive values for the min
+and max y. As for the magnitude of my values, I simply looked at the map
+for a starting point and played around with different numbers until I
+got the view I wanted.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="dv">14000000</span>,<span class="op">-</span><span class="dv">6000000</span>])</span></code></pre></div>
 <p>Notice that these values are negative. Along similar thinking to how
 we decided on our y limitation, these negative values are the result of
 how coordinate systems are designed. Consider the prime meridian (which
 lies at 0 degrees in the East and West directions) with West being
 negative. Since the United States are to the West of the prime meridian,
 we know that the x-range for our zoom should be negative. As for the
-magnitude, I just palyed around with the numbers until I got the
+magnitude, I just played around with the numbers until I got the
 East-West orientation that encompassed the United States. Use the
 <code>show()</code> function in <code>matplotlib</code> to tell Python
 to show the most recently created graph:<br />
@@ -2778,7 +2763,7 @@ href="https://caltrout.org/projects/southern-steelhead-coalitions?gclid=Cj0KCQiA
 California Steelhead Trout</a>. Steelhead trout is a beautiful fish
 species that interbreeds with resident rainbow trout in many coastal
 regions throughout California, which are split into distinct population
-segments and managed as such.</p>
+segments:</p>
 <figure>
 <img src="images/steelhead_dps.png"
 alt="Southern California Steelhead Trout distinct population segment map with watershed landmarks" />
@@ -2844,7 +2829,7 @@ California Steelhead Trout</a></li>
 href="https://ourcodeworld.com/articles/read/635/why-should-i-learn-python-programming-language">Python
 logo</a></li>
 </ol>
-<div class="sourceCode" id="cb10"><pre
+<div class="sourceCode" id="cb9"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

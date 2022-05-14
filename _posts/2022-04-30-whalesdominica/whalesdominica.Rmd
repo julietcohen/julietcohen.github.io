@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Protecting Whales from Ships
 
-In this analysis in Python, we aim to determine the spatial outline of a speed reduction zone for boats in Dominica, an island country in the Caribbean that is well-known for its year-round sperm whale population ([source](https://discoverdominica.com/en/lists/35/whale-watching#:~:text=Dominica%20is%20the%20only%20country,the%20calm%20turquoise%20Caribbean%20Sea.)). We do this by creating a grid on the seascape with each cell representing the number of reported whale sightings in that subregion. We then use automatic identification system data to track the vessel movement in this same region. Lastly, we calculate the effect of a hypothetical speed reduction zone on the local traffic.
+In this Python analysis, we aim to determine the optimal spatial outline of a speed reduction zone for boats in Dominica, an island country in the Caribbean that is well-known for its year-round sperm whale population ([source](https://discoverdominica.com/en/lists/35/whale-watching#:~:text=Dominica%20is%20the%20only%20country,the%20calm%20turquoise%20Caribbean%20Sea.)). We do this by creating a grid across Dominica's seascape where each cell represents the number of reported whale sightings in that subregion. We then use automatic identification system data to track the vessel movement in this same region. Lastly, we calculate the effect of a hypothetical speed reduction zone on the local traffic.
 
 <center>
 
@@ -32,7 +32,7 @@ In this analysis in Python, we aim to determine the spatial outline of a speed r
 
 </center>
 
-##### "Whales are among the largest creatures on earth and play vital roles in maintaining healthy underwater ecosystems. Yet, intensive whaling over the past 200 years has brought many populations to the brink of extinction, and today many species remain threatened or endangered. Although hunting has decreased dramatically over the last century, another danger threatens whales – massive cargo ships. Whale-ship collisions are currently a leading cause of death for large whales, and scientists estimate that over 80 blue, humpback, and fin whales are killed by vessel collisions on the West Coast of the United States each year...As global maritime traffic continues to increase, it is critical that we implement solutions now to protect endangered whales."    - [Whale Safe, Benioff Ocean Initiative](https://boi.ucsb.edu/active_projects/whale-strikes)
+##### "Whales are among the largest creatures on earth and play vital roles in maintaining healthy underwater ecosystems. Yet, intensive whaling over the past 200 years has brought many populations to the brink of extinction, and today many species remain threatened or endangered. Although hunting has decreased dramatically over the last century, another danger threatens whales – massive cargo ships. Whale-ship collisions are currently a leading cause of death for large whales, and scientists estimate that over 80 blue, humpback, and fin whales are killed by vessel collisions on the West Coast of the United States each year ... As global maritime traffic continues to increase, it is critical that we implement solutions now to protect endangered whales."    - [Whale Safe, Benioff Ocean Initiative](https://boi.ucsb.edu/active_projects/whale-strikes)
 
 <center>
 
@@ -81,7 +81,7 @@ dominica_outline
 
 ### Whale Sightings Data
 
-Bootstrap the geometries from the latitude & longitude and set the CRS to `EPSG 4326` initially, and we will convert it to 2002 when we are done appending the geometries. This ensures that the latitude and longitude are projected correctly. 
+Bootstrap the geometries from the latitude & longitude and set the CRS to `EPSG 4326` initially, and we will convert it to `EPSG 2002` when we are done appending the geometries. This 2-step process ensures that the latitude and longitude are projected correctly. 
 ```python
 sightings_geom = gpd.points_from_xy(x = sightings.Long, 
                                     y = sightings.Lat, 
@@ -108,7 +108,7 @@ ax.grid(True)
 
 </center>
 
-Determine the minimum and maximum `x` and `y` bounds of all sightings using the `total_bound()` function:
+Determine the minimum and maximum `x` and `y` bounds of all sightings using the `.total_bounds` function:
 ```python
 minx, miny, maxx, maxy = sightings.total_bounds
 minx, miny, maxx, maxy
@@ -116,7 +116,7 @@ minx, miny, maxx, maxy
 # (408480.65208368783, 1532792.7459409237, 498500.3049570159, 1796964.399702923)
 ```
 
-Create `arrays` of the indices of our grid, with the values denoting the southwest corner of each grid cell:
+Create `arrays` of the indices of our grid, with the values denoting the southwest corner of each grid cell. The syntax here is pretty abstract, but it gets the job done. The `2000` argument represents the quantity of meters in each direction:
 
 ```python
 # the grid cell dimensions are 2000 meters in both the x and y direction
@@ -149,7 +149,7 @@ for x in xs:
 grid = gpd.GeoDataFrame({'geometry': cells}, 
                         crs = projected_EPSG)
                         
-# plot the grid and increase the figure size to better visualize without a fill color
+# plot the grid and increase the figure size to 20, 20 to better visualize without a fill color
 grid.boundary.plot(figsize=(20,20))
 ```
 
@@ -170,6 +170,11 @@ joined = grid.sjoin(sightings,
 # plot the whale habitat in the form of cells
 joined.plot(figsize = (15, 15))
 ```
+<center>
+
+![](outputs/grid_cell_sjoin.png){width=15%}
+
+</center>
 
 Group the rows of the joined dataset to be able to count the number of whale sightings per cell:
 ```python
@@ -188,11 +193,16 @@ min_count = grid['count'].min()
 grid['count'].unique()
 ```
 
-Subsample the grid cells for only those with 20 or mores observations:
+<center>
+
+![](outputs/range_whale_obs.png){width=40%}
+
+</center>
+
+Subsample the grid cells for only those with 20 or more observations, because when defining protected species habitat we should prioritize protecting the subregions that are more densely populated:
 ```python
 # fitler the data for only sightings that included more than 20 whales
 grid_subset = grid[grid['count'] > 20]
-grid_subset
 ```
 
 Execute a `unary union` and take the convex hull of that union to determine a comprehensive speed reduction zone. Next, take the `convex hull` of the `unary union` in order to desginate the speed reduction zone, essentially rounding out the cell polygons from the `unary union`.
@@ -229,7 +239,7 @@ grid_subset_hull_gdf = gpd.GeoDataFrame(index=[0],
 
 ### Plot the Speed Reduction Zone
 
-Now that we have determined the grid cells with whale sightings around Dominica, lets move on to defining the ideal speed reduction zones for ships in this region. Cargo ships, large fishing vessels, and ecotourism vessels all pose a threat to whales. If the ships travel slower and are more vigilant of the surrounding marine life, perhaps we can find a middle ground in which whales can safely migrate alongside humans in the marine region around Dominica. To make this compromise, we aim to determine the portion of the seascape that is most critical to reduce speed, rather than trying to restrict speeds everywhere, which is unrealistic as it would be impossible to regulate. Furthermore, if whales are not observed often in a certain region of the ocea, restricting speeds there would be more disruptive to human livelihoods than beneficial to whale movement. 
+Now that we have determined the grid cells with whale sightings around Dominica, lets move on to defining the ideal speed reduction zones for ships in this region. Cargo ships, large fishing vessels, and ecotourism vessels all pose a threat to whales. If the ships travel slower and are more vigilant of the surrounding marine life, perhaps we can find a middle ground in which whales can safely feed, raise their young, and migrate alongside humans in the marine region around Dominica. To make this compromise, we aim to determine the portion of the seascape that is most critical to reduce speed, rather than trying to restrict speeds everywhere, which is unrealistic as it would be impossible to regulate. Furthermore, if whales are not observed often in a certain region of the ocean, restricting speeds there would be more disruptive to human livelihoods than beneficial to whale movement. 
 
 ```python
 fig, ax = plt.subplots(figsize = (4,4), 
@@ -323,7 +333,8 @@ First, sort the vessels by their Maritime Mobile Service Identity (MMSI), which 
 vessel_sorted = vessel.sort_values(["MMSI", "TIMESTAMP"], 
                                    ascending = True)
 
-# create a copy of the raw data because we need to shift the columns in the working copy, since we are trying to match 2 timestamps and their respective locations to each singular vessel    
+# create a copy of the raw data because we need to shift the columns in the working copy
+# we are trying to match 2 timestamps and their respective locations to each singular vessel    
 vessel_sorted_copy = vessel_sorted.shift()
 
 vessel_joined = vessel_sorted.join(vessel_sorted_copy, 
@@ -362,6 +373,7 @@ vessel_joined_mmsi_match['time_diff'] = (vessel_joined_mmsi_match['TIMESTAMP_end
 Calculate the average speed in meters per second using (distance) = (rate)*(time):
 ```python
 # divide the distance column by the time_diff column
+# use the function `total_seconds()` to get the time in units of seconds
 vessel_joined_mmsi_match['speed_m_s'] = vessel_joined_mmsi_match['distance_m']/vessel_joined_mmsi_match['time_diff'].dt.total_seconds()
 ```
 
@@ -388,7 +400,7 @@ Filter for the times that are greater than zero, because we only want to calcula
 vessel_joined_mmsi_match = vessel_joined_mmsi_match.loc[vessel_joined_mmsi_match['time_diff_actual_vs_10k']>0]
 ```
 
-Sum up the time difference values and convert the units from seconds to days
+Sum up the time difference values and convert the units from seconds to days:
 ```python
 sum(vessel_joined_mmsi_match['time_diff_actual_vs_10k']/ 60/60/24)
 ```

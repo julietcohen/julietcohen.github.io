@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["outputs/boat.jpeg","outputs/dominica_outline.png","outputs/dominica.png","outputs/fine_grid.png","outputs/grid.png","outputs/hull_poly.png","outputs/speed_zone_dominica.png","outputs/sperm_whale.png","outputs/subset_union.png","outputs/vessel_data.png","outputs/vessel_points.png","outputs/vessels_shifted.png","whalesdominica_files/anchor-4.2.2/anchor.min.js","whalesdominica_files/bowser-1.9.3/bowser.min.js","whalesdominica_files/distill-2.2.21/template.v2.js","whalesdominica_files/header-attrs-2.13/header-attrs.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.min.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.min.map","whalesdominica_files/popper-2.6.0/popper.min.js","whalesdominica_files/tippy-6.2.7/tippy-bundle.umd.min.js","whalesdominica_files/tippy-6.2.7/tippy-light-border.css","whalesdominica_files/tippy-6.2.7/tippy.css","whalesdominica_files/tippy-6.2.7/tippy.umd.min.js","whalesdominica_files/webcomponents-2.0.0/webcomponents.js","whalessantabarbara_files/anchor-4.2.2/anchor.min.js","whalessantabarbara_files/bowser-1.9.3/bowser.min.js","whalessantabarbara_files/distill-2.2.21/template.v2.js","whalessantabarbara_files/header-attrs-2.13/header-attrs.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.map","whalessantabarbara_files/popper-2.6.0/popper.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-bundle.umd.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-light-border.css","whalessantabarbara_files/tippy-6.2.7/tippy.css","whalessantabarbara_files/tippy-6.2.7/tippy.umd.min.js","whalessantabarbara_files/webcomponents-2.0.0/webcomponents.js","whalessantabarbara.html"]}
+  {"type":"character","attributes":{},"value":["outputs/boat.jpeg","outputs/dominica_outline.png","outputs/dominica.png","outputs/fine_grid.png","outputs/grid_cell_sjoin.png","outputs/grid.png","outputs/hull_poly.png","outputs/range_whale_obs.png","outputs/speed_zone_dominica.png","outputs/sperm_whale.png","outputs/subset_union.png","outputs/vessel_data.png","outputs/vessel_points.png","outputs/vessels_shifted.png","whalesdominica_files/anchor-4.2.2/anchor.min.js","whalesdominica_files/bowser-1.9.3/bowser.min.js","whalesdominica_files/distill-2.2.21/template.v2.js","whalesdominica_files/header-attrs-2.13/header-attrs.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.min.js","whalesdominica_files/jquery-3.6.0/jquery-3.6.0.min.map","whalesdominica_files/popper-2.6.0/popper.min.js","whalesdominica_files/tippy-6.2.7/tippy-bundle.umd.min.js","whalesdominica_files/tippy-6.2.7/tippy-light-border.css","whalesdominica_files/tippy-6.2.7/tippy.css","whalesdominica_files/tippy-6.2.7/tippy.umd.min.js","whalesdominica_files/webcomponents-2.0.0/webcomponents.js","whalessantabarbara_files/anchor-4.2.2/anchor.min.js","whalessantabarbara_files/bowser-1.9.3/bowser.min.js","whalessantabarbara_files/distill-2.2.21/template.v2.js","whalessantabarbara_files/header-attrs-2.13/header-attrs.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.js","whalessantabarbara_files/jquery-3.6.0/jquery-3.6.0.min.map","whalessantabarbara_files/popper-2.6.0/popper.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-bundle.umd.min.js","whalessantabarbara_files/tippy-6.2.7/tippy-light-border.css","whalessantabarbara_files/tippy-6.2.7/tippy.css","whalessantabarbara_files/tippy-6.2.7/tippy.umd.min.js","whalessantabarbara_files/webcomponents-2.0.0/webcomponents.js","whalessantabarbara.html"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1516,14 +1516,14 @@ Distance and Speed of Vessels</a></li>
 </nav>
 </div>
 <h2 id="protecting-whales-from-ships">Protecting Whales from Ships</h2>
-<p>In this analysis in Python, we aim to determine the spatial outline
-of a speed reduction zone for boats in Dominica, an island country in
-the Caribbean that is well-known for its year-round sperm whale
-population (<a
+<p>In this Python analysis, we aim to determine the optimal spatial
+outline of a speed reduction zone for boats in Dominica, an island
+country in the Caribbean that is well-known for its year-round sperm
+whale population (<a
 href="https://discoverdominica.com/en/lists/35/whale-watching#:~:text=Dominica%20is%20the%20only%20country,the%20calm%20turquoise%20Caribbean%20Sea.">source</a>).
-We do this by creating a grid on the seascape with each cell
-representing the number of reported whale sightings in that subregion.
-We then use automatic identification system data to track the vessel
+We do this by creating a grid across Dominica’s seascape where each cell
+represents the number of reported whale sightings in that subregion. We
+then use automatic identification system data to track the vessel
 movement in this same region. Lastly, we calculate the effect of a
 hypothetical speed reduction zone on the local traffic.</p>
 <center>
@@ -1535,7 +1535,7 @@ though the seascape around Dominica.</figcaption>
 </figure>
 </center>
 <h5
-id="whales-are-among-the-largest-creatures-on-earth-and-play-vital-roles-in-maintaining-healthy-underwater-ecosystems.-yet-intensive-whaling-over-the-past-200-years-has-brought-many-populations-to-the-brink-of-extinction-and-today-many-species-remain-threatened-or-endangered.-although-hunting-has-decreased-dramatically-over-the-last-century-another-danger-threatens-whales-massive-cargo-ships.-whale-ship-collisions-are-currently-a-leading-cause-of-death-for-large-whales-and-scientists-estimate-that-over-80-blue-humpback-and-fin-whales-are-killed-by-vessel-collisions-on-the-west-coast-of-the-united-states-each-yearas-global-maritime-traffic-continues-to-increase-it-is-critical-that-we-implement-solutions-now-to-protect-endangered-whales.---whale-safe-benioff-ocean-initiative">“Whales
+id="whales-are-among-the-largest-creatures-on-earth-and-play-vital-roles-in-maintaining-healthy-underwater-ecosystems.-yet-intensive-whaling-over-the-past-200-years-has-brought-many-populations-to-the-brink-of-extinction-and-today-many-species-remain-threatened-or-endangered.-although-hunting-has-decreased-dramatically-over-the-last-century-another-danger-threatens-whales-massive-cargo-ships.-whale-ship-collisions-are-currently-a-leading-cause-of-death-for-large-whales-and-scientists-estimate-that-over-80-blue-humpback-and-fin-whales-are-killed-by-vessel-collisions-on-the-west-coast-of-the-united-states-each-year-as-global-maritime-traffic-continues-to-increase-it-is-critical-that-we-implement-solutions-now-to-protect-endangered-whales.---whale-safe-benioff-ocean-initiative">“Whales
 are among the largest creatures on earth and play vital roles in
 maintaining healthy underwater ecosystems. Yet, intensive whaling over
 the past 200 years has brought many populations to the brink of
@@ -1545,7 +1545,7 @@ another danger threatens whales – massive cargo ships. Whale-ship
 collisions are currently a leading cause of death for large whales, and
 scientists estimate that over 80 blue, humpback, and fin whales are
 killed by vessel collisions on the West Coast of the United States each
-year…As global maritime traffic continues to increase, it is critical
+year … As global maritime traffic continues to increase, it is critical
 that we implement solutions now to protect endangered whales.” - <a
 href="https://boi.ucsb.edu/active_projects/whale-strikes">Whale Safe,
 Benioff Ocean Initiative</a></h5>
@@ -1599,8 +1599,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <h3 id="whale-sightings-data">Whale Sightings Data</h3>
 <p>Bootstrap the geometries from the latitude &amp; longitude and set
 the CRS to <code>EPSG 4326</code> initially, and we will convert it to
-2002 when we are done appending the geometries. This ensures that the
-latitude and longitude are projected correctly.</p>
+<code>EPSG 2002</code> when we are done appending the geometries. This
+2-step process ensures that the latitude and longitude are projected
+correctly.</p>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sightings_geom <span class="op">=</span> gpd.points_from_xy(x <span class="op">=</span> sightings.Long, </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                                    y <span class="op">=</span> sightings.Lat, </span>
@@ -1622,7 +1623,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 <p><img src="outputs/grid.png" style="width:20.0%" /></p>
 </center>
 <p>Determine the minimum and maximum <code>x</code> and <code>y</code>
-bounds of all sightings using the <code>total_bound()</code>
+bounds of all sightings using the <code>.total_bounds</code>
 function:</p>
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>minx, miny, maxx, maxy <span class="op">=</span> sightings.total_bounds</span>
@@ -1630,7 +1631,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># total_bounds in meters:</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (408480.65208368783, 1532792.7459409237, 498500.3049570159, 1796964.399702923)</span></span></code></pre></div>
 <p>Create <code>arrays</code> of the indices of our grid, with the
-values denoting the southwest corner of each grid cell:</p>
+values denoting the southwest corner of each grid cell. The syntax here
+is pretty abstract, but it gets the job done. The <code>2000</code>
+argument represents the quantity of meters in each direction:</p>
 <div class="sourceCode" id="cb7"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the grid cell dimensions are 2000 meters in both the x and y direction</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.arange(minx, </span>
@@ -1662,7 +1665,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a hr
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> gpd.GeoDataFrame({<span class="st">&#39;geometry&#39;</span>: cells}, </span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                        crs <span class="op">=</span> projected_EPSG)</span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>                        </span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the grid and increase the figure size to better visualize without a fill color</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the grid and increase the figure size to 20, 20 to better visualize without a fill color</span></span>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>grid.boundary.plot(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
 <center>
 <p><img src="outputs/fine_grid.png" style="width:30.0%" /></p>
@@ -1678,6 +1681,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a hr
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                    </span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the whale habitat in the form of cells</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>joined.plot(figsize <span class="op">=</span> (<span class="dv">15</span>, <span class="dv">15</span>))</span></code></pre></div>
+<center>
+<p><img src="outputs/grid_cell_sjoin.png" style="width:15.0%" /></p>
+</center>
 <p>Group the rows of the joined dataset to be able to count the number
 of whale sightings per cell:</p>
 <div class="sourceCode" id="cb9"><pre
@@ -1693,12 +1699,15 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a h
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># check the unique values in the count column to get an idea about the range of the sightings per cell</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>grid[<span class="st">&#39;count&#39;</span>].unique()</span></code></pre></div>
-<p>Subsample the grid cells for only those with 20 or mores
-observations:</p>
+<center>
+<p><img src="outputs/range_whale_obs.png" style="width:40.0%" /></p>
+</center>
+<p>Subsample the grid cells for only those with 20 or more observations,
+because when defining protected species habitat we should prioritize
+protecting the subregions that are more densely populated:</p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fitler the data for only sightings that included more than 20 whales</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>grid_subset <span class="op">=</span> grid[grid[<span class="st">&#39;count&#39;</span>] <span class="op">&gt;</span> <span class="dv">20</span>]</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>grid_subset</span></code></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>grid_subset <span class="op">=</span> grid[grid[<span class="st">&#39;count&#39;</span>] <span class="op">&gt;</span> <span class="dv">20</span>]</span></code></pre></div>
 <p>Execute a <code>unary union</code> and take the convex hull of that
 union to determine a comprehensive speed reduction zone. Next, take the
 <code>convex hull</code> of the <code>unary union</code> in order to
@@ -1731,14 +1740,14 @@ around Dominica, lets move on to defining the ideal speed reduction
 zones for ships in this region. Cargo ships, large fishing vessels, and
 ecotourism vessels all pose a threat to whales. If the ships travel
 slower and are more vigilant of the surrounding marine life, perhaps we
-can find a middle ground in which whales can safely migrate alongside
-humans in the marine region around Dominica. To make this compromise, we
-aim to determine the portion of the seascape that is most critical to
-reduce speed, rather than trying to restrict speeds everywhere, which is
-unrealistic as it would be impossible to regulate. Furthermore, if
-whales are not observed often in a certain region of the ocea,
-restricting speeds there would be more disruptive to human livelihoods
-than beneficial to whale movement.</p>
+can find a middle ground in which whales can safely feed, raise their
+young, and migrate alongside humans in the marine region around
+Dominica. To make this compromise, we aim to determine the portion of
+the seascape that is most critical to reduce speed, rather than trying
+to restrict speeds everywhere, which is unrealistic as it would be
+impossible to regulate. Furthermore, if whales are not observed often in
+a certain region of the ocean, restricting speeds there would be more
+disruptive to human livelihoods than beneficial to whale movement.</p>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize <span class="op">=</span> (<span class="dv">4</span>,<span class="dv">4</span>), </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                       dpi <span class="op">=</span> <span class="dv">200</span>)</span>
@@ -1823,18 +1832,19 @@ memorized from middle school:<br />
 class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>vessel_sorted <span class="op">=</span> vessel.sort_values([<span class="st">&quot;MMSI&quot;</span>, <span class="st">&quot;TIMESTAMP&quot;</span>], </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                                   ascending <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create a copy of the raw data because we need to shift the columns in the working copy, since we are trying to match 2 timestamps and their respective locations to each singular vessel    </span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>vessel_sorted_copy <span class="op">=</span> vessel_sorted.shift()</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>vessel_joined <span class="op">=</span> vessel_sorted.join(vessel_sorted_copy, </span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>                                   lsuffix <span class="op">=</span> <span class="st">&#39;_end&#39;</span>, </span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                                   rsuffix <span class="op">=</span> <span class="st">&#39;_start&#39;</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                                   </span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># drop rows in which the MMSI_start does not match MMSI_end, because we can only compare time stamps from the same vessel</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>vessel_joined_mmsi_match <span class="op">=</span> vessel_joined[vessel_joined[<span class="st">&#39;MMSI_start&#39;</span>] <span class="op">==</span> vessel_joined[<span class="st">&#39;MMSI_end&#39;</span>]]</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="co"># take a look at the dataframe now that it is prepped for speed calculations</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>vessel_joined_mmsi_match</span></code></pre></div>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create a copy of the raw data because we need to shift the columns in the working copy</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># we are trying to match 2 timestamps and their respective locations to each singular vessel    </span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>vessel_sorted_copy <span class="op">=</span> vessel_sorted.shift()</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>vessel_joined <span class="op">=</span> vessel_sorted.join(vessel_sorted_copy, </span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                                   lsuffix <span class="op">=</span> <span class="st">&#39;_end&#39;</span>, </span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                                   rsuffix <span class="op">=</span> <span class="st">&#39;_start&#39;</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>                                   </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># drop rows in which the MMSI_start does not match MMSI_end, because we can only compare time stamps from the same vessel</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>vessel_joined_mmsi_match <span class="op">=</span> vessel_joined[vessel_joined[<span class="st">&#39;MMSI_start&#39;</span>] <span class="op">==</span> vessel_joined[<span class="st">&#39;MMSI_end&#39;</span>]]</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co"># take a look at the dataframe now that it is prepped for speed calculations</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>vessel_joined_mmsi_match</span></code></pre></div>
 <center>
 <img src="outputs/vessels_shifted.png" style="width:80.0%" />
 </center>
@@ -1856,7 +1866,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a h
 (rate)*(time):</p>
 <div class="sourceCode" id="cb24"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># divide the distance column by the time_diff column</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>vessel_joined_mmsi_match[<span class="st">&#39;speed_m_s&#39;</span>] <span class="op">=</span> vessel_joined_mmsi_match[<span class="st">&#39;distance_m&#39;</span>]<span class="op">/</span>vessel_joined_mmsi_match[<span class="st">&#39;time_diff&#39;</span>].dt.total_seconds()</span></code></pre></div>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use the function `total_seconds()` to get the time in units of seconds</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>vessel_joined_mmsi_match[<span class="st">&#39;speed_m_s&#39;</span>] <span class="op">=</span> vessel_joined_mmsi_match[<span class="st">&#39;distance_m&#39;</span>]<span class="op">/</span>vessel_joined_mmsi_match[<span class="st">&#39;time_diff&#39;</span>].dt.total_seconds()</span></code></pre></div>
 <p>What is the time that the distance would have taken at 10 knots?
 <code>1 knot = 1 nautical mile</code>, so we convert our meters to
 nautical miles and then convert the time to hours.</p>
@@ -1882,7 +1893,7 @@ speed:</p>
 <div class="sourceCode" id="cb27"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>vessel_joined_mmsi_match <span class="op">=</span> vessel_joined_mmsi_match.loc[vessel_joined_mmsi_match[<span class="st">&#39;time_diff_actual_vs_10k&#39;</span>]<span class="op">&gt;</span><span class="dv">0</span>]</span></code></pre></div>
 <p>Sum up the time difference values and convert the units from seconds
-to days</p>
+to days:</p>
 <div class="sourceCode" id="cb28"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(vessel_joined_mmsi_match[<span class="st">&#39;time_diff_actual_vs_10k&#39;</span>]<span class="op">/</span> <span class="dv">60</span><span class="op">/</span><span class="dv">60</span><span class="op">/</span><span class="dv">24</span>)</span></code></pre></div>
 <p>The difference between the time that it actually took and how much it
