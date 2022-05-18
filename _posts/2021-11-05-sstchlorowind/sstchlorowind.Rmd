@@ -17,15 +17,15 @@ categories:
 ## The Santa Barbara Channel
 ### A basin of oceanic data just waiting to be analyzed
 
-The beautiful, biodiverse Santa Barbara coast is known for its sunny weather, gnarly swell, and unique geographic features. Among these are the four northern channel islands, Santa Cruz, Anacapa, Santa Rosa, and San Miguel, which reside between 12 and 27 miles off shore. The Santa Barbara Channel lies between these islands and the coastline, stretching from Los Angeles in the south to Pt. Conception in the north. 
+The beautiful, biodiverse Santa Barbara coast is known for its pleasant mediterranean climate, gnarly swell, and unique geographic features. Among these are the four northern channel islands, Santa Cruz, Anacapa, Santa Rosa, and San Miguel, which reside between 12 and 27 miles off shore. The Santa Barbara Channel lies between these islands and the coastline, stretching from Los Angeles in the south to Pt. Conception in the north. 
 
 ### Ocean Currents
 
-This channel harbors a unique combination of ocean currents that causes heterogeneity in environmental conditions across the islands and circulates nutrients throughout the ocean depths in seaosnal patterns.
+This channel hosts a clash of different ocean currents that causes heterogeneity in environmental conditions across the islands and circulates nutrients throughout the ocean depths in seasonal patterns.
 
 ![Santa Barbara Channel currents and all eight channel islands (from west to east): San Miguel Island, Santa Rosa Island, Santa Cruz Island, Anacapa Island, San Nicolas Island, Santa Barbara Island, Santa Catalina Island, San Clemente Island (1).](images/channel_currents.png)
 
-The California current brings a cold swell from the Gulf of Alaska down the coast, providing ideal temporal conditions for black rockfish, sunflower sea otters, red abalone, and other creatures around San Miguel and Santa Rosa Islands. In contrast to the southeast-bound California Current is the northwest-bound Southern California Counter-current from Baja California. This warm, relatively nutrient-poor water supports different marine species such as spiny lobsters, moray eels, and damselfish such as California's state fish: the Garibaldi. These species are more commonly found near the southeast islands ([1: Channel Islands National Park](https://www.nps.gov/chis/learn/nature/currents-upwelling.htm), [2: National Park Service](https://www.nps.gov/articles/garibaldi.htm#:~:text=The%20Garibaldi%20is%20the%20California%20State%20fish%20and%20is%20protected%20from%20fishing.&text=These%20fish%20mainly%20live%20in%20the%20kelp%20forest%20ecosystem.&text=This%20species%20of%20damselfish%20inhabits,reefs%20and%20among%20kelp%20forests.)).
+The California current brings a cold swell from the Gulf of Alaska down the coast, providing ideal temporal conditions for black rockfish, sunflower sea otters, red abalone, and other creatures around San Miguel and Santa Rosa Islands. In contrast to the southeast-bound California Current is the northwest-bound Southern California Counter-current from Baja California. This warmer and relatively nutrient-poor water supports different marine species such as spiny lobsters, moray eels, and damselfish such as California's state fish: the Garibaldi. These species are more commonly found near the southeast islands ([1: Channel Islands National Park](https://www.nps.gov/chis/learn/nature/currents-upwelling.htm), [2: National Park Service](https://www.nps.gov/articles/garibaldi.htm#:~:text=The%20Garibaldi%20is%20the%20California%20State%20fish%20and%20is%20protected%20from%20fishing.&text=These%20fish%20mainly%20live%20in%20the%20kelp%20forest%20ecosystem.&text=This%20species%20of%20damselfish%20inhabits,reefs%20and%20among%20kelp%20forests.)).
 
 <center>
 
@@ -35,7 +35,7 @@ The California current brings a cold swell from the Gulf of Alaska down the coas
 
 ### Marine Wildlife
 
-This clashing current rendezvous turns the Santa Barbara Channel into a hotspot for biodiversity such as marine mammals like dolphins and whales, benthic invertebrates like purple urchins, plants such as giant kelp and and unique fish species such as the sunfish (the most majestic fish of all). 
+This clashing current rendezvous turns the Santa Barbara Channel into a hotspot for biodiversity for marine mammals like dolphins and whales, benthic invertebrates like purple urchins, plants such as giant kelp, and charismatic fish species such as the sunfish (the most majestic marine beast known to man). 
 
 <center>
 
@@ -43,9 +43,15 @@ This clashing current rendezvous turns the Santa Barbara Channel into a hotspot 
 
 </center>
 
-During late November through April, whale sightings are quite common in Santa Barbara. Thousands of Pacific gray whales migrate south towards the warm waters of Baja California and feed on krill in the channel along the way, which are tiny organisms that rely on oceanic chlorophyll blooms (4). We can detect chlorophyll and sea surface temperature via remote-sensing satellites. While trying to strategically determine the best time of year to spot these whales, we might want to consider the timing of these phytoplankton blooms. Do these blooms occur more often when we have warmer ocean temperatures? What time of year would that be, and does it align with the famous "whale season" known to be November through April? Is the ocean temperature impacted by wind? A few data-driven friends and I decided to combine data about wind, sea surface temperature, and chlorophyll in the Santa Barbara Channel to find the best time of year to go whale watching. My collaborators include Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. 
+From late November through April, whale sightings are quite common in Santa Barbara. Thousands of Pacific gray whales migrate south towards the warm waters of Baja California and feed on krill in the channel along the way, which are tiny organisms that thrive on oceanic chlorophyll blooms (4). Modern remote-sensing techniques can detect chlorophyll and sea surface temperature via satellites. In order to strategically determine the best time of year to spot these whales, we might consider the timing of these phytoplankton blooms.
 
-Question: How did wind speed affect sea surface temperature and chlorophyll in the Santa Barbara Channel during 2020?
+###### Do these blooms occur more often when we have warmer ocean temperatures? What time of year would that be, and does it align with the famous "whale season" known to be November through April?
+
+###### Is the ocean temperature impacted by wind? 
+
+A few data-driven friends and I decided to combine data about wind, sea surface temperature, and chlorophyll in the Santa Barbara Channel to find the best time of year to go whale watching. My collaborators include Grace Lewin, Jake Eisaguirre, and Connor Flynnfrom the Environmental Data Science program at the Bren School of Environmental Science and Management. 
+
+###### Primary Question: How did wind speed affect sea surface temperature and chlorophyll in the Santa Barbara Channel during 2020?
 
 ### The National Oceanic Atmospheric Administration (NOAA)
 
@@ -53,11 +59,13 @@ Question: How did wind speed affect sea surface temperature and chlorophyll in t
 
 The National Oceanic Atmospheric Administration has the perfect datasets to help us out, and they even have a handy application programming interface (API) to do the heavy lifting for us. The NOAA Aquamodis Satellite data can be found [here](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMWsstd3day_LonPM180.graph?sst%5B(last)%5D%5B(0.0)%5D%5B(33.1125):(34.9)%5D%5B(-120.6625):(-118.875)%5D&.draw=surface&.vars=longitude%7Clatitude%7Csst&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff). 
 
-The REDDAP API will import sea surface temperature and chlorophyll data directly from the NOAA Aquamodis Satellite. In addition, we manually pulled wind speed data from NOAA's [East Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46053), [West Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46054), and the [Santa Monica Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46025) by downloading and decompressing the 2020 Standard Meteorological Data Files. 
+The REDDAP API will import sea surface temperature and chlorophyll data directly from the NOAA Aquamodis Satellite. To complement this data, we manually pulled wind speed data from NOAA's [East Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46053), [West Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46054), and the [Santa Monica Buoy](https://www.ndbc.noaa.gov/station_history.php?station=46025) by downloading and decompressing the 2020 Standard Meteorological Data Files. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
 ```
+
+Start by loading the necessary packages for downloading the data and preparing it for analysis:
 
 ```{r}
 library(rerddap)
@@ -130,7 +138,7 @@ SM_chloro <- griddap('erdMWchla8day_LonPM180', # 8 day composite Chlorophyll SM_
 chloro <- rbind(E_chloro, W_chloro, SM_chloro) #Bind data
 ```
 
-We downlaoded the wind data manually from [NOAA's website](https://www.ndbc.noaa.gov/station_history.php?station=46053), so we import it from the local Rproj, using the `here()` function. This file path will work on your local machine, helping make this log post as reproducible as possible.
+We downlaoded the wind data manually from [NOAA's website](https://www.ndbc.noaa.gov/station_history.php?station=46053), so we import it from the local `Rproj`, using the `here()` function. This file path will work on your local machine, helping make this log post as reproducible as possible.
 
 ```{r}
 # Wind data for each buoy and data cleaning
@@ -202,7 +210,8 @@ sst_clean <- sst %>%
 final_sst <- sst_clean %>% 
   filter(sst > 0) %>% # remove NAs
   mutate(sst = (sst * (9/5) + 32 )) %>% # convert to F...there's probably a function for this
-  mutate(sst = (sst - 3)) # accounting for SST satellite error through anecdotal and buoy comparison. A team member's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements 
+  mutate(sst = (sst - 3)) # accounting for SST satellite error through anecdotal and buoy comparison.
+# A team member's field experience justifies this as he has consistently cross-referenced the satellite data with in situ measurements 
 
 # see the data join chunk for na.rm explanation in code comment
 final_sst_avg <- final_sst %>% 
@@ -216,7 +225,7 @@ Here we cleaned the remotely-sensed chlorophyll data, summarizing it by day:
 # clean chloro data
 # see the data join chunk for na.rm explanation in code comment
 chloro_clean <- chloro %>% 
-  mutate(date = ymd_hms(time, tz = "UTC")) %>%  # sometimes datetime conversions can be tricky, never forget to check the timezone!
+  mutate(date = ymd_hms(time, tz = "UTC")) %>%  # never forget to check the timezone!
   mutate(ymd_date = ymd(date, tz = NULL)) %>% 
   mutate(date = ymd_date) %>% 
   select(c("latitude", "longitude", "chlorophyll", "location", "date"))
@@ -227,11 +236,15 @@ final_chloro_avg <- chloro_clean %>%
 
 ```
 
-We used inner_join() in two steps to combine the cleaned data from the three variables into one dataframe:
+We used `inner_join()` in two steps to combine the cleaned data from the three variables into one dataframe:
 
 ```{r}
 # combine daily wind and sst and chloro means
-# we decided to use inner join in order to not include any rows that lack values for ANY of the 3 variables. We do not want any NA values in one col and have data in another col, because when we map everything together that data would be represented as if there was a zero value for the variable that had NA. This change reduced the amount of rows by a couple hundred. This was primarily in the SST and cholorophyll data which had plenty of NA's but the wind data did not initially have NA's.
+# we decided to use inner join in order to not include any rows that lack values for ANY of the 3 variables.
+# We do not want any NA values in one col and have data in another col, because when we map everything together
+# that data would be represented as if there was a zero value for the variable that had NA. 
+# his change reduced the amount of rows by a couple hundred. This was primarily in the SST and cholorophyll data
+# which had plenty of NA's but the wind data did not initially have NA's.
 
 wind_sst <- inner_join(wind_avg, final_sst_avg, by = c("date", "location"))
 
@@ -239,7 +252,7 @@ chloro_wind_sst <- inner_join(wind_sst, final_chloro_avg, by = c("date", "locati
 
 ```
 
-Now the fun part: visualization! My team and I made three plots, one for each variable. Each plot represents data from all three buoys. We marked the sea surface temperature maximum in all plots since the combined data reveals a temporal correlation between sea surface temperature and wind.
+Now the fun part: visualization! My team and I made three plots, one for each variable. Each plot represents data from all three buoys. We marked the sea surface temperature maximum in all plots since the combined data reveals a probable temporal correlation between sea surface temperature and wind.
 
 ```{r}
 # Daily Average Sea Surface Temperature from East, West, and Santa Monica Buoys
@@ -293,7 +306,7 @@ The chlorophyll peaked in April. This aligns with the well-known whale watching 
 #### Acknowledgements
 
 - I would like to thank my exceptionally driven and creative team of collaborators on this project, Grace Lewin, Jake Eisaguirre, and Connor Flynn, good friends of mine from the Environmental Data Science program at the Bren School of Environmental Science and Management. Thank you for your time, resources, and all the energy you put into this code and analysis.\
-- Thank you to Julien Brun, a Senior Data Scientist at the [National Center for Ecological Analysis and Synthesis](https://www.nceas.ucsb.edu/), for teaching us about how to use API's and locate and utilize metadata. He helped us with our data cleaning and wrangling throughout this project, and we admire him for his dedication to open-source science and teaching the next generation of data scientists to program in with reproducible habits.\
+- Thank you to Julien Brun, a Senior Data Scientist at the [National Center for Ecological Analysis and Synthesis](https://www.nceas.ucsb.edu/), for teaching us about how to use API's as wel as locate and utilize metadata. We admire Julien for his dedication to open-source science and instilling reproducible habits in the next generation of scientists.\
 - Thank you to NOAA for providing the data that made this analysis possible and for providing an API to import it with ease.
 
 #### References
