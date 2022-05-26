@@ -1,6 +1,6 @@
 ---
 title: "Juliet Cohen"
-image: "Bren_photo.png"
+image: "Juliet.jpg"
 links:
   - label: Email
     url: "jscohen@bren.ucsb.edu"
@@ -18,11 +18,11 @@ I am a conservation biologist and aspiring data scientist interested in the inte
 
 Following this research, I served as a field technician studying endangered populations of flat-tailed horned lizards and steelhead trout in Southern California. With a growing interest in dynamic urban ecosystems, I went on to study incipient invasive species across the Hawaiian islands. These projects and diverse field roles inspired me to delve into environmental data science in order to recognize broad ecological patterns across diverse scientific disciplines.
 
-Going forward, I aim to utilize **modelling techniques** and **spatial data science** to understand the population dynamics of species that are most imperiled by urban expansion and climate change. With open source programming tools and a collaborative approach, I hope to advise preventative policies to protect wildlife from anthropogenic influence.
+Going forward, I aim to utilize **modeling techniques** and **spatial data science** to understand the population dynamics of species that are most imperiled by urban expansion and climate change. With open source programming tools and a collaborative approach, I hope to advise preventative policies to protect wildlife from anthropogenic influence.
 
 ### Arctic Data & Marine Science
 
-I currently work in environmental data analysis, curation, and communication at the **National Center for Ecological Analysis and Synthesis**. I served as a member of the Arctic Data Center team, and I currently serve as a Data Analyst Fellow at the **Ocean Health Index** where I contribute to our understanding of marine health on a global scale.
+I currently work at the **National Center for Ecological Analysis and Synthesis**. I served as a member of the Arctic Data Center team, and I currently serve as a Data Analyst Fellow at the **Ocean Health Index** where I contribute to our understanding of marine health on a global scale.
 
 ### Education
 
