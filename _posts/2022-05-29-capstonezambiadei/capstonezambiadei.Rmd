@@ -1,5 +1,5 @@
 ---
-title: "Diversity, Equity, and Inclusion Considerations in a Zambia Case Study"
+title: "Ethics and Bias Considerations in a Zambia Case Study"
 description: |
   Remote sensing techniques can help us better understand other regions of the world,  
 author:
@@ -16,10 +16,8 @@ draft: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, eval = FALSE)
 ```
-
-#### Diversity, Equity, and Inclusion Considerations in a Zambia Case Study
 
 <center>
 
@@ -33,12 +31,104 @@ However, we need to take a step back and ask:
 
 ##### "Does everyone in our target audience even have a standard laptop?"
 
-In the context of **diversity, equity, and inclusion**, we recognize that not everyone has the privileges we students have in the United States with access to the computational and financial resources of the University of California educational system.
+In the context of **diversity, equity, and inclusion** and **ethics and bias in environmental data science**, we recognize that not everyone has the privileges we students have in the United States with access to the computational and financial resources of the University of California educational system.
 
 Furthermore, we should ask:
 
 ##### "Does our target audience speak English?" After all, all our documentation is in English.
 
 Recreating our analysis would be impossible to a Zambian farmer who may not speak English.
+
+### Computer use in Zambia
+
+```{r, include = FALSE}
+library(tidyverse)
+library(grid)
+library(ggimage)
+library(jpeg)
+
+# create dataframe manually from the annual data on https://datareportal.com/digital-in-zambia
+zambia <- data.frame(
+  year = c(2017, 2018, 2019, 2020, 2021, 2022),
+  pop_millions = c(16.98, 17.35, 17.87, 18.12, 18.65, 19.19),
+  int_users_millions = c(3.57, 5.19, 7.25, 4.43, 5.48, 5.47)
+)
+
+# plot pop and internet use with flag as background
+plot <- ggplot(data = zambia) +
+geom_line(aes(x = year,
+              y = pop_millions),
+          color = "white",
+          size = 2,
+          linetype = "dashed") +
+  geom_text(aes(2017.5, 6.5, label = "Internet\nUsers", vjust = 1)) +
+  theme_light() +
+  geom_line(aes(x = year,
+                y = int_users_millions),
+            color = "white",
+            size = 2,
+            linetype = "dashed") +
+  geom_text(aes(2017.5, 16.5, label = "Total\nPopulation", vjust = 1)) +
+  scale_y_continuous(breaks = seq(0, 20, by = 2)) +
+  labs(y = "Number of Zambians (millions)",
+       x = "Year",
+       title = "Population and Computer Users in Zambia, 2017-2022") +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.position = "none",
+    plot.title = element_text(size = 15, 
+                              color = "white",
+                              face = "bold",
+                              family = "Tahoma"),
+    # plot.subtitle = element_text(size = 12,
+    #                              color = "white",
+    #                              family = "Tahoma"),
+    axis.title.x = element_text(size=12, 
+                                      color="white", 
+                                      face="bold",
+                                      angle=0),
+    axis.text.x= element_text(family = "Tahoma", 
+                                         face="bold", 
+                                        color="white",
+                                         size=12),
+    axis.title.y = element_text(size=12, 
+                                      color="white", 
+                                      face="bold",
+                                      angle=90),
+    axis.text = element_text(color = "white")
+  )
+
+url = "https://media.istockphoto.com/vectors/zambia-flag-vector-id1091648302?k=20&m=1091648302&s=170667a&w=0&h=TvxkWEggAAB7X3S5iYKUwuViqnsA5zIOLbRwWoEUJqo="
+download.file(url, destfile = "flag.jpeg")
+img <- readJPEG("flag.jpeg")
+
+ggbackground(plot, url)
+```
+
+<center>
+
+![](pics/pop_internet_plot.png){width=70%}
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 [Source of Zambia Data](https://datareportal.com/reports/digital-2021-zambia)
