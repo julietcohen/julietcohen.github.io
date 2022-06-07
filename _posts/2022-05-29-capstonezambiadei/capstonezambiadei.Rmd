@@ -1,7 +1,7 @@
 ---
 title: "Ethics and Bias Considerations in a Zambia Case Study"
 description: |
-  Remote sensing techniques can help us better understand other regions of the world,  
+  Modern remote sensing techniques combined with machine leanring can help us better understand agriculture in other regions of the world and even predict future trends. Within the context of predicting maize yields in Zambia, we must ask ourselves how our modeling approach includes bias, and the ethics involved in producing a reporducible pipeline that may not be accessible to the people who need it most. 
 author:
   - name: Juliet Cohen
     url: {}
@@ -21,23 +21,23 @@ knitr::opts_chunk$set(echo = FALSE, eval = FALSE)
 
 <center>
 
-![](pics/zambia.png){width="40%"}
+![](pics/zambia.png){width=31%}![](pics/maize.jpeg){width=59%}
 
 </center>
 
-My master's capstone project is [**"An open-source pipeline for remote sensing of crop yields under environmental change in sub-Saharan Africa"**](https://github.com/cropmosaiks). The final data products include an open-source programming tool and a database of processed satellite imagery data to be utilized by an audience of researchers, policy-makers, farmers, or anyone else interested in crop yield predictions in Zambia. Because our data products, documentation, and instructions for use are available on the [MOSAIKS API website](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/), anyone in the world should be able to access them as long as they have access to a basic computer. The Diversity, Equity, and Inclusion focus of this project is to allow more people to execute spatiotemporal modeling techniques and reproduce our Zambia case study and similar analyses with our processed satellite imagery data. With our preprocessing which reqwuired an exceptional amount of compute power, time, and expertise executed by my team, the following modeling steps for the user do not require powerful compute or a deep understanding of the featurization process. Rather, the following computing steps to run analyses with the images are designed to be able to be executed on a standard laptop.
+For my master's capstone project, my group produced [an open-source pipeline](https://github.com/cropmosaiks) for remote sensing of crop yields with a case study focused on the country of Zambia in sub-Saharan Africa. The final data products included a free programming tool and a database of processed satellite imagery to detect maize yields in Zambia. Our vision was for these products to be utilized by an audience of researchers, policy-makers, farmers, or anyone else interested in crop yield predictions. We published our data products on the free [MOSAIKS API website](https://nadar.gspp.berkeley.edu/home/index/?next=/portal/index/) website, which serves as a portal for anyone in the world to access our materials, assuming the user has access to a standard computer. The diversity, equity, and inclusion goal of this project was to allow more people who lack a technical background or computational resources to execute spatiotemporal modeling techniques. My team pre-processed the satellite imagery to take care of the first steps in the pipeline (with the help of our university-funded compute power and faculty  expertise). As a result, the next steps in the workflow does not require powerful computational resources or a deep understanding of the featurization process on the user's end. Rather, the rest of the analyses was designed to be able to be executed on a standard laptop.
 
-However, we need to take a step back and ask:
+Expanding spatiotemporal modeling to a wider community is certainly a powerful idea. However,  we need to take a step back to consider the **ethics and bias** in our approach by asking the question:
 
 ##### "Does everyone in our target audience even have a standard laptop?"
 
-In the context of **diversity, equity, and inclusion** and **ethics and bias in environmental data science**, we recognize that not everyone has the privileges we students have in the United States with access to the computational and financial resources of the University of California educational system.
+In the context of **diversity, equity, and inclusion**, we recognize that not everyone has the privileges that we enjoy at the University of California, Santa Barbara. These include access to the computational and financial resources of the university system educational system, time and support through our graduate program and faculty, and reliable electricity in our homes and work spaces. 
 
-Furthermore, we should ask:
+Furthermore, we must ask:
 
-##### "Does our target audience speak English?" After all, all our documentation is in English.
+##### "Does our crop model show prediction bias because of the bias in the data on which it was trained?" 
 
-Recreating our analysis would be impossible to a Zambian farmer who may not speak English.
+To attempt to address these concerns, let's begin by examining the quantity of Zambians who have access to the internet.
 
 ### Computer use in Zambia
 
@@ -109,10 +109,32 @@ ggbackground(plot, url)
 
 <center>
 
-![](pics/pop_internet_plot.png){width=70%}
+![Data Source: Data Reportal (1)](pics/pop_internet_plot.png){width=78%}
 
 </center>
 
+The number of internet users in Zambia is small across all years, relative to the national population. This certainly raises a red flag for our capstone projects accessibility, considering that our data products require the user to have internet access. Other regions of the world have a much higher ratio of internet users to the total population, which represents sub-Saharan Africa as relatively low on the list of global regions with internet users (2). This is a disappointing trend, and hopefully in the future internet use will increase in this region. Until internet use shows more equality across the globe, we know our userbase is biased.
+
+### Bias in Our Model
+
+Next, let's consider the bias in the ground-truth crop data that we used to train our model. My team trained implemented a supervised machine learning approach to train a model to predict maize yields based on satellite imagery. My team was had access to annual maize yields reported by farmers across the country at district resolution, and we paired this data with satellite images of those farms over several years. The model "learned" how to identify maize, and therefore can serve as a supplmentary tool to quantify maize yields over time, even where and when we lack district-level maize yield data from the farmers themselves.
+
+So how can we determine if our model has bias? One might argue that a model is only as accurate and powerful as the data used to train it. Looking deeper into the metadata for our crop yields, we can identify multiple potential sources of bias. Firstly, the source of this data is not explicit or transparent about how these surveys are conducted, but my team does understand that these surveys are resource-intensive (3). The farmers must assess their maize fields each May to report the area planted, expected yields, size of the farm, total irrigated area, and finally report actual yields in August during the harvest season (3). The hectares of farmland are rough estimates, and the resource-intensive nature of these surveys means not every farm can be included in these analyses. All these factors imply that perhaps not every farm is surveyed, especially small-scale farms. Furthermore, the fact that farmers are in need of funding for irrigation from foreign investors might serve as an incentive to over-report yields to show productivity and potential, or perhaps under-report yields in order to demonstrate a need for more funding.
+
+Lastly, we must consider bias in the satellite data. Considering the resolution of our satellite imagery and its limited ability to accurately penetrate cloud cover during the rainy season, are we really consistently documenting every field in Zambia? That would certainly be a bold assumption. Overall, no data is perfect, and a model based on two biased data sources is certainly riddled with bias as well. Acknowledging such bias and adjusting our methods in the furutre is critical to getting closer to the truth, even if we never quite make it there.
+
+
+
+
+
+
+
+
+
+
+### Conclusion
+
+**This bias in our data dissimination and userbase poses highlights bias and issues for advancements in farming and data transparency across Zambia and the rest of sub-Saharan Africa** Farming in this region of the world is partially subsidized through investments from China and other countries around the world, and foreign investments are expected to increase in the future (3). These agricultural investors likely base their funding allocation decisions on crop production data trends across Zambia and the rest of sub-Saharan Africa. If these investors have more insight into the crop trends in the 
 
 
 
@@ -128,7 +150,16 @@ ggbackground(plot, url)
 
 
 
+References & Sources
+
+1. [Datareportal](https://datareportal.com/reports/digital-2021-zambia)
+
+2. [Our World in Data](https://ourworldindata.org/internet)
+
+3. [University of California, Santa Barbara, Department of Geography, Baylis Lab.](https://baylislab.ace.illinois.edu/) Personal communication (April 11, 2022)
+
+4. [Maize photograph](https://www.worldbank.org/en/topic/agriculture/brief/ensure-food-security)
 
 
 
-[Source of Zambia Data](https://datareportal.com/reports/digital-2021-zambia)
+
