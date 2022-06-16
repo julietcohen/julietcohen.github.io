@@ -10,19 +10,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <center>
 
-![Upper Matilija Creek in Ojai, CA.](about_pics/waterfall.jpg){width="90%"}
+![Steelhead trout habitat in Upper Matilija Creek in Ojai, CA.](about_pics/waterfall.jpg){width="90%"}
 
 </center>
 
 <center>
 
-![Overlooking Olomana ("three peaks) on the east side of Oahu, Hawaii.](about_pics/overlook_oahu.jpg){width=90%}
+![Overlooking Olomana ("three peaks") on the east side of Oahu, Hawaii during a field survey for incipient invasive species.](about_pics/overlook_oahu.jpg){width=90%}
 
 </center>
 
 My path to become a data scientist began as a raccoon trapper, a lizard hunter, an island invasive species specialist, and a fisheries technician. I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean data and enter it into databases in ArcGIS, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, SQL, and EML slowly over time. However, I didn't make this journey alone. I found mentors in academic advisers, field crew leaders, and data scientists that provided the tools to help me grow as a data scientist.
 
-![My coworker at the Oahu Invasive Species Committee laughing as the field crew makes our way down a ridgeline.](about_pics/phill.jpg){width=90%}
+![My coworker at the Oahu Invasive Species Committee laughing as the field crew makes our way down a ridgeline after a hard day's work bushwacking through the dense uluhe plants that cover the lower elevation ridges in the Ko'olau Mountains.](about_pics/phill.jpg){width=90%}
 
 ### Undergraduate Research at UC Santa Barbara
 
@@ -47,6 +47,18 @@ I completed two independent research projects in undergrad: one investigating sp
 ###### left: Measuring the turbidity of my various species-specific buckets at regular time intervals. I would dive into the mariculture nets each day to collect new bivalve species, run my secchi disk filtration trials with algae and bryozoans in the buckets, then return the bivalves to their natural habitat at the end of the day.
 
 ###### Right: One of my bivlavle filtration trials a the off-shore mariculture site. The different species of bilvalves in each filtered the algae and bryozoans at different rates, resulting in different levels of turbidity. 
+
+<center>
+
+![An arboreal snake spotted on a night walk through the tropical rainforest in Monteverde, Costa Rica](about_pics/snake_CR.png){width=50%}
+
+</center>
+
+<center>
+
+![A highly venemous eyelash palm pit viper in the tropical rainforest of Costa Rica ](about_pics/pit_viper.png){width=50%}
+
+</center>
 
 ### The Lizard Days
 
@@ -140,6 +152,25 @@ Lastly, we utilized [DIDSON underwater sonar camera technology](http://www.sound
 
 <center>
 
-![The DIDSON crew all geared up to snorkel around the Ventura River camera to find the invasive catfish species we repeatedly saw during footage review.](about_pics/snorkel_gang.JPG){width="65%"}
+![The DIDSON crew all geared up to snorkel around the Ventura River camera to find the invasive catfish species we repeatedly saw during footage review](about_pics/snorkel_gang.JPG){width="65%"}
 
 </center>
+
+<center>
+
+![A chunky alligator lizard sunning on a stone in steelhead trout habitat in Gobernador Creek in Ojai, CA](about_pics/lizard.png){width="65%"}
+
+</center>
+
+<center>
+
+![A native western pond turtle in steelhead trout habitat in Gaviota Creek, CA. We recorded measurements of these turtles as well as their gender and location to track their populations throughout Santa Barbara and Ventura Counties.](about_pics/west_pond_turt.png){width="65%"}
+
+</center>
+
+
+
+
+
+
+
