@@ -1,0 +1,63 @@
+---
+title: "Spatial Data Analysis in R: `raster` and `terra`"
+description: |
+  `raster` has been the go-to spatial analysis package in R since the dawn of time, but it's time to convert our workflow to the more modern `terra` package. At the Ocean Health Index, we work with spatial data for a plethora of goals like mapping sea ice extent and habitat types that sequester carbon throughout the land and coastal nations. As we map the 2022 sea level rise across the globe, let's dive into how we convert our `raster` functions into `terra` functions.
+author:
+  - name: Juliet Cohen
+    url: {}
+date: 2022-06-16
+output:
+  distill::distill_article:
+    self_contained: false
+draft: TRUE
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Spatial data in R has a reputation for being tedious and time consuming. Learning how to wrangle `.shp` files, `.nc` files, and `tif` files and their metadata has certainly tested my patience and exacerbated my imposter syndrome in the data science world. The [Ocean Health Index](https://oceanhealthindex.org/) has historically applied the `raster` package to monitor the relationship between the marine world and human well-being for 220 regions through annual assessments. But with the goal of constantly improving methodology and keeping up with the hip trends in environmental science, we converted our scripts for calculating `sea ice extent`, `habitat mapping`, and `sea level rise` from `raster` to `terra`. 
+
+##### How should we go about converting spatial functions between these packages and executing  intermediate checks along the way?
+
+### 1. Sea Level Rise
+
+The 2021 Ocean Health Index calculation of the sea level rise pressure layer can be found [here.]()
+
+Import a `.tif` file that represents the world's ocean as a raster using `raster::raster()` versus `terra::rast()` and plot both to compare the output.
+
+```{r, eval=FALSE}
+ocean_raster <- raster::raster(file.path(dir_M, "git-annex/globalprep/spatial/v2017/ocean.tif"))
+plot(ocean_raster)
+ocean_terra <- terra::rast(file.path(dir_M, "git-annex/globalprep/spatial/v2017/ocean.tif"))
+plot(ocean_terra)
+```
+
+Compare these spatial objects as dataframes, which allows us to compare the grid cell values at each latitude and longitude combination.
+
+```{r}
+# convert to df's
+raster_y2020_m03_df <- terra::as.data.frame(raster_y2020_m03, xy = TRUE, na.rm = FALSE)
+terra_y2020_m03_df <- terra::as.data.frame(terra_y2020_m03, xy = TRUE, na.rm = FALSE)
+
+true_false_df <- base::as.data.frame(raster_y2020_m03_df == terra_y2020_m03_df) # all values are NA or TRUE, no FALSE values in any column
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
