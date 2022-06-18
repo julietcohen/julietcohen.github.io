@@ -22,15 +22,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
 My path to become a data scientist began as a raccoon trapper, a lizard hunter, an island invasive species specialist, and a fisheries technician. I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean data and enter it into databases in ArcGIS, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, SQL, and EML slowly over time. However, I didn't make this journey alone. I found mentors in academic advisers, field crew leaders, and data scientists that provided the tools to help me grow as a data scientist.
 
-![My coworker at the Oahu Invasive Species Committee laughing as the field crew makes our way down a ridgeline after a hard day's work bushwacking through the dense uluhe plants that cover the lower elevation ridges in the Ko'olau Mountains.](about_pics/phill.jpg){width=90%}
+<center>
+
+![My coworker at the Oahu Invasive Species Committee laughing as the field crew makes our way down a ridgeline after a hard day's work bushwacking through the dense uluhe plants that cover the lower elevation ridges in the Ko'olau Mountains.](about_pics/phill.jpg){width=70%}
+
+</center>
 
 ### Undergraduate Research at UC Santa Barbara
 
 I earned a B.S. in Ecology and Evolution from UC Santa Barbara, and during this time I served as a research technician in [Dr. Doug McCauley's lab](https://labs.eemb.ucsb.edu/mccauley/doug/) in the department of [Ecology, Evolution, and Marine Biology](https://www.eemb.ucsb.edu/). I worked closely with PhD candidate [Molly Hardesty-Moore](https://backyardcarnivores.weebly.com/) on her research investigating raccoon spatial ecology in urban landscapes. We trapped raccoons around Santa Barbara county and fitted them with radio collars, then tracked them using VHF telemetry techniques. Molly used this spatial data in conjunction with hair samples from raccoons, foxes, skunks, and opossums to compare behavior and dietary trends in raccoons that live in urban versus rural habitats. While the study was primarily interested in luring raccoons into traps overnight, we often caught other small carnivores and watched them peruse the landscape via camera traps throughout Santa Barbara County.
 
+Some of my proudest camera trap photos included black bears and bobcats at Sedgwick Reserve:
+
 <center>
 
-![native striped skunk caught on one of my camera traps](about_pics/skunk.jpg){width="50%"}
+![](about_pics/skunk.jpg){width="45%"}![](about_pics/black_bear.png){width=45%}
+
+</center>
+
+<center>
+
+![](about_pics/bobcat.png){width=45%}![](about_pics/fox.png){width=45%}
 
 </center>
 
@@ -42,7 +54,7 @@ I completed two independent research projects in undergrad: one investigating sp
 
 </center>
 
-![](about_pics/turbidity_measurement.JPG){width="70%"}![](about_pics/buckets.png){width=30%}
+![](about_pics/turbidity_measurement.JPG){width="60%"}![](about_pics/buckets.png){width=30%}
 
 ###### left: Measuring the turbidity of my various species-specific buckets at regular time intervals. I would dive into the mariculture nets each day to collect new bivalve species, run my secchi disk filtration trials with algae and bryozoans in the buckets, then return the bivalves to their natural habitat at the end of the day.
 
@@ -50,13 +62,13 @@ I completed two independent research projects in undergrad: one investigating sp
 
 <center>
 
-![An arboreal snake spotted on a night walk through the tropical rainforest in Monteverde, Costa Rica](about_pics/snake_CR.png){width=50%}
+![An arboreal snake spotted on a night walk through the tropical rainforest in Monteverde, Costa Rica](about_pics/snake_CR.png){width=40%}
 
 </center>
 
 <center>
 
-![A highly venemous eyelash palm pit viper in the tropical rainforest of Costa Rica ](about_pics/pit_viper.png){width=50%}
+![A highly venemous eyelash palm pit viper in the tropical rainforest of Costa Rica ](about_pics/pit_viper.png){width=40%}
 
 </center>
 

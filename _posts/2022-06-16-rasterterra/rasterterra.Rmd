@@ -17,7 +17,7 @@ draft: TRUE
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Spatial data in R has a reputation for being tedious and time consuming. Learning how to wrangle `.shp` files, `.nc` files, and `tif` files and their metadata has certainly tested my patience and exacerbated my imposter syndrome in the data science world. The [Ocean Health Index](https://oceanhealthindex.org/) has historically applied the `raster` package to monitor the relationship between the marine world and human well-being for 220 regions through annual assessments. But with the goal of constantly improving methodology and keeping up with the hip trends in environmental science, we converted our scripts for calculating `sea ice extent`, `habitat mapping`, and `sea level rise` from `raster` to `terra`. 
+Spatial data in R has a reputation for being tedious and time consuming. It can be challenging to wrangle `.shp` files, `.nc` files, and `.tif` files and their metadata in order to execute analyses and visualize rasters. The [Ocean Health Index](https://oceanhealthindex.org/) has historically applied the `raster` package to monitor the relationship between the marine health and human well-being for 220 regions through annual assessments. But with the goal of continuously improving methodology and keeping up with the hip trends in environmental science, we converted our scripts for calculating `sea ice extent`, `habitat mapping`, and `sea level rise` from `raster` to `terra`. 
 
 ##### How should we go about converting spatial functions between these packages and executing  intermediate checks along the way?
 
