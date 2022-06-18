@@ -17,33 +17,90 @@ draft: TRUE
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Spatial data in R has a reputation for being tedious and time consuming. It can be challenging to wrangle `.shp` files, `.nc` files, and `.tif` files and their metadata in order to execute analyses and visualize rasters. The [Ocean Health Index](https://oceanhealthindex.org/) has historically applied the `raster` package to monitor the relationship between the marine health and human well-being for 220 regions through annual assessments. But with the goal of continuously improving methodology and keeping up with the hip trends in environmental science, we converted our scripts for calculating `sea ice extent`, `habitat mapping`, and `sea level rise` from `raster` to `terra`. 
+Spatial data in R has a reputation for being tedious and time consuming. It can be challenging to wrangle `.shp` files, `.nc` files, and `.tif` files and their metadata in order to execute analyses and visualize rasters. The [Ocean Health Index](https://oceanhealthindex.org/) has historically applied the `raster` package to annually monitor the relationship between the marine health and human well-being for 220 regions. But with the goal of continuously improving methodology and keeping up with the hip trends in environmental science, in 2022 the Ocean Health Index began calculating `sea ice extent`, `habitat mapping`, and `sea level rise` using the `terra` package instead of the `raster` package. 
 
-##### How should we go about converting spatial functions between these packages and executing  intermediate checks along the way?
+##### How do we go about converting spatial functions between these packages and executing intermediate checks along the way?
 
 ### 1. Sea Level Rise
 
-The 2021 Ocean Health Index calculation of the sea level rise pressure layer can be found [here.]()
-
-Import a `.tif` file that represents the world's ocean as a raster using `raster::raster()` versus `terra::rast()` and plot both to compare the output.
+Let's start with the basics: Import a `.tif` file that represents the world's ocean as a raster using `raster::raster()` versus `terra::rast()` and plot both to compare the output.
 
 ```{r, eval=FALSE}
 ocean_raster <- raster::raster(file.path(dir_M, "git-annex/globalprep/spatial/v2017/ocean.tif"))
 plot(ocean_raster)
+
 ocean_terra <- terra::rast(file.path(dir_M, "git-annex/globalprep/spatial/v2017/ocean.tif"))
 plot(ocean_terra)
 ```
 
-Compare these spatial objects as dataframes, which allows us to compare the grid cell values at each latitude and longitude combination.
+They sure do look similar. Now let's use the grid cell values of these spatial objects to populate the cells of a dataframe, which allows us to compare the values at each latitude and longitude pairing between packages.
+
+First we use the `aggregate()` function to lower the spatial resolution by a factor of 10:
+- `fact` argument represents the aggregation factor (the number of cells in each direction horizontally and vertically), a value of 10 results in a raster with 10 kilometer resolution if the original `.tif` file is at 1 kilometer resolution
+- `fun` argument is the function used to aggregate the values
+- `progress` argument shows a progress bar as the raster is aggregated, this is helpful for large raster files (when executing in a chunk rather than a script)
 
 ```{r}
-# convert to df's
-raster_y2020_m03_df <- terra::as.data.frame(raster_y2020_m03, xy = TRUE, na.rm = FALSE)
-terra_y2020_m03_df <- terra::as.data.frame(terra_y2020_m03, xy = TRUE, na.rm = FALSE)
+ocean_raster_agg <- raster::aggregate(ocean_raster, fact = 10, fun = sum, progress = 'text')
+ocean_terra_agg <- terra::aggregate(ocean_terra, fact = 10, fun = sum, progress = 'text')
 
-true_false_df <- base::as.data.frame(raster_y2020_m03_df == terra_y2020_m03_df) # all values are NA or TRUE, no FALSE values in any column
+# convert to df's
+ocean_raster_df <- base::as.data.frame(ocean_raster_agg, xy = TRUE, na.rm = FALSE)
+ocean_terra_df <- base::as.data.frame(ocean_terra_agg, xy = TRUE, na.rm = FALSE)
+
+# compare the two rasters: method 1
+compareRasters(ocean_raster_df, ocean_terra_df)
+# TRUE or FALSE
+
+# compare the two rasters: method 2
+# set the two dataframes equal to each other to populate the cells of a new daatframe
+# cells with TRUE are those which matched in both dataframes, and cells with FALSE are those which did not match
+true_false_df <- base::as.data.frame(raster_y2020_m03_df == terra_y2020_m03_df)
+# all values are NA or TRUE, no FALSE values in any column
 ```
 
+```{r, eval=FALSE}
+# convert to df's
+# raster_y2020_m03_df <- terra::as.data.frame(raster_y2020_m03, xy = TRUE, na.rm = FALSE)
+# terra_y2020_m03_df <- terra::as.data.frame(terra_y2020_m03, xy = TRUE, na.rm = FALSE)
+# 
+# true_false_df <- base::as.data.frame(raster_y2020_m03_df == terra_y2020_m03_df) # all values are NA or TRUE, no FALSE values in any column
+```
+
+Casey's workflow for reading in .tif file and converting to raster & df:
+
+```{r}
+ocean_10km_file <- here('_spatial', 'ocean_area_mol.tif')
+# unlink(ocean_10km_file)
+
+if(!file.exists(ocean_10km_file)) {
+  message('Processing ocean area at 10 km resolution...')
+  ocean_moll_1km <- raster(ocean_1km_file)
+  
+  ocean_moll_10km <- aggregate(ocean_moll_1km, fact = 10, fun = sum, progress = 'text')
+  
+  # rast_base_10km <- raster(rast_base_10km_file)
+  # compareRaster(ocean_moll_10km, rast_base_10km)
+  # [1] TRUE
+  
+  ### drop the Caspian Sea:
+  casp_bbox <- c(xmin = 3700000, xmax = 4800000, ymin = 4300000, ymax = 5650000)
+  ocean_moll_df <- as.data.frame(ocean_moll_10km, xy = TRUE) %>%
+    setNames(c('x', 'y', 'z')) %>%
+    mutate(caspian_x = between(x, casp_bbox['xmin'], casp_bbox['xmax']),
+           caspian_y = between(y, casp_bbox['ymin'], casp_bbox['ymax']),
+           caspian   = caspian_x & caspian_y) %>%
+    mutate(z = ifelse(caspian, NA, z)) %>%
+    select(-contains('caspian'))
+  
+  ocean_moll_10km_no_casp <- rasterFromXYZ(ocean_moll_df, res = 10000, crs = crs(ocean_moll_10km))
+  
+  # plot(ocean_moll_10km_no_casp)
+  ocean_moll_10km_no_casp <- ocean_moll_10km_no_casp / 100
+  
+  writeRaster(ocean_moll_10km_no_casp, ocean_10km_file, overwrite = TRUE)
+}
+```
 
 
 

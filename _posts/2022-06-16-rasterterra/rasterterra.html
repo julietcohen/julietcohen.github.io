@@ -1490,22 +1490,37 @@ let’s dive into how we convert our <code>raster</code> functions into
 
 <div class="d-article">
 <p>Spatial data in R has a reputation for being tedious and time
-consuming. Learning how to wrangle <code>.shp</code> and
-<code>tiff</code> files and their metadata has certainly tested my
-patience and exacerbated my imposter syndrome in the data science world.
-The <a href="https://oceanhealthindex.org/">Ocean Health Index</a> has
-historically applied the <code>raster</code> package to monitor the
-relationship between the marine world and human well-being for 220
-regions through annual assessments. But with the goal of constantly
-improving methodology and keeping up with the hip trends in
-environmental science, we converted our <code>raster</code> functions
-used to calculate <code>sea ice extent</code>,
-<code>habitat mapping</code>, and <code>sea level rise</code> to
-<code>terra</code> functions.</p>
-<h4
-id="how-do-we-go-about-converting-functions-between-these-packages-and-visualizing-the-intermediate-steps-along-the-way">How
-do we go about converting functions between these packages and
-visualizing the intermediate steps along the way?</h4>
+consuming. It can be challenging to wrangle <code>.shp</code> files,
+<code>.nc</code> files, and <code>.tif</code> files and their metadata
+in order to execute analyses and visualize rasters. The <a
+href="https://oceanhealthindex.org/">Ocean Health Index</a> has
+historically applied the <code>raster</code> package to annually monitor
+the relationship between the marine health and human well-being for 220
+regions. But with the goal of continuously improving methodology and
+keeping up with the hip trends in environmental science, in 2022 the
+Ocean Health Index began calculating <code>sea ice extent</code>,
+<code>habitat mapping</code>, and <code>sea level rise</code> using the
+<code>terra</code> package instead of the <code>raster</code>
+package.</p>
+<h5
+id="how-do-we-go-about-converting-spatial-functions-between-these-packages-and-executing-intermediate-checks-along-the-way">How
+do we go about converting spatial functions between these packages and
+executing intermediate checks along the way?</h5>
+<h3 id="sea-level-rise">1. Sea Level Rise</h3>
+<p>The 2021 Ocean Health Index calculation of the sea level rise
+pressure layer can be found <a href="">here.</a></p>
+<p>Import a <code>.tif</code> file that represents the world’s ocean as
+a raster using <code>raster::raster()</code> versus
+<code>terra::rast()</code> and plot both to compare the output.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>Compare these spatial objects as dataframes, which allows us to
+compare the grid cell values at each latitude and longitude
+combination.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
