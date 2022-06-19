@@ -3,7 +3,7 @@ title: "Juliet Cohen"
 image: "Juliet.jpg"
 links:
   - label: Email
-    url: "jscohen@bren.ucsb.edu"
+    url: "mailto:jscohen@bren.ucsb.edu"
   - label: GitHub
     url: "https://github.com/julietcohen"
   - label: Bren Profile
