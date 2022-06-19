@@ -9,7 +9,7 @@ date: 2022-03-16
 output:
   distill::distill_article:
     self_contained: false
-preview: ~/_posts/poster_video/2022-0303-newhorizonsinconservationconference2022/poster_video/New_Horizons_Poster_cropMOSAIKS_blog_post.pdf
+preview: poster_video/poster_png.png
 categories:
   - Python
   - Diversity, Equity, & Inclusion
@@ -24,8 +24,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <center>
 
-![](../2022-0303-newhorizonsinconservationconference2022/poster_video/New_Horizons_Poster_cropMOSAIKS_blog_post.pdf){width=99%}
-
+![](poster_video/poster_png.png){width=99%}
 
 </center>
 
@@ -84,16 +83,10 @@ An example of a task is determining how a characteristic of the landscape change
 ### How does this remote sensing tool increase equity in the field of environmental data science?
 
 The MOSAIKS system and its resulting products can provide policy-makers, researchers, and users in
-sub-Saharan Africa with a tool to address environmental questions in less time with fewer resources.
-Innovative remote sensing tools and machine learning can fill in the current gaps in data for many
+sub-Saharan Africa (an future regions in the future) with a tool to address environmental questions in less time with fewer resources.
+Innovative remote sensing tools and machine learning can fill in current gaps in data for many
 regions of the world. By filling in these data gaps, decision-makers can study how a region might be
 affected by global climate change and develop mitigation efforts accordingly. With this tool, countries can compare environmental trends on a broader scale, establish collaborative food security policies, and fight climate change from well-informed perspectives.
-
-<center>
-
-![](poster_video/poster_png.png){width=99%}
-
-</center>
 
 If you are interested in learning more about this project, or if you have suggestions to improve our methodology or data products, please feel free to contact my team at **cp-cropmosaiks.bren.ucsb.edu** or create an issue on our github organization, [cropMOSAIKS](https://github.com/cropmosaiks). Thank you for reading, and happy coding!
 
