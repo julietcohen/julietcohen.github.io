@@ -27,7 +27,7 @@ Cullen Molitor\
 
 <center>
 
-![](../newhorizonsinconservationconference2022/poster_video/New_Horizons_Poster_CropMOSAIKS_blog_post.pdf){width=99%}
+![](_posts/2022-03-03-newhorizonsinconservationconference2022/poster_video/New_Horizons_Poster_CropMOSAIKS_blog_post.pdf){width=99%}
 
 </center>
 

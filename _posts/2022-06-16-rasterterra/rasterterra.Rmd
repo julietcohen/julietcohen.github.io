@@ -33,38 +33,31 @@ ocean_terra <- terra::rast(file.path(dir_M, "git-annex/globalprep/spatial/v2017/
 plot(ocean_terra)
 ```
 
-They sure do look similar. Now let's use the grid cell values of these spatial objects to populate the cells of a dataframe, which allows us to compare the values at each latitude and longitude pairing between packages.
-
-First we use the `aggregate()` function to lower the spatial resolution by a factor of 10:
-- `fact` argument represents the aggregation factor (the number of cells in each direction horizontally and vertically), a value of 10 results in a raster with 10 kilometer resolution if the original `.tif` file is at 1 kilometer resolution
-- `fun` argument is the function used to aggregate the values
-- `progress` argument shows a progress bar as the raster is aggregated, this is helpful for large raster files (when executing in a chunk rather than a script)
+They sure do look similar. Now let's use the grid cell values of these spatial objects to populate the cells of a dataframe, which allows us to compare the values at each latitude and longitude pairing between packages. Raster documentation shows that we can use the `as.data.frame()` from base R for both packages. 
 
 ```{r}
-ocean_raster_agg <- raster::aggregate(ocean_raster, fact = 10, fun = sum, progress = 'text')
-ocean_terra_agg <- terra::aggregate(ocean_terra, fact = 10, fun = sum, progress = 'text')
+### Idea for this script: bring in the monthly file we used in the OHI script because it is more explanatory
 
 # convert to df's
-ocean_raster_df <- base::as.data.frame(ocean_raster_agg, xy = TRUE, na.rm = FALSE)
-ocean_terra_df <- base::as.data.frame(ocean_terra_agg, xy = TRUE, na.rm = FALSE)
+ocean_raster_df <- as.data.frame(ocean_raster_agg, xy = TRUE, na.rm = FALSE)
+ocean_terra_df <- as.data.frame(ocean_terra_agg, xy = TRUE, na.rm = FALSE)
 
-# compare the two rasters: method 1
-compareRasters(ocean_raster_df, ocean_terra_df)
-# TRUE or FALSE
+# if ncessary, recode the NA value for the spatRaster we made with `terra` 
 
-# compare the two rasters: method 2
-# set the two dataframes equal to each other to populate the cells of a new daatframe
+
+# compare the two rasterLayer to spatraster
+# set the two dataframes equal to each other to populate the cells of a new dataframe
 # cells with TRUE are those which matched in both dataframes, and cells with FALSE are those which did not match
-true_false_df <- base::as.data.frame(raster_y2020_m03_df == terra_y2020_m03_df)
+true_false_df <- as.data.frame(raster_y2020_m03_df == terra_y2020_m03_df)
 # all values are NA or TRUE, no FALSE values in any column
-```
 
-```{r, eval=FALSE}
-# convert to df's
-# raster_y2020_m03_df <- terra::as.data.frame(raster_y2020_m03, xy = TRUE, na.rm = FALSE)
-# terra_y2020_m03_df <- terra::as.data.frame(terra_y2020_m03, xy = TRUE, na.rm = FALSE)
-# 
-# true_false_df <- base::as.data.frame(raster_y2020_m03_df == terra_y2020_m03_df) # all values are NA or TRUE, no FALSE values in any column
+# count the NA values in each df, they should be the same
+# count number of NA values in each df, they are the same!
+sum(is.na(raster_y2020_m03_df$Averaged.Sea.Level.Anomalies.2020.03)) # 433059
+sum(is.na(terra_y2020_m03_df$sla)) # 43059
+
+# last check: subtract one df's values from the other
+
 ```
 
 Casey's workflow for reading in .tif file and converting to raster & df:
@@ -102,8 +95,17 @@ if(!file.exists(ocean_10km_file)) {
 }
 ```
 
+### Raster Manipulation with `aggregate()`
 
+We can use the `aggregate()` function to lower the spatial resolution by a factor of 10:
+- `fact` argument represents the aggregation factor (the number of cells in each direction horizontally and vertically), a value of 10 results in a raster with 10 kilometer resolution if the original `.tif` file is at 1 kilometer resolution
+- `fun` argument is the function used to aggregate the values
+- `progress` argument shows a progress bar as the raster is aggregated, this is helpful for large raster files (when executing in a chunk rather than a script)
 
+```{r}
+ocean_raster_agg <- raster::aggregate(ocean_raster, fact = 10, fun = sum, progress = 'text')
+ocean_terra_agg <- terra::aggregate(ocean_terra, fact = 10, fun = sum, progress = 'text')
+```
 
 
 
