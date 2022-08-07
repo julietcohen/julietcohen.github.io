@@ -8,7 +8,7 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Master's Capstone Project: An open-source pipeline for remote sensing of crop yields under environmental change in sub-Saharan Africa
+## Master's Capstone Project - An open-source pipeline for remote sensing of crop yields: a Zambia Case Study
 
 #### ABSTRACT
 
@@ -27,7 +27,7 @@ Cullen Molitor\
 
 <center>
 
-![](_posts/2022-03-03-newhorizonsinconservationconference2022/poster_video/New_Horizons_Poster_CropMOSAIKS_blog_post.pdf){width=99%}
+![](research/poster_png.png){width=99%}
 
 </center>
 
