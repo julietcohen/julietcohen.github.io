@@ -16,11 +16,11 @@ site: distill::distill_website
 ---
 ### Bio
 
-I am a conservation biologist and aspiring data scientist interested in the interaction between landscapes and wildlife population dynamics in the face of climate change. I earned a Master’s degree in Environmental Data Science from **UC Santa Barbara’s Bren School of Environmental Science and Management.** Prior to the Bren School, I earned a Bachelor’s degree in Ecology and Evolution with distinction in the major from UC Santa Barbara in 2019. My undergraduate research investigated mammalian spatial ecology and the role of bivalves in mariculture systems off the coast of Costa Rica.
+I am a conservation biologist and data scientist interested in the interactions between landscapes, wildlife, and humans in the face of climate change. I earned a Master’s degree in Environmental Data Science from **UC Santa Barbara’s Bren School of Environmental Science and Management.** Prior to the Bren School, I earned a Bachelor’s degree in Ecology and Evolution with distinction in the major from UC Santa Barbara in 2019.
 
-Following this research, I served as a field technician studying endangered populations of flat-tailed horned lizards and steelhead trout in Southern California. With a growing interest in dynamic urban ecosystems, I went on to study incipient invasive species across the Hawaiian islands. These field roles inspired me to delve into environmental data science in order to recognize broad ecological patterns across diverse scientific disciplines.
+My undergraduate research investigated mammalian spatial ecology and the role of bivalves in Costa Rican mariculture systems. Following this, I served as a field technician studying endangered populations of flat-tailed horned lizards and steelhead trout in Southern California. With a growing interest in dynamic urban ecosystems, I went on to study incipient invasive species across the Hawaiian islands. These field roles inspired me to delve into environmental data science in order to recognize broad ecological patterns across diverse scientific disciplines.
 
-Going forward, I aim to utilize **modeling techniques** and **spatial data science** to understand the population dynamics of species that are most imperiled by urban expansion and climate change. With open source programming tools and a collaborative approach, I hope to advise preventative policies to protect wildlife from anthropogenic influence.
+Going forward, I aim to utilize **machine learning modeling techniques** and **spatial data science** to understand shifting landscapes, wildlife populations, and human livelihoods. With open source programming tools and a collaborative approach, I hope to improve our understanding of anthropogenic influences across the world.
 
 ### Arctic Data & Marine Science
 
@@ -29,7 +29,8 @@ I work at the **National Center for Ecological Analysis and Synthesis**. I serve
 ### Education
 
 **Master of Environmental Data Science**\
-Bren School of Environmental Science & Management - University of California, Santa Barbara
+Bren School of Environmental Science & Management\
+University of California - Santa Barbara
 
 **Ecology & Evolution with Distinction in the Major**\
 University of California - Santa Barbara

@@ -12,7 +12,7 @@ output:
 preview: pics/pop_internet_plot.png
 categories:
   - R
-  - Diversity, Equity, and Inclusion
+  - Diversity, Equity, & Inclusion
 ---
 
 ```{r setup, include=FALSE}
