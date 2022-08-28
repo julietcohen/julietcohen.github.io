@@ -1,5 +1,5 @@
 name: "julietcohen.github.io"
-title: "Juliet Cohen: Wildlife Enthusiast and Aspiring Data Scientist"
+title: "Juliet Cohen"
 description: |
   My Website
 output_dir: "docs"
@@ -8,7 +8,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Resume"
-      href: Resume_20220725.pdf
+      href: Resume_20220828.pdf
     - text: "Programming Blog"
       href: blog.html
     - text: "Field Work Photo Gallery"

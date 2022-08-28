@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 </center>
 
-My path to become a data scientist began as a raccoon trapper, a lizard hunter, an island invasive species specialist, and a fisheries technician. I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean data and enter it into databases in ArcGIS, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, SQL, and EML slowly over time. However, I didn't make this journey alone. I found mentors in academic advisers, field crew leaders, and data scientists that provided the tools to help me grow as a data scientist.
+My path to become a data scientist began as a raccoon trapper, a lizard hunter, an island invasive species specialist, and a fisheries technician. I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets, I learned to clean data and enter it into databases in ArcGIS, and today my passion lies in gleaning meaningful observations from ecological and environmental data. I connected with R, Python, and open data science practices slowly over time. However, I didn't make this journey alone; I found mentors in academic advisers, field crew leaders, and data scientists that provided the tools to help me grow.
 
 <center>
 
@@ -98,7 +98,7 @@ Our team's mission was to systematically survey for flat-tailed horned lizards t
 
 ### Invasive Species in Hawaii
 
-My second seasonal field job was a field technician and data specialist position at the [Oahu Invasive Species Committee](https://www.oahuisc.org/). I picked up my life and move to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu. I quickly fell in love with the extreme ridgelines of the Ko'olau mountains, and I grew tough from the grueling difficulty of the survey field work. Despite the danger of traversing perilous mountain ranges while bushwhacking through impossible tangles of invasive species like thick strawberry guava tree groves and spikey lantana, I loved my time serving the Oahu Invasive Species Committee.
+My second seasonal field job was a field technician and data specialist position at the [Oahu Invasive Species Committee](https://www.oahuisc.org/). I moved my life to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu. I quickly fell in love with the extreme ridgelines of the Ko'olau mountains, and I grew tough from the grueling difficulty of the survey field work. Despite the danger of traversing perilous mountain ranges while bushwhacking through impossible tangles of invasive species like thick strawberry guava tree groves and spikey lantana, I loved my time serving the Oahu Invasive Species Committee.
 
 <center>
 
@@ -120,7 +120,7 @@ For special operations each month, we also surveyed for plant species in the hig
 
 ###### Right: Ascending a side of a mountian ridge in high-elevation native forest in the Ko'olau Mountains, surveying for native o'hia trees infected with an invasive fungal pathogen called Rapid O'hia Death.
 
-My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna on Oahu, the history of the island's people and geology, and how Hawaii's ecology is currently changing. We suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and involuntarily screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape along the top of the invasive albezia trees. the field crew talked politics on our radios while on survey, usually smelled moldy, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
+My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna, the history of the island's people and geology, and how Hawaiian ecology is currently changing. We suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and involuntarily screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape along the top of the invasive albezia trees. the field crew usually smelled sweaty, argued about politics on our radios while on survey, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
 
 ![](about_pics/waterall_jump.jpg){width="50%"}![](about_pics/oahu_survey.jpg){width="50%"}
 
@@ -130,13 +130,13 @@ My coworkers were at the root of my fondness towards my experience working at th
 
 ![](about_pics/JC_PK_KKC.jpg){width="50%"}![](about_pics/jacksons.jpg){width="50%"}
 
-###### Left: My coworkers Phill and Kepano and I discussing the day's survey plan in the middle of native uluhe (the plant species you see here) on a ridge oh the east side of the island
+###### Left: My coworkers Phill and Kepano and I discussing the day's survey plan in the middle of native uluhe on a ridge on the east side of the island.
 
 ###### Right: Two invasive Jackson's chameleons we found on survey in low-elevation forest. As our job was to remove invasive species to prevent harm to native Hawaiian flora and fauna, we confiscate these individuals from the field because they prey upon native Hawaiian snails.
 
 ### Southern California Steelhead Trout
 
-I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California Steelhead Trout. We conducted surveys for the migratory fish themselves and their resident counterparts, rainbow trout. We collected data on their abundance, size, and the environmental conditions of the freshwater streams in which they resided (temperature, gravel quailty, etc.). We also conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow freshwater streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag larger individuals to track their migration upstream during breeding season in December - April, and their return to the Pacific Ocean around April-May.
+I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California steelhead trout. We conducted surveys for the migratory fish themselves and their resident counterparts, rainbow trout. We collected data on their abundance, size, and the environmental conditions of the freshwater streams in which they resided (temperature, gravel quailty, etc.). We also conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow freshwater streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag larger individuals to track their migration upstream during breeding season in December - April, and their return to the Pacific Ocean around April-May.
 
 ![](about_pics/KC_survey.jpg){width="50%"}![](about_pics/HA_survey.jpg){width="50%"}
 
