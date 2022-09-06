@@ -35,6 +35,13 @@ html {
   --navbar-font:     Kaisei Tokumin, serif;  /* websites + blogs only */
 }
 
+ /*------------- Whole Document---------------- */
+
+body {
+    font-family: 'Kaisei+Tokumin';
+    font-size: 13px;
+}
+
 /*-- ARTICLE METADATA --*/
 d-byline {
   --heading-size:    0.6rem;
@@ -63,7 +70,7 @@ d-appendix {
 .distill-site-header {
   --title-size:       14px;
   --text-color:       black;
-  --text-size:        20px;
+  --text-size:        18px;
   --hover-color:      dimgray;
   --bkgd-color:       rgba(46,139,87, 0.5);
 }

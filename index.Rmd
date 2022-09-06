@@ -16,15 +16,15 @@ site: distill::distill_website
 ---
 ### Bio
 
-I am a conservation biologist and data scientist interested in the interactions between landscapes, wildlife, and humans in the face of climate change. I earned a Master’s degree in Environmental Data Science from **UC Santa Barbara’s Bren School of Environmental Science and Management.** Prior to the Bren School, I earned a Bachelor’s degree in Ecology and Evolution with distinction in the major from UC Santa Barbara in 2019.
+I am a conservation biologist and data scientist interested in utilizing modeling techniques and spatial data to understand dynamic ecosystems, wildlife populations, and human livelihoods. With open source programming tools and a collaborative approach, I hope to improve our understanding of anthropogenic influences across the world.
 
-My undergraduate research investigated mammalian spatial ecology and the role of bivalves in Costa Rican mariculture systems. Following this, I served as a field technician studying endangered populations of flat-tailed horned lizards and steelhead trout in Southern California. With a growing interest in dynamic urban ecosystems, I went on to study incipient invasive species across the Hawaiian islands. These field roles inspired me to delve into environmental data science in order to recognize broad ecological patterns across diverse scientific disciplines.
+I earned a Master’s degree in Environmental Data Science from UC Santa Barbara’s Bren School of Environmental Science and Management. Prior to the Bren School, I earned a Bachelor’s degree in Ecology and Evolution with distinction in the major from UC Santa Barbara in 2019.
 
-Going forward, I aim to utilize **machine learning modeling techniques** and **spatial data science** to understand shifting landscapes, wildlife populations, and human livelihoods. With open source programming tools and a collaborative approach, I hope to improve our understanding of anthropogenic influences across the world.
+My undergraduate research investigated mammalian spatial ecology and the role of bivalves in Costa Rican mariculture systems. Following this, I served as a field technician studying endangered populations of flat-tailed horned lizards and steelhead trout in Southern California, as well as invasive species in Hawaii. These field roles inspired me to delve into environmental data science in order to recognize broad ecological patterns across diverse scientific disciplines.
 
 ### Arctic Data & Marine Science
 
-I work at the **National Center for Ecological Analysis and Synthesis**. I served as a member of the Arctic Data Center team, and I currently serve as a Data Analyst Fellow at the **Ocean Health Index** where I contribute to our understanding of marine health on a global scale.
+I work at the National Center for Ecological Analysis and Synthesis. I served as a member of the Arctic Data Center team, and I currently serve as a Data Analyst Fellow at the Ocean Health Index where I contribute to our understanding of marine health on a global scale.
 
 ### Education
 
