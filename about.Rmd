@@ -74,7 +74,7 @@ I completed two independent research projects in undergrad: one investigating sp
 
 ### The Lizard Days
 
-My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I committed to a three month season working with a small crew composed of three other female field technicians for the Herpetology Department at the San Diego Natural History Museum. I surveyed through the hot, arid desert Monday through Friday, often working 50-hour weeks, and then returned to beautiful Santa Barbara on the weekends to reunite with my friends and pet gecko. These two-day vacations were often filled with indulging in the luxuries of civilization such as washing machines. I would take extensive walks along the bluffs just to admire all the diverse plant communities because they were simply something different than the sea of sparse creosote bushes that surrounded me all week long.
+My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I committed to a three month season working with a small crew composed of three other field technicians for the Herpetology Department at the San Diego Natural History Museum. We surveyed through the desert Monday through Friday, often working 50-hour weeks. My weekends were often filled with indulging in the luxuries of civilization such as washing machines. I didn't miss the creosote bushes that surrounded me all week long.
 
 <center>
 
@@ -88,7 +88,7 @@ My first job post graduation was a seasonal field technician position surveying 
 
 </center>
 
-Our team's mission was to systematically survey for flat-tailed horned lizards to determine its range throughout the arid desert landscape. This survey was the natural history museum's attempt to prove a that this land is critical habitat for a threatened species and in turn prevent geothermal mining in the region. We did indeed find plenty of spikey lizards, camouflaged side winder rattlesnakes, nighthawk nests, countless skeletons, beetles that play dead, kangaroo rat tracks, and ominous badger holes. The sunrises and sunsets really enhance the beauty and solitude of the desert landscape, and I wouldn't trade those field days driving a truck through the sand for anything. I still think about the flat-tailed horned lizards fairly often. I wonder how they're holding up these days.
+Our team's mission was to survey for flat-tailed horned lizards to determine their range throughout the arid landscape. This survey could prove that this land was critical habitat for a threatened species and prevent mining in the region. We did  find plenty of armored lizards, side winders, nighthawk nests, mammal skulls, beetles that play dead, kangaroo rat tracks, and badger tunnels. The sunrises and sunsets really enhance the beauty of the desert landscape, and I wouldn't trade those field days for anything. I still think about the flat-tailed horned lizards fairly often.
 
 <center>
 
@@ -98,7 +98,7 @@ Our team's mission was to systematically survey for flat-tailed horned lizards t
 
 ### Invasive Species in Hawaii
 
-My second seasonal field job was a field technician and data specialist position at the [Oahu Invasive Species Committee](https://www.oahuisc.org/). I moved my life to the town of Kaneohe on the island of Oahu and promptly bought a moped and a mosquito net. My work included surveying for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu. I quickly fell in love with the extreme ridgelines of the Ko'olau mountains, and I grew tough from the grueling difficulty of the survey field work. Despite the danger of traversing perilous mountain ranges while bushwhacking through impossible tangles of invasive species like thick strawberry guava tree groves and spikey lantana, I loved my time serving the Oahu Invasive Species Committee.
+My second seasonal field job was a field technician and data specialist position at the [Oahu Invasive Species Committee](https://www.oahuisc.org/). I moved to Kaneohe on Oahu and, and  the work included surveying for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu. I quickly fell in love with the extreme ridgelines, despite the discomfort of traversing perilous mountain ranges while bushwhacking through impossible tangles of thick strawberry guava tree groves and thorny lantana.
 
 <center>
 
@@ -106,37 +106,33 @@ My second seasonal field job was a field technician and data specialist position
 
 </center>
 
-For special operations each month, we also surveyed for plant species in the high elevation forests and in select regions of the other mountain range of the west side; the Wai'anae mountains.
+We also surveyed for plant species in the high elevation forests and in select regions of the other mountain range of the Wai'anae mountains.
 
 <center>
 
-![Taking a break from tedious plants surveys to admire the the views of the west side of the island. In the upper elevations of the Wai'anae Mountains, we surveyed for the incipient invasive plant species Chromolaeana odorata](about_pics/fence.jpg){width="75%"}
+![Admiring the views from the Wai'anae Mountains as we surveyed for the invasive plant species Chromolaeana odorata.](about_pics/fence.jpg){width="75%"}
 
 </center>
 
 ![](about_pics/KKC_heli.jpg){width="55%"}![](about_pics/first_heli.jpg){width="45%"}
 
-###### Left: An aerial survey for *Miconia calvescens* in the Ko'olau Mountains with my coworker Nick at the Oahu Invasive Species Committee.
+###### Left: An aerial survey for Miconia calvescens in the Ko'olau Mountains with my coworker Nick at the Oahu Invasive Species Committee.
 
 ###### Right: Ascending a side of a mountian ridge in high-elevation native forest in the Ko'olau Mountains, surveying for native o'hia trees infected with an invasive fungal pathogen called Rapid O'hia Death.
 
-My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna, the history of the island's people and geology, and how Hawaiian ecology is currently changing. We suffered through endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and involuntarily screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape along the top of the invasive albezia trees. the field crew usually smelled sweaty, argued about politics on our radios while on survey, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
+My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna, the history of the island's people and geology, and how Hawaiian ecology is currently changing. We endured endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape along the top of the albezia trees. The field crew usually smelled sweaty, argued about politics on our radios while on survey, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
 
 ![](about_pics/waterall_jump.jpg){width="50%"}![](about_pics/oahu_survey.jpg){width="50%"}
-
-###### Left: My coworker Ryan and I admiring a waterfall near Waimanalo, Oahu in our Miconia calvescens survey uniforms
-
-###### Right: Our field crew for the day hiking in the lowland Ko'olau forest to reach a remote transect destination area that was filled with mosquitos, mud, and tangled hao plant.
 
 ![](about_pics/JC_PK_KKC.jpg){width="50%"}![](about_pics/jacksons.jpg){width="50%"}
 
 ###### Left: My coworkers Phill and Kepano and I discussing the day's survey plan in the middle of native uluhe on a ridge on the east side of the island.
 
-###### Right: Two invasive Jackson's chameleons we found on survey in low-elevation forest. As our job was to remove invasive species to prevent harm to native Hawaiian flora and fauna, we confiscate these individuals from the field because they prey upon native Hawaiian snails.
+###### Right: Two invasive Jackson's chameleons we found on survey in low-elevation forest. We confiscated them from the field because they eat the native Hawaiian snails.
 
 ### Southern California Steelhead Trout
 
-I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California steelhead trout. We conducted surveys for the migratory fish themselves and their resident counterparts, rainbow trout. We collected data on their abundance, size, and the environmental conditions of the freshwater streams in which they resided (temperature, gravel quailty, etc.). We also conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow freshwater streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag larger individuals to track their migration upstream during breeding season in December - April, and their return to the Pacific Ocean around April-May.
+I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California steelhead trout and their resident counterparts, the rainbow trout. We collected data on their size, mating behavior, and stream conditions. We conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag big fish to track their upstream migration during breeding season in December - April, and their return to the Pacific Ocean around April-May.
 
 ![](about_pics/KC_survey.jpg){width="50%"}![](about_pics/HA_survey.jpg){width="50%"}
 
@@ -152,9 +148,9 @@ I served as a fisheries technician for the Pacific States Marine Fisheries Commi
 
 ###### Left: Measuring a small trout we caught while electric fishing before returning it to the creek.
 
-###### Right: We often found two-striped garter snakes on survey in riparian habiat. This snake species is not aggressive towards predators such as humans, but rather predates on fish (like chub and trout), insects, and other smaller prey.
+###### Right: We often found two-striped garter snakes on survey in riparian habitat. This snake species eats fish like chub and trout, so they hang out in rocky pools.
 
-Lastly, we utilized [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/products/didson-sonars) to film our freshwater streams 24/7 to capture steelhead migrations. We deployed cameras in the Ventura River, Salispuedes Creek, and the Santa Ynez Rvier. These very high-tech cameras utilize sound waves to detect both biotic and abiotic movement in the water, and it was my job to detect trout and other species, such as native chub and invasive catfish, based on their sillouettes in the camera footage.
+We used [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/products/didson-sonars) to film our freshwater streams 24/7 to capture possible steelhead migrations. We deployed cameras in the Ventura River, Salispuedes Creek, and the Santa Ynez River. These  high-tech cameras use sound waves to detect both movement in the water, and it was our job to detect trout and other species like turtles and catfish, based on their silhouettes and swimming patterns in the camera footage.
 
 <center>
 
@@ -176,7 +172,7 @@ Lastly, we utilized [DIDSON underwater sonar camera technology](http://www.sound
 
 <center>
 
-![A native western pond turtle in steelhead trout habitat in Gaviota Creek, CA. We recorded measurements of these turtles as well as their gender and location to track their populations throughout Santa Barbara and Ventura Counties.](about_pics/west_pond_turt.png){width="65%"}
+![A native western pond turtle in Gaviota Creek, CA. Counties.](about_pics/west_pond_turt.png){width="65%"}
 
 </center>
 
