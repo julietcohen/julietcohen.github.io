@@ -2824,16 +2824,16 @@ respective functions both called <code>extract()</code>.
 <code>terra::extract()</code> allows for more flexibility in extracting
 the proportion of cells that fall within the polygons, if they are on
 the borders. However, our experience with these functions is that they
-are very slow to execute. &gt;
-<code>exact_extractr::exact_extract()</code> offers <em>much</em> faster
-processing speeds, but requires different syntax. This function allows
-the user different options for the output that range in complexity. For
-example, one can extract a list of dataframes, each of which contains
-the cell values and weight (coverage proportion) for one polygon. The
-user can then use those values and weights as they want. Alternatively,
-<code>exact_extractr()</code> can do a weighted calculation for us, with
-arguments that specfies a <em>weighted</em> function and the data to use
-as weights.</p>
+are very slow to execute.</p>
+<p><code>exact_extractr::exact_extract()</code> offers <em>much</em>
+faster processing speeds, but requires different syntax. This function
+allows the user different options for the output that range in
+complexity. For example, one can extract a list of dataframes, each of
+which contains the cell values and weight (coverage proportion) for one
+polygon. The user can then use those values and weights as they want.
+Alternatively, <code>exact_extractr()</code> can do a weighted
+calculation for us, with arguments that specfies a <em>weighted</em>
+function and the data to use as weights.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>years_all <span class="ot">&lt;-</span>  <span class="fu">as.factor</span>(<span class="dv">2012</span><span class="sc">:</span><span class="dv">2020</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> years_all) {</span>
