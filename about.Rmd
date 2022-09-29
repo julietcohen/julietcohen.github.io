@@ -134,11 +134,11 @@ My coworkers were at the root of my fondness towards my experience working at th
 
 I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California steelhead trout and their resident counterparts, the rainbow trout. We collected data on their size, mating behavior, and stream conditions. We conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag big fish to track their upstream migration during breeding season in December - April, and their return to the Pacific Ocean around April-May.
 
-![](about_pics/KC_survey.jpg){width="50%"}![](about_pics/HA_survey.jpg){width="50%"}
+![](about_pics/KC_survey.jpg){width="35%"}![](about_pics/migratory_trout.png){width="65%"}
 
 ###### Left: A redd survey in Gobernador Creek in Carpinteria, CA.
 
-###### Right: A redd survey in Matilija Creek in Ojai, CA.
+###### Right: A 20-inch trout spotted on a snorkel survey in Ventura, CA. Movement patterns indicated by a pit tag as well as genetic analysis will reveal if this individual is migratory, as is suggested by its markings and size.
 
 <center>
 
@@ -154,7 +154,7 @@ We used [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/
 
 <center>
 
-![Data entry: reviewing sonar footage of fish, debris, and the occassional water bird and freshwater turtle in steelhead trout habitat](about_pics/DIDSON_data_review.JPG){width="65%"}
+![Data entry: reviewing sonar footage for steelhead trout, but mainly recording other native fish, chub, debris, and the occassional water bird or freshwater turtle.](about_pics/DIDSON_data_review.JPG){width="65%"}
 
 </center>
 
@@ -172,7 +172,7 @@ We used [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/
 
 <center>
 
-![A native western pond turtle in Gaviota Creek, CA. Counties.](about_pics/west_pond_turt.png){width="65%"}
+![A native western pond turtle spotted on a steelhead trout survey in Gaviota Creek, CA.](about_pics/west_pond_turt.png){width="65%"}
 
 </center>
 
