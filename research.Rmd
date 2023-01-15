@@ -14,16 +14,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ###### The environmental and social impacts of climate change are disproportionately distributed worldwide. Many highly impacted regions lack the assets to monitor and generate resource predictions, and therefore lack high-quality environmental and social data. As a result, it is difficult to make predictions about the impacts of climate change for these regions using conventional modeling tools. Recently, machine learning approaches applied to high-resolution satellite imagery have been successful in making predictions of a wide range of social and environmental variables. However, generating these predictions comes with significant barriers, including high computational costs, data storage and expertise requirements, and financial costs. Reducing the financial and computational burden of machine learning approaches is essential to increasing the equity of environmental monitoring processes and outputs. Our approach demonstrates a pipeline to make predictions on ground-truth data using the Random Convolutional Features method through a use case example of predicting crop yields in Zambia. These crop yield predictions can be used to analyze food security risk in the region. We apply the novel machine learning approach, MOSAIKS (Rolf et al., 2021), to create tabular features for Zambia using Landsat 8 and Sentinel 2 satellite imagery. We pair these generated features of Zambia with ground-truth crop yield data to build a model that predicts crop yields over time and increases the spatial resolution of predicted crop yields. We then use this model to fill in a data gap of crop yield predictions in Zambia during the years 2020 and 2021. During these years, crop yield data was not collected due to the COVID-19 pandemic, leaving a gap in food security forecasting. Beyond this use case, these tabular features of satellite imagery and the methodology developed to create them provides a tool for others to build models and generate predictions of other social and environmental variables in this region.
 
-- **Please see the GitHub organization [here.](https://github.com/cropmosaiks)**\
-- **Please see the final project presententation [here.](https://www.youtube.com/watch?v=iXdETegKbSs&t=4351s)**\
-- **Please see this project's poster for the Yale School of the Environment: New Horizons in Conservation Conference\ [here.](https://julietcohen.github.io/posts/2022-03-03-newhorizonsinconservationconference2022/#how-does-this-remote-sensing-tool-increase-equity-in-the-field-of-environmental-data-science)**
+- [GitHub organization](https://github.com/cropmosaiks)\
+- [Final presentation](https://www.youtube.com/watch?v=iXdETegKbSs&t=4351s)\
+- [Poster for the Yale School of the Environment: New Horizons in Conservation Conference](https://julietcohen.github.io/posts/2022-03-03-newhorizonsinconservationconference2022/#how-does-this-remote-sensing-tool-increase-equity-in-the-field-of-environmental-data-science)
 
 Collaborators:\
 Grace Lewin\
 Steven Cognac\
 Cullen Molitor\
 
-**Mentorship:** Thank you to Tamma Carleton from UC Santa Barbara and Jonathan Proctor from Harvard University. Your vision for this project, existing codebase, and research expertise helped make this project a reality.
+**Mentorship:** Thank you to Tamma Carleton from UC Santa Barbara and Jonathan Proctor from Harvard University. Your vision for this project, existing codebase, and research expertise made this project a reality.
 
 <center>
 
@@ -43,7 +43,7 @@ Poster presented at the UC Santa Barbara Undergraduate Research Colloquium:
 
 **Funding:** This project was possible thanks to the Undergraduate Research and Creative Activities Grant from UC Santa Barbara.
 
-**Mentorship:** Thank you to Molley Hardesty-Moore and Doug McCauley from UC Santa Barbara. Your mentorship and research expertise helped make this project a reality.
+**Mentorship:** Thank you to Molley Hardesty-Moore and Doug McCauley from UC Santa Barbara. Your mentorship and research expertise made this project a reality.
 
 ## Filtration Efficiency in Bivalves: effects of species and size in oysters and mussels
 
@@ -56,4 +56,4 @@ Poster presented at the UC Santa Barbara Undergraduate Research Colloquium:
 
 **Funding:** This project was possible through the Tropical Biology and Conservation program at UC Santa Barbara and the Monteverde Institute, as well as the UC Santa Barbara EAP Gaucho Scholarship.
 
-**Mentorship:** Thank you to Frank Joyce of the Monteverde Institute, Costa Rice. Your mentorship and research expertise helped make this project a reality.
+**Mentorship:** Thank you to Frank Joyce of the Monteverde Institute, Costa Rica. Your mentorship and research expertise made this project a reality.

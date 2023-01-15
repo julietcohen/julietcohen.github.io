@@ -1,7 +1,7 @@
 ---
 title: "From Field Technician to Data Scientist: My career path through the world of conservation biology"
 description: |
-  "If you want to go fast, go alone. If you want to go far, go together." – African proverb
+  "If you want to go fast, go alone. If you want to go far, go together." - African proverb
 ---
 
 ```{r setup, include=FALSE}
@@ -56,9 +56,9 @@ I completed two independent research projects in undergrad: one investigating sp
 
 ![](about_pics/turbidity_measurement.JPG){width="60%"}![](about_pics/buckets.png){width=30%}
 
-###### left: Measuring the turbidity of my various species-specific buckets at regular time intervals. I would dive into the mariculture nets each day to collect new bivalve species, run my secchi disk filtration trials with algae and bryozoans in the buckets, then return the bivalves to their natural habitat at the end of the day.
+###### left: Measuring the turbidity of my various species-specific buckets at regular time intervals. I would dive into the mariculture nets each day to collect new bivalve species, run my secchi disk filtration trials with algae and bryozoans in the buckets, then return the bivalves to their marigulture nets.
 
-###### Right: One of my bivlavle filtration trials a the off-shore mariculture site. The different species of bilvalves in each filtered the algae and bryozoans at different rates, resulting in different levels of turbidity. 
+###### Right: One of my bivalve filtration trials a the off-shore mariculture site. The different species of bilvalves in each filtered the algae and bryozoans at different rates, resulting in different levels of turbidity. 
 
 <center>
 
@@ -74,7 +74,7 @@ I completed two independent research projects in undergrad: one investigating sp
 
 ### The Lizard Days
 
-My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I committed to a three month season working with a small crew composed of three other field technicians for the Herpetology Department at the San Diego Natural History Museum. We surveyed through the desert Monday through Friday, often working 50-hour weeks. My weekends were often filled with indulging in the luxuries of civilization such as washing machines. I didn't miss the creosote bushes that surrounded me all week long.
+My first job post graduation was a seasonal field technician position surveying for flat tailed-horned lizards in desert habitat just inland of San Diego and El Centro in Southern California. I worked for the Herpetology Department at the San Diego Natural History Museum. We surveyed through the desert Monday through Friday, often working 50-hour weeks. My weekends were often filled with indulging in the luxuries of civilization such as washing machines and paved roads. I didn't miss the creosote bushes that surrounded me all week long.
 
 <center>
 
@@ -88,7 +88,7 @@ My first job post graduation was a seasonal field technician position surveying 
 
 </center>
 
-Our team's mission was to survey for flat-tailed horned lizards to determine their range throughout the arid landscape. This survey could prove that this land was critical habitat for a threatened species and prevent mining in the region. We did  find plenty of armored lizards, side winders, nighthawk nests, mammal skulls, beetles that play dead, kangaroo rat tracks, and badger tunnels. The sunrises and sunsets really enhance the beauty of the desert landscape, and I wouldn't trade those field days for anything. I still think about the flat-tailed horned lizards fairly often.
+Our team's mission was to survey for flat-tailed horned lizards to determine their range throughout the arid landscape. This survey could prove that this land was critical habitat for a threatened species and prevent mining in the region. We did find plenty of armored lizards, side winders, nighthawk nests, mammal skulls, beetles that play dead, kangaroo rat tracks, and badger tunnels. The sunrises and sunsets emphasized the beauty of the desert landscape; I wouldn't trade those long field days for anything. I still think about the flat-tailed horned lizards fairly often.
 
 <center>
 
@@ -98,7 +98,7 @@ Our team's mission was to survey for flat-tailed horned lizards to determine the
 
 ### Invasive Species in Hawaii
 
-My second seasonal field job was a field technician and data specialist position at the [Oahu Invasive Species Committee](https://www.oahuisc.org/). I moved to Kaneohe on Oahu and, and  the work included surveying for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu. I quickly fell in love with the extreme ridgelines, despite the discomfort of traversing perilous mountain ranges while bushwhacking through impossible tangles of thick strawberry guava tree groves and thorny lantana.
+My second seasonal field job was a field technician and data specialist position at the [Oahu Invasive Species Committee](https://www.oahuisc.org/). The work included surveying for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu. I quickly fell in love with the extreme ridgelines, despite the discomfort of traversing perilous mountain ranges while bushwhacking through impossible tangles of thick strawberry guava tree groves and thorny lantana.
 
 <center>
 
@@ -120,7 +120,7 @@ We also surveyed for plant species in the high elevation forests and in select r
 
 ###### Right: Ascending a side of a mountian ridge in high-elevation native forest in the Ko'olau Mountains, surveying for native o'hia trees infected with an invasive fungal pathogen called Rapid O'hia Death.
 
-My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna, the history of the island's people and geology, and how Hawaiian ecology is currently changing. We endured endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS to cooperate after a long day in the rain, and screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape along the top of the albezia trees. The field crew usually smelled sweaty, argued about politics on our radios while on survey, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
+My coworkers were at the root of my fondness towards my experience working at the Oahu Invasive Species Committee. My field crew taught me about the native flora and fauna, the history of the island's people and geology, and how Hawaiian ecology is perpetually changing. We endured endless days bushwhacking and being eaten alive by mosquitos. We bonded by helping untangle each other from invasive plant masses, struggling to get ArcGIS and our handheld devices to cooperate in the rain, and screaming in fear when Kahekili and Josh, our helicopter pilots, took dive bombs on aerial surveys just to see how close they could scrape along the top of the albezia trees. The field crew usually smelled sweaty, argued about politics on our radios while on survey, and never missed an opportunity to chase each other around the baseyard with invasive Jackson's chameleons we confiscated from the field. I miss the OISC crew more than any other part of my time in Hawaii.
 
 ![](about_pics/waterall_jump.jpg){width="50%"}![](about_pics/oahu_survey.jpg){width="50%"}
 
@@ -132,7 +132,7 @@ My coworkers were at the root of my fondness towards my experience working at th
 
 ### Southern California Steelhead Trout
 
-I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California steelhead trout and their resident counterparts, the rainbow trout. We collected data on their size, mating behavior, and stream conditions. We conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag big fish to track their upstream migration during breeding season in December - April, and their return to the Pacific Ocean around April-May.
+I served as a fisheries technician for the Pacific States Marine Fisheries Commission and the California Department of Fish and Wildlife to survey for the endangered Southern California steelhead trout and their resident counterparts, the rainbow trout. We collected data on their size, mating behavior, and stream conditions. We conducted redd surveys, taking data on trout nests in the gravel bottoms of shallow streams. We electric-fished certain streams to get a comprehensive estimate of their population size and PIT tag big fish to track their upstream migration during breeding season in December - April, and their return to the Pacific Ocean around April-May. Those trout surveys allowed me to explore the riparian regions of Ojai, Ventura, and Santa Barbara alongside the most devoted and knowledgeable wildlife biologists you'll ever meet. I'm grateful for the memories spotting and measuring fish in crystal pools, getting slightly lost where the streams forked, and identifying frogs, snakes, newts, feathers, and skulls along the way. The steelhead is a special species.
 
 ![](about_pics/KC_survey.jpg){width="35%"}![](about_pics/migratory_trout.png){width="65%"}
 
@@ -142,7 +142,7 @@ I served as a fisheries technician for the Pacific States Marine Fisheries Commi
 
 <center>
 
-![Electric fishing in Topanga Creek with the goal of PIT tagging adult trout. We administer a mild shock into the water with that large backpack pictured here, scoop the stunned fish into buckets of oxygenated water, medicate the fish, insert a PIT tag, and release them back into the creek when they have fully recovered.](about_pics/efishing.jpg){width="70%"}
+![Electric fishing in Topanga Creek to PIT tagging adult trout. We administer a mild shock into the water with that large backpack pictured here, scoop the stunned fish into buckets of oxygenated water, medicate the fish, insert a PIT tag, and release them back into the creek when they have fully recovered.](about_pics/efishing.jpg){width="70%"}
 
 ![](about_pics/measure_fish.JPG){width="50%"}![](about_pics/snake_arm.JPG){width="50%"}
 
