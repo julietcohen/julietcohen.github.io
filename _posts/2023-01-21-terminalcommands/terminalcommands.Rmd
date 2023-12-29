@@ -39,8 +39,8 @@ Use | Command
 vertically list files and directories, with date created | `ls -l`
 list all files and directories, including hidden ones (useful to open files that start with '.' for advanced settings) | `ls -a`
 remove directory and all contents recursively | `rm -r {DIRECTORY}`
-move directory | `mv path/to/file new/pth/to/file`
-rename directory | `mv path/to/file /same/path/new/name` 
+move file or directory from current directory to new location | `mv file_name new_path/`
+rename file or directory in current directory | `mv file_name new_name` 
 check number of files in the current directory, pay attention to 'l' versus '1' here | `ls -1 | wc -l`
 count number of files of any kind, recursively, in current working dir | `find . -type f | wc -l`
 count number of files with a certain extension, recursively, in current working directory | `find . -type f -name "*.{EXTENSION}" | wc -l`
@@ -51,7 +51,7 @@ create new tmux session, with default session ID `0` | `tmux`
 exit `tmux` session but allow it to continue running in background | keyboard shortcut `ctrl` + `b` `d`
 exter back into a specific `tmux` session | `tmux a -t {SESSION ID}`
 check all active `tmux` sessions | `tmux ls`
-kill `tmux` session | `tmux kill-session -t {SESSION ID}`
+kill `tmux` session | `tmux kill--session -t {SESSION ID}`
 
 # GitHub
 
@@ -66,7 +66,7 @@ print all branches in repo, with * next to branch you're in | `git branch -a`
 check what branch you're on, and where your current version stands with files added, commited, and pushed in comaprison to the remote | `git status`
 check recent commits | `git log`
 merge `develop` branch into `main` | make sure you have pushed changed from `develop`, then: `git checkout main`, then: `git merge develop`
-display repo's branching & commit history in an easy-to-follow visual tree format | `git log --graph`
+display repository's branching & commit history in an easy-to-follow visual tree format | `git log --graph`
 
 # File & Directory Transfers
 
@@ -74,7 +74,7 @@ display repo's branching & commit history in an easy-to-follow visual tree forma
 
 `scp /path/to/local/file/or/directory/ username@server.host.ucsb.edu:/path/to/destination`
 
-Example to copy all feather files from current directory to my account on the Taylor server:
+Example to copy all feather files from current directory to my account on the "Taylor" server:
 `scp ./*.feather jscohen@taylor.bren.ucsb.edu:/Users/jscohen/data_features`
 
 ### Use `rsync` to copy directory from one directory on a local machine to another directory on the same local machine
