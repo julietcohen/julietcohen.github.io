@@ -1,0 +1,123 @@
+---
+title: "Terminal Commands for Big Data Workflows & GitHub "
+description: |
+  Whether you're processing large datsets on remote servers or fixing bugs in a new branch, command line skills are essential for working efficiently. Check out the  commands that I've found to be useful for processing terabytes of Arctic data for visualization on the Permafrost Discovery Gateway.     
+author:
+  - name: Juliet Cohen
+    url: {}
+date: 2023-01-22
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_float: true
+preview: pdg_imagery_viewer.png
+categories:
+  - Bash
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+![Imagery Viewer with data layers on the Permafrost Discovery Gateway](pdg_imagery_viewer.png)
+
+# The Command Line
+
+Although the terminal lacks a friendly GUI, it processes commands faster than navigating your IDE's file directory and it's highly useful for working with large datasets across machines. It's unforgiving with capitalization, typos, and undo-ing commands, but so worth it when you get the hang of it!
+
+The following are my favorite terminal commands for branching in GitHub, counting files recursively in large data directories, running scripts in the background, and more.
+
+# General Commands & tmux
+
+General commands to navigate directories and shuffle them around. Modifying large dataset structures and can freeze up an IDE's file explorer, so it's best done in the terminal.
+
+Additionally, running commands with the `tmux` tool is a game-changer as it allows processes to continue running in the background, even if the connection to the server is lost. It also allows multiple processes to be run simultaneously with different `tmux` sessions, so you can be transferring a large directory across a machine in one terminal and continue to check the size of the destination directory in another terminal, or run other scripts entirely, or just close your laptop and go home for the night while a script runs with no concern about your laptop falling asleep. I highly recommend using it whenever possible!
+
+Use | Command
+------------------- | ------------------
+vertically list files and directories, with date created | `ls -l`
+list all files and directories, including hidden ones (useful to open files that start with '.' for advanced settings) | `ls -a`
+remove directory and all contents recursively | `rm -r {DIRECTORY}`
+move directory | `mv path/to/file new/pth/to/file`
+rename directory | `mv path/to/file /same/path/new/name` 
+check number of files in the current directory, pay attention to 'l' versus '1' here | `ls -1 | wc -l`
+count number of files of any kind, recursively, in current working dir | `find . -type f | wc -l`
+count number of files with a certain extension, recursively, in current working directory | `find . -type f -name "*.{EXTENSION}" | wc -l`
+check total data storage in `documents` directory | download package with: `curl https://sh.rustup.rs -sSf | sh`, then install package with: `cargo install dirstat-rs`, and finally run: `ds documents`
+count number of files in current directory, recursively, and show how many files are within each subdirectory (run all as one command) | `find -maxdepth 1 -type d |`, `sort | while read -r dir;`, `do n=$(find "$dir" -type f | wc -l);`, `printf "%4d : %s\n" $n "$dir"; done`
+create symbolic link to folder | `ln -s /path/to/folder {LINK NAME}`
+create new tmux session, with default session ID `0` | `tmux`
+exit `tmux` session but allow it to continue running in background | keyboard shortcut `ctrl` + `b` `d`
+exter back into a specific `tmux` session | `tmux a -t {SESSION ID}`
+check all active `tmux` sessions | `tmux ls`
+kill `tmux` session | `tmux kill-session -t {SESSION ID}`
+
+# GitHub
+
+Use | Command
+------------------- | ------------------
+remove requirement to enter GitHub credentials on server again when pushing & such (run all as one command) | `git config --global credential.helper`, `"cache --timeout=100000000"`
+switch into branch `develop` | `git checkout develop`
+push to branch `develop` | `git add {FILES}`,  `git commit -m "{MESSAGE}"`, `git push origin develop`
+create a new branch called `NewBranch` | `git checkout -b NewBranch`
+create a new branch from the `develop` branch | first switch to the `develop` branch, pull updates with `git pull`, then: `git checkout -b NewBranch develop`
+print all branches in repo, with * next to branch you're in | `git branch -a`
+check what branch you're on, and where your current version stands with files added, commited, and pushed in comaprison to the remote | `git status`
+check recent commits | `git log`
+merge `develop` branch into `main` | make sure you have pushed changed from `develop`, then: `git checkout main`, then: `git merge develop`
+display repo's branching & commit history in an easy-to-follow visual tree format | `git log --graph`
+
+# File & Directory Transfers
+
+### Use `scp` to copy file or directory from local machine to a remote machine
+
+`scp /path/to/local/file/or/directory/ username@server.host.ucsb.edu:/path/to/destination`
+
+Example to copy all feather files from current directory to my account on the Taylor server:
+`scp ./*.feather jscohen@taylor.bren.ucsb.edu:/Users/jscohen/data_features`
+
+### Use `rsync` to copy directory from one directory on a local machine to another directory on the same local machine
+
+`rsync -av /path/to/source/directory /path/to/destination/directory`
+
+Options `-av` includes `-v` which sets `rsync` to communicate its progress throughout the transfer, and `-a` which is the `--archive` option which combined the options `-rlptgoD` which stand for:
+
+Option | Meaning
+------- | --------------
+`-r`, `--recursive` | include recursive directories
+`-l`, `--links` |copy symlinks as links
+`-p`, `--perms` | preserve permissions
+`-t`, `--times` | preserve times
+`-g`, `--group` | preserve group
+`-o`, `--owner` | preserve owner
+`-D` | same as `--devices` and `--specials`, also transfer special files such as symbolic links, named sockets, and fifos (pipes)
+
+### When to use `rsync` over `scp`
+
+- Use `scp` when transferring a small amount of files, and use `rsync` when you are transferring a larger quantity of data.
+- Use `rsync` to add complexity to the command, like the following options:
+  - `--exclude` to omit certain files from the transfer
+  - `--update` to skip files that are newer in the destination location
+  - `--remove-source-files` to delete the files from the source directory after they are transferred to destination (make sure all files are done being written before running the `rsync` command with this option)
+- You can setup `rsync` to run relatively continuously in the background with a `tmux` session while a script is writing new files to the _source_ directory. This is particularly useful if you are paying to use a powerful server and you are writing files to nodes' `/tmp` directories because it's faster than writing to the `/scratch` directory or your home directory that are not on the nodes. You might not want to risk losing all your files from the `/tmp` directory if your job expires before the script is done writing files, because then the `/tmp` directory is wiped before you can transfer the files somewhere safe! So transfer as many as you can before the job finishes.  
+- With `rsync`, you can transfer files between Google Drive and a local or remote machine. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

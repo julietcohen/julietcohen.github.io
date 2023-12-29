@@ -1,0 +1,32 @@
+---
+title: "Juliet Cohen"
+image: "Juliet.jpg"
+links:
+  - label: Email
+    url: "mailto:jscohen@bren.ucsb.edu"
+  - label: GitHub
+    url: "https://github.com/julietcohen"
+  - label: Bren Profile
+    url: "https://bren.ucsb.edu/people/juliet-cohen"
+  - label: Twitter
+    url: "https://twitter.com/juliet_s_cohen"
+output:
+  postcards::trestles
+site: distill::distill_website
+---
+### Bio
+
+I am a conservation biologist and data scientist interested in utilizing spatial data and modeling techniques to understand dynamic ecosystems in the face of climate change.
+
+I earned a Bachelor’s degree in Ecology and Evolution from UC Santa Barbara in 2019, where I conducted research focused on mammalian spatial ecology and the role of bivalves in Costa Rican mariculture systems. Following these projects, I served as a field technician studying endangered flat-tailed horned lizards and steelhead trout in Southern California, as well as invasive species in Hawaii. These immersive field roles inspired me to recognize broad ecological patterns across scientific disciplines, leading me to earn a Master’s degree in Environmental Data Science from UC Santa Barbara’s Bren School of Environmental Science & Management in 2022. 
+
+I apply open-source programming tools as a data scientist for the National Center for Ecological Analysis and Synthesis, where I am proud to collaborate with passionate conservationists from diverse backgrounds. I served as a member of the Ocean Health Index team, where I studied the relationship between marine health and human livelihoods on a global scale. I currently work at the Arctic Data Center, where I process and visualize pan-Arctic datasets derived from machine learning models and satellite imagery. I find my job to be very rewarding as I provide tools for researchers to answer diverse environmental questions about the Arctic region.
+
+### Education
+
+**Master of Environmental Data Science**\
+Bren School of Environmental Science & Management\
+University of California - Santa Barbara
+
+**B.S. in Ecology and Evolution**\
+University of California - Santa Barbara
