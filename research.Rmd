@@ -8,6 +8,16 @@ description: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Published Datasets
+
+Annett Bartsch, Georg Pointner, Ingmar Nitze, Juliet Cohen, Barbara Widhalm, Clemens von Baeckmann, & Rodrigue Tanguy. (2024). _Arctic Infrastructure: Sentinel-1 and Sentinel-2 derived Arctic Coastal Human Impact dataset, Pan-Arctic Region, 2016 - 2020_. Arctic Data Center. doi:10.18739/A21J97929.
+
+Chandi Witharana, Mahendra R Udawalpola, Amal S Perera, Amit Hasan, Elias Manos, Anna Liljedahl, Mikhail Kanevskiy, M Torre Jorgenson, Ronald Daanen, Benjamin Jones, Howard Epstein, Matthew B Jones, Robyn Thiessen-bock, Juliet Cohen, & Kastan Day. (2023). _Ice-wedge polygon detection in satellite imagery from pan-Arctic regions, Permafrost Discovery Gateway, 2001-2021_. Arctic Data Center. doi:10.18739/A2KW57K57.
+
+S. Jeanette Clark, Matthew B. Jones, Samantha Csik, Carmen Galaz García, Bryce Mecum, Natasha Haycock-Chavez, Daphne Virlar-Knight, Juliet Cohen, Anna Liljedahl. 2023. _Scalable and Computationally Reproducible Approaches to Arctic Research. Arctic Data Center_. doi:10.18739/A2QF8JM2V
+
+Ingmar Nitze, & Juliet Cohen. (2024). _Pan-Arctic lake area time series (2017-2021)_. Arctic Data Center. (in progress)
+
 ## Master's Capstone Project - An open-source pipeline for remote sensing of crop yields: a Zambia Case Study
 
 #### ABSTRACT
