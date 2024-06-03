@@ -18,29 +18,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![Overlooking Olomana ("three peaks") on the east side of Oahu, Hawai.](about_pics/overlook_oahu.jpg){width=90%}
 
-</center>
-
-My career began as a raccoon trapper, a lizard hunter, an island invasive species specialist, and a fisheries technician. I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets. Today my passion lies in gleaning meaningful observations from ecological and environmental datasets. I didn't make this journey alone; I found mentors in  field crew leaders, and  scientists along the way.
-
-<center>
-
-![](about_pics/.jpg){width=70%}
+I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets. Today my passion lies in gleaning meaningful observations from ecological and environmental datasets. I didn't make this journey alone; I found mentors in  field crew leaders, and  scientists along the way.
 
 </center>
 
-### Undergraduate Research at UC Santa Barbara
+### Mammalian Spatial Ecology
 
 I served as a research technician in [the McCauley lab](https://labs.eemb.ucsb.edu/mccauley/doug/) at UC Santa Barbara under Dr. Molly Hardesty-Moore investigating mesocarnivore spatial ecology in urban landscapes. I assisted Molly with trapping raccoons and fitting them with radio collars. We then tracked them using telemetry techniques over several years. Molly used this spatial data in conjunction with hair samples from raccoons, foxes, skunks, and opossums to compare behavior and dietary trends in mammals that live in urban versus rural habitats. We watched them peruse the landscape via camera traps.
 
 <center>
 
-![](about_pics/skunk.jpg){width="45%"}![](about_pics/black_bear.png){width=45%}
+![](about_pics/skunk.jpg){width="50%"}![](about_pics/black_bear.png){width=50%}
 
 </center>
 
 <center>
 
-![](about_pics/bobcat.png){width=45%}![](about_pics/fox.png){width=45%}
+![](about_pics/bobcat.png){width=50%}![](about_pics/fox.png){width=50%}
 
 </center>
 
@@ -58,15 +52,10 @@ In spent some of my free time walking through the forest to find wildlife:
 
 <center>
 
-![](about_pics/snake_CR.png){width=40%}
+![](about_pics/snake_CR.png){width=40%}![](about_pics/pit_viper.png){width=40%}
 
 </center>
 
-<center>
-
-![](about_pics/pit_viper.png){width=40%}
-
-</center>
 
 ### The Lizard Days
 
@@ -74,23 +63,17 @@ I got the chance to survey for flat tailed-horned lizards in the desert habitat 
 
 <center>
 
-![The first flat-tailed horned lizard we spotted of the season season](about_pics/fthl.JPG){width="60%"}
+![The first flat-tailed horned lizard we spotted of the season season](about_pics/fthl.JPG){width="50%"}![The crew admiring a flat-tailed horned lized](about_pics/fthl_group.JPG){width="50%"}
 
 </center>
 
 <center>
 
-![This iguana has a unique strategy to avoid the hot desert floor.](about_pics/lizard_bush.jpg){width=65%}
+![This iguana has a unique strategy to avoid the hot desert floor.](about_pics/lizard_bush.jpg){width=60%}
 
 </center>
 
 We did find plenty of armored lizards, sidewinders, nighthawk nests, mammal skulls, blue death feigning beetles, kangaroo rat tracks, and badger tunnels.
-
-<center>
-
-![The crew admiring a flat-tailed horned lized](about_pics/fthl_group.JPG){width="70%"}
-
-</center>
 
 ### Hawaii
 

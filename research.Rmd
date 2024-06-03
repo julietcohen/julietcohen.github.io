@@ -1,7 +1,7 @@
 ---
 title: "Research in Ecology & Environmental Data Science "
 description: |
-  From agriculture in sub-Saharan Africa to bilvalves in Costa Rica
+  
 ---
 
 ```{r setup, include=FALSE}
@@ -20,9 +20,9 @@ Ingmar Nitze, & Juliet Cohen. (2024). _Pan-Arctic lake area time series (2017-20
 
 ## Master's Capstone Project - An open-source pipeline for remote sensing of crop yields: a Zambia Case Study
 
-#### ABSTRACT
+**Abstract**
 
-###### The environmental and social impacts of climate change are disproportionately distributed worldwide. Many highly impacted regions lack the assets to monitor and generate resource predictions, and therefore lack high-quality environmental and social data. As a result, it is difficult to make predictions about the impacts of climate change for these regions using conventional modeling tools. Recently, machine learning approaches applied to high-resolution satellite imagery have been successful in making predictions of a wide range of social and environmental variables. However, generating these predictions comes with significant barriers, including high computational costs, data storage and expertise requirements, and financial costs. Reducing the financial and computational burden of machine learning approaches is essential to increasing the equity of environmental monitoring processes and outputs. Our approach demonstrates a pipeline to make predictions on ground-truth data using the Random Convolutional Features method through a use case example of predicting crop yields in Zambia. These crop yield predictions can be used to analyze food security risk in the region. We apply the novel machine learning approach, MOSAIKS (Rolf et al., 2021), to create tabular features for Zambia using Landsat 8 and Sentinel 2 satellite imagery. We pair these generated features of Zambia with ground-truth crop yield data to build a model that predicts crop yields over time and increases the spatial resolution of predicted crop yields. We then use this model to fill in a data gap of crop yield predictions in Zambia during the years 2020 and 2021. During these years, crop yield data was not collected due to the COVID-19 pandemic, leaving a gap in food security forecasting. Beyond this use case, these tabular features of satellite imagery and the methodology developed to create them provides a tool for others to build models and generate predictions of other social and environmental variables in this region.
+The environmental and social impacts of climate change are disproportionately distributed worldwide. Many highly impacted regions lack the assets to monitor and generate resource predictions, and therefore lack high-quality environmental and social data. As a result, it is difficult to make predictions about the impacts of climate change for these regions using conventional modeling tools. Recently, machine learning approaches applied to high-resolution satellite imagery have been successful in making predictions of a wide range of social and environmental variables. However, generating these predictions comes with significant barriers, including high computational costs, data storage and expertise requirements, and financial costs. Reducing the financial and computational burden of machine learning approaches is essential to increasing the equity of environmental monitoring processes and outputs. Our approach demonstrates a pipeline to make predictions on ground-truth data using the Random Convolutional Features method through a use case example of predicting crop yields in Zambia. These crop yield predictions can be used to analyze food security risk in the region. We apply the novel machine learning approach, MOSAIKS (Rolf et al., 2021), to create tabular features for Zambia using Landsat 8 and Sentinel 2 satellite imagery. We pair these generated features of Zambia with ground-truth crop yield data to build a model that predicts crop yields over time and increases the spatial resolution of predicted crop yields. We then use this model to fill in a data gap of crop yield predictions in Zambia during the years 2020 and 2021. During these years, crop yield data was not collected due to the COVID-19 pandemic, leaving a gap in food security forecasting. Beyond this use case, these tabular features of satellite imagery and the methodology developed to create them provides a tool for others to build models and generate predictions of other social and environmental variables in this region.
 
 - [GitHub organization](https://github.com/cropmosaiks)\
 - [Final presentation](https://www.youtube.com/watch?v=iXdETegKbSs&t=4351s)\
@@ -43,9 +43,9 @@ Cullen Molitor\
 
 ## Anthropogenic niche partitioning: mesocarnivore spatial and temporal coexistence along an urban gradient
 
-#### ABSTRACT
+**Abstract**
 
-###### We understand little about how our urbanizing world influences temporal and spatial niche partitioning among synathropic mammals. My research objectives include (1) to analyze how species shift temporal coexistence in response to varying degrees of urbanization, and (2) evaluate spatial niche partitioning by calculating relative mammalian diversity along an urban gradient. Urban species include the North American raccoon, striped skunk, red fox, brush rabbit, and Virginia opossum. Nine camera traps are deployed throughout three distinct habitats along an urban gradient. Urbanization positively correlates with nocturnality, and seasonality strongly predicts activity patterns that differ between species. Shifting activity patterns can disrupt delicate ecological relationships and specialized resource exploitation.
+We understand little about how our urbanizing world influences temporal and spatial niche partitioning among synathropic mammals. My research objectives include (1) to analyze how species shift temporal coexistence in response to varying degrees of urbanization, and (2) evaluate spatial niche partitioning by calculating relative mammalian diversity along an urban gradient. Urban species include the North American raccoon, striped skunk, red fox, brush rabbit, and Virginia opossum. Nine camera traps are deployed throughout three distinct habitats along an urban gradient. Urbanization positively correlates with nocturnality, and seasonality strongly predicts activity patterns that differ between species. Shifting activity patterns can disrupt delicate ecological relationships and specialized resource exploitation.
 
 Poster presented at the UC Santa Barbara Undergraduate Research Colloquium:
 
@@ -57,13 +57,14 @@ Poster presented at the UC Santa Barbara Undergraduate Research Colloquium:
 
 ## Filtration Efficiency in Bivalves: effects of species and size in oysters and mussels
 
-#### ABSTRACT
-###### Filter-feeding bivalves possess the potential to naturally improve marine ecosystems suffering from an overabundance of particulate organic matter and anthropogenic pollution through their water filtration processes. However, differences in realized potentials related to species identity and size are poorly understood. This project strives to (1) analyze filtration rates as they correspond to species in *Pteria sterna*, *Pinctada mazatlanica*, and *Semimytilus algosus*, and (2) determine the independent influence of soft tissue volume on this phenomenon. I performed species-segregated filtration trials and analyzed the filtration efficiency per unit volume of soft tissue. *Pteria sterna* filters the fastest when considering species identity, but *Semimytilus algosus* filters most efficiently when considering water filtered per unit volume of soft tissue. Species and size are interconnected and codetermine filtration efficiency; size is the dominant factor regarding filtration, but species identity strongly predicts size. Microscope analysis of algae and bryozoans abundance before and after filtration trials implies that species differ in the organic matter they primarily consume. Furthermore, filtration rate does not increase linearly with larger group sizes, providing implications of social facilitation among bivalves.
+**Abstract**
+
+Filter-feeding bivalves possess the potential to naturally improve marine ecosystems suffering from an overabundance of particulate organic matter and anthropogenic pollution through their water filtration processes. However, differences in realized potentials related to species identity and size are poorly understood. This project strives to (1) analyze filtration rates as they correspond to species in *Pteria sterna*, *Pinctada mazatlanica*, and *Semimytilus algosus*, and (2) determine the independent influence of soft tissue volume on this phenomenon. I performed species-segregated filtration trials and analyzed the filtration efficiency per unit volume of soft tissue. *Pteria sterna* filters the fastest when considering species identity, but *Semimytilus algosus* filters most efficiently when considering water filtered per unit volume of soft tissue. Species and size are interconnected and codetermine filtration efficiency; size is the dominant factor regarding filtration, but species identity strongly predicts size. Microscope analysis of algae and bryozoans abundance before and after filtration trials implies that species differ in the organic matter they primarily consume. Furthermore, filtration rate does not increase linearly with larger group sizes, providing implications of social facilitation among bivalves.
 
 ![](research/Juliet's_Final_Bivalve_Paper_pdf.pdf){width=99%}
 
 [Full Research Paper](research/Juliets_Final_Bivalve_Paper_html_copy.html)
 
-**Funding:** This project was possible through the Tropical Biology and Conservation program at UC Santa Barbara and the Monteverde Institute, as well as the UC Santa Barbara EAP Gaucho Scholarship.
+**Funding:** Tropical Biology and Conservation program at the Monteverde Institute, and UC Santa Barbara EAP Gaucho Scholarship
 
-**Mentorship:** Thank you to Frank Joyce of the Monteverde Institute, Costa Rica. Your mentorship and research expertise made this project a reality.
+**Mentorship:** Frank Joyce of the Monteverde Institute, Costa Rica.

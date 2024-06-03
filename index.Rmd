@@ -14,19 +14,13 @@ output:
   postcards::trestles
 site: distill::distill_website
 ---
-### Bio
+#### Bio
 
-I am a conservation biologist, data scientist, and software developer interested in utilizing spatial data and remote sensing to understand our dynamic ecosystems in the face of climate change.
+I'm an environmental data scientist and software developer interested in utilizing spatial data and remote sensing to understand our dynamic ecosystems in the face of climate change.
 
-I apply open-source programming at the National Center for Ecological Analysis and Synthesis, where I am proud to collaborate with passionate conservationists from diverse backgrounds. I process and visualize pan-Arctic datasets derived from machine learning models and satellite imagery for the the [Permafrost Discovery Gateway](https://arcticdata.io/catalog/portals/permafrost) project.
+I earned a Bachelor’s degree in Ecology and Evolution from UC Santa Barbara in 2019, where I conducted research focused on mammalian spatial ecology and Costa Rican mariculture systems. In the following years, I served as a wildlife field technician in Southern California and Hawaii. These immersive field roles inspired me to recognize broad ecological patterns across scientific disciplines, leading me to earn a Master’s degree in Environmental Data Science from UC Santa Barbara’s Bren School of Environmental Science & Management in 2022. 
 
-My goal is to provide tools for researchers, community members, and policy makers to answer environmental questions about the Arctic region.
+I process and visualize pan-Arctic datasets derived from machine learning models and satellite imagery for the [Permafrost Discovery Gateway](https://arcticdata.io/catalog/portals/permafrost) project. I develop open-source software tools to understand how we're shaping the world around us.
 
-### Education
 
-**Master of Environmental Data Science**\
-Bren School of Environmental Science & Management\
-University of California - Santa Barbara
 
-**B.S. in Ecology and Evolution**\
-University of California - Santa Barbara
