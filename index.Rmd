@@ -16,11 +16,11 @@ site: distill::distill_website
 ---
 ### Bio
 
-I am a conservation biologist, data scientist, and software developer interested in utilizing spatial data and remote sesnsing to understand dynamic ecosystems in the face of climate change.
+I am a conservation biologist, data scientist, and software developer interested in utilizing spatial data and remote sensing to understand our dynamic ecosystems in the face of climate change.
 
-I earned a Bachelor’s degree in Ecology and Evolution from UC Santa Barbara in 2019, where I conducted research focused on mammalian spatial ecology and Costa Rican mariculture systems. In the following years, I served as a field technician studying endangered flat-tailed horned lizards and steelhead trout in Southern California, as well as invasive species in Hawaii. These immersive field roles inspired me to recognize broad ecological patterns across scientific disciplines, leading me to earn a Master’s degree in Environmental Data Science from UC Santa Barbara’s Bren School of Environmental Science & Management in 2022. 
+I apply open-source programming at the National Center for Ecological Analysis and Synthesis, where I am proud to collaborate with passionate conservationists from diverse backgrounds. I process and visualize pan-Arctic datasets derived from machine learning models and satellite imagery for the the [Permafrost Discovery Gateway](https://arcticdata.io/catalog/portals/permafrost) project.
 
-I apply open-source programming tools as a data scientist and software developer for the National Center for Ecological Analysis and Synthesis, where I am proud to collaborate with passionate conservationists from diverse backgrounds. I served as a member of the Ocean Health Index team, where I studied the relationship between marine health and human livelihoods on a global scale. I currently work at the Arctic Data Center on the [Permafrost Discovery Gateway](https://arcticdata.io/catalog/portals/permafrost) project where I process and visualize pan-Arctic datasets derived from machine learning models and satellite imagery. I find my job to be very rewarding as I provide tools for researchers, community members, and policy makers to answer diverse environmental questions about the Arctic region.
+My goal is to provide tools for researchers, community members, and policy makers to answer environmental questions about the Arctic region.
 
 ### Education
 
