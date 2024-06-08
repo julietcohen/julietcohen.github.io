@@ -23,49 +23,48 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <center>
 
-![](images/python.png){width=70%}
+![](images/python.png){width=60%}
 
 </center>
 
-Python is a powerful programming language for spatial analyses. In this tutorial, we learn the basics of plotting shapefiles overlaid on top of a basemap, which gives us spatial context and opens doors for deeper analysis. Understanding where points, lines, and polygons exist in the world empowers data scientists to answer questions about correlated variables, consider new questions that arise throughout the analysis process, and communicate conclusions to audiences in an easily-digestible way.
+Python is a powerful programming language for spatial analyses. In this tutorial, we learn the basics of plotting shapefiles overlaid on top of a basemap. Understanding where points, lines, and polygons exist in the world allows us to answer questions about correlated variables, consider new questions that arise throughout the analysis process, and communicate conclusions to audiences in an easily-digestible way.
 
 We start with the basics; installing the integrated development environment (IDE) Jupyter Notebook and installing the necessary packages. If you prefer to use another IDE such as Visual Studio Code and have already installed the packages `geopandas`, feel free to jump ahead to the **Importing Packages** section.
 
-As a conservation biologist and an aspiring data scientist, I'm interested in plotting endangered species' critical habitat ranges throughout the United States. I sourced my data from the U.S. Geological Survey [here](https://ecos.fws.gov/ecp/report/table/critical-habitat.html). I'm a big fan of USGS datasets because they are usually relatively clean and provide comprehensive metadata.
+I'm interested in plotting endangered species' critical habitat ranges throughout the United States. I sourced my data from the U.S. Geological Survey [here](https://ecos.fws.gov/ecp/report/table/critical-habitat.html). I'm a big fan of USGS datasets because they are relatively clean and provide comprehensive metadata.
 
 Let's map the critical habitat ranges of the Florida Bonneted bat and many other species of concern on a basemap of the United States.
 
 <center>
 
-![The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.](images/bat.png){width=85%}
+![The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.](images/bat.png){width=75%}
 
 </center>
 
 ## Getting started with Python and Jupyter Notebooks
 
-Transitioning from `R` and `Rstudio` to `Python` and `Jupyter` can be difficult, as is learning any new language or IDE. We have to say goodbye to the exceptionally user-friendly `RStudio` interface with its convenient graphical user interface and easily accessible console and terminal windows. Let's dive into the objected-oriented language of Python and the mysterious terminal. Personally, I struggled every step of this journey with lots of syntax errors, merge conflicts, and endless Googling I hope this post will help hold your hand as we make this transition together.
+Firstly, install `Anaconda` with instructions [here.](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) To minimize the packages you're installing, go ahead with `miniconda`. This can be done through the commandline. Both `Anaconda` or `Miniconda` will work fine whether you have a PC or Mac.
 
-First things first, if you're using Jupyter Notebooks to code in Python, you're gonna have to install Python and Anaconda Navigator. Install `Anaconda` into your home directory. (Note: there are plenty of other IDE's for Python, such as [visual studio code](https://code.visualstudio.com/), which I adopted later in my data science journey).
+Next, install the IDE [VSCode](https://code.visualstudio.com/). 
 
-As I had a PC when I first started coding in Python, installing `Anaconda` really threw me and my laptop for a loop. But what better way to learn to use the terminal besides struggling to install stuff you desperately need for graduate school? Errors and trouble-shooting is what makes us stronger data scientists, even if we don't want to recognize that as we fight the urge to throw our computer out the window. Click [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) for a great resource to walk you through installing `Anaconda`. Either `Anaconda` or `Miniconda` will work fine whether you have a PC or Mac.
+On a Mac, I activate `conda` in the regular terminal (`conda activate`). On a PC, I do this from the Anaconda Prompt (the `Anaconda` terminal) because it's tricky to get my normal command line or Bash to recognize that `conda` is indeed on my computer.
 
-After installing Anaconda, start your journey plotting shapefiles in `Python` by opening up Jupyter Notebooks. On a Mac, I can activate `conda` in the regular terminal (`conda activate`). On a PC, I like to do this from the Anaconda Prompt (the `Aanconda` terminal) because it's tricky to get my normal command line or Bash to recognize that `conda` is indeed on my computer. My favorite workflow is as follows:
+Create a new conda environment with `conda create -n EnvName` and tag on `python=3.10` to the end if you want to specify a certain python version. Activate the environment with `conda activate EnvName`. Don't install any packages into your base environment. If you do this by accident, you can always reset it.
 
-- From the start menu, open a terminal through Anaconda Navigator that's called "Anaconda Prompt".  
-- Install `geopandas` with `conda install geopandas` in your base environment (which is the default). If that doesn't work (which would not surprise me if you're on a PC), create a new environment to do so. I found the steps on this website to be helpful: https://medium.com/analytics-vidhya/fastest-way-to-install-geopandas-in-jupyter-notebook-on-windows-8f734e11fa2b. I tried installing `geopandas` in my base environment, but it was difficult to install all the correct versions of all the dependencies, so I decided to take the easy route and just make a new environment for `geopandas` and any other spatial analysis packages I'll need.  - Activate the environment in which you have installed the `geopandas` package. I named that environment `geo_env`, so I type `activate geo_env`.   
-- Now that I am in my desired environment, I am going to navigate to the folder in my terminal in which I want to open and save my Jupyter Notebook. That command is `cd file/path/to/folder`. You know this worked if your terminal working directory now has that file path tacked onto the end. This file path step is *not required* if you want to include *relative file paths* to import data and save your notebook.  
+Install `geopandas` with `conda install geopandas` or `pip install geopandas`.  
+
+If using Jupyter Notebooks: in the command line, navigate to the folder in my terminal in which I want to open and save my Jupyter Notebook. That command is `cd file/path/to/folder`. You know this worked if your terminal working directory now has that file path tacked onto the end. This file path step is *not required* if you want to include *relative file paths* to import data and save your notebook.  
 
 ![](images/activate_cd.png)
 
-- Download your spatial data files to this folder to make your life easier in 2 minutes when you import your spatial data in Jupyter Notebook.  
-- Open Jupyter Notebooks by typing just that: `jupyter notebook`. This will tell your terminal to pop open Jupyter Notebook in your browser with your folder of choice already open and ready to go.  
-- In the upper right side, open a new notebook.  
+- Download your spatial data files to this folder to make your life easier when you import your spatial data.  
+- If using Jupyter Notebooks, open a new one by running: `jupyter notebook`. This will pop open Jupyter Notebook in your browser with your folder of choice already open and ready to go. In the upper right side, open a new notebook. If using VScode, run: `touch spatial_analysis.ipynb`
 
 ![](images/jupyter.png)
 
 - Note: the Anaconda terminal window you used to open this notebook should not be closed during your work session. It must remain open to keep your kernel connected and give you the ability to save! If you need to run any terminal commands after you have already opened this notebook, such as if you need to download a package or check a file location, just open up another terminal window and enter the `geo_env` environment to do so.
 
-## Importing Packages (`modules`)
+## Importing Packages
 
 For plotting shapefiles, you'll want to import the following packages:  
 
@@ -83,32 +82,23 @@ As a proponent of reproducibility and crediting those who provided the data, I l
 
 Data source: [US Fish and Wildlife](https://ecos.fws.gov/ecp/report/table/critical-habitat.html)\ 
 - contains .shp, .dbf, and .shx polygon files that relate to critical species habiata in the United States\
-- I chose the first zip file you see on this site\
-- USFW provided great metadata\  
+- I chose the first zip file you see on this site
 
 ## Importing Data
 
-Let's import your data! Now is the time you're gonna thank yourself for placing your data in the same folder as your Jupyter notebook. We will use `geopandas` to read in the **shapefile** with your polygons or lines or points of choice (you will not find a combination of these shapes in the same shapefile, because that's just how the world works). You might take a look at all the data files and feel a little overwhelmed at the choices due to the way that shapefiles and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to import a **shapefile** of polygons, so that **.shp** file is the only one you need to read in:   
+Let's import your data! We will use `geopandas` to read in the **shapefile** with  polygons or lines or points You might take a look at all the file extensions and feel overwhelmed. Shapefiles and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to import a **shapefile** of polygons, so that **.shp** file is the only one you need to read in:   
 
 ```python
 gdf = gpd.read_file('CRITHAB_POLY.shp')
-# Take a look at the first rows:
-print(gdf.head())  
-# Ask Python how many rows and columns are in this dataframe
-print(gdf.shape)
 ```
 
-My only complaint with the `head()` function is that it returns the first rows in a plain text format:
-
-![](images/text.png)
-
-If you want to see the first and last few rows of the dataframe in a format that looks more familiar (like how Rstudio presents dataframes), try just typing the name of the data frame, `gdf`:  
+By simply typing `gdf`, we get a nicely formatted preview of the geodataframe:
 
 ![](images/gdf.png)
 
-This shapefile I read in contains polygons that designate the critical habitat ranges for many endangered and threatened species in the United States. I chose to name it `gdf` for *geodataframe*. Expect that you will be modifying this dataframe as you go through this mapping process (subsetting columns, filtering for certain factor levels, etc.) so you will likely be tacking on more words to `gdf` to tell these modified versions apart. Start naming things simply and clearly, and get more specific as you process your data.  
+This shapefile contains polygons that designate the critical habitat ranges for many endangered and threatened species in the United States.
 
-Practice cimple commans like calling all the column names in the dataframe:  
+Practice simple commands like calling all the column names in the dataframe:  
 
 ```python
 print(gdf.columns)
@@ -135,7 +125,7 @@ Print the latitude and longitude pairs that make up a particular polygon:
 
 ## Setting the Coordinate Reference System  
 
-As a last step before you plot, you have to make sure you set the data to the desired coordinate reference system (CRS). This is pretty standard for all kinds of spatial data, since your data might come with an unfamiliar CRS or have no CRS at all if you are making a mask, a raster, or executing similar geospatial processes. For information about coordinate reference systems, check out [this guide.](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)  
+As a last step before you plot, you have to make sure you set the data to the desired coordinate reference system (CRS). This is standard for all kinds of spatial data, since your data might come with an undesired CRS or lack information about it. For information about coordinate reference systems, check out [this guide.](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)  
 
 Three common CRS's are as follows:   
 
@@ -163,7 +153,7 @@ gdf_3857.plot(column='comname',
 
 Note that you did not have to call the package to use the function `plot()`. Instead, you can name the dataframe which you want to plot, which is `gdf_3857` in this case, *then* `plot()` and add arguments and supplemental plot structure changes as you go.
              
-The fig size can be whatever you want. 10-20 is usually good enough. You have finer control over the degree of zoom of the map with the arguments `xlim()` and `ylim()`, anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:  
+The fig size can be whatever you want. You have finer control over the degree of zoom of the map with the arguments `xlim()` and `ylim()`, anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:  
 
 ```python
 crit_hab_polys = gdf_3857.plot(column='comname',
@@ -196,7 +186,7 @@ You did it! Welcome to the wonderful world of geospatial data in Python.
 
 ## Future Analysis
 
-With this basic skill mastered, you can now dive deeper into this data to determine if variables are correlated across space. Considering state borders, you might ask **which endangered species occupy ciritical habitat in your home state?** and investigate the different wildlife protection policies across the United States. Alternatively, you could approach this data from an environmental perspective and ask **which natural biomes contain the most critical habitat for these endangered species? Are these habitats degrading at a faster rate than those that contain less critical habitat?**
+With this basic skill mastered, you can now dive deeper into this data to determine if variables are correlated across space. Considering state borders, you might ask **which endangered species occupy critical habitat in your home state?** and investigate the different wildlife protection policies across the United States. Alternatively, you could approach this data from an environmental perspective and ask **which natural biomes contain the most critical habitat for these endangered species? Are these habitats degrading at a faster rate than those that contain less critical habitat?**
 
 ## A Local California Use Case Example
 
