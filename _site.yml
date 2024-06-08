@@ -7,7 +7,7 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "Resume"
+    - text: "CV"
       href: Resume_20240529.pdf
     - text: "Programming Blog"
       href: blog.html

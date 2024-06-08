@@ -24,7 +24,7 @@ I started collecting data while traversing mountaintops and snorkeling inside aq
 
 ### Mammalian Spatial Ecology
 
-I served as a research technician in [the McCauley lab](https://labs.eemb.ucsb.edu/mccauley/doug/) at UC Santa Barbara under Dr. Molly Hardesty-Moore investigating mesocarnivore spatial ecology in urban landscapes. I assisted Molly with trapping raccoons and fitting them with radio collars. We then tracked them using telemetry techniques over several years. Molly used this spatial data in conjunction with hair samples from raccoons, foxes, skunks, and opossums to compare behavior and dietary trends in mammals that live in urban versus rural habitats. We watched them peruse the landscape via camera traps.
+I served as a research technician in [the McCauley lab](https://labs.eemb.ucsb.edu/mccauley/doug/) at UC Santa Barbara under Dr. Molly Hardesty-Moore investigating mesocarnivore spatial ecology in urban landscapes. I assisted Molly with trapping raccoons and fitting them with radio collars, then tracking them using telemetry techniques over several years. This spatial data was used in conjunction with hair samples from raccoons, foxes, skunks, and opossums to compare behavior and dietary trends in mammals that live in urban versus rural habitats. We watched them peruse the landscape via camera traps.
 
 <center>
 
