@@ -23,23 +23,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <center>
 
-![](images/python.png){width=60%}
+![The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.](images/bat.png){width=75%}
 
 </center>
+
+Let's map the critical habitat ranges of the Florida Bonneted bat and many other species of concern.
 
 In this tutorial, we learn the basics of plotting shapefiles overlaid on top of a basemap. Understanding where points, lines, and polygons exist in the world allows us to answer questions about correlated variables, consider new questions that arise throughout the analysis process, and communicate conclusions to audiences in an easily-digestible way.
 
 We start with the basics; installing the integrated development environment (IDE) such as VS Code or Jupyter Notebook and installing the necessary packages.
 
 I'm interested in plotting endangered species' critical habitat ranges throughout the United States. I sourced my data from the U.S. Geological Survey [here](https://ecos.fws.gov/ecp/report/table/critical-habitat.html). I'm a big fan of USGS datasets because they are relatively clean and provide comprehensive metadata.
-
-Let's map the critical habitat ranges of the Florida Bonneted bat and many other species of concern in the United States.
-
-<center>
-
-![The Florida bonneted bat, a critically endangered species that has been assigned critical habitat by U.S. Fish and Wildlife. Hopefully, the critical habita is suffificient to help this species recover and reach sustainable population levels. The world would be a better place with more bonneted bats.](images/bat.png){width=75%}
-
-</center>
 
 ## Getting started 
 
