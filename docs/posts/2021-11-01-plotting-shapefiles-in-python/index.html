@@ -119,7 +119,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/activate_cd.png","images/bat.png","images/columns.png","images/crit_hab_no_basemap.png","images/crit_hab_with_basemap.png","images/gdf.png","images/jupyter.png","images/lat_long.png","images/plot_code.png","images/python.png","images/set_crs.png","images/shape.png","images/steelhead_crayfish.png","images/steelhead_dps.png","images/subset_end.png","images/text.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.11/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.13/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.map","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["images/activate_cd.png","images/bat.png","images/columns.png","images/crit_hab_no_basemap.png","images/crit_hab_with_basemap.png","images/gdf.png","images/jupyter.png","images/lat_long.png","images/plot_code.png","images/python.png","images/set_crs.png","images/shape.png","images/steelhead_crayfish.png","images/steelhead_dps.png","images/subset_end.png","images/text.png","plotting-shapefiles-in-python_files/anchor-4.2.2/anchor.min.js","plotting-shapefiles-in-python_files/bowser-1.9.3/bowser.min.js","plotting-shapefiles-in-python_files/distill-2.2.21/template.v2.js","plotting-shapefiles-in-python_files/header-attrs-2.10/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.11/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.13/header-attrs.js","plotting-shapefiles-in-python_files/header-attrs-2.14/header-attrs.js","plotting-shapefiles-in-python_files/jquery-1.11.3/jquery.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.js","plotting-shapefiles-in-python_files/jquery-3.6.0/jquery-3.6.0.min.map","plotting-shapefiles-in-python_files/popper-2.6.0/popper.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-bundle.umd.min.js","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy-light-border.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.css","plotting-shapefiles-in-python_files/tippy-6.2.7/tippy.umd.min.js","plotting-shapefiles-in-python_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2466,8 +2466,7 @@ a basemap.</p></p>
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#getting-started-with-python-and-jupyter-notebooks">Getting
-started with Python and Jupyter Notebooks</a></li>
+<li><a href="#getting-started">Getting started</a></li>
 <li><a href="#importing-packages">Importing Packages</a></li>
 <li><a href="#importing-data">Importing Data</a></li>
 <li><a href="#setting-the-coordinate-reference-system">Setting the
@@ -2489,18 +2488,15 @@ United States:</a></li>
 <center>
 <p><img src="images/python.png" style="width:60.0%" /></p>
 </center>
-<p>Python is a powerful programming language for spatial analyses. In
-this tutorial, we learn the basics of plotting shapefiles overlaid on
-top of a basemap. Understanding where points, lines, and polygons exist
-in the world allows us to answer questions about correlated variables,
-consider new questions that arise throughout the analysis process, and
-communicate conclusions to audiences in an easily-digestible way.</p>
+<p>In this tutorial, we learn the basics of plotting shapefiles overlaid
+on top of a basemap. Understanding where points, lines, and polygons
+exist in the world allows us to answer questions about correlated
+variables, consider new questions that arise throughout the analysis
+process, and communicate conclusions to audiences in an
+easily-digestible way.</p>
 <p>We start with the basics; installing the integrated development
-environment (IDE) Jupyter Notebook and installing the necessary
-packages. If you prefer to use another IDE such as Visual Studio Code
-and have already installed the packages <code>geopandas</code>, feel
-free to jump ahead to the <strong>Importing Packages</strong>
-section.</p>
+environment (IDE) such as VS Code or Jupyter Notebook and installing the
+necessary packages.</p>
 <p>I’m interested in plotting endangered species’ critical habitat
 ranges throughout the United States. I sourced my data from the U.S.
 Geological Survey <a
@@ -2508,7 +2504,7 @@ href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html">here</a>.
 I’m a big fan of USGS datasets because they are relatively clean and
 provide comprehensive metadata.</p>
 <p>Let’s map the critical habitat ranges of the Florida Bonneted bat and
-many other species of concern on a basemap of the United States.</p>
+many other species of concern in the United States.</p>
 <center>
 <figure>
 <img src="images/bat.png" style="width:75.0%"
@@ -2520,16 +2516,20 @@ this species recover and reach sustainable population levels. The world
 would be a better place with more bonneted bats.</figcaption>
 </figure>
 </center>
-<h2 id="getting-started-with-python-and-jupyter-notebooks">Getting
-started with Python and Jupyter Notebooks</h2>
+<h2 id="getting-started">Getting started</h2>
 <p>Firstly, install <code>Anaconda</code> with instructions <a
-href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html">here.</a>
-To minimize the packages you’re installing, go ahead with
-<code>miniconda</code>. This can be done through the commandline. Both
-<code>Anaconda</code> or <code>Miniconda</code> will work fine whether
-you have a PC or Mac.</p>
+href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html">from
+Conda documentation</a> or from <a
+href="https://waylonwalker.com/install-miniconda/">this blog post</a>
+that worked well for me. To minimize the packages you’re installing,
+install <code>miniconda</code>. This can be done through the
+commandline. Both <code>Anaconda</code> or <code>Miniconda</code> will
+work whether you have a PC or Mac.</p>
 <p>Next, install the IDE <a
-href="https://code.visualstudio.com/">VSCode</a>.</p>
+href="https://code.visualstudio.com/">VSCode</a>. I recommend this over
+Jupyter Notebooks.</p>
+<p>Don’t install any packages into your base environment. If you do this
+by accident, you can always reset it.</p>
 <p>On a Mac, I activate <code>conda</code> in the regular terminal
 (<code>conda activate</code>). On a PC, I do this from the Anaconda
 Prompt (the <code>Anaconda</code> terminal) because it’s tricky to get
@@ -2538,9 +2538,7 @@ indeed on my computer.</p>
 <p>Create a new conda environment with
 <code>conda create -n EnvName</code> and tag on <code>python=3.10</code>
 to the end if you want to specify a certain python version. Activate the
-environment with <code>conda activate EnvName</code>. Don’t install any
-packages into your base environment. If you do this by accident, you can
-always reset it.</p>
+environment with <code>conda activate EnvName</code>.</p>
 <p>Install <code>geopandas</code> with
 <code>conda install geopandas</code> or
 <code>pip install geopandas</code>.</p>
@@ -2583,27 +2581,28 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a hr
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> contextily <span class="im">as</span> ctx <span class="co"># add a default basemap under our polygons of interest</span></span></code></pre></div>
 <p>If you do not already have <code>contextily</code> installed, use a
 <code>conda forge</code> command to install it in the terminal in your
-geospatial environment.</p>
-<p>As a proponent of reproducibility and crediting those who provided
-the data, I like to include a markdown chunk following my package
-imports that includes a URL link to where I found my data, along with a
-citation if necessary and any notes about how I downloaded it for myself
-or anyone else working through my code:</p>
-<p>Data source: <a
-href="https://ecos.fws.gov/ecp/report/table/critical-habitat.html">US
-Fish and Wildlife</a>  - contains .shp, .dbf, and .shx polygon files
-that relate to critical species habiata in the United States<br />
-- I chose the first zip file you see on this site</p>
+environment if you used <code>conda forge</code> to install previous
+packages. If you used pip to install other packages, stick with
+<code>pip</code>. It is not wise to mix <code>conda forge</code> and
+<code>pip</code> in the same environment because dependencies can
+conflict.</p>
+<p>I like to include a markdown chunk following my package imports that
+includes a URL link to where I found my data, a citation, and notes
+about how I downloaded it for myself or anyone else working through my
+code:</p>
+<pre><code>Data source: [US Fish and Wildlife](https://ecos.fws.gov/ecp/report/table/critical-habitat.html)\ 
+- contains .shp, .dbf, and .shx polygon files that relate to critical species habiata in the United States\
+- I chose the first zip file you see on this site</code></pre>
 <h2 id="importing-data">Importing Data</h2>
-<p>Let’s import your data! We will use <code>geopandas</code> to read in
-the <strong>shapefile</strong> with polygons or lines or points You
-might take a look at all the file extensions and feel overwhelmed.
-Shapefiles and their metadata are stored separately (.shp, .dbf, .shx,
-.xml, and so on). In this example we are trying to import a
+<p>We will use <code>geopandas</code> to read in the
+<strong>shapefile</strong> with polygons or lines or points You might
+take a look at all the file extensions and feel overwhelmed. Shapefiles
+and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so
+on). In this example we are trying to import a
 <strong>shapefile</strong> of polygons, so that <strong>.shp</strong>
 file is the only one you need to read in:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(<span class="st">&#39;CRITHAB_POLY.shp&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(<span class="st">&#39;CRITHAB_POLY.shp&#39;</span>)</span></code></pre></div>
 <p>By simply typing <code>gdf</code>, we get a nicely formatted preview
 of the geodataframe:</p>
 <p><img src="images/gdf.png" /></p>
@@ -2612,12 +2611,12 @@ ranges for many endangered and threatened species in the United
 States.</p>
 <p>Practice simple commands like calling all the column names in the
 dataframe:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdf.columns)</span></code></pre></div>
-<p>Check the factor levels for the columns <code>listing_st</code>:</p>
 <div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>status_levels <span class="op">=</span> gdf.listing_st.unique()</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>status_levels</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdf.columns)</span></code></pre></div>
+<p>Check the factor levels for the columns <code>listing_st</code>:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>status_levels <span class="op">=</span> gdf.listing_st.unique()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>status_levels</span></code></pre></div>
 <p>Using U.S. Fish and Wildlife as an example, now that you know the
 factor levels of a categorical variable, you can subset for only
 <em>“endangered”</em> species, only <em>“threatened”</em> species,
@@ -2633,78 +2632,74 @@ src="images/shape.png" /></p>
 polygon: <img src="images/lat_long.png" /></p>
 <h2 id="setting-the-coordinate-reference-system">Setting the Coordinate
 Reference System</h2>
-<p>As a last step before you plot, you have to make sure you set the
-data to the desired coordinate reference system (CRS). This is standard
-for all kinds of spatial data, since your data might come with an
-undesired CRS or lack information about it. For information about
-coordinate reference systems, check out <a
+<p>As a last step before you plot, you have to make sure you
+<strong>set</strong> and then <strong>transform</strong> the data to the
+desired coordinate reference system (CRS). This is standard for all
+kinds of spatial data, since your data might come with an undesired CRS
+or lack information about it. For information about coordinate reference
+systems, check out <a
 href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf">this
 guide.</a></p>
 <p>Three common CRS’s are as follows:</p>
 <ul>
-<li><strong>WGS84 (EPSG: 4326)</strong>, which is commonly used for GIS
-data across the globe or across multiple countries<br />
-and<br />
-</li>
-<li><strong>NAD83 (EPSG:4269)</strong>, which is most commonly used for
-federal agencies<br />
-and<br />
-</li>
-<li><strong>Mercator (EPSG: 3857)</strong>, which is used for tiles from
-Google Maps, Open Street Maps, and Stamen Maps. I will use this one
-today because I want to overlay my polygons onto a Google basemap with
-<code>contextily</code>.</li>
+<li><p><strong>WGS84 (EPSG: 4326)</strong>, which is commonly used for
+GIS data across the globe or across multiple countries</p></li>
+<li><p><strong>NAD83 (EPSG:4269)</strong>, which is most commonly used
+for federal agencies</p></li>
+<li><p><strong>Mercator (EPSG: 3857)</strong>, which is projected, uses
+units of meters, and used for tiles from Google Maps, Open Street Maps,
+and Stamen Maps. I will use this one today because I want to overlay my
+polygons onto a Google basemap with <code>contextily</code>.</p></li>
 </ul>
-<p>Set the CRS to ESPG 3857. This code may take a minute to run. In
-Jupyter Notebook, you know that code chunk is still chuggin’ away if you
-see an asterisk in brackets to the left of the code chunk:</p>
-<p><img src="images/set_crs.png" /></p>
+<p>Once you set the CRS, transform it:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gdf_3857 <span class="op">=</span> to_crs(epsg <span class="op">=</span> <span class="st">&quot;3857&quot;</span>, inplace <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div>
 <h2 id="plotting-shapefiles-on-a-basemap">Plotting Shapefiles on a
 Basemap</h2>
-<p>Use the plot() function from matplotlib and make the polygon color
-represent each species:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gdf_3857.plot(column<span class="op">=</span><span class="st">&#39;comname&#39;</span>,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>             figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
+<p>Use the <code>plot()</code> function from <code>matplotlib</code> and
+assign the palette to the species attribute:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gdf_3857.plot(column <span class="op">=</span> <span class="st">&#39;comname&#39;</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>             figsize <span class="op">=</span> <span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
 <p><img src="images/crit_hab_no_basemap.png" /></p>
 <p>Note that you did not have to call the package to use the function
 <code>plot()</code>. Instead, you can name the dataframe which you want
 to plot, which is <code>gdf_3857</code> in this case, <em>then</em>
 <code>plot()</code> and add arguments and supplemental plot structure
 changes as you go.</p>
-<p>The fig size can be whatever you want. You have finer control over
-the degree of zoom of the map with the arguments <code>xlim()</code> and
-<code>ylim()</code>, anyway. These polygons are just floating in space,
-so lets add a basemap to give us geographical context:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>crit_hab_polys <span class="op">=</span> gdf_3857.plot(column<span class="op">=</span><span class="st">&#39;comname&#39;</span>,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>             figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
-<p>Notice that I used an argument in the plot function, setting the
-<code>column = 'comname'</code>, which is a column within the
-<code>gdf_3857</code> geodataframe that specifies the common name for
-the species in that row. This argument sets a unique color to each
-common name, which will help us tell the difference between each
-species’ habitat on the map, even if 1 species’ habitat is composed of
-multiple polygons.</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ctx.add_basemap(crit_hab_polys)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:  </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">2350000</span>,<span class="dv">6350000</span>])</span></code></pre></div>
-<p>Since the basemap within the <code>contextily</code> package is of
-the entire world, we need to specify the x-limitations and y-limitations
-for our map so we can zoom in on the United States to best understand
-our data. The default x and y units were in the millions, so I specified
-my units in millions, too. When considering if I should plug in positive
-or negative values, I considered the way that coordinate reference
-systems are designed with positive values for North and East, and
-negative values for South and West. I considered that the United States
-is north of the equator, so I should have positive values for the min
-and max y. As for the magnitude of my values, I simply looked at the map
-for a starting point and played around with different numbers until I
-got the view I wanted.</p>
+<p>The <code>figsize</code> can be whatever you want. You have finer
+control over the degree of zoom of the map with the arguments
+<code>xlim()</code> and <code>ylim()</code>. These polygons are just
+floating in space, so lets add a basemap to give us geographical
+context:</p>
 <div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="dv">14000000</span>,<span class="op">-</span><span class="dv">6000000</span>])</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>crit_hab_polys <span class="op">=</span> gdf_3857.plot(column <span class="op">=</span> <span class="st">&#39;comname&#39;</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                              figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">20</span>))</span></code></pre></div>
+<p>Notice that I used an argument in the plot function, setting the
+<code>column = 'comname'</code>, which specifies the common name for the
+species in that row. This argument sets a unique color to each common
+name, which will help us tell the difference between each species’
+habitat on the map, even if 1 species’ habitat is composed of multiple
+polygons.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ctx.add_basemap(crit_hab_polys)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the axis limits to zoom in on just the lower 48 states</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">2350000</span>,<span class="dv">6350000</span>])</span></code></pre></div>
+<p>Since the extent of the basemap within the <code>contextily</code>
+package is the entire world, we need to specify the x-limitations and
+y-limitations for our map so we can zoom in on the United States. The
+default x and y units were in the millions, so I specified my units in
+millions, too. When considering if I should plug in positive or negative
+values, I considered the way that coordinate reference systems are
+designed with positive values for North and East, and negative values
+for South and West. I considered that the United States is north of the
+equator, so I should have positive values for the min and max y. As for
+the magnitude of my values, I simply looked at the map for a starting
+point and played around with different numbers until I got the view I
+wanted.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="dv">14000000</span>,<span class="op">-</span><span class="dv">6000000</span>])</span></code></pre></div>
 <p>Notice that these values are negative. Along similar thinking to how
 we decided on our y limitation, these negative values are the result of
 how coordinate systems are designed. Consider the prime meridian (which
@@ -2746,17 +2741,16 @@ alt="Southern California Steelhead Trout distinct population segment map with wa
 <figcaption aria-hidden="true">Southern California Steelhead Trout
 distinct population segment map with watershed landmarks</figcaption>
 </figure>
-<p>I was lucky enough to conduct field work with these migratory fish in
-2020-2021 through the California Department of Fish and Wildlife and the
-Pacific States Marine Fisheries Committee. I grew to appreciate their
-vital role in ecosystem processes and the culture of indigenous people
-who have interacted with them for centuries. This fish is currently in
-the process of being listed as a California endangered species starting
-in December of 2021, which will hopefully expand critical habitat range,
-increase monitoring of the populations, and help enforce illegal fishing
-and pollution regulation in their habitat. We can check out the
-steelhead’s critical habitat range before and after 2021 to see how it
-expands over time and space.</p>
+<p>I was lucky enough to conduct field work with these migratory fish
+with the Pacific States Marine Fisheries Committee. I grew to appreciate
+their role in ecosystem processes and the culture of indigenous people.
+This fish has been on the federal endangered species list for years, but
+was just recently listed as a California endangered species in 2024.
+This will hopefully expand critical habitat range, increase monitoring
+of the populations, and help enforce illegal fishing and pollution
+regulation in their habitat. <strong>We can check out the steelhead’s
+critical habitat range before and after 2024 to see how it expands over
+time and space.</strong></p>
 <center>
 <figure>
 <img src="images/steelhead_crayfish.png" style="width:85.0%"
@@ -2805,7 +2799,7 @@ California Steelhead Trout</a></li>
 href="https://ourcodeworld.com/articles/read/635/why-should-i-learn-python-programming-language">Python
 logo</a></li>
 </ol>
-<div class="sourceCode" id="cb9"><pre
+<div class="sourceCode" id="cb11"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

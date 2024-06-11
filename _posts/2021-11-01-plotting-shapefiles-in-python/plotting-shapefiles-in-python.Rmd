@@ -27,13 +27,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </center>
 
-Python is a powerful programming language for spatial analyses. In this tutorial, we learn the basics of plotting shapefiles overlaid on top of a basemap. Understanding where points, lines, and polygons exist in the world allows us to answer questions about correlated variables, consider new questions that arise throughout the analysis process, and communicate conclusions to audiences in an easily-digestible way.
+In this tutorial, we learn the basics of plotting shapefiles overlaid on top of a basemap. Understanding where points, lines, and polygons exist in the world allows us to answer questions about correlated variables, consider new questions that arise throughout the analysis process, and communicate conclusions to audiences in an easily-digestible way.
 
-We start with the basics; installing the integrated development environment (IDE) Jupyter Notebook and installing the necessary packages. If you prefer to use another IDE such as Visual Studio Code and have already installed the packages `geopandas`, feel free to jump ahead to the **Importing Packages** section.
+We start with the basics; installing the integrated development environment (IDE) such as VS Code or Jupyter Notebook and installing the necessary packages.
 
 I'm interested in plotting endangered species' critical habitat ranges throughout the United States. I sourced my data from the U.S. Geological Survey [here](https://ecos.fws.gov/ecp/report/table/critical-habitat.html). I'm a big fan of USGS datasets because they are relatively clean and provide comprehensive metadata.
 
-Let's map the critical habitat ranges of the Florida Bonneted bat and many other species of concern on a basemap of the United States.
+Let's map the critical habitat ranges of the Florida Bonneted bat and many other species of concern in the United States.
 
 <center>
 
@@ -41,15 +41,18 @@ Let's map the critical habitat ranges of the Florida Bonneted bat and many other
 
 </center>
 
-## Getting started with Python and Jupyter Notebooks
+## Getting started 
 
-Firstly, install `Anaconda` with instructions [here.](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) To minimize the packages you're installing, go ahead with `miniconda`. This can be done through the commandline. Both `Anaconda` or `Miniconda` will work fine whether you have a PC or Mac.
+Firstly, install `Anaconda` with instructions [from Conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html) or from [this blog post](https://waylonwalker.com/install-miniconda/) that worked well for me. To minimize the packages you're installing, install `miniconda`. This can be done through the commandline. Both `Anaconda` or `Miniconda` will work  whether you have a PC or Mac.
 
-Next, install the IDE [VSCode](https://code.visualstudio.com/). 
+Next, install the IDE [VSCode](https://code.visualstudio.com/). I recommend this over Jupyter Notebooks.
+
+Don't install any packages into your base environment. If you do this by accident, you can always reset it.
+
 
 On a Mac, I activate `conda` in the regular terminal (`conda activate`). On a PC, I do this from the Anaconda Prompt (the `Anaconda` terminal) because it's tricky to get my normal command line or Bash to recognize that `conda` is indeed on my computer.
 
-Create a new conda environment with `conda create -n EnvName` and tag on `python=3.10` to the end if you want to specify a certain python version. Activate the environment with `conda activate EnvName`. Don't install any packages into your base environment. If you do this by accident, you can always reset it.
+Create a new conda environment with `conda create -n EnvName` and tag on `python=3.10` to the end if you want to specify a certain python version. Activate the environment with `conda activate EnvName`. 
 
 Install `geopandas` with `conda install geopandas` or `pip install geopandas`.  
 
@@ -76,17 +79,19 @@ import matplotlib.pyplot as plt # plot our data and manipulate the plot
 import contextily as ctx # add a default basemap under our polygons of interest
 ```
 
-If you do not already have `contextily` installed, use a `conda forge` command to install it in the terminal in your geospatial environment.
+If you do not already have `contextily` installed, use a `conda forge` command to install it in the terminal in your environment if you used `conda forge` to install previous packages. If you used pip to install other packages, stick with `pip`. It is not wise to mix `conda forge` and `pip` in the same environment because dependencies can conflict.
 
-As a proponent of reproducibility and crediting those who provided the data, I like to include a markdown chunk following my package imports that includes a URL link to where I found my data, along with a citation if necessary and any notes about how I downloaded it for myself or anyone else working through my code:
+I like to include a markdown chunk following my package imports that includes a URL link to where I found my data, a citation, and notes about how I downloaded it for myself or anyone else working through my code:
 
+```
 Data source: [US Fish and Wildlife](https://ecos.fws.gov/ecp/report/table/critical-habitat.html)\ 
 - contains .shp, .dbf, and .shx polygon files that relate to critical species habiata in the United States\
 - I chose the first zip file you see on this site
+```
 
 ## Importing Data
 
-Let's import your data! We will use `geopandas` to read in the **shapefile** with  polygons or lines or points You might take a look at all the file extensions and feel overwhelmed. Shapefiles and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to import a **shapefile** of polygons, so that **.shp** file is the only one you need to read in:   
+We will use `geopandas` to read in the **shapefile** with  polygons or lines or points You might take a look at all the file extensions and feel overwhelmed. Shapefiles and their metadata are stored separately (.shp, .dbf, .shx, .xml, and so on). In this example we are trying to import a **shapefile** of polygons, so that **.shp** file is the only one you need to read in:   
 
 ```python
 gdf = gpd.read_file('CRITHAB_POLY.shp')
@@ -125,51 +130,52 @@ Print the latitude and longitude pairs that make up a particular polygon:
 
 ## Setting the Coordinate Reference System  
 
-As a last step before you plot, you have to make sure you set the data to the desired coordinate reference system (CRS). This is standard for all kinds of spatial data, since your data might come with an undesired CRS or lack information about it. For information about coordinate reference systems, check out [this guide.](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)  
+As a last step before you plot, you have to make sure you **set** and then **transform** the data to the desired coordinate reference system (CRS). This is standard for all kinds of spatial data, since your data might come with an undesired CRS or lack information about it. For information about coordinate reference systems, check out [this guide.](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)  
 
 Three common CRS's are as follows:   
 
 - **WGS84 (EPSG: 4326)**, which is commonly used for GIS data across the globe or across multiple countries  
-and   
+
 - **NAD83 (EPSG:4269)**, which is most commonly used for federal agencies  
-and  
-- **Mercator (EPSG: 3857)**, which is used for tiles from Google Maps, Open Street Maps, and Stamen
-Maps. I will use this one today because I want to overlay my polygons onto a Google basemap with `contextily`.  
 
-Set the CRS to ESPG 3857. This code may take a minute to run. In Jupyter Notebook, you know that code chunk is still chuggin' away if you see an asterisk in brackets to the left of the code chunk:
+- **Mercator (EPSG: 3857)**, which is projected, uses units of meters, and used for tiles from Google Maps, Open Street Maps, and Stamen Maps. I will use this one today because I want to overlay my polygons onto a Google basemap with `contextily`. 
 
-![](images/set_crs.png)
+Once you set the CRS, transform it:
+
+```python
+gdf_3857 = to_crs(epsg = "3857", inplace = False)
+```
 
 ## Plotting Shapefiles on a Basemap
 
-Use the plot() function from matplotlib and make the polygon color represent each species:
+Use the `plot()` function from `matplotlib` and assign the palette to the species attribute:
 
 ```python
-gdf_3857.plot(column='comname',
-             figsize=(20,20))
+gdf_3857.plot(column = 'comname',
+             figsize = 20,20))
 ```
              
 ![](images/crit_hab_no_basemap.png)
 
 Note that you did not have to call the package to use the function `plot()`. Instead, you can name the dataframe which you want to plot, which is `gdf_3857` in this case, *then* `plot()` and add arguments and supplemental plot structure changes as you go.
              
-The fig size can be whatever you want. You have finer control over the degree of zoom of the map with the arguments `xlim()` and `ylim()`, anyway. These polygons are just floating in space, so lets add a basemap to give us geographical context:  
+The `figsize` can be whatever you want. You have finer control over the degree of zoom of the map with the arguments `xlim()` and `ylim()`. These polygons are just floating in space, so lets add a basemap to give us geographical context:  
 
 ```python
-crit_hab_polys = gdf_3857.plot(column='comname',
-             figsize=(20,20))
+crit_hab_polys = gdf_3857.plot(column = 'comname',
+                              figsize = (20,20))
 ```       
       
-Notice that I used an argument in the plot function, setting the `column = 'comname'`, which is a column within the `gdf_3857` geodataframe that specifies the common name for the species in that row. This argument sets a unique color to each common name, which will help us tell the difference between each species' habitat on the map, even if 1 species' habitat is composed of multiple polygons.
+Notice that I used an argument in the plot function, setting the `column = 'comname'`, which specifies the common name for the species in that row. This argument sets a unique color to each common name, which will help us tell the difference between each species' habitat on the map, even if 1 species' habitat is composed of multiple polygons.
 
 ```python
 ctx.add_basemap(crit_hab_polys)
 
-# Set the axis limits to zoom in on just the lower 48 states, rather than viewing the entire world:  
+# Set the axis limits to zoom in on just the lower 48 states
 plt.ylim([2350000,6350000])
 ```
 
-Since the basemap within the `contextily` package is of the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States to best understand our data. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States is north of the equator, so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted.
+Since the extent of the basemap within the `contextily` package is the entire world, we need to specify the x-limitations and y-limitations for our map so we can zoom in on the United States. The default x and y units were in the millions, so I specified my units in millions, too. When considering if I should plug in positive or negative values, I considered the way that coordinate reference systems are designed with positive values for North and East, and negative values for South and West. I considered that the United States is north of the equator, so I should have positive values for the min and max y. As for the magnitude of my values, I simply looked at the map for a starting point and played around with different numbers until I got the view I wanted.
 
 ```python
 plt.xlim([-14000000,-6000000])
@@ -194,7 +200,7 @@ Living in Santa Barbara, I'm interested in the critical habitat of the [Southern
 
 ![Southern California Steelhead Trout distinct population segment map with watershed landmarks](images/steelhead_dps.png)
 
-I was lucky enough to conduct field work with these migratory fish in 2020-2021 through the California Department of Fish and Wildlife and the Pacific States Marine Fisheries Committee. I grew to appreciate their vital role in ecosystem processes and the culture of indigenous people who have interacted with them for centuries. This fish is currently in the process of being listed as a California endangered species starting in December of 2021, which will hopefully expand critical habitat range, increase monitoring of the populations, and help enforce illegal fishing and pollution regulation in their habitat. We can check out the steelhead's critical habitat range before and after 2021 to see how it expands over time and space.
+I was lucky enough to conduct field work with these migratory fish with the Pacific States Marine Fisheries Committee. I grew to appreciate their role in ecosystem processes and the culture of indigenous people. This fish has been on the federal endangered species list for years, but was just recently listed as a California endangered species in 2024. This will hopefully expand critical habitat range, increase monitoring of the populations, and help enforce illegal fishing and pollution regulation in their habitat. **We can check out the steelhead's critical habitat range before and after 2024 to see how it expands over time and space.**
 
 <center>
 
