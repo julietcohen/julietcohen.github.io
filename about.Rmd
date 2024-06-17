@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <center>
 
-![Overlooking Olomana ("three peaks") on the east side of Oahu, Hawai.](about_pics/overlook_oahu.jpg){width=90%}
+![Overlooking Olomana ("three peaks") on the east side of Oahu, Hawaii.](about_pics/overlook_oahu.jpg){width=90%}
 
 I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets. Today my passion lies in gleaning meaningful observations from ecological and environmental datasets. I didn't make this journey alone; I found mentors in  field crew leaders, and  scientists along the way.
 
@@ -24,7 +24,7 @@ I started collecting data while traversing mountaintops and snorkeling inside aq
 
 ### Mammalian Spatial Ecology
 
-I served as a research technician in [the McCauley lab](https://labs.eemb.ucsb.edu/mccauley/doug/) at UC Santa Barbara under Dr. Molly Hardesty-Moore investigating mesocarnivore spatial ecology in urban landscapes. I assisted Molly with trapping raccoons and fitting them with radio collars, then tracking them using telemetry techniques over several years. This spatial data was used in conjunction with hair samples from raccoons, foxes, skunks, and opossums to compare behavior and dietary trends in mammals that live in urban versus rural habitats. We watched them peruse the landscape via camera traps.
+I served as a research technician in the [McCauley lab](https://labs.eemb.ucsb.edu/mccauley/doug/) at UC Santa Barbara under Dr. Molly Hardesty-Moore investigating mesocarnivore spatial ecology in urban landscapes. I assisted Molly with trapping raccoons and fitting them with radio collars, then tracking them using telemetry techniques over several years. This spatial data was used in conjunction with hair samples from raccoons, foxes, skunks, and opossums to compare behavior and dietary trends in mammals that live in urban versus rural habitats. We watched them peruse the landscape via camera traps.
 
 <center>
 
@@ -115,31 +115,17 @@ I served as a fisheries technician for the Pacific States Marine Fisheries Commi
 
 ![](about_pics/measure_fish.JPG){width="50%"}![](about_pics/snake_arm.JPG){width="50%"}
 
-We used [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/products/didson-sonars) to film our freshwater streams 24/7 to capture possible steelhead migrations. We deployed cameras in the Ventura River, Salispuedes Creek, and the Santa Ynez River. These  high-tech cameras use sound waves to detect  movement in the water, and it was our job to detect trout based on their silhouettes and swimming patterns in the camera footage.
+We used [DIDSON underwater sonar camera technology](http://www.soundmetrics.com/products/didson-sonars) to film our freshwater streams 24/7 to capture possible steelhead migrations. We deployed cameras in the Ventura River, Salispuedes Creek, and the Santa Ynez River. These high-tech cameras use sound waves to detect movement in the water, and it was our job to detect trout based on their silhouettes and swimming patterns in the camera footage. We reviewed sonar footage hoping to find steelhead trout migrating upstream, but mainly only recorded catfish, chub, debris, and the occassional water bird or freshwater turtle. Our crew snorkeled around the Ventura River camera to find the invasive catfish species we repeatedly saw during footage review as a celebration to the end of the field season.
 
-<center>
+![](about_pics/DIDSON_data_review.JPG){width="50%"}![](about_pics/snorkel_gang.JPG){width="50%"}
 
-![Data entry: reviewing sonar footage for steelhead trout, but mainly recording other native fish, chub, debris, and the occassional water bird or freshwater turtle.](about_pics/DIDSON_data_review.JPG){width="65%"}
+On survey in Ojai, I spotted a chunky alligator lizard sunning on a stone in steelhead trout habitat in Gobernador Creek. Their long tails always made me think these individuals were snakes at first glance. In Gaviota we would frequently find native western pond turtles.
 
-</center>
+![](about_pics/lizard.png){width="60%"}![](about_pics/west_pond_turt.png){width="40%"}
 
-<center>
+### Arctic Science
 
-![The DIDSON crew all geared up to snorkel around the Ventura River camera to find the invasive catfish species we repeatedly saw during footage review.](about_pics/snorkel_gang.JPG){width="65%"}
-
-</center>
-
-<center>
-
-![A chunky alligator lizard sunning on a stone in steelhead trout habitat in Gobernador Creek in Ojai, CA](about_pics/lizard.png){width="65%"}
-
-</center>
-
-<center>
-
-![A native western pond turtle spotted on a steelhead trout survey in Gaviota Creek, CA.](about_pics/west_pond_turt.png){width="65%"}
-
-</center>
+My current role as a data scientist and software developer sent me to Fairbanks, Alaska to meet the end users of the datasets I help create and visualize on the [Permafrost Discovery Gateway](https://arcticdata.io/catalog/portals/permafrost). My team and I had the opportunity to see the effects of permafrost thaw on communities and natural environments. My colleague Amelia Liberatore wrote an article about our field excursions and the future trajectory of our project: [Sinking Soil, Rising Research](https://www.nceas.ucsb.edu/news/sinking-soil-rising-research)
 
 
 
