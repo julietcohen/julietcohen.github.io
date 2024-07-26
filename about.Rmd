@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![Overlooking Olomana ("three peaks") on the east side of Oahu, Hawaii.](about_pics/overlook_oahu.jpg){width=90%}
 
-I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets. Today my passion lies in gleaning meaningful observations from ecological and environmental datasets. I didn't make this journey alone; I found mentors in  field crew leaders, and  scientists along the way.
+I started collecting data while traversing mountaintops and snorkeling inside aquaculture nets. Today my passion lies in gleaning meaningful observations from ecological and environmental datasets. I didn't make this journey alone; I found mentors in  field crew leaders and scientists along the way.
 
 </center>
 
@@ -38,7 +38,9 @@ I served as a research technician in the [McCauley lab](https://labs.eemb.ucsb.e
 
 </center>
 
-I led a mini project looking at water filtration rates among different bivalve species in a small off-shore Costa Rican mariculture system. I would dive into the mariculture nets each day to collect new bivalves, algae, and bryozoans, run the filtration trials, then return the bivalves to their mariculture nets.
+### Mariculture
+
+I led a project looking at water filtration rates among different bivalve species in a small off-shore Costa Rican mariculture system. I dove in the mariculture nets each day to collect new bivalves, algae, and bryozoans, run the filtration trials, then return the bivalves to their mariculture nets. This project aimed to provide guidance for site management regarding the best bivalve species to  pair the fish communities.
 
 <center>
 
@@ -48,7 +50,7 @@ I led a mini project looking at water filtration rates among different bivalve s
 
 ![](about_pics/turbidity_measurement.JPG){width="60%"}![](about_pics/buckets.png){width=30%}
 
-In spent some of my free time walking through the forest to find wildlife:
+I spent some of my free time walking through the forest to find wildlife:
 
 <center>
 
@@ -59,7 +61,7 @@ In spent some of my free time walking through the forest to find wildlife:
 
 ### The Lizard Days
 
-I got the chance to survey for flat tailed-horned lizards in the desert habitat in Southern California, and I met many other lizard species along the way.
+I served as part of a field crew with the San Diego Natural History Museum to survey for flat tailed-horned lizards in the desert habitat in Southern California. This summer field work documented that there was sufficient abundance of this threatened species in this desert region, aiding in protecting the habitat from geothermal mining infrastructure. We got several trucks stuck in the sand and met many lizard, bird, and snake species along the way!
 
 <center>
 
@@ -73,11 +75,11 @@ I got the chance to survey for flat tailed-horned lizards in the desert habitat 
 
 </center>
 
-We did find plenty of armored lizards, sidewinders, nighthawk nests, mammal skulls, blue death feigning beetles, kangaroo rat tracks, and badger tunnels.
+We encoutnered armored lizards, sidewinders, nighthawk nests, mammal skulls, blue death feigning beetles, kangaroo rat tracks, and badger tunnels.
 
 ### Hawaii
 
-As a field technician and data specialist at the [Oahu Invasive Species Committee](https://www.oahuisc.org/), I surveyed for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu and the Wai'anae Mountains in the west. I quickly fell in love with the extreme ridgelines, despite the bushwhacking through impossible tangles of trees.
+As a field technician and data specialist at the [Oahu Invasive Species Committee](https://www.oahuisc.org/), I surveyed for incipient invasive plant and insect species in the lush forests of the Ko'olau mountains on the east side of the island of Oahu, and in the Wai'anae Mountains in the west. I quickly fell in love with the extreme ridgelines despite the rainstorms and bushwhacking through impossible tangles of trees.
 
 <center>
 
